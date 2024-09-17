@@ -1,0 +1,1259 @@
+fileFormatVersion: 2
+guid: 52e54ebc89084ec44b87b22ebaf978c1
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 86
+      height: 48
+    spriteID: f64c39ea7b8bbd540834f27d1c58cd6f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 4
+      width: 86
+      height: 48
+    spriteID: 464a8acc9b696324ab22a6824f1c3ed5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 4}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 4
+      width: 86
+      height: 48
+    spriteID: 9419526ddc6b6c3499b1ad3904e62081
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 192, y: 4}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 4
+      width: 86
+      height: 48
+    spriteID: ba96306662ae16448a2f2d376e099b38
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 286, y: 4}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 380
+      y: 4
+      width: 86
+      height: 48
+    spriteID: d89c2ba00ea303b4da756c707f58eac5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 380, y: 4}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 60
+      width: 86
+      height: 48
+    spriteID: e810594133ba0e24d886b8da51ff94be
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 60}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 60
+      width: 86
+      height: 48
+    spriteID: 2a0e33fe5f92ea6488179fe68c79e119
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 60}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 60
+      width: 86
+      height: 48
+    spriteID: d3003e9eea2eef74e8d207ff24316718
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 192, y: 60}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 60
+      width: 86
+      height: 48
+    spriteID: 5cd144eae29f3284082740c7f663fac0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 286, y: 60}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 380
+      y: 60
+      width: 86
+      height: 48
+    spriteID: 8b42aebd29be08040923d8e977aead44
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 380, y: 60}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 116
+      width: 86
+      height: 48
+    spriteID: cbbb858adeaca904184ef4133f232c25
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 116}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 116
+      width: 86
+      height: 48
+    spriteID: 8ac3791da4de4274ebd4f598e1e45345
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 116}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_12
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 116
+      width: 86
+      height: 48
+    spriteID: c6bb91e88a373b04da3e626d9401fa19
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 192, y: 116}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_13
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 116
+      width: 86
+      height: 48
+    spriteID: 7785b6c87d8b6e745800181afbfde717
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 286, y: 116}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_14
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 380
+      y: 116
+      width: 86
+      height: 48
+    spriteID: c4207b75619911b41bb03c5f04ebdbde
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 380, y: 116}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_15
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 172
+      width: 86
+      height: 48
+    spriteID: 48451051c61e2164bb9896536d2f29d3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 172}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_16
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 172
+      width: 86
+      height: 48
+    spriteID: ada0055f975f087469971be9a0d66115
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 172}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_17
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 172
+      width: 86
+      height: 48
+    spriteID: 9b5b8b893723371498dbacd46a61b3cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 192, y: 172}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_18
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 172
+      width: 86
+      height: 48
+    spriteID: 46854a9ff2a3f3247b6a508003327cc1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 286, y: 172}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_19
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 380
+      y: 172
+      width: 86
+      height: 48
+    spriteID: bb32bd0875aacc240b7335f89bf6b262
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 380, y: 172}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_20
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 228
+      width: 86
+      height: 48
+    spriteID: 3e60bb1477f781040a0773bb25f30518
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 228}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_21
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 228
+      width: 86
+      height: 48
+    spriteID: c6285e62e97472c46a03c5e97e40138b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 228}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_22
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 228
+      width: 86
+      height: 48
+    spriteID: 47e52332cbf9ad041bc04968a63eafad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 192, y: 228}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_23
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 228
+      width: 86
+      height: 48
+    spriteID: 8e328a63ab2e2db4caae7c177dfabba2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 286, y: 228}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_24
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 380
+      y: 228
+      width: 86
+      height: 48
+    spriteID: 18e29f4daa35f26429912ba3b8a64a8b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 380, y: 228}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_25
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 284
+      width: 86
+      height: 48
+    spriteID: 20e0349f2e56baa428eed7e6f8df232c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 284}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_26
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 284
+      width: 86
+      height: 48
+    spriteID: a693135194a5d9948b6df401c7f7eab4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 284}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_27
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 284
+      width: 86
+      height: 48
+    spriteID: fa9d212747a2ddc40915f10b84ed5879
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 192, y: 284}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_28
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 284
+      width: 86
+      height: 48
+    spriteID: 7e7acd609b3c768479fcc00f107f626c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 286, y: 284}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_29
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 380
+      y: 284
+      width: 86
+      height: 48
+    spriteID: b62152c418043634dbaa54fad77b042a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 380, y: 284}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_30
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 340
+      width: 86
+      height: 48
+    spriteID: 5c5469e515e2a9d4ab0fcc9a1c3dcdc9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 340}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_31
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 340
+      width: 86
+      height: 48
+    spriteID: dc90b04e52da1984ab9f3a1cdc93b19f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 340}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_32
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 340
+      width: 86
+      height: 48
+    spriteID: 63bbf66c24d485149a869cc374dac63e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 192, y: 340}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_33
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 340
+      width: 86
+      height: 48
+    spriteID: 969cecf809407f14eabb42a37774d85a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 286, y: 340}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_34
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 380
+      y: 340
+      width: 86
+      height: 48
+    spriteID: 6b2caad406ae84541807791277271ea6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 380, y: 340}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_35
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 396
+      width: 86
+      height: 48
+    spriteID: cddd27d5e5dbfe84fbeeea28f58107bd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 396}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_36
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 396
+      width: 86
+      height: 48
+    spriteID: 210dca1b64539b3419384f0877456c00
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 396}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_37
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 396
+      width: 86
+      height: 48
+    spriteID: e1eda323ac2ea234a9a17d2405dbfb3b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 192, y: 396}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_38
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 396
+      width: 86
+      height: 48
+    spriteID: 613199054a862684cb3bf3145c8c2d45
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 286, y: 396}
+  - name: preview_dragon_knight_run_breath_attack_combo_Frame_39
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 380
+      y: 396
+      width: 86
+      height: 48
+    spriteID: 4eae025ed5fe6e84a95678cced11e799
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 380, y: 396}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1393379925
+    name: preview_dragon_knight_run_breath_attack_combo
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: f64c39ea7b8bbd540834f27d1c58cd6f
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 464a8acc9b696324ab22a6824f1c3ed5
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 9419526ddc6b6c3499b1ad3904e62081
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: ba96306662ae16448a2f2d376e099b38
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: d89c2ba00ea303b4da756c707f58eac5
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: e810594133ba0e24d886b8da51ff94be
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 2a0e33fe5f92ea6488179fe68c79e119
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: d3003e9eea2eef74e8d207ff24316718
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 5cd144eae29f3284082740c7f663fac0
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 8b42aebd29be08040923d8e977aead44
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: cbbb858adeaca904184ef4133f232c25
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 8ac3791da4de4274ebd4f598e1e45345
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: c6bb91e88a373b04da3e626d9401fa19
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 7785b6c87d8b6e745800181afbfde717
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: c4207b75619911b41bb03c5f04ebdbde
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 48451051c61e2164bb9896536d2f29d3
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: ada0055f975f087469971be9a0d66115
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 9b5b8b893723371498dbacd46a61b3cc
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 46854a9ff2a3f3247b6a508003327cc1
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: bb32bd0875aacc240b7335f89bf6b262
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 3e60bb1477f781040a0773bb25f30518
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: c6285e62e97472c46a03c5e97e40138b
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 47e52332cbf9ad041bc04968a63eafad
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 8e328a63ab2e2db4caae7c177dfabba2
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 18e29f4daa35f26429912ba3b8a64a8b
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 20e0349f2e56baa428eed7e6f8df232c
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: a693135194a5d9948b6df401c7f7eab4
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: fa9d212747a2ddc40915f10b84ed5879
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 7e7acd609b3c768479fcc00f107f626c
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: b62152c418043634dbaa54fad77b042a
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 5c5469e515e2a9d4ab0fcc9a1c3dcdc9
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: dc90b04e52da1984ab9f3a1cdc93b19f
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 63bbf66c24d485149a869cc374dac63e
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_33
+      frameIndex: 33
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 969cecf809407f14eabb42a37774d85a
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 6b2caad406ae84541807791277271ea6
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_35
+      frameIndex: 35
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: cddd27d5e5dbfe84fbeeea28f58107bd
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_36
+      frameIndex: 36
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 210dca1b64539b3419384f0877456c00
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_37
+      frameIndex: 37
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: e1eda323ac2ea234a9a17d2405dbfb3b
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_38
+      frameIndex: 38
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 613199054a862684cb3bf3145c8c2d45
+    - name: preview_dragon_knight_run_breath_attack_combo_Frame_39
+      frameIndex: 39
+      cellRect:
+        x: 0
+        y: 0
+        width: 86
+        height: 48
+      spriteId: 4eae025ed5fe6e84a95678cced11e799
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 86, y: 48}

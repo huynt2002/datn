@@ -106,11 +106,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numEnemy: 03000000
-  enemy:
-  - {fileID: 9050534279554106856, guid: abd75af6c1f3ed14a854b8dab02dadc8, type: 3}
+  enemyPrefabList:
+  - {fileID: 6273467602576250793, guid: 3fbfaefe57c0e3047a0b1d391ee02774, type: 3}
   spawnType: 1
-  SpawnTime: 5
-  trigger: 0
+  spawnTime: 1
 --- !u!1 &905467666363487341
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,13 +215,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd25c7159314564ab3cb37c5d4729c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numEnemy: 0100000002000000
-  enemy:
-  - {fileID: 6273467602576250793, guid: 3fbfaefe57c0e3047a0b1d391ee02774, type: 3}
+  numEnemy: 02000000
+  enemyPrefabList:
   - {fileID: 8403386804578322872, guid: 903100e0740956349849e2f2f6888e35, type: 3}
   spawnType: 1
-  SpawnTime: 7
-  trigger: 0
+  spawnTime: 1
 --- !u!1 &1620933846431105875
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,8 +312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd8629dd20200e48ad7ad0caa595f35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   chestSpawnPos: []
+  itemList: []
+  monsterList: []
 --- !u!60 &6457437682650889055
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1585,14 +1583,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd25c7159314564ab3cb37c5d4729c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numEnemy: 010000000100000001000000
-  enemy:
+  numEnemy: 02000000
+  enemyPrefabList:
   - {fileID: 9050534279554106856, guid: abd75af6c1f3ed14a854b8dab02dadc8, type: 3}
-  - {fileID: 6273467602576250793, guid: 3fbfaefe57c0e3047a0b1d391ee02774, type: 3}
-  - {fileID: 8403386804578322872, guid: 903100e0740956349849e2f2f6888e35, type: 3}
   spawnType: 1
-  SpawnTime: 3
-  trigger: 0
+  spawnTime: 1
 --- !u!1 &8803942691763790301
 GameObject:
   m_ObjectHideFlags: 0
@@ -35157,12 +35152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd25c7159314564ab3cb37c5d4729c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numEnemy: 03000000
-  enemy:
+  numEnemy: 0100000003000000
+  enemyPrefabList:
   - {fileID: 9050534279554106856, guid: abd75af6c1f3ed14a854b8dab02dadc8, type: 3}
+  - {fileID: 6273467602576250793, guid: 3fbfaefe57c0e3047a0b1d391ee02774, type: 3}
   spawnType: 1
-  SpawnTime: 1
-  trigger: 0
+  spawnTime: 1
 --- !u!1001 &613823463125127888
 PrefabInstance:
   m_ObjectHideFlags: 0

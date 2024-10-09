@@ -6,51 +6,58 @@ public class SpawnEnemy : MonoBehaviour
 {
     [Header("Enemy")]
     public int[] numEnemy;
-    public GameObject[] enemy;
+    public GameObject[] enemyPrefabList;
     [Header("SpawnType")]
+    private bool spawned = false;
     public SpawnType spawnType = SpawnType.Wait;
     public enum SpawnType
     {
         Trigger,
         Wait
     }
-    public float SpawnTime = 1f;
-    public List<GameManager> monster;
+    public float spawnTime = 1f;
+    ArrayList monsterList = new ArrayList();
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (spawnType == SpawnType.Wait)
-        {
-            if (SpawnTime > 0)
-            {
-                SpawnTime -= Time.deltaTime;
-            }
-            else
-            {
-                Spawn();
-            }
-        }
-    }
-
-    void Spawn()
-    {
-        for (int i = 0; i < enemy.LongLength; i++)
+        for (int i = 0; i < enemyPrefabList.Length; i++)
             while (numEnemy[i] > 0)
             {
                 Vector2 pos = new Vector2(Random.Range(transform.position.x - gameObject.GetComponent<BoxCollider2D>().bounds.size.x / 2 + 1f,
                  transform.position.x + gameObject.GetComponent<BoxCollider2D>().bounds.size.x / 2 - 1f),
                  transform.position.y + 0.5f);
-                var mons = SpawnManager.instance.SpawnMonster(enemy[i], pos) as GameObject;
-                mons.transform.parent = transform;
+                var mons = SpawnManager.instance.SpawnMonster(enemyPrefabList[i], pos) as GameObject;
+                mons.transform.parent = gameObject.transform;
                 mons.SetActive(false);
+                monsterList.Add(mons);
                 numEnemy[i]--;
             }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!spawned)
+            if (spawnType == SpawnType.Wait)
+            {
+                if (spawnTime > 0)
+                {
+                    spawnTime -= Time.deltaTime;
+                }
+                else
+                {
+                    Spawn();
+                }
+            }
+    }
+
+    void Spawn()
+    {
+        foreach (GameObject monster in monsterList)
+        {
+            monster.SetActive(true);
+        }
+        spawned = true;
     }
 
 

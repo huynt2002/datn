@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     int remainingJump = 0;
 
     [Header("Dash")]
-    [SerializeField] GameObject dashEffect;
     public bool canDash = true;
     public float dashSpeed = 20f;
     public float dashDuration = 1f;
@@ -194,6 +193,14 @@ public class PlayerMovement : MonoBehaviour
             if (remainingJump > 0)
             {
                 SoundManager.instance.PlayJumpSound(gameObject.transform);
+                if (!isGrounded)
+                {
+                    Vector2 pos = new Vector2(
+                            gameObject.transform.position.x, gameObject.transform.position.y - 1f);
+                    GameObject effect = SpawnManager
+                        .instance
+                        .SpawnEffect(SpawnManager.EffectType.PlayerJumpEffect, pos);
+                }
                 ResetSkill();
                 body.velocity = new Vector2(body.velocity.x, jumpForce);
                 remainingJump--;
@@ -205,11 +212,11 @@ public class PlayerMovement : MonoBehaviour
 
     void DashEffect()
     {
-        if (dashEffect != null)
+        // Set correct arrow spawn position
+        GameObject dust = SpawnManager.instance.SpawnEffect(SpawnManager.EffectType.PlayerDashEffect, gameObject.transform.position);
+        // Turn arrow in correct direction
+        if (dust)
         {
-            // Set correct arrow spawn position
-            GameObject dust = Instantiate(dashEffect, gameObject.transform.position, gameObject.transform.localRotation) as GameObject;
-            // Turn arrow in correct direction
             dust.transform.localScale = new Vector3(facingDirection, 1, 1);
         }
     }

@@ -8,7 +8,6 @@ public class Damage : MonoBehaviour
 {
     protected Entity entity;
     public float knockbackForce;
-    [SerializeField] GameObject attackEffect;
     protected void Start()
     {
         entity = transform.parent?.gameObject.GetComponent<Entity>();
@@ -20,11 +19,7 @@ public class Damage : MonoBehaviour
     }
     protected void Effect(Vector3 position)
     {
-        if (attackEffect != null)
-        {
-            // Set correct arrow spawn position
-            GameObject dust = Instantiate(attackEffect, position + new Vector3(0, 0.5f, 0),
-                 Quaternion.identity) as GameObject;
-        }
+        // Set correct arrow spawn position
+        GameObject dust = SpawnManager.instance.SpawnEffect(SpawnManager.EffectType.HitEffect, position + new Vector3(0, 0.5f, 0)) as GameObject;
     }
 }

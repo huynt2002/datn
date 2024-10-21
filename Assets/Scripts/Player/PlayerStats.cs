@@ -17,6 +17,7 @@ public class PlayerStats : Entity
     {
         coin = 10000;
         gem = 0;
+
     }
 
     // Update is called once per frame
@@ -32,7 +33,7 @@ public class PlayerStats : Entity
         CurrentHP = MaxHP;
         speed = 5;
         IsAlive = true;
-        Damage = 10;
+        Damage = 100;
         SetOutPutDamage();
     }
 

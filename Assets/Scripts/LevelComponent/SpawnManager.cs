@@ -8,6 +8,9 @@ public class SpawnManager : MonoBehaviour
     [Header("UIElement")]
     [SerializeField] GameObject uiHPCanvas;
     public static SpawnManager instance;
+    [Header("Monster")]
+    //[SerializeField] Dictionary<string> itemPre;
+
     [Header("Item")]
     [SerializeField] GameObject itemPre;
     [SerializeField] List<ItemStats> itemDataList;
@@ -28,6 +31,10 @@ public class SpawnManager : MonoBehaviour
     public int coinDropRate;
     [SerializeField] GameObject gem;
     public int gemDropRate;
+
+    [Header("2D Effect")]
+    [SerializeField] GameObject effectController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +45,30 @@ public class SpawnManager : MonoBehaviour
     {
         instance = this;
         InitItemList();
+    }
+
+    public enum EffectType
+    {
+        None, PlayerJumpEffect, PlayerDashEffect, HitEffect
+    }
+
+
+    public GameObject SpawnEffect(EffectType effectType, Vector2 pos)
+    {
+        GameObject effect = Instantiate(effectController, pos, Quaternion.identity) as GameObject;
+        switch (effectType)
+        {
+            case EffectType.PlayerJumpEffect:
+                effect.GetComponent<ParticleDestroyEvent>().effectType = EffectType.PlayerJumpEffect;
+                return effect;
+            case EffectType.PlayerDashEffect:
+                effect.GetComponent<ParticleDestroyEvent>().effectType = EffectType.PlayerDashEffect;
+                return effect;
+            case EffectType.HitEffect:
+                effect.GetComponent<ParticleDestroyEvent>().effectType = EffectType.HitEffect;
+                return effect;
+        }
+        return effect;
     }
 
     void InitItemList()

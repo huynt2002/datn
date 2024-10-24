@@ -35,6 +35,10 @@ public class SpawnManager : MonoBehaviour
     [Header("2D Effect")]
     [SerializeField] GameObject effectController;
 
+    [Header("Particle Effect")]
+    [SerializeField] GameObject bloodSmall;
+    [SerializeField] GameObject bloodLarge;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +56,10 @@ public class SpawnManager : MonoBehaviour
         None, PlayerJumpEffect, PlayerDashEffect, HitEffect
     }
 
+    public enum ParticleType
+    {
+        BloodSmall, BloodLarge
+    }
 
     public GameObject SpawnEffect(EffectType effectType, Vector2 pos)
     {
@@ -69,6 +77,18 @@ public class SpawnManager : MonoBehaviour
                 return effect;
         }
         return effect;
+    }
+
+    public GameObject SpawnParticalEffect(ParticleType type, Vector2 pos)
+    {
+        switch (type)
+        {
+            case ParticleType.BloodSmall:
+                return Instantiate(bloodSmall, pos, Quaternion.identity) as GameObject;
+            case ParticleType.BloodLarge:
+                return Instantiate(bloodLarge, pos, Quaternion.identity) as GameObject;
+        }
+        return null;
     }
 
     void InitItemList()

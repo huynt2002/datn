@@ -363,7 +363,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2097151
+    m_Bits: 6291455
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -748,6 +748,14 @@ PrefabInstance:
       propertyPath: hitEffect
       value: 
       objectReference: {fileID: 4911124489918257835, guid: 5ff44fcff6e1e5c4a87d7b69473aab3f, type: 3}
+    - target: {fileID: 6219467405547251028, guid: 0dcac33b44530d646b28c5f40c696c98, type: 3}
+      propertyPath: bloodLarge
+      value: 
+      objectReference: {fileID: 1855497614338780, guid: 5873496c4ce8ed84cbf522e42db4e9c4, type: 3}
+    - target: {fileID: 6219467405547251028, guid: 0dcac33b44530d646b28c5f40c696c98, type: 3}
+      propertyPath: bloodSmall
+      value: 
+      objectReference: {fileID: 1855497614338780, guid: d69f42e134ac04940a19229a15320cc6, type: 3}
     - target: {fileID: 6219467405547251028, guid: 0dcac33b44530d646b28c5f40c696c98, type: 3}
       propertyPath: effectController
       value: 

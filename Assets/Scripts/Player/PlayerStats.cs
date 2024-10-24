@@ -23,27 +23,28 @@ public class PlayerStats : Entity
     // Update is called once per frame
     void Update()
     {
-
+        //just for demonstrate
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            Damage += 10;
+        }
     }
 
     public void SetDefault()
     {
         MaxHP = 100;
-        DEF = 10;
+        DEF = 5;
         CurrentHP = MaxHP;
         speed = 5;
         IsAlive = true;
-        Damage = 100;
+        Damage = 15;
         SetOutPutDamage();
     }
 
     protected override void Dead()
     {
-        if (!IsAlive)
-        {
-            gameObject.SetActive(false);
-            GameManager.instance.isLose = true;
-        }
+        gameObject.SetActive(false);
+        GameManager.instance.isLose = true;
     }
 
     public void SetHp(float hp)

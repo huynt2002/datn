@@ -20,6 +20,6 @@ public class Damage : MonoBehaviour
     protected void Effect(Vector3 position)
     {
         // Set correct arrow spawn position
-        GameObject dust = SpawnManager.instance.SpawnEffect(SpawnManager.EffectType.HitEffect, position + new Vector3(0, 0.5f, 0)) as GameObject;
+        GameObject dust = SpawnManager.instance.SpawnEffect(SpawnManager.EffectType.HitEffect, position + new Vector3(0, 0.5f, 0));
     }
 }

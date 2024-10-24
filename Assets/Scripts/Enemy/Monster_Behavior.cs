@@ -27,7 +27,6 @@ public class Monster_Behavior : MonoBehaviour
     [SerializeField] GameObject attackSkills;
     public List<GameObject> skills;
     [Header("GetHit")]
-    public bool getHit = false;
     public bool canGetHit;
 
     // Start is called before the first frame update
@@ -58,13 +57,18 @@ public class Monster_Behavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (getHit)
+        if (!entity.IsAlive)
+        {
+            animator.SetTrigger("dead");
+            return;
+        }
+        if (entity.getHit && canGetHit)
         {
             GetHit();
         }
         else
         {
-            if (!isCD && !getHit)
+            if (!isCD && (!entity.getHit || !canGetHit))
             {
                 if (!attack)
                 {
@@ -186,7 +190,7 @@ public class Monster_Behavior : MonoBehaviour
 
     public void ResetGetHit()
     {
-        getHit = false;
+        entity.getHit = false;
         skills[currentAttack].SetActive(true);
         animator.SetTrigger("idle");
     }

@@ -15,6 +15,7 @@ public class Entity : MonoBehaviour
     public bool IsAlive { get; protected set; }
     public bool invicible { get; protected set; }
     public float outPutDamage { get; protected set; }
+    public bool getHit;
     void Start()
     {
         StatsApplied();
@@ -22,13 +23,14 @@ public class Entity : MonoBehaviour
     public void TakeDamage(float _damage, Defines.DamageType _type)
     {
         if (invicible) return;
-        float damage = 0;
         if (_type != Defines.DamageType.Trap)
         {
-            damage = _damage - DEF;
+            _damage = _damage - DEF;
         }
-        damage = (int)_damage;
+        float damage = _damage > 0 ? (int)_damage : 0;
         DamagePopUpManager.instance?.Create(gameObject.transform.position, damage);
+        GameObject blood = SpawnManager.instance
+            .SpawnParticalEffect(SpawnManager.ParticleType.BloodSmall, gameObject.transform.position);
         var ui = GetComponent<Monster_Behavior>()?.GetComponentInChildren<DisplayHP>();
         if (ui != null) ui.show = true;
         CurrentHP -= damage;
@@ -48,6 +50,7 @@ public class Entity : MonoBehaviour
         DEF = stats.DEF;
         CurrentHP = MaxHP;
         IsAlive = true;
+        getHit = false;
         speed = stats.Speed;
         SetOutPutDamage();
     }
@@ -59,12 +62,23 @@ public class Entity : MonoBehaviour
 
     protected virtual void Dead()
     {
-        if (!IsAlive)
+        //Dead for monster
+        DropWhenDie();
+        var collider2Ds = gameObject.GetComponentsInChildren<Collider2D>();
+        foreach (var collider in collider2Ds)
         {
-            DropWhenDie();
-            SoundManager.instance.PlayDeathSound(gameObject.transform);
-            Destroy(gameObject);
+            if (collider.gameObject.tag == "Enemy")
+            {
+                SpawnManager.instance.SpawnParticalEffect(SpawnManager.ParticleType.BloodLarge, collider.transform.position);
+            }
         }
+        SoundManager.instance.PlayDeathSound(gameObject.transform);
+        Invoke(nameof(Destroy), 5f);
+    }
+
+    void Destroy()
+    {
+        Destroy(gameObject);
     }
 
     public void Invincible(bool set)

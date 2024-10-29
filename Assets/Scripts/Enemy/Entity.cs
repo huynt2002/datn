@@ -20,7 +20,7 @@ public class Entity : MonoBehaviour
     {
         StatsApplied();
     }
-    public void TakeDamage(float _damage, Defines.DamageType _type)
+    public void TakeDamage(float _damage, Defines.DamageType _type, bool isCriticalHit = false)
     {
         if (invicible) return;
         if (_type != Defines.DamageType.Trap)
@@ -28,7 +28,7 @@ public class Entity : MonoBehaviour
             _damage = _damage - DEF;
         }
         float damage = _damage > 0 ? (int)_damage : 0;
-        DamagePopUpManager.instance?.Create(gameObject.transform.position, damage);
+        DamagePopUpManager.instance?.Create(gameObject.transform.position, damage, isCriticalHit);
         GameObject blood = SpawnManager.instance
             .SpawnParticalEffect(SpawnManager.ParticleType.BloodSmall, gameObject.transform.position);
         var ui = GetComponent<Monster_Behavior>()?.GetComponentInChildren<DisplayHP>();

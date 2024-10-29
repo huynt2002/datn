@@ -13,7 +13,12 @@ public class DamageEnemy : Damage
             Effect(e.gameObject.transform.position);
             if (e.invicible) return;
             e.getHit = true;
-            e.TakeDamage(entity.outPutDamage, Defines.DamageType.Entity);
+            if (getCriticalHit())
+            {
+                e.TakeDamage(getCriticalHitDamage(entity.outPutDamage), Defines.DamageType.Entity, true);
+            }
+            else { e.TakeDamage(entity.outPutDamage, Defines.DamageType.Entity); }
+
             KnockBack(e.GetComponent<Rigidbody2D>());
             Debug.Log("Damage " + e.name);
         }

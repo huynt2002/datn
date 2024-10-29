@@ -22,4 +22,19 @@ public class Damage : MonoBehaviour
         // Set correct arrow spawn position
         GameObject dust = SpawnManager.instance.SpawnEffect(SpawnManager.EffectType.HitEffect, position + new Vector3(0, 0.5f, 0));
     }
+
+    protected bool getCriticalHit()
+    {
+        var p = Random.Range(0, 100);
+        if (p <= 10)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    protected float getCriticalHitDamage(float damage)
+    {
+        return damage * 2;
+    }
 }

@@ -22,20 +22,20 @@ public class DamagePopup : MonoBehaviour
         textMesh.SetText(damageAmount.ToString());
         if (isHeal)
         {
-            textMesh.fontSize = 10;
+            textMesh.fontSize = 5;
             textColor = new Color(0, 255, 60);
         }
         else if (!isCriticalHit)
         {
             // Normal hit
-            textMesh.fontSize = 10;
+            textMesh.fontSize = 5;
             textColor = new Color(255, 66, 0);
         }
         else
         {
             // Critical hit
-            textMesh.fontSize = 15;
-            textColor = new Color(255, 0, 24);
+            textMesh.fontSize = 8;
+            textColor = new Color(255, 0, 0);
         }
         textMesh.color = textColor;
         disappearTimer = DISAPPEAR_TIMER_MAX;

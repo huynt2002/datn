@@ -140,11 +140,12 @@ public class SpawnManager : MonoBehaviour
         return item;
     }
 
-    public void SpawnItemFromChest(Vector2 pos, ChestType chestType = ChestType.None)
+    public GameObject SpawnItemFromChest(Vector2 pos, ChestType chestType = ChestType.None)
     {
         ItemStats itemStats = ChoseItem(chestType);
         var item = Instantiate(itemPre, pos, Quaternion.identity) as GameObject;
         item.GetComponent<ItemManager>().itemStats = itemStats;
+        return item;
     }
 
     ItemStats ChoseItem(ChestType type = ChestType.None)

@@ -13,26 +13,26 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] ProjectileType type;
     public Vector2 originPos;
     public Vector2 goalPos;
+    public Vector2 targetPos;
     public float speed;
     private float damage;
     bool damaged;
     // Start is called before the first frame update
     [SerializeField]
-    public void Set(float damage = 10, float speed = 7f)
+    public void Set(Vector2 targetPos, float damage = 10, float speed = 7f)
     {
         this.damage = damage;
         this.speed = speed;
+        this.targetPos = targetPos;
     }
 
     void Start()
     {
         damaged = false;
-        Vector2 pPos = PlayerStats.instance.transform.position;
         if (type == ProjectileType.Chase)
         {
             originPos = transform.position;
-            goalPos = pPos;
-            Vector2 direction = goalPos - originPos;
+            Vector2 direction = targetPos - originPos;
             direction = new Vector2(10f * direction.x, 10f * direction.y);
             goalPos = originPos + direction;
         }

@@ -30,7 +30,7 @@ public class PlayerStats : Entity
         }
     }
 
-    public void SetDefault()
+    public override void SetDefault()
     {
         MaxHP = 100;
         DEF = 5;
@@ -45,35 +45,6 @@ public class PlayerStats : Entity
     {
         gameObject.SetActive(false);
         GameManager.instance.isLose = true;
-    }
-
-    public void SetHp(float hp)
-    {
-        MaxHP = hp;
-    }
-
-    public void IncreaseHP(float amount)
-    {
-        MaxHP += amount;
-        CurrentHP += amount;
-    }
-
-    public void HealHP(float amount)
-    {
-        CurrentHP += amount;
-        if (CurrentHP > MaxHP) CurrentHP = MaxHP;
-        DamagePopUpManager.instance?.Create(transform.position, amount, false, true);
-    }
-
-    public void SetDEF(float def)
-    {
-        DEF = def;
-    }
-
-    public void SetDMG(float dmg)
-    {
-        Damage = dmg;
-        SetOutPutDamage();
     }
 
     public void SetGem(int g)

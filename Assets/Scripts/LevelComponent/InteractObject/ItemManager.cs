@@ -5,13 +5,6 @@ using UnityEngine;
 public class ItemManager : PlayerInteract
 {
     public ItemStats itemStats;
-    public string Name;
-    public float ATKAmount;
-    public float DEFAmount;
-    public float HPAmount;
-    public string description;
-    Sprite icon;
-
     public bool isSale { get; private set; }
     public int cost = 500;
     void Awake()
@@ -38,13 +31,7 @@ public class ItemManager : PlayerInteract
     }
     public void ApplyData()
     {
-        Name = itemStats.ItemName;
-        ATKAmount = itemStats.ATKAmount;
-        DEFAmount = itemStats.DEFAmount;
-        HPAmount = itemStats.HPAmount;
-        description = itemStats.description;
-        icon = itemStats.icon;
-        GetComponent<SpriteRenderer>().sprite = icon;
+        GetComponent<SpriteRenderer>().sprite = itemStats.icon;
     }
     public override void Item()
     {
@@ -74,7 +61,7 @@ public class ItemManager : PlayerInteract
         {
             return;
         }
-        inventoryManager.AddItem(this);
+        inventoryManager.AddItem(itemStats);
         Destroy(this.gameObject);
     }
 

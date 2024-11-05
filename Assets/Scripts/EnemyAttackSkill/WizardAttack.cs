@@ -6,7 +6,8 @@ public class WizardAttack : AttackSkill
 {
     [SerializeField] GameObject projectile;
     public float ranThresh;
-    void Start(){
+    void Start()
+    {
 
     }
     public override void Attack()
@@ -15,7 +16,7 @@ public class WizardAttack : AttackSkill
         var y = Random.Range(transform.position.y - ranThresh, transform.position.y + ranThresh);
         var go = Instantiate(projectile, new Vector2(x, y), Quaternion.identity) as GameObject;
         entity.SetOutPutDamage(damage);
-        go.GetComponent<ProjectileBehavior>().Set(entity.outPutDamage);
+        go.GetComponent<ProjectileBehavior>().Set(PlayerStats.instance.transform.position, entity.outPutDamage);
     }
 
     public override void ResetAttack()

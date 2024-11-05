@@ -1,21 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance { get; private set; }
-    public List<ItemStats> items { get; private set; }
+    public Dictionary<ItemStats, GameObject> items { get; private set; }
     public const int numItem = 9;
     public bool full { get; private set; }
-    PlayerStats p;
-    // Start is called before the first frame update
+    Entity p;
+
+    public GameObject itemEffectContainer;
+
+    // public Dictionary<ItemTrait, int> itemTraits;
+
+    // public Dictionary<ItemTrait, GameObject> effectList;
+
     void Start()
     {
         instance = this;
-        items = new List<ItemStats>();
-        p = PlayerStats.instance;
-        CalculateItemsStats();
+        items = new Dictionary<ItemStats, GameObject>();
+        p = gameObject.GetComponent<Entity>();
+        CalculateItemsStats(p);
+        // itemTraits = new Dictionary<ItemTrait, int>();
+        // effectList = new Dictionary<ItemTrait, GameObject>();
     }
     // Update is called once per frame
     void Update()
@@ -26,54 +36,74 @@ public class InventoryManager : MonoBehaviour
         }
         else full = true;
     }
-    public void AddItem(ItemManager item)
+    public void AddItem(ItemStats item)
     {
-        items.Add(item.itemStats);
-        ApplyItemStats(item.itemStats);
+        //AddItemTrait(item.itemStats.trait);
+        var itemEffect = Instantiate(item.itemEffectObject, itemEffectContainer.transform) as GameObject;
+        items.Add(item, itemEffect);
+        item.ApplyItemStats(p);
     }
 
-    public void RemoveItem(ItemManager item)
-    {
-        items.Remove(item.itemStats);
-        CalculateItemsStats();
-    }
+    // void AddItemTrait(ItemTrait trait)
+    // {
+    //     if (itemTraits.ContainsKey(trait))
+    //     {
+    //         itemTraits[trait]++;
+    //     }
+    //     else
+    //     {
+    //         itemTraits[trait] = 1;
+    //     }
+    //     HandleItemEffect(trait);
+    // }
 
-    public void DropItem(ItemStats i)
-    {
-        SpawnManager.instance.SpawnItem(transform.position, i);
-        RemoveItemStats(i);
-        items.Remove(i);
-        CalculateItemsStats();
-    }
+    // void RemoveItemTrait(ItemTrait trait)
+    // {
+    //     if (itemTraits.ContainsKey(trait))
+    //     {
+    //         itemTraits[trait]--;
+    //     }
+    //     else
+    //     {
+    //         itemTraits[trait] = 0;
+    //     }
+    //     HandleItemEffect(trait);
+    // }
 
-    void CalculateItemsStats()
+    void CalculateItemsStats(Entity e)
     {
-        p.SetDefault();
-        float sumHP = 0;
-        float sumDef = 0;
-        float sumDMG = 0;
-        foreach (var i in items)
+        e.SetDefault();
+        foreach (var i in items.Keys)
         {
-            sumHP += i.HPAmount;
-            sumDef += i.DEFAmount;
-            sumDMG += i.ATKAmount;
+            i.ApplyItemStats(e);
         }
-        ItemStats tmp = new ItemStats();
-        tmp.HPAmount = sumHP;
-        tmp.DEFAmount = sumDef;
-        tmp.ATKAmount = sumDMG;
-        ApplyItemStats(tmp);
     }
 
-    void ApplyItemStats(ItemStats s)
+    public void RemoveItem(ItemStats item)
     {
-        p.IncreaseHP(s.HPAmount);
-        p.SetDEF(p.DEF * (1 + s.DEFAmount / 100));
-        p.SetDMG(p.Damage * (1 + s.ATKAmount / 100));
+        //RemoveItemTrait(item.itemStats.trait);
+        Destroy(items[item]);
+        items.Remove(item);
+        CalculateItemsStats(p);
     }
 
-    void RemoveItemStats(ItemStats s)
+    public void HandleItemEffect(ItemStats item)
     {
-        p.IncreaseHP(-s.HPAmount);
+
+
+    }
+
+    public void RemoveItemEffect()
+    {
+
+    }
+
+    public void DropItem(int index)
+    {
+        var item = items.Keys.ToList()[index];
+        SpawnManager.instance.SpawnItem(transform.position, item);
+        item.RemoveItemStats(p);
+        items.Remove(item);
+        CalculateItemsStats(p);
     }
 }

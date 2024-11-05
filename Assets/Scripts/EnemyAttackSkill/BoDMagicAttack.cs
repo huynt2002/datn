@@ -41,11 +41,11 @@ public class BoDMagicAttack : AttackSkill
             spawnPosList.Add(t);
         }
         var go = Instantiate(boDProjectile, pPos, Quaternion.identity) as GameObject;
-        go.GetComponent<ProjectileBehavior>()?.Set(entity.outPutDamage);
+        go.GetComponent<ProjectileBehavior>()?.Set(Vector2.zero, entity.outPutDamage);
         foreach (var i in spawnPosList)
         {
             var go1 = Instantiate(boDProjectile, i, Quaternion.identity) as GameObject;
-            go1.GetComponent<ProjectileBehavior>()?.Set(entity.outPutDamage);
+            go1.GetComponent<ProjectileBehavior>()?.Set(Vector2.zero, entity.outPutDamage);
         }
         spawnPosList.Clear();
     }

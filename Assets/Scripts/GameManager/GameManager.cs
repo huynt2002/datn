@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -126,7 +127,7 @@ public class GameManager : MonoBehaviour
                 var i = mainCanvasManager.GetItemIndex();
                 if (i != -1)
                 {
-                    InventoryManager.instance.DropItem(InventoryManager.instance.items[i]);
+                    InventoryManager.instance.DropItem(i);
                     PlayerInfoHide();
                 }
             }

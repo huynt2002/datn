@@ -18,8 +18,22 @@ public class Entity : MonoBehaviour
     public bool getHit;
     void Start()
     {
-        StatsApplied();
+        SetDefault();
     }
+
+    virtual public void SetDefault()
+    {
+        if (stats == null) return;
+        Damage = stats.Damage;
+        MaxHP = stats.MaxHP;
+        DEF = stats.DEF;
+        CurrentHP = MaxHP;
+        IsAlive = true;
+        getHit = false;
+        speed = stats.Speed;
+        SetOutPutDamage();
+    }
+
     public void TakeDamage(float _damage, Defines.DamageType _type, bool isCriticalHit = false)
     {
         if (invicible) return;
@@ -40,19 +54,6 @@ public class Entity : MonoBehaviour
             IsAlive = false;
             Dead();
         }
-    }
-
-    void StatsApplied()
-    {
-        if (stats == null) return;
-        Damage = stats.Damage;
-        MaxHP = stats.MaxHP;
-        DEF = stats.DEF;
-        CurrentHP = MaxHP;
-        IsAlive = true;
-        getHit = false;
-        speed = stats.Speed;
-        SetOutPutDamage();
     }
 
     public void DealDamage(Entity entity)
@@ -94,5 +95,34 @@ public class Entity : MonoBehaviour
     public void SetOutPutDamage(float dame = 0)
     {
         outPutDamage = Damage + dame / Damage;
+    }
+
+    public void SetHp(float hp)
+    {
+        MaxHP = hp;
+    }
+
+    public void IncreaseHP(float amount)
+    {
+        MaxHP += amount;
+        CurrentHP += amount;
+    }
+
+    public void HealHP(float amount)
+    {
+        CurrentHP += amount;
+        if (CurrentHP > MaxHP) CurrentHP = MaxHP;
+        DamagePopUpManager.instance?.Create(transform.position, amount, false, true);
+    }
+
+    public void SetDEF(float def)
+    {
+        DEF = def;
+    }
+
+    public void SetDMG(float dmg)
+    {
+        Damage = dmg;
+        SetOutPutDamage();
     }
 }

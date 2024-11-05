@@ -28,6 +28,7 @@ public class MainCanvasManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI dmg;
     [SerializeField] TextMeshProUGUI def;
     [Header("Inventory")]
+    List<ItemStats> itemList;
     [SerializeField] List<GameObject> itemSlots;
     [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI itemRare;
@@ -116,6 +117,7 @@ public class MainCanvasManager : MonoBehaviour
     {
         if (gameManager.playerInfo)
         {
+            itemList = new List<ItemStats>(InventoryManager.instance.items.Keys);
             DisplayStats();
             DisplayInventory();
             playerInfoCanvas.SetActive(true);
@@ -139,7 +141,8 @@ public class MainCanvasManager : MonoBehaviour
     {
         for (int i = 0; i < InventoryManager.instance.items.Count; i++)
         {
-            itemSlots[i].GetComponent<Image>().sprite = InventoryManager.instance.items[i].icon;
+
+            itemSlots[i].GetComponent<Image>().sprite = itemList[i].icon;
         }
         for (int i = InventoryManager.instance.items.Count; i < 9; i++)
         {
@@ -155,9 +158,9 @@ public class MainCanvasManager : MonoBehaviour
         int i = GetItemIndex();
         if (i != -1)
         {
-            itemName.text = InventoryManager.instance.items[i].ItemName;
-            itemRare.text = InventoryManager.instance.items[i].itemType.ToString();
-            itemDescription.text = InventoryManager.instance.items[i].description;
+            itemName.text = itemList[i].ItemName;
+            itemRare.text = itemList[i].itemType.ToString();
+            itemDescription.text = itemList[i].description;
         }
     }
 

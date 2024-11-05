@@ -19,3 +19,5 @@ MonoBehaviour:
   HPAmount: 30
   description: 'Increase 30HP '
   icon: {fileID: 21300000, guid: da7129ed6a246f048a49d8d97de2d2d4, type: 3}
+  itemType: 0
+  itemEffectObject: {fileID: 3619892523627480844, guid: bb827c06a7760c949be67e2253474c16, type: 3}

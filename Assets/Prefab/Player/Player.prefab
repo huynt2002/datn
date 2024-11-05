@@ -91,7 +91,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 3
-  attackEffect: {fileID: 4911124489918257835, guid: 5ff44fcff6e1e5c4a87d7b69473aab3f, type: 3}
 --- !u!1 &1451121491342251040
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,6 +165,7 @@ Transform:
   - {fileID: 6391011997759341224}
   - {fileID: 3316943921964024837}
   - {fileID: 6570085737589053871}
+  - {fileID: 5007551542186242658}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2732962477221686909
@@ -298,6 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7734be60ccb0629499139d01c6219db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemEffectContainer: {fileID: 4481967053058003175}
 --- !u!114 &2850648946721361993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,7 +493,6 @@ MonoBehaviour:
   isOneWay: 0
   jumpForce: 10
   maxJump: 2
-  dashEffect: {fileID: 1038168246061390451, guid: 8b8c8cc6774fb074cb9139cc631b108e, type: 3}
   canDash: 1
   dashSpeed: 20
   dashDuration: 0.25
@@ -519,6 +519,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
+  getHit: 0
+--- !u!1 &4481967053058003175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5007551542186242658}
+  m_Layer: 0
+  m_Name: ItemEffectContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5007551542186242658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4481967053058003175}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5966786623815608426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5862659506205918589
 GameObject:
   m_ObjectHideFlags: 0

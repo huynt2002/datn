@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileBehavior : MonoBehaviour
@@ -10,31 +8,48 @@ public class ProjectileBehavior : MonoBehaviour
         Chase, BoD, Fireball
     }
 
-    [SerializeField] ProjectileType type;
-    public Vector2 originPos;
-    public Vector2 goalPos;
-    public Vector2 targetPos;
-    public float speed;
-    private float damage;
-    bool damaged;
-    // Start is called before the first frame update
-    [SerializeField]
-    public void Set(Vector2 targetPos, float damage = 10, float speed = 7f)
+    public enum Target
     {
-        this.damage = damage;
-        this.speed = speed;
-        this.targetPos = targetPos;
+        Player, Enemy
     }
 
-    void Start()
+    [SerializeField] ProjectileType type;
+    Vector2 originPos;
+    Vector2 goalPos;
+    Transform targetPos;
+    float speed;
+    float damage;
+    public bool destroyedAtCollided = false;
+    Target target;
+    public float nearestDistanceSqr = 30f;
+    // Start is called before the first frame update
+    [SerializeField]
+    public void Set(Target target, float damage = 10, float speed = 7f)
     {
-        damaged = false;
+        this.target = target;
+        this.damage = damage;
+        this.speed = speed;
+        GetGoalPos();
+    }
+
+    void Awake()
+    {
+        gameObject.SetActive(false);
+    }
+
+    void GetGoalPos()
+    {
         if (type == ProjectileType.Chase)
         {
-            originPos = transform.position;
-            Vector2 direction = targetPos - originPos;
-            direction = new Vector2(10f * direction.x, 10f * direction.y);
-            goalPos = originPos + direction;
+            targetPos = GetTargetTransform();
+            if (targetPos)
+            {
+                ToTargetPos(targetPos.position);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
         else if (type == ProjectileType.BoD)
         {
@@ -42,12 +57,26 @@ public class ProjectileBehavior : MonoBehaviour
         }
         else if (type == ProjectileType.Fireball)
         {
-            originPos = transform.position;
-            goalPos = new Vector2(originPos.x + 1 * PlayerStats.instance.transform.localScale.x, originPos.y);
-            Vector2 direction = goalPos - originPos;
-            direction = new Vector2(30f * direction.x, 30f * direction.y);
-            goalPos = originPos + direction;
+            StraightWay();
         }
+        gameObject.SetActive(true);
+    }
+
+    void ToTargetPos(Vector2 targetPos)
+    {
+        originPos = transform.position;
+        Vector2 direction = targetPos - originPos;
+        direction = new Vector2(10f * direction.x, 10f * direction.y);
+        goalPos = originPos + direction;
+    }
+
+    void StraightWay()
+    {
+        originPos = transform.position;
+        goalPos = new Vector2(originPos.x + 1 * PlayerStats.instance.transform.localScale.x, originPos.y);
+        Vector2 direction = goalPos - originPos;
+        direction = new Vector2(30f * direction.x, 30f * direction.y);
+        goalPos = originPos + direction;
     }
 
     // Update is called once per frame
@@ -69,19 +98,11 @@ public class ProjectileBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (type == ProjectileType.Chase)
+        other.transform.parent.GetComponent<Entity>().TakeDamage(damage, Defines.DamageType.Projectile);
+        if (destroyedAtCollided)
         {
-            if (damaged) return;
-            other.transform.parent.GetComponent<Entity>().TakeDamage(damage, Defines.DamageType.Projectile);
-            damaged = true;
-            // if (type == ProjectileType.Chase)
-            //     Destroy(gameObject);
+            Destroy(gameObject);
         }
-        else
-        {
-            other.transform.parent.GetComponent<Entity>().TakeDamage(damage, Defines.DamageType.Projectile);
-        }
-
     }
 
     public void Chase()
@@ -99,5 +120,31 @@ public class ProjectileBehavior : MonoBehaviour
     public void BoD()
     {
 
+    }
+
+    Transform GetTargetTransform()
+    {
+        if (target == Target.Player)
+        {
+            return PlayerStats.instance.transform;
+        }
+        else
+        {
+            var transforms = GameObject.FindGameObjectsWithTag("Enemy");
+            Transform nearestTransform = null;
+
+            foreach (var t in transforms)
+            {
+                if (t == null) continue; // Skip null entries in the array
+                Vector2 distanceSqr = t.transform.position - transform.position;
+                if (distanceSqr.magnitude < nearestDistanceSqr)
+                {
+                    nearestTransform = t.transform;
+                    nearestDistanceSqr = distanceSqr.magnitude;
+                }
+            }
+
+            return nearestTransform;
+        }
     }
 }

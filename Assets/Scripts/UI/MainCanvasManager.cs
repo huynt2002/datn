@@ -117,7 +117,7 @@ public class MainCanvasManager : MonoBehaviour
     {
         if (gameManager.playerInfo)
         {
-            itemList = new List<ItemStats>(InventoryManager.instance.items.Keys);
+            itemList = InventoryManager.instance.items.ConvertAll(e => e.Key);
             DisplayStats();
             DisplayInventory();
             playerInfoCanvas.SetActive(true);

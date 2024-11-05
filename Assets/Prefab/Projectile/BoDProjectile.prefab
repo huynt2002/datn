@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52753f3b24fd0e84d8e6d8c3155daed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectType: 0
 --- !u!114 &6095834673679554332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  originPos: {x: 0, y: 0}
-  goalPos: {x: 0, y: 0}
-  speed: 0
-  damage: 10
+  lifeTime: 5
+  destroyedAtCollided: 0
+  scanTargetRange: 10
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64

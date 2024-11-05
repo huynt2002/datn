@@ -166,7 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  originPos: {x: 0, y: 0}
-  goalPos: {x: 0, y: 0}
-  speed: 10
-  damage: 10
+  destroyedAtCollided: 0
+  scanTargetRange: 10
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 128

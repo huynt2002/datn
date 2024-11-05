@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance { get; private set; }
-    public Dictionary<ItemStats, GameObject> items { get; private set; }
+    public List<KeyValuePair<ItemStats, GameObject>> items { get; private set; }
     public const int numItem = 9;
     public bool full { get; private set; }
     Entity p;
@@ -21,7 +21,7 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        items = new Dictionary<ItemStats, GameObject>();
+        items = new List<KeyValuePair<ItemStats, GameObject>>();
         p = gameObject.GetComponent<Entity>();
         CalculateItemsStats(p);
         // itemTraits = new Dictionary<ItemTrait, int>();
@@ -39,8 +39,16 @@ public class InventoryManager : MonoBehaviour
     public void AddItem(ItemStats item)
     {
         //AddItemTrait(item.itemStats.trait);
-        var itemEffect = Instantiate(item.itemEffectObject, itemEffectContainer.transform) as GameObject;
-        items.Add(item, itemEffect);
+        if (item.itemEffectObject)
+        {
+            var itemEffect = Instantiate(item.itemEffectObject, itemEffectContainer.transform) as GameObject;
+            items.Add(new KeyValuePair<ItemStats, GameObject>(item, itemEffect));
+        }
+        else
+        {
+            items.Add(new KeyValuePair<ItemStats, GameObject>(item, null));
+        }
+
         item.ApplyItemStats(p);
     }
 
@@ -73,17 +81,17 @@ public class InventoryManager : MonoBehaviour
     void CalculateItemsStats(Entity e)
     {
         e.SetDefault();
-        foreach (var i in items.Keys)
+        foreach (var i in items)
         {
-            i.ApplyItemStats(e);
+            i.Key.ApplyItemStats(e);
         }
     }
 
     public void RemoveItem(ItemStats item)
     {
         //RemoveItemTrait(item.itemStats.trait);
-        Destroy(items[item]);
-        items.Remove(item);
+        Destroy(items.Find(e => e.Key == item).Value);
+        items.Remove(items.Find(e => e.Key == item));
         CalculateItemsStats(p);
     }
 
@@ -100,9 +108,9 @@ public class InventoryManager : MonoBehaviour
 
     public void DropItem(int index)
     {
-        var item = items.Keys.ToList()[index];
-        SpawnManager.instance.SpawnItem(transform.position, item);
-        item.RemoveItemStats(p);
+        var item = items[index];
+        SpawnManager.instance.SpawnItem(transform.position, item.Key);
+        item.Key.RemoveItemStats(p);
         items.Remove(item);
         CalculateItemsStats(p);
     }

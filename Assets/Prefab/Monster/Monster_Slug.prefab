@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 3987079374739049985}
   - component: {fileID: 1591170857690577220}
   m_Layer: 0
-  m_Name: Slug
+  m_Name: Monster_Slug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -572,6 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: d047c033908435b469c3e1290d239624, type: 2}
+  getHit: 0
 --- !u!114 &1591170857690577220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,5 +596,4 @@ MonoBehaviour:
   attack: 0
   attackSkills: {fileID: 3598196329538777258}
   skills: []
-  getHit: 0
   canGetHit: 0

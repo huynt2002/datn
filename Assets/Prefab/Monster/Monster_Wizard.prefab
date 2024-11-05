@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 2152526488476696524}
   - component: {fileID: 5052554920020029412}
   m_Layer: 0
-  m_Name: Wizard
+  m_Name: Monster_Wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,6 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: d047c033908435b469c3e1290d239624, type: 2}
+  getHit: 0
 --- !u!114 &2152526488476696524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,7 +566,6 @@ MonoBehaviour:
   attack: 0
   attackSkills: {fileID: 1327876324661965698}
   skills: []
-  getHit: 0
   canGetHit: 1
 --- !u!1 &8696942646136718407
 GameObject:

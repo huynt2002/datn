@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7427119732227099400}
   - component: {fileID: 5174102961834001584}
   m_Layer: 0
-  m_Name: BoD
+  m_Name: Monster_BoD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

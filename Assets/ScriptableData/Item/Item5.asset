@@ -20,3 +20,4 @@ MonoBehaviour:
   description: Legend Stone. Icrease 50%DMG/50%DEF/50HP.
   icon: {fileID: 21300000, guid: 70e92df91699f664ab5bad7bf4723022, type: 3}
   itemType: 2
+  itemEffectObject: {fileID: 570684442556238901, guid: 72d9e1648956a4644a7f21a9046cc328, type: 3}

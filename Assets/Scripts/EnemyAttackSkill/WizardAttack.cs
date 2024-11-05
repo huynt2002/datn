@@ -16,7 +16,7 @@ public class WizardAttack : AttackSkill
         var y = Random.Range(transform.position.y - ranThresh, transform.position.y + ranThresh);
         var go = Instantiate(projectile, new Vector2(x, y), Quaternion.identity) as GameObject;
         entity.SetOutPutDamage(damage);
-        go.GetComponent<ProjectileBehavior>().Set(PlayerStats.instance.transform.position, entity.outPutDamage);
+        go.GetComponent<ProjectileBehavior>().Set(ProjectileBehavior.Target.Player, entity.outPutDamage);
     }
 
     public override void ResetAttack()

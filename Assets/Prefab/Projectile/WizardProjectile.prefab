@@ -165,7 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8e351174be3ac47baae3f3463fbd46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originPos: {x: 0, y: 0}
-  goalPos: {x: 0, y: 0}
-  speed: 7
-  damage: 0
+  type: 0
+  destroyedAtCollided: 1
+  scanTargetRange: 10
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64

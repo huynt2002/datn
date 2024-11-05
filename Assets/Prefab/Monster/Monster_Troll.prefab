@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 1883816743401727700}
   - component: {fileID: 1865436479964577116}
   m_Layer: 0
-  m_Name: Troll
+  m_Name: Monster_Troll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -541,6 +541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: d047c033908435b469c3e1290d239624, type: 2}
+  getHit: 0
 --- !u!114 &1865436479964577116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,7 +565,6 @@ MonoBehaviour:
   attack: 0
   attackSkills: {fileID: 1497645212692885469}
   skills: []
-  getHit: 0
   canGetHit: 1
 --- !u!1 &9152599117324866336
 GameObject:

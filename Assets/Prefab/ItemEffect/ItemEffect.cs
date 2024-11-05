@@ -4,9 +4,25 @@ using UnityEngine;
 
 public abstract class ItemEffect : MonoBehaviour
 {
-    public abstract bool Check();
+    protected Entity entity;
+    public float effectCD = 5f;
+    protected float countCD = 0;
+    public virtual bool Check()
+    {
+        if (countCD < effectCD)
+        {
+            countCD += Time.deltaTime;
+            return false;
+        }
+        countCD = 0;
+        return true;
+    }
     public abstract void ApplyEffect();
 
+    void Start()
+    {
+        entity = gameObject.GetComponentInParent<Entity>();
+    }
     void Update()
     {
         if (Check())

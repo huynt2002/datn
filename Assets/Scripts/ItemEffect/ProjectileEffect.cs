@@ -5,9 +5,17 @@ using UnityEngine;
 public class ProjectileEffect : ItemEffect
 {
     [SerializeField] GameObject projectile;
-    [SerializeField] ProjectileBehavior.Target target;
+    ProjectileBehavior.Target target;
     public override void ApplyEffect()
     {
+        if (entity.GetComponent<PlayerStats>())
+        {
+            target = ProjectileBehavior.Target.Enemy;
+        }
+        else
+        {
+            target = ProjectileBehavior.Target.Player;
+        }
         if (projectile)
         {
             var projectileObject = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;

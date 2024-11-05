@@ -53,7 +53,7 @@ public class SpawnManager : MonoBehaviour
 
     public enum EffectType
     {
-        None, PlayerJumpEffect, PlayerDashEffect, HitEffect
+        None, PlayerJumpEffect, PlayerDashEffect, HitEffect, PlayerHealingEffect
     }
 
     public enum ParticleType
@@ -64,18 +64,14 @@ public class SpawnManager : MonoBehaviour
     public GameObject SpawnEffect(EffectType effectType, Vector2 pos)
     {
         GameObject effect = Instantiate(effectController, pos, Quaternion.identity) as GameObject;
-        switch (effectType)
-        {
-            case EffectType.PlayerJumpEffect:
-                effect.GetComponent<ParticleDestroyEvent>().effectType = EffectType.PlayerJumpEffect;
-                return effect;
-            case EffectType.PlayerDashEffect:
-                effect.GetComponent<ParticleDestroyEvent>().effectType = EffectType.PlayerDashEffect;
-                return effect;
-            case EffectType.HitEffect:
-                effect.GetComponent<ParticleDestroyEvent>().effectType = EffectType.HitEffect;
-                return effect;
-        }
+        effect.GetComponent<ParticleDestroyEvent>().effectType = effectType;
+        return effect;
+    }
+
+    public GameObject SpawnEffect(EffectType effectType, Transform parent)
+    {
+        GameObject effect = Instantiate(effectController, parent) as GameObject;
+        effect.GetComponent<ParticleDestroyEvent>().effectType = effectType;
         return effect;
     }
 

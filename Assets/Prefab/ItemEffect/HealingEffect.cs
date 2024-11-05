@@ -13,6 +13,7 @@ public class HealingEffect : ItemEffect
         if (entity)
         {
             entity.HealHP(healNum);
+            var uiEffect = SpawnManager.instance.SpawnEffect(SpawnManager.EffectType.PlayerHealingEffect, transform);
         }
     }
 

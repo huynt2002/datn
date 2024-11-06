@@ -14,9 +14,14 @@ public abstract class ItemEffect : MonoBehaviour
             countCD += Time.deltaTime;
             return false;
         }
-        countCD = 0;
         return true;
     }
+
+    public void ResetCD()
+    {
+        countCD = 0;
+    }
+
     public abstract void ApplyEffect();
 
     protected void Start()

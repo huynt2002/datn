@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561581d114dd1ca4a8ee274becc9d972, type: 3}
   m_Name: Item0
   m_EditorClassIdentifier: 
-  id: 0
   ItemName: Apple
-  ATKAmount: 0
-  DEFAmount: 0
+  ATKAmount: 5
   HPAmount: 30
-  description: 'Increase 30HP '
+  speedAmount: 0
+  description: 'Increase 10HP and 5%ATK '
   icon: {fileID: 21300000, guid: da7129ed6a246f048a49d8d97de2d2d4, type: 3}
   itemType: 0
+  trait: {fileID: 11400000, guid: c57eb289f28239444b43123bd5bf6a98, type: 2}
   itemEffectObject: {fileID: 3619892523627480844, guid: bb827c06a7760c949be67e2253474c16, type: 3}

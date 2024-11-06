@@ -11,44 +11,45 @@ public class ItemTrait : ScriptableObject
     {
         public int levelNum;
         public string description;
+        public float ATKAmount;
+        public float HPAmount;
+        public float speedAmount;
     }
     public string traitName;
-    public float ATKAmount;
-    public float HPAmount;
-    public float speedAmount;
-    public string description;
     public Sprite icon;
-    public int currentLevel = -1;
+    public int currentLevel { get; private set; } = -1;
     public List<ItemTraitEffectLevel> effects;
     public GameObject itemTraitEffect;
 
     public void ApplyStats(Entity e)
     {
-        e.IncreaseHP(HPAmount);
-        e.IncreaseDmg(ATKAmount);
+        if (currentLevel == -1) return;
+        e.IncreaseHP(effects[currentLevel].HPAmount);
+        e.IncreaseDmg(effects[currentLevel].ATKAmount);
     }
 
     public void RemoveStats(Entity e)
     {
-        e.DecreaseHP(HPAmount);
-        e.DecreaseDmg(ATKAmount);
+        if (currentLevel == -1) return;
+        e.DecreaseHP(effects[currentLevel].HPAmount);
+        e.DecreaseDmg(effects[currentLevel].ATKAmount);
     }
 
     public void UpdateCurrentLevel(int num)
     {
-        for (int i = effects.Count; i > 0; i--)
+        for (int i = 0; i < effects.Count; i++)
         {
-            if (effects[i].levelNum < num)
+            if (effects[i].levelNum <= num)
             {
                 currentLevel = i;
-                break;
             }
         }
     }
     public GameObject GetTraitEffect(Transform parent)
     {
+        if (currentLevel == -1) return null;
         var effectObject = Instantiate(itemTraitEffect, parent) as GameObject;
-        effectObject.GetComponent<ItemTraitEffect>().level = currentLevel;
+        effectObject.GetComponent<ItemTraitEffect>().SetLevel(currentLevel);
         return effectObject;
     }
 }

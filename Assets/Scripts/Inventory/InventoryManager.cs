@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,9 +12,9 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField] GameObject itemEffectContainer;
 
-    // public Dictionary<ItemTrait, int> itemTraits;
+    public Dictionary<ItemTrait, int> itemTraitCount;
 
-    // public Dictionary<ItemTrait, GameObject> effectList;
+    public Dictionary<ItemTrait, GameObject> traitEffectList;
 
     void Start()
     {
@@ -21,8 +22,8 @@ public class InventoryManager : MonoBehaviour
         items = new List<KeyValuePair<ItemStats, GameObject>>();
         p = gameObject.GetComponent<Entity>();
         // CalculateItemsStats(p);
-        // itemTraits = new Dictionary<ItemTrait, int>();
-        // effectList = new Dictionary<ItemTrait, GameObject>();
+        itemTraitCount = new Dictionary<ItemTrait, int>();
+        traitEffectList = new Dictionary<ItemTrait, GameObject>();
     }
     // Update is called once per frame
     void Update()
@@ -35,7 +36,6 @@ public class InventoryManager : MonoBehaviour
     }
     public void AddItem(ItemStats item)
     {
-        //AddItemTrait(item.itemStats.trait);
         if (item.itemEffectObject)
         {
             var itemEffect = Instantiate(item.itemEffectObject, itemEffectContainer.transform) as GameObject;
@@ -46,33 +46,34 @@ public class InventoryManager : MonoBehaviour
             items.Add(new KeyValuePair<ItemStats, GameObject>(item, null));
         }
         item.ApplyItemStats(p);
+        AddItemTrait(item.trait);
     }
 
-    // void AddItemTrait(ItemTrait trait)
-    // {
-    //     if (itemTraits.ContainsKey(trait))
-    //     {
-    //         itemTraits[trait]++;
-    //     }
-    //     else
-    //     {
-    //         itemTraits[trait] = 1;
-    //     }
-    //     HandleItemEffect(trait);
-    // }
+    void AddItemTrait(ItemTrait trait)
+    {
+        if (!trait) return;
+        if (itemTraitCount.ContainsKey(trait))
+        {
+            itemTraitCount[trait]++;
+        }
+        else
+        {
+            itemTraitCount[trait] = 1;
+        }
+        AddItemTraitEffect(trait);
+        Debug.Log("A: " + itemTraitCount);
+    }
 
-    // void RemoveItemTrait(ItemTrait trait)
-    // {
-    //     if (itemTraits.ContainsKey(trait))
-    //     {
-    //         itemTraits[trait]--;
-    //     }
-    //     else
-    //     {
-    //         itemTraits[trait] = 0;
-    //     }
-    //     HandleItemEffect(trait);
-    // }
+    void RemoveItemTrait(ItemTrait trait)
+    {
+        if (!trait) return;
+        if (itemTraitCount.ContainsKey(trait))
+        {
+            itemTraitCount[trait]--;
+        }
+        RemoveItemTraitEffect(trait);
+        Debug.Log("A: " + itemTraitCount);
+    }
 
     // void CalculateItemsStats(Entity e)
     // {
@@ -83,15 +84,18 @@ public class InventoryManager : MonoBehaviour
     //     }
     // }
 
-    public void HandleItemEffect(ItemStats item)
+    public void AddItemTraitEffect(ItemTrait itemTrait)
     {
-
-
+        itemTrait.UpdateCurrentLevel(itemTraitCount[itemTrait]);
+        itemTrait.ApplyStats(p);
+        traitEffectList[itemTrait] = itemTrait.GetTraitEffect(itemEffectContainer.transform);
     }
 
-    public void RemoveItemEffect()
+    public void RemoveItemTraitEffect(ItemTrait itemTrait)
     {
-
+        itemTrait.RemoveStats(p);
+        Destroy(traitEffectList[itemTrait]);
+        AddItemTraitEffect(itemTrait);
     }
 
     public void DropItem(int index)
@@ -100,6 +104,8 @@ public class InventoryManager : MonoBehaviour
         SpawnManager.instance.SpawnItem(transform.position, item.Key);
         item.Key.RemoveItemStats(p);
         items.Remove(item);
+        Destroy(item.Value);
+        RemoveItemTrait(item.Key.trait);
         //CalculateItemsStats(p);
     }
 }

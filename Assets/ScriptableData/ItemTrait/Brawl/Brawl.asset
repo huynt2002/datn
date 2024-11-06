@@ -12,11 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e303f957e650d45a4c281401806984, type: 3}
   m_Name: Brawl
   m_EditorClassIdentifier: 
-  name: Brawl
+  traitName: 
+  icon: {fileID: 0}
+  currentLevel: -1
   effects:
   - levelNum: 2
     description: +30 HP
-    effectObject: {fileID: 0}
+    ATKAmount: 0
+    HPAmount: 30
+    speedAmount: 0
   - levelNum: 4
     description: +50 HP
-    effectObject: {fileID: 0}
+    ATKAmount: 0
+    HPAmount: 50
+    speedAmount: 0
+  itemTraitEffect: {fileID: 6892797471154144616, guid: 417def8de871eea4ab84bf02b2c962db, type: 3}

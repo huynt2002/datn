@@ -15,7 +15,7 @@ public class ItemStats : ScriptableObject
     public string description;
     public Sprite icon;
     public ItemType itemType;
-    //public ItemTrait trait;
+    public ItemTrait trait;
     public GameObject itemEffectObject;
     public void ApplyItemStats(Entity e)
     {

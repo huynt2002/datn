@@ -6,6 +6,7 @@ public class HealingEffect : ItemEffect
         if (entity)
         {
             EffectBehaviors.Healing(entity, healNum, transform);
+            ResetCD();
         }
     }
 }

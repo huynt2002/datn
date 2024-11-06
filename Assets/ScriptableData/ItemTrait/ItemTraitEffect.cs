@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public abstract class ItemTraitEffect : ItemEffect
 {
-    public int level;
+    protected int level;
     public override void ApplyEffect()
     {
 
@@ -15,4 +11,8 @@ public abstract class ItemTraitEffect : ItemEffect
     public abstract void SecondLevel();
 
     public abstract void ThirdLevel();
+    public void SetLevel(int level)
+    {
+        this.level = level;
+    }
 }

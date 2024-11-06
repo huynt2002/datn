@@ -224,7 +224,6 @@ MonoBehaviour:
   playerInfoCanvas: {fileID: 2473218526071128091}
   hp: {fileID: 6371804740565114056}
   dmg: {fileID: 7909174673652209355}
-  def: {fileID: 5113176258312745257}
   itemSlots:
   - {fileID: 2482554959607727197}
   - {fileID: 6597162678678240512}
@@ -536,7 +535,9 @@ MonoBehaviour:
   coinDropRate: 50
   gem: {fileID: 6339571356652092816, guid: 23bdb2044b39ee14db5a4ef3a0e3cff7, type: 3}
   gemDropRate: 100
-  effectController: {fileID: 0}
+  effectController: {fileID: 4911124489918257835, guid: 5ff44fcff6e1e5c4a87d7b69473aab3f, type: 3}
+  bloodSmall: {fileID: 1855497614338780, guid: d69f42e134ac04940a19229a15320cc6, type: 3}
+  bloodLarge: {fileID: 1855497614338780, guid: 5873496c4ce8ed84cbf522e42db4e9c4, type: 3}
 --- !u!1 &7620366572323322737
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,6 +910,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8963982295372320484}
+    - target: {fileID: 8704718238339223141, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1070,17 +1075,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6606428780256496549, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
   m_PrefabInstance: {fileID: 1745927806826191673}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5113176258312745257 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6831800794827401744, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
-  m_PrefabInstance: {fileID: 1745927806826191673}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6081416357382875618 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5503205109675619035, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}

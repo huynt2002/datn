@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec6c87f0585ccfe4c96d73db725a5f32, type: 3}
-  m_Name: Enemy1
+  m_Name: Monster_Troll
   m_EditorClassIdentifier: 
   Damage: 10
-  MaxHP: 70
-  DEF: 0
-  Speed: 2
+  MaxHP: 200
+  Speed: 3

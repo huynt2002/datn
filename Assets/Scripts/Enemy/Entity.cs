@@ -8,13 +8,16 @@ public class Entity : MonoBehaviour
     [Header("Stats")]
     public EntityStats stats;
     public float CurrentHP { get; protected set; }
-    public float Damage { get; protected set; }
     public float MaxHP { get; protected set; }
-    public float DEF { get; protected set; }
+
     public float speed { get; protected set; }
+
+    public float Damage { get; protected set; }
+    public float outPutDamage { get; protected set; }
+
     public bool IsAlive { get; protected set; }
     public bool invicible { get; protected set; }
-    public float outPutDamage { get; protected set; }
+
     public bool getHit;
     void Start()
     {
@@ -26,7 +29,6 @@ public class Entity : MonoBehaviour
         if (stats == null) return;
         Damage = stats.Damage;
         MaxHP = stats.MaxHP;
-        DEF = stats.DEF;
         CurrentHP = MaxHP;
         IsAlive = true;
         getHit = false;
@@ -37,11 +39,8 @@ public class Entity : MonoBehaviour
     public void TakeDamage(float _damage, Defines.DamageType _type, bool isCriticalHit = false)
     {
         if (invicible) return;
-        if (_type != Defines.DamageType.Trap)
-        {
-            _damage = _damage - DEF;
-        }
-        float damage = _damage > 0 ? (int)_damage : 0;
+        getHit = true;
+        var damage = (int)_damage;
         DamagePopUpManager.instance?.Create(gameObject.transform.position, damage, isCriticalHit);
         GameObject blood = SpawnManager.instance
             .SpawnParticalEffect(SpawnManager.ParticleType.BloodSmall, gameObject.transform.position);
@@ -108,6 +107,12 @@ public class Entity : MonoBehaviour
         CurrentHP += amount;
     }
 
+    public void DecreaseHP(float amount)
+    {
+        MaxHP -= amount;
+        CurrentHP -= amount;
+    }
+
     public void HealHP(float amount)
     {
         CurrentHP += amount;
@@ -115,14 +120,15 @@ public class Entity : MonoBehaviour
         DamagePopUpManager.instance?.Create(transform.position, amount, false, true);
     }
 
-    public void SetDEF(float def)
+    public void IncreaseDmg(float dmg)
     {
-        DEF = def;
+        Damage = Damage * (100 + dmg) / 100;
+        SetOutPutDamage();
     }
 
-    public void SetDMG(float dmg)
+    public void DecreaseDmg(float dmg)
     {
-        Damage = dmg;
+        Damage = Damage * 100 / (100 + dmg);
         SetOutPutDamage();
     }
 }

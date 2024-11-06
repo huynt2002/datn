@@ -8,11 +8,10 @@ public class ItemStats : ScriptableObject
     {
         Common, Rare, Legend
     }
-    public int id;
     public string ItemName;
     public float ATKAmount;
-    public float DEFAmount;
     public float HPAmount;
+    public float speedAmount;
     public string description;
     public Sprite icon;
     public ItemType itemType;
@@ -21,12 +20,12 @@ public class ItemStats : ScriptableObject
     public void ApplyItemStats(Entity e)
     {
         e.IncreaseHP(HPAmount);
-        e.SetDEF(e.DEF * (1 + DEFAmount / 100));
-        e.SetDMG(e.Damage * (1 + ATKAmount / 100));
+        e.IncreaseDmg(ATKAmount);
     }
 
     public void RemoveItemStats(Entity e)
     {
-        e.IncreaseHP(-HPAmount);
+        e.DecreaseHP(HPAmount);
+        e.DecreaseDmg(ATKAmount);
     }
 }

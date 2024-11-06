@@ -19,7 +19,7 @@ public abstract class ItemEffect : MonoBehaviour
     }
     public abstract void ApplyEffect();
 
-    void Start()
+    protected void Start()
     {
         entity = gameObject.GetComponentInParent<Entity>();
     }

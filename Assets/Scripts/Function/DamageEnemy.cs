@@ -12,7 +12,6 @@ public class DamageEnemy : Damage
             //deal damage
             Effect(e.gameObject.transform.position);
             if (e.invicible) return;
-            e.getHit = true;
             if (getCriticalHit())
             {
                 e.TakeDamage(getCriticalHitDamage(entity.outPutDamage), Defines.DamageType.Entity, true);

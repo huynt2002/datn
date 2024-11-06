@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda69ed457047634c84fc3dab4b50ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: d047c033908435b469c3e1290d239624, type: 2}
+  stats: {fileID: 11400000, guid: d44a8926d70cb2343bdbd55bb435c9dd, type: 2}
   getHit: 0
 --- !u!114 &2152526488476696524
 MonoBehaviour:

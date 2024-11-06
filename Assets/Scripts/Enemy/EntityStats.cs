@@ -5,7 +5,6 @@ public class EntityStats : ScriptableObject
 {
     public float Damage;
     public float MaxHP;
-    public float DEF;
     public float Speed;
 
 }

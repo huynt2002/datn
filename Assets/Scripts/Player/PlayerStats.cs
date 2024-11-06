@@ -15,6 +15,7 @@ public class PlayerStats : Entity
 
     void Start()
     {
+        SetDefault();
         coin = 10000;
         gem = 0;
 
@@ -28,12 +29,20 @@ public class PlayerStats : Entity
         {
             Damage += 10;
         }
+        if (getHit)
+        {
+            Invoke(nameof(ResetGetHit), 1f);
+        }
+    }
+
+    void ResetGetHit()
+    {
+        getHit = false;
     }
 
     public override void SetDefault()
     {
         MaxHP = 100;
-        DEF = 5;
         CurrentHP = MaxHP;
         speed = 5;
         IsAlive = true;

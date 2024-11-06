@@ -9,7 +9,7 @@ public class InventoryManager : MonoBehaviour
     public bool full { get; private set; }
     Entity p;
 
-    public GameObject itemEffectContainer;
+    [SerializeField] GameObject itemEffectContainer;
 
     // public Dictionary<ItemTrait, int> itemTraits;
 
@@ -20,7 +20,7 @@ public class InventoryManager : MonoBehaviour
         instance = this;
         items = new List<KeyValuePair<ItemStats, GameObject>>();
         p = gameObject.GetComponent<Entity>();
-        CalculateItemsStats(p);
+        // CalculateItemsStats(p);
         // itemTraits = new Dictionary<ItemTrait, int>();
         // effectList = new Dictionary<ItemTrait, GameObject>();
     }
@@ -45,7 +45,6 @@ public class InventoryManager : MonoBehaviour
         {
             items.Add(new KeyValuePair<ItemStats, GameObject>(item, null));
         }
-
         item.ApplyItemStats(p);
     }
 
@@ -75,22 +74,14 @@ public class InventoryManager : MonoBehaviour
     //     HandleItemEffect(trait);
     // }
 
-    void CalculateItemsStats(Entity e)
-    {
-        e.SetDefault();
-        foreach (var i in items)
-        {
-            i.Key.ApplyItemStats(e);
-        }
-    }
-
-    public void RemoveItem(ItemStats item)
-    {
-        //RemoveItemTrait(item.itemStats.trait);
-        Destroy(items.Find(e => e.Key == item).Value);
-        items.Remove(items.Find(e => e.Key == item));
-        CalculateItemsStats(p);
-    }
+    // void CalculateItemsStats(Entity e)
+    // {
+    //     e.SetDefault();
+    //     foreach (var i in items)
+    //     {
+    //         i.Key.ApplyItemStats(e);
+    //     }
+    // }
 
     public void HandleItemEffect(ItemStats item)
     {
@@ -109,6 +100,6 @@ public class InventoryManager : MonoBehaviour
         SpawnManager.instance.SpawnItem(transform.position, item.Key);
         item.Key.RemoveItemStats(p);
         items.Remove(item);
-        CalculateItemsStats(p);
+        //CalculateItemsStats(p);
     }
 }

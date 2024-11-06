@@ -26,7 +26,6 @@ public class MainCanvasManager : MonoBehaviour
     [SerializeField] GameObject playerInfoCanvas;
     [SerializeField] TextMeshProUGUI hp;
     [SerializeField] TextMeshProUGUI dmg;
-    [SerializeField] TextMeshProUGUI def;
     [Header("Inventory")]
     List<ItemStats> itemList;
     [SerializeField] List<GameObject> itemSlots;
@@ -134,7 +133,6 @@ public class MainCanvasManager : MonoBehaviour
     {
         hp.text = PlayerStats.instance.CurrentHP + "/" + PlayerStats.instance.MaxHP;
         dmg.text = PlayerStats.instance.Damage + "";
-        def.text = PlayerStats.instance.DEF + "";
     }
 
     void DisplayInventory()

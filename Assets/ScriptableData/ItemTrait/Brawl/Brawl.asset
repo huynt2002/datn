@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e303f957e650d45a4c281401806984, type: 3}
   m_Name: Brawl
   m_EditorClassIdentifier: 
-  traitName: 
-  icon: {fileID: 0}
-  currentLevel: -1
+  traitName: Brawl
+  icon: {fileID: 308871389, guid: 992d0cdaa8cb2134182d6c2fd8128c8c, type: 3}
   effects:
   - levelNum: 2
-    description: +30 HP
+    description: +30 HP and have a chance to restore 5HP every time get hit
     ATKAmount: 0
     HPAmount: 30
     speedAmount: 0

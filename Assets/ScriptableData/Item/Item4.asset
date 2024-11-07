@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561581d114dd1ca4a8ee274becc9d972, type: 3}
   m_Name: Item4
   m_EditorClassIdentifier: 
-  id: 4
-  ItemName: Belt
+  itemName: Belt of The Giant
   ATKAmount: 0
-  DEFAmount: 20
   HPAmount: 30
+  speedAmount: 0
   description: A giant belt. Increase 20%DEF and 30HP
   icon: {fileID: 21300000, guid: 6858a15e5082cf34b9ee3167e90403d3, type: 3}
   itemType: 1
+  trait: {fileID: 0}
+  itemEffectObject: {fileID: 0}

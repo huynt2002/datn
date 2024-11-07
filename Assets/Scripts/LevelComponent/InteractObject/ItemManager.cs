@@ -69,13 +69,12 @@ public class ItemManager : PlayerInteract
     {
         if (!isSale)
         {
-            InfoUIManager.instance.SetInfo(gameObject.transform, Color.white, Defines.InfoButText.PickUp,
-                    itemStats.ItemName, itemStats.itemType.ToString(), itemStats.description);
+            InfoUIManager.instance.SetInfo(gameObject.transform, Color.white, Defines.InfoButText.PickUp, itemStats);
         }
         else
         {
-            InfoUIManager.instance.SetInfo(gameObject.transform, Color.yellow, Defines.InfoButText.Buy + " (" + cost + ")",
-                      itemStats.ItemName, itemStats.itemType.ToString(), itemStats.description);
+            InfoUIManager.instance.SetInfo(gameObject.transform, Color.yellow,
+            Defines.InfoButText.Buy + " (" + cost + ")", itemStats);
         }
     }
 

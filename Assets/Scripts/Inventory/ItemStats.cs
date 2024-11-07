@@ -8,7 +8,7 @@ public class ItemStats : ScriptableObject
     {
         Common, Rare, Legend
     }
-    public string ItemName;
+    public string itemName;
     public float ATKAmount;
     public float HPAmount;
     public float speedAmount;

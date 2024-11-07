@@ -156,7 +156,7 @@ public class MainCanvasManager : MonoBehaviour
         int i = GetItemIndex();
         if (i != -1)
         {
-            itemName.text = itemList[i].ItemName;
+            itemName.text = itemList[i].itemName;
             itemRare.text = itemList[i].itemType.ToString();
             itemDescription.text = itemList[i].description;
         }

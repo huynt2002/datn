@@ -72,6 +72,7 @@ public class Entity : MonoBehaviour
                 SpawnManager.instance.SpawnParticalEffect(SpawnManager.ParticleType.BloodLarge, collider.transform.position);
             }
         }
+        Invincible(true);
         SoundManager.instance.PlayDeathSound(gameObject.transform);
         Invoke(nameof(Destroy), 5f);
     }

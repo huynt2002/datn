@@ -11,6 +11,7 @@ public abstract class AttackSkill : MonoBehaviour
     public int damage;
     public float cdTime;
     Monster_Behavior monster_Behavior;
+    public bool needReload = true;
     void Awake()
     {
         monster_Behavior = GetComponentInParent<Monster_Behavior>();
@@ -28,15 +29,12 @@ public abstract class AttackSkill : MonoBehaviour
     {
         if (monster_Behavior != null)
         {
-            if (monster_Behavior != null)
+            if (monster_Behavior.attack || monster_Behavior.isCD)
             {
-                if (monster_Behavior.attack || monster_Behavior.isCD)
-                {
-                    return;
-                }
-                monster_Behavior.attack = true;
-                monster_Behavior.SetTarget(other.transform.parent);
+                return;
             }
+            monster_Behavior.attack = true;
+            monster_Behavior.SetTarget(other.transform.parent);
         }
     }
 

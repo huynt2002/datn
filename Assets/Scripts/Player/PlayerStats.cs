@@ -31,11 +31,11 @@ public class PlayerStats : Entity
         }
         if (getHit)
         {
-            Invoke(nameof(ResetGetHit), 1f);
+            Invoke(nameof(ResetGetHit), 0.5f);
         }
     }
 
-    void ResetGetHit()
+    public void ResetGetHit()
     {
         getHit = false;
     }

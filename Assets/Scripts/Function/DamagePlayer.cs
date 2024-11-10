@@ -23,7 +23,7 @@ public class DamagePlayer : Damage
         //deal damage
         e.TakeDamage(entity.outPutDamage, Defines.DamageType.Entity);
         Effect(e.gameObject.transform.position);
-        //KnockBack(other.transform.parent.GetComponent<Rigidbody2D>());
+        KnockBack(other.transform.parent.GetComponent<Rigidbody2D>());
         Debug.Log("Damage " + e.name);
     }
 }

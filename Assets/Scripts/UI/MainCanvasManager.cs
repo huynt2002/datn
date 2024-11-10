@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Linq;
 
 public class MainCanvasManager : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class MainCanvasManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI itemRare;
     [SerializeField] TextMeshProUGUI itemDescription;
+    [SerializeField] GameObject traitItemUI;
+    [SerializeField] Transform traitContainer;
+    [SerializeField] GameObject traitInfoObject;
+    [SerializeField] GameObject traitDetail;
     [Header("EndGame")]
     [SerializeField] GameObject EndGame;
     [SerializeField] GameObject Win;
@@ -146,6 +151,24 @@ public class MainCanvasManager : MonoBehaviour
         {
             itemSlots[i].GetComponent<Image>().sprite = null;
         }
+
+        var traitUIs = traitContainer.GetComponentsInChildren<ItemTraitInfoUI>();
+        foreach (ItemTraitInfoUI trait in traitUIs)
+        {
+            Destroy(trait.gameObject);
+        }
+
+        var traitList = InventoryManager.instance.itemTraitCount;
+        var visible = traitList.Any(e => e.Value != 0);
+        foreach (var trait in traitList.Keys)
+        {
+            if (traitList[trait] != 0)
+            {
+                var traitInfo = Instantiate(traitItemUI, traitContainer) as GameObject;
+                traitInfo.GetComponent<ItemTraitInfoUI>().SetTrait(trait);
+            }
+        }
+        traitInfoObject.SetActive(visible);
     }
 
     public void DisplayItemDescription()
@@ -215,5 +238,18 @@ public class MainCanvasManager : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(null);
             Time.timeScale = 1;
         }
+    }
+    public void UpdateTraitDetail(bool visible, ItemTrait trait = null)
+    {
+        if (trait)
+        {
+            var str = "";
+            foreach (var level in trait.effects)
+            {
+                str += "<b>Level:" + level.levelNum + "</b>\n" + level.description + "\n";
+            }
+            traitDetail.GetComponent<TraitDetailUI>().Set(trait.traitName, str);
+        }
+        traitDetail.SetActive(visible);
     }
 }

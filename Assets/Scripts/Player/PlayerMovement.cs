@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement instance;
+    Entity entity;
     [Header("Components")]
     [SerializeField] Rigidbody2D body;
     float gravityScale;
@@ -50,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         instance = this;
+        entity = GetComponent<Entity>();
     }
     void Start()
     {
@@ -81,7 +83,6 @@ public class PlayerMovement : MonoBehaviour
     {
 
     }
-
     public void Attack(InputAction.CallbackContext context)
     {
         if (context.performed && isGrounded && !isDash && !isSkill)

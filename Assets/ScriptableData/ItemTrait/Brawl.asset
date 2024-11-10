@@ -13,16 +13,14 @@ MonoBehaviour:
   m_Name: Brawl
   m_EditorClassIdentifier: 
   traitName: Brawl
-  icon: {fileID: 308871389, guid: 992d0cdaa8cb2134182d6c2fd8128c8c, type: 3}
+  icon: {fileID: 21300000, guid: 369248f6a152562439657fd775eadda4, type: 3}
   effects:
   - levelNum: 2
     description: +30 HP and have a chance to restore 5HP every time get hit
     ATKAmount: 0
     HPAmount: 30
-    speedAmount: 0
   - levelNum: 4
-    description: +50 HP
+    description: +50 HP and have a chance to restore 10HP every time get hit
     ATKAmount: 0
     HPAmount: 50
-    speedAmount: 0
   itemTraitEffect: {fileID: 6892797471154144616, guid: 417def8de871eea4ab84bf02b2c962db, type: 3}

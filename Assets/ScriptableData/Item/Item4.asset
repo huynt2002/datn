@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: Item4
   m_EditorClassIdentifier: 
   itemName: Belt of The Giant
-  ATKAmount: 0
+  ATKAmount: 10
   HPAmount: 30
-  speedAmount: 0
-  description: A giant belt. Increase 20%DEF and 30HP
+  description: A giant belt. Increase 30 Max HP and 10% ATK
   icon: {fileID: 21300000, guid: 6858a15e5082cf34b9ee3167e90403d3, type: 3}
   itemType: 1
-  trait: {fileID: 0}
+  trait: {fileID: 11400000, guid: c57eb289f28239444b43123bd5bf6a98, type: 2}
   itemEffectObject: {fileID: 0}

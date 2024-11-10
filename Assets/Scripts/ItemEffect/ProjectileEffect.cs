@@ -5,21 +5,12 @@ using UnityEngine;
 public class ProjectileEffect : ItemEffect
 {
     [SerializeField] GameObject projectile;
-    ProjectileBehavior.Target target;
     public override void ApplyEffect()
     {
-        if (entity.GetComponent<PlayerStats>())
+        if (entity && projectile)
         {
-            target = ProjectileBehavior.Target.Enemy;
-        }
-        else
-        {
-            target = ProjectileBehavior.Target.Player;
-        }
-        if (projectile)
-        {
-            var projectileObject = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
-            projectileObject.GetComponent<ProjectileBehavior>().Set(target, entity.outPutDamage);
+            EffectBehaviors.ProjectTileSpawn(entity, projectile, transform.position);
+            ResetCD();
         }
     }
 }

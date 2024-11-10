@@ -15,9 +15,8 @@ MonoBehaviour:
   itemName: Ruby Stone
   ATKAmount: 50
   HPAmount: 50
-  speedAmount: 0
-  description: Legend Stone. Icrease 50%DMG/50%DEF/50HP.
+  description: Legend Stone. Icrease 50%DMG and 50HP.
   icon: {fileID: 21300000, guid: 70e92df91699f664ab5bad7bf4723022, type: 3}
   itemType: 2
-  trait: {fileID: 0}
-  itemEffectObject: {fileID: 570684442556238901, guid: 72d9e1648956a4644a7f21a9046cc328, type: 3}
+  trait: {fileID: 11400000, guid: f6a818da2d36e5047845b373d6d28545, type: 2}
+  itemEffectObject: {fileID: 0}

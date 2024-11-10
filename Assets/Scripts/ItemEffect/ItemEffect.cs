@@ -17,9 +17,9 @@ public abstract class ItemEffect : MonoBehaviour
         return true;
     }
 
-    public void ResetCD()
+    public void ResetCD(float cd = 0f)
     {
-        countCD = 0;
+        countCD = cd;
     }
 
     public abstract void ApplyEffect();

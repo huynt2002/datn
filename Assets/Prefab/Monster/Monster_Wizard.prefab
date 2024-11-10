@@ -367,6 +367,7 @@ MonoBehaviour:
   anim: {fileID: 7400000, guid: 3aae3850de556a54c81b410ef5a9afbc, type: 2}
   damage: 10
   cdTime: 0
+  needReload: 1
   projectile: {fileID: 5828442611997034025, guid: 93c1cca4a81ef1f42acff93640f73114, type: 3}
   ranThresh: 3
 --- !u!1 &8403386804578322872

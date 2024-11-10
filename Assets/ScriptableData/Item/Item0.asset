@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Apple
   ATKAmount: 5
-  HPAmount: 30
-  speedAmount: 0
+  HPAmount: 10
   description: 'Increase 10HP and 5%ATK '
   icon: {fileID: 21300000, guid: da7129ed6a246f048a49d8d97de2d2d4, type: 3}
   itemType: 0
-  trait: {fileID: 11400000, guid: c57eb289f28239444b43123bd5bf6a98, type: 2}
+  trait: {fileID: 11400000, guid: f6a818da2d36e5047845b373d6d28545, type: 2}
   itemEffectObject: {fileID: 3619892523627480844, guid: bb827c06a7760c949be67e2253474c16, type: 3}

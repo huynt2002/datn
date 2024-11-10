@@ -6,10 +6,6 @@ public class WizardAttack : AttackSkill
 {
     [SerializeField] GameObject projectile;
     public float ranThresh;
-    void Start()
-    {
-
-    }
     public override void Attack()
     {
         var x = Random.Range(transform.position.x - ranThresh, transform.position.x + ranThresh);

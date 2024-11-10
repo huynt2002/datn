@@ -60,7 +60,7 @@ public class InventoryManager : MonoBehaviour
         {
             itemTraitCount[trait] = 1;
         }
-        AddItemTraitEffect(trait);
+        UpdateItemTraitEffect(trait);
         Debug.Log("A: " + itemTraitCount);
     }
 
@@ -71,7 +71,7 @@ public class InventoryManager : MonoBehaviour
         {
             itemTraitCount[trait]--;
         }
-        RemoveItemTraitEffect(trait);
+        UpdateItemTraitEffect(trait);
         Debug.Log("A: " + itemTraitCount);
     }
 
@@ -84,18 +84,16 @@ public class InventoryManager : MonoBehaviour
     //     }
     // }
 
-    public void AddItemTraitEffect(ItemTrait itemTrait)
+    public void UpdateItemTraitEffect(ItemTrait itemTrait)
     {
+        itemTrait.RemoveStats(p);
+        if (traitEffectList.ContainsKey(itemTrait))
+        {
+            Destroy(traitEffectList[itemTrait]);
+        }
         itemTrait.UpdateCurrentLevel(itemTraitCount[itemTrait]);
         itemTrait.ApplyStats(p);
         traitEffectList[itemTrait] = itemTrait.GetTraitEffect(itemEffectContainer.transform);
-    }
-
-    public void RemoveItemTraitEffect(ItemTrait itemTrait)
-    {
-        itemTrait.RemoveStats(p);
-        Destroy(traitEffectList[itemTrait]);
-        AddItemTraitEffect(itemTrait);
     }
 
     public void DropItem(int index)

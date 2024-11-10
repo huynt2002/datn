@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: Item3
   m_EditorClassIdentifier: 
   itemName: Silver Arrow
-  ATKAmount: 30
+  ATKAmount: 20
   HPAmount: 0
-  speedAmount: 0
-  description: Increase 30% DMG
+  description: Increase 20% DMG
   icon: {fileID: 21300000, guid: 59c8cd2a91ad7f846b9efd79b945c356, type: 3}
   itemType: 1
-  trait: {fileID: 0}
+  trait: {fileID: 11400000, guid: 19c5ac0a4581c404f8f3255be4034865, type: 2}
   itemEffectObject: {fileID: 0}

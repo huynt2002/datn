@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Wooden Shield
   ATKAmount: 0
-  HPAmount: 0
-  speedAmount: 0
-  description: Increase DEF 20%
+  HPAmount: 20
+  description: Increase 20 Max HP
   icon: {fileID: 21300000, guid: 615f3cdaa1374bd4db14286066f31cde, type: 3}
   itemType: 0
   trait: {fileID: 11400000, guid: c57eb289f28239444b43123bd5bf6a98, type: 2}

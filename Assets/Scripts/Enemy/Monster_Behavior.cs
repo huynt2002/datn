@@ -47,6 +47,7 @@ public class Monster_Behavior : MonoBehaviour
         var skill = attackSkills.GetComponentsInChildren<AttackSkill>();
         foreach (var x in skill)
         {
+            if (!x.needReload) continue;
             skills.Add(x.gameObject);
             x.gameObject.SetActive(false);
         }

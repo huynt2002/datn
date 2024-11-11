@@ -61,7 +61,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8891810975713291283}
   m_Father: {fileID: 8626064904833414273}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7561785233693508815
@@ -123,7 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 7400000, guid: 0df2db778007ccd4aacca2287f40c35f, type: 2}
   damage: 5
-  cdTime: 0
+  cdTime: 3
+  needWaitOtherAttack: 1
   force: 8
 --- !u!1 &2969619385303630280
 GameObject:
@@ -219,11 +221,11 @@ Transform:
   m_GameObject: {fileID: 3456009813798858853}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7800517507525845185}
+  m_Father: {fileID: 3628096668684495257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2851877499039663734
 BoxCollider2D:
@@ -434,7 +436,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8891810975713291283}
   - {fileID: 1517888674694655984}
   - {fileID: 8241524845488609914}
   - {fileID: 8626064904833414273}
@@ -507,7 +508,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -591,9 +592,7 @@ MonoBehaviour:
   moveTarget: {x: 0, y: 0}
   facingDirection: 0
   faceRight: 0
-  originCDTime: 2
-  timeCount: 0
+  idleTime: 1
   attack: 0
-  attackSkills: {fileID: 3598196329538777258}
-  skills: []
+  currentAttackSkill: {fileID: 0}
   canGetHit: 0

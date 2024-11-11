@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
+
 
 public class Damage : MonoBehaviour
 {
@@ -10,13 +8,23 @@ public class Damage : MonoBehaviour
     public float knockbackForce;
     protected void Start()
     {
-        entity = transform.parent?.gameObject.GetComponent<Entity>();
+        entity = GetComponentInParent<Entity>();
     }
     protected void KnockBack(Rigidbody2D other)
     {
         Vector2 force = new Vector2(entity.transform.localScale.x * knockbackForce, 0);
         other.AddForce(force, ForceMode2D.Impulse);
     }
+
+    IEnumerator KnockBackReset(Rigidbody2D other)
+    {
+        Vector2 force = new Vector2(entity.transform.localScale.x * knockbackForce, 0);
+        other.gravityScale = 0;
+        other.velocity = force;
+        yield return new WaitForSeconds(0.15f);
+        other.gravityScale = Defines.Physics.GravityScale;
+    }
+
     protected void Effect(Vector3 position)
     {
         // Set correct arrow spawn position

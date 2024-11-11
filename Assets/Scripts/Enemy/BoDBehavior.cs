@@ -31,24 +31,12 @@ public class BoDBehavior : Monster_Behavior
     void Update()
     {
         playerPos = PlayerStats.instance.transform;
-        if (isCD)
-        {
-            timeCount += Time.deltaTime;
-            if (timeCount >= CDTime)
-            {
-                timeCount = 0;
-                isCD = false;
-            }
-        }
-        else
-        {
-            BoDAttack();
-        }
+        BoDAttack();
     }
 
     void Teleport()
     {
-        teleport?.AttackTrigger();
+        //teleport?.AttackTrigger();
         teleport?.Attack();
         StartCoroutine(DisableInvicible(teleport.anim.length));
     }
@@ -61,7 +49,7 @@ public class BoDBehavior : Monster_Behavior
 
     void BoDAttack()
     {
-        currentSkill?.AttackTrigger();
+        //currentSkill?.AttackTrigger();
     }
 
     public void SkillTrigger()
@@ -100,9 +88,8 @@ public class BoDBehavior : Monster_Behavior
     public void CoolDown()
     {
         currentSkill?.ResetAttack();
-        SetCDTime(currentSkill.cdTime + teleport.anim.length);
         Teleport();
-        isCD = true;
+        isIdle = true;
         ChoseAttack();
     }
 

@@ -29,15 +29,6 @@ public class PlayerStats : Entity
         {
             Damage += 10;
         }
-        if (getHit)
-        {
-            Invoke(nameof(ResetGetHit), 0.5f);
-        }
-    }
-
-    public void ResetGetHit()
-    {
-        getHit = false;
     }
 
     public override void SetDefault()

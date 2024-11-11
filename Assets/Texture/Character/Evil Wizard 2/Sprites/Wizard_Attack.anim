@@ -92,21 +92,21 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1
-    functionName: SkillAttack
+    functionName: AttackInAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 2.5
-    functionName: SkillAttack
+    functionName: AttackInAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 3.5
-    functionName: CD
+    functionName: ResetAttackWithIdle
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

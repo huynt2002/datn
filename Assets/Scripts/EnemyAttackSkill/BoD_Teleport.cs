@@ -6,12 +6,12 @@ public class BoD_Teleport : AttackSkill
 {
     public override void Attack()
     {
-        entity.Invincible(true);
+        entity.SetInvincible(true);
     }
 
     public override void ResetAttack()
     {
-        entity.Invincible(false);
+        entity.SetInvincible(false);
     }
 
     // Start is called before the first frame update

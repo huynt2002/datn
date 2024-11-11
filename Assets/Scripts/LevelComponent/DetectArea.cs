@@ -63,7 +63,7 @@ public class DetectArea : MonoBehaviour
         {
             foreach (var mon in monsters)
             {
-                if (!mon.attack && mon.canChase && !mon.isCD)
+                if (!mon.attack && mon.canChase && !mon.isIdle)
                     mon.SetTarget(other.gameObject.GetComponentInParent<Transform>());
             }
         }

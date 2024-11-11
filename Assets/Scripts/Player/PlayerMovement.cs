@@ -9,19 +9,19 @@ public class PlayerMovement : MonoBehaviour
     Entity entity;
     [Header("Components")]
     [SerializeField] Rigidbody2D body;
-    float gravityScale;
     [SerializeField] Animator animator;
     [SerializeField] GroundSensor groundSensor;
     bool isGrounded => groundSensor.isGrounded;
     [SerializeField] GameObject playerCollider;
     [Header("Move")]
+    bool isMove;
     public float speed = 3f;
     float horizontal;
     int facingDirection = 1;
     public bool isOneWay;
     [Header("Jump")]
     public float jumpForce = 5f;
-    public int maxJump = 2;
+    public int maxJump = 1;
     int remainingJump = 0;
 
     [Header("Dash")]
@@ -36,14 +36,20 @@ public class PlayerMovement : MonoBehaviour
     //public int remainDash = 0;
 
     [Header("Attack")]
-    public bool canReceiveInput = true;
-    public bool inputReceive;
+
+
+
+
     [Header("Interact")]
     public PlayerInteract playerInteract;
+    [Header("GetHit")]
+    public float getHitTime = 0.15f;
+    bool getHit => entity.getHit;
+
     [Header("Skill")]
     public bool isSkill;
     public float skillCDTime = 3f;
-    public bool isSkillCD;
+    public bool canUseSkill;
     public float cdCount = 0;
     [SerializeField] GameObject skillPre;
     // Start is called before the first frame update
@@ -55,72 +61,81 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
-        gravityScale = Defines.Physics.GravityScale;
         cdCount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //CD, Reset
-        if (isSkillCD)
-        {
-            cdCount -= Time.deltaTime;
-            if (cdCount <= 0)
-            {
-                isSkillCD = false;
-            }
-        }
-        if (isGrounded)
-        {
-            remainingJump = maxJump;
-        }
+        SkillCD();
+        GetHit();
         Air();
         Move();
+        Idle();
     }
 
     void FixedUpdate()
     {
 
     }
-    public void Attack(InputAction.CallbackContext context)
+
+    void GetHit()
     {
-        if (context.performed && isGrounded && !isDash && !isSkill)
+        if (getHit)
         {
-            if (canReceiveInput)
-            {
-                inputReceive = true;
-                canReceiveInput = false;
-            }
-            // ResetAttack();
-            // isAttack = true;
-            // animator.SetTrigger("attack" + remainAttack);
-            // SoundManager.instance.PlayAttackSound(gameObject.transform);
-            // remainAttack++;
-            // if (remainAttack > maxAttack)
-            // {
-            //     remainAttack = 1;
-            // }
+            StartCoroutine(PlayerGetHit());
         }
     }
 
-    public void AttackReset()
+    IEnumerator PlayerGetHit()
     {
-        if (!canReceiveInput)
+        animator.SetTrigger("getHit");
+        ResetSkill();
+        yield return new WaitForSeconds(getHitTime);
+        entity.ResetGetHit();
+    }
+
+    void Idle()
+    {
+        if (isMove || !isGrounded || getHit || isDash || isSkill)
         {
-            canReceiveInput = true;
+            return;
         }
-        else
+
+        animator.SetTrigger("idle");
+    }
+
+    public void Attack(InputAction.CallbackContext context)
+    {
+        if (!isGrounded || isDash || isSkill || getHit)
         {
-            canReceiveInput = false;
+            return;
+        }
+        if (context.performed)
+        {
+
+        }
+    }
+
+    void SkillCD()
+    {
+        if (!canUseSkill)
+        {
+            cdCount -= Time.deltaTime;
+            if (cdCount <= 0)
+            {
+                canUseSkill = true;
+            }
         }
     }
 
     public void SkillAttackInput(InputAction.CallbackContext context)
     {
-        if (context.performed && !isSkillCD)
+        if (!canUseSkill || getHit) { return; }
+        if (context.performed)
         {
             isSkill = true;
+            canUseSkill = false;
             animator.SetBool("skill", true);
         }
     }
@@ -135,11 +150,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed && canDash)
         {
-            StartCoroutine(Dash());
+            StartCoroutine(PerformDash());
         }
     }
-    IEnumerator Dash()
+    IEnumerator PerformDash()
     {
+        animator.SetBool("dash", true);
         Flip();
         ResetSkill();
         canDash = false;
@@ -148,13 +164,12 @@ public class PlayerMovement : MonoBehaviour
         SoundManager.instance.PlayDashSound(gameObject.transform);
         body.gravityScale = 0;
         body.velocity = new Vector2(dashSpeed * facingDirection, 0f);
-        animator.SetBool("dash", true);
-        PlayerStats.instance.Invincible(true);
+        PlayerStats.instance.SetInvincible(true);
         yield return new WaitForSeconds(dashDuration);
-        isDash = false;
-        body.gravityScale = gravityScale;
+        body.gravityScale = Defines.Physics.GravityScale;
         body.velocity = new Vector2(0f, body.velocity.y);
-        PlayerStats.instance.Invincible(false);
+        PlayerStats.instance.SetInvincible(false);
+        isDash = false;
         animator.SetBool("dash", false);
         yield return new WaitForSeconds(dashCD);
         canDash = true;
@@ -162,24 +177,30 @@ public class PlayerMovement : MonoBehaviour
 
     void Air()
     {
-        if (!isDash && !isSkill && !isGrounded)
+        if (isGrounded)
         {
-            animator.SetTrigger("air");
+            remainingJump = maxJump;
         }
+        if (isDash || isSkill || isGrounded || getHit)
+        {
+            return;
+        }
+        animator.SetTrigger("air");
     }
     private void Move()
     {
-        if (isDash || isSkill) return;
-        if (horizontal != 0 && !inputReceive)
+        if (isDash || isSkill || getHit) { return; }
+        if (horizontal != 0)
         {
+            isMove = true;
             body.velocity = new Vector2(horizontal * speed, body.velocity.y);
-            if (isGrounded) animator.SetTrigger("move");
+            if (isGrounded) { animator.SetTrigger("move"); }
             Flip();
         }
         else
         {
             body.velocity = new Vector2(0, body.velocity.y);
-            if (isGrounded) animator.SetTrigger("idle");
+            isMove = false;
         }
     }
     public void Move(InputAction.CallbackContext context)
@@ -240,7 +261,7 @@ public class PlayerMovement : MonoBehaviour
         if (isSkill)
         {
             isSkill = false;
-            isSkillCD = true;
+            canUseSkill = true;
             cdCount = skillCDTime;
             animator.SetBool("skill", false);
         }

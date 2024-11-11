@@ -47,6 +47,7 @@ MonoBehaviour:
   anim: {fileID: 7400000, guid: 5ad192532325655469cdec6bfad69d38, type: 2}
   damage: 0
   cdTime: 0
+  needWaitOtherAttack: 1
 --- !u!1 &1981528175996222860
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: fa11ea9c8a969a944a251c41de95bc9e, type: 2}
+  getHit: 0
 --- !u!50 &1103075167745921147
 Rigidbody2D:
   serializedVersion: 4
@@ -221,7 +223,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -270,12 +272,9 @@ MonoBehaviour:
   moveTarget: {x: 0, y: 0}
   facingDirection: 0
   faceRight: -1
-  originCDTime: 1.5
-  timeCount: 0
+  idleTime: 1
   attack: 0
-  attackSkills: {fileID: 0}
-  skills: []
-  getHit: 0
+  currentAttackSkill: {fileID: 0}
   canGetHit: 0
   teleport: {fileID: 7915960502569660766}
   pos1: {fileID: 0}
@@ -333,6 +332,7 @@ MonoBehaviour:
   anim: {fileID: 7400000, guid: 75d2446a52f825343bff9d2d5bda72af, type: 2}
   damage: 7
   cdTime: 1.5
+  needWaitOtherAttack: 1
   force: 2
 --- !u!1 &5079112191822996027
 GameObject:
@@ -578,6 +578,7 @@ MonoBehaviour:
   anim: {fileID: 7400000, guid: c6f031aac126dd545a35ca5463a56b48, type: 2}
   damage: 20
   cdTime: 3
+  needWaitOtherAttack: 1
   force: 4
 --- !u!1 &7141186353573654048
 GameObject:
@@ -670,7 +671,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 0
-  attackEffect: {fileID: 4911124489918257835, guid: 5ff44fcff6e1e5c4a87d7b69473aab3f, type: 3}
 --- !u!1 &8088777652370136761
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,6 +718,7 @@ MonoBehaviour:
   anim: {fileID: 7400000, guid: a8e814c85a1d49d4aa780388cc25e05e, type: 2}
   damage: 12
   cdTime: 1.5
+  needWaitOtherAttack: 1
   boDProjectile: {fileID: 7183848645229619181, guid: 88aa8af5b11fc1048adbb7c6cab5adb7, type: 3}
 --- !u!1 &8228319273318860596
 GameObject:
@@ -766,6 +767,7 @@ MonoBehaviour:
   anim: {fileID: 7400000, guid: 002b694fc75ded048a19c9707f9af74e, type: 2}
   damage: 10
   cdTime: 2
+  needWaitOtherAttack: 1
   projectile: {fileID: 5828442611997034025, guid: 93c1cca4a81ef1f42acff93640f73114, type: 3}
   ranThresh: 3
 --- !u!1001 &6017143052802527752

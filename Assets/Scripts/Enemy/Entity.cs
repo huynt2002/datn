@@ -18,7 +18,7 @@ public class Entity : MonoBehaviour
     public bool IsAlive { get; protected set; }
     public bool invicible { get; protected set; }
 
-    public bool getHit;
+    public bool getHit { get; protected set; }
     void Start()
     {
         SetDefault();
@@ -72,7 +72,7 @@ public class Entity : MonoBehaviour
                 SpawnManager.instance.SpawnParticalEffect(SpawnManager.ParticleType.BloodLarge, collider.transform.position);
             }
         }
-        Invincible(true);
+        SetInvincible(true);
         SoundManager.instance.PlayDeathSound(gameObject.transform);
         Invoke(nameof(Destroy), 5f);
     }
@@ -82,7 +82,7 @@ public class Entity : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void Invincible(bool set)
+    public void SetInvincible(bool set)
     {
         invicible = set;
     }
@@ -131,5 +131,10 @@ public class Entity : MonoBehaviour
     {
         Damage = Damage * 100 / (100 + dmg);
         SetOutPutDamage();
+    }
+
+    public void ResetGetHit()
+    {
+        getHit = false;
     }
 }

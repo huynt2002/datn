@@ -16,16 +16,12 @@ public class Monster_Behavior : MonoBehaviour
     public Vector2 moveTarget;
     public int facingDirection;
     public int faceRight;
-    public float originCDTime = 1.5f;
-    protected float CDTime;
-    public float timeCount;
-    public bool isCD { get; protected set; }
+    public bool isIdle { get; protected set; }
+    public float idleTime = 1f;
+    float idleCount = 0;
     [Header("Attack")]
-    int currentAttack = 0;
     public bool attack;
-    bool attacking = false;
-    [SerializeField] GameObject attackSkills;
-    public List<GameObject> skills;
+    public AttackSkill currentAttackSkill = null;
     [Header("GetHit")]
     public bool canGetHit;
 
@@ -37,22 +33,6 @@ public class Monster_Behavior : MonoBehaviour
         entity = GetComponent<Entity>();
         groundSensor = GetComponent<GroundSensor>();
         faceRight = (int)transform.localScale.x;
-        InitAttack();
-        CDTime = originCDTime;
-    }
-
-    protected void InitAttack()
-    {
-        skills = new List<GameObject>();
-        var skill = attackSkills.GetComponentsInChildren<AttackSkill>();
-        foreach (var x in skill)
-        {
-            if (!x.needReload) continue;
-            skills.Add(x.gameObject);
-            x.gameObject.SetActive(false);
-        }
-        currentAttack = 0;
-        skills[0].SetActive(true);
     }
 
     // Update is called once per frame
@@ -69,35 +49,55 @@ public class Monster_Behavior : MonoBehaviour
         }
         else
         {
-            if (!isCD && (!entity.getHit || !canGetHit))
+            if (!isIdle && (!entity.getHit || !canGetHit))
             {
-                if (!attack)
-                {
-                    Move();
-                }
-                else
+                if (attack)
                 {
                     Attack();
                 }
-            }
-            else if (isCD)
-            {
-                animator.SetTrigger("idle");
-                timeCount += Time.deltaTime;
-                if (timeCount >= CDTime)
+                else
                 {
-                    timeCount = 0;
-                    isCD = false;
-                    SetupAttack();
+                    Move();
                 }
+            }
+            else if (isIdle)
+            {
+                Idle();
             }
         }
 
     }
+
+    void Idle()
+    {
+        animator.SetTrigger("idle");
+        if (idleCount > 0)
+        {
+            idleCount -= Time.deltaTime;
+        }
+        else
+        {
+            isIdle = false;
+        }
+    }
+
+    public void SetIdle(bool set)
+    {
+        isIdle = set;
+        if (set)
+        {
+            idleCount = idleTime;
+        }
+        else
+        {
+            idleCount = 0;
+        }
+
+    }
+
     void GetHit()
     {
-        attack = false;
-        skills[currentAttack].SetActive(false);
+        ResetAttack();
         animator.SetTrigger("getHit");
     }
     void Move()
@@ -107,9 +107,9 @@ public class Monster_Behavior : MonoBehaviour
         {
             if (transform.position.x == moveTarget.x)
             {
-                if (!isCD)
+                if (!isIdle)
                 {
-                    isCD = true;
+                    SetIdle(true);
                     SetTarget();
                 }
             }
@@ -123,20 +123,36 @@ public class Monster_Behavior : MonoBehaviour
         }
     }
 
-    public void SkillAttack()
+    void Attack()
     {
-        //in animation
-        skills[currentAttack].GetComponent<AttackSkill>().Attack();
+        animator.Play(currentAttackSkill.anim.name);
     }
-    protected void Attack()
+
+    public void AttackInAnimation()
     {
-        if (!attacking)
-        {
-            attacking = true;
-            Flip(moveTarget);
-        }
-        skills[currentAttack].GetComponent<AttackSkill>().AttackTrigger();
+        //only trigger in animation
+        Flip(moveTarget);
+        currentAttackSkill?.Attack();
     }
+
+    public void SetAttack(AttackSkill attackSkill, Transform target)
+    {
+        attack = true;
+        currentAttackSkill = attackSkill;
+        SetTarget(target);
+    }
+
+    public void ResetAttack()
+    {
+        attack = false;
+    }
+
+    public void ResetAttackWithIdle()
+    {
+        ResetAttack();
+        SetIdle(true);
+    }
+
     protected void Flip(Vector2 moveTarget)
     {
         if (moveTarget.x < transform.position.x)
@@ -148,28 +164,6 @@ public class Monster_Behavior : MonoBehaviour
             facingDirection = faceRight;
         }
         gameObject.transform.localScale = new Vector3(facingDirection, 1, 1);
-    }
-    public void CD()
-    {
-        //reset and CD attack
-        skills[currentAttack].GetComponent<AttackSkill>().ResetAttack();
-        isCD = true;
-        SetCDTime(skills[currentAttack].GetComponent<AttackSkill>().cdTime);
-        attack = false;
-        attacking = false;
-        skills[currentAttack].SetActive(false);
-    }
-
-    protected void SetupAttack()
-    {
-        currentAttack++;
-        if (currentAttack >= skills.Count)
-        {
-            currentAttack = 0;
-        }
-
-        skills[currentAttack].SetActive(true);
-
     }
 
     public void SetTarget(Transform pos = null)
@@ -191,20 +185,7 @@ public class Monster_Behavior : MonoBehaviour
 
     public void ResetGetHit()
     {
-        entity.getHit = false;
-        skills[currentAttack].SetActive(true);
+        entity.ResetGetHit();
         animator.SetTrigger("idle");
-    }
-
-    protected void SetCDTime(float cd = 0)
-    {
-        if (cd == 0)
-        {
-            CDTime = originCDTime;
-        }
-        else
-        {
-            CDTime = cd;
-        }
     }
 }

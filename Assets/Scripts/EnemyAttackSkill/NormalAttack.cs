@@ -11,7 +11,7 @@ public class NormalAttack : AttackSkill
     {
         body = GetComponentInParent<Rigidbody2D>();
     }
-    // Start is called before the first frame update
+
     public override void ResetAttack()
     {
 
@@ -22,11 +22,10 @@ public class NormalAttack : AttackSkill
         int direction = 1;
         Monster_Behavior monster_Behavior = body.GetComponent<Monster_Behavior>();
         entity.SetOutPutDamage(damage);
-        if (monster_Behavior.facingDirection == monster_Behavior.faceRight)
+        if (monster_Behavior.facingDirection != monster_Behavior.faceRight)
         {
-            direction = 1;
+            direction = -1;
         }
-        else { direction = -1; }
         body.AddForce(new Vector2(force * direction, 0), ForceMode2D.Impulse);
     }
 }

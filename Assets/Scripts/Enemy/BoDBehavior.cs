@@ -14,8 +14,6 @@ public class BoDBehavior : Monster_Behavior
     [SerializeField] AttackSkill magicAttack;
     [SerializeField] AttackSkill comboAttack;
     [SerializeField] AttackSkill projectileAttack;
-
-    AttackSkill currentSkill;
     Transform playerPos;
     // Start is called before the first frame update
     void Start()
@@ -31,12 +29,11 @@ public class BoDBehavior : Monster_Behavior
     void Update()
     {
         playerPos = PlayerStats.instance.transform;
-        BoDAttack();
+        Attack();
     }
 
     void Teleport()
     {
-        //teleport?.AttackTrigger();
         teleport?.Attack();
         StartCoroutine(DisableInvicible(teleport.anim.length));
     }
@@ -47,20 +44,15 @@ public class BoDBehavior : Monster_Behavior
         teleport?.ResetAttack();
     }
 
-    void BoDAttack()
-    {
-        //currentSkill?.AttackTrigger();
-    }
-
     public void SkillTrigger()
     {
-        currentSkill?.Attack();
+        currentAttackSkill?.Attack();
     }
 
     public void SkillTriggerFlip()
     {
         Flip(playerPos.position);
-        currentSkill?.Attack();
+        currentAttackSkill?.Attack();
     }
 
     void ChoseAttack()
@@ -68,26 +60,26 @@ public class BoDBehavior : Monster_Behavior
         var tmp = Random.Range(0, 100);
         if (tmp >= 60)
         {
-            currentSkill = normalAttack;
-            if (entity.CurrentHP / entity.MaxHP <= 0.5) currentSkill = comboAttack;
+            currentAttackSkill = normalAttack;
+            if (entity.CurrentHP / entity.MaxHP <= 0.5) currentAttackSkill = comboAttack;
         }
         else if (tmp >= 40)
         {
-            currentSkill = projectileAttack;
+            currentAttackSkill = projectileAttack;
         }
         else if (tmp >= 20)
         {
-            currentSkill = magicAttack;
+            currentAttackSkill = magicAttack;
         }
         else
         {
-            currentSkill = comboAttack;
-            if (entity.CurrentHP / entity.MaxHP > 0.5) currentSkill = normalAttack;
+            currentAttackSkill = comboAttack;
+            if (entity.CurrentHP / entity.MaxHP > 0.5) currentAttackSkill = normalAttack;
         }
     }
     public void CoolDown()
     {
-        currentSkill?.ResetAttack();
+        currentAttackSkill?.ResetAttack();
         Teleport();
         isIdle = true;
         ChoseAttack();

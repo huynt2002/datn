@@ -123,9 +123,12 @@ public class Monster_Behavior : MonoBehaviour
         }
     }
 
-    void Attack()
+    protected void Attack()
     {
-        animator.Play(currentAttackSkill.anim.name);
+        if (currentAttackSkill)
+        {
+            animator.Play(currentAttackSkill.anim.name);
+        }
     }
 
     public void AttackInAnimation()

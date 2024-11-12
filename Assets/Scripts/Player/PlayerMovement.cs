@@ -9,48 +9,52 @@ public class PlayerMovement : MonoBehaviour
     Entity entity;
     [Header("Components")]
     [SerializeField] Rigidbody2D body;
-    [SerializeField] Animator animator;
+    [SerializeField] PlayerAnimationController animatorController;
     [SerializeField] GroundSensor groundSensor;
     bool isGrounded => groundSensor.isGrounded;
     [SerializeField] GameObject playerCollider;
     [Header("Move")]
-    bool isMove;
-    public float speed = 3f;
+    [SerializeField] bool isMove;
+    [SerializeField] float speed = 3f;
     float horizontal;
     int facingDirection = 1;
     public bool isOneWay;
     [Header("Jump")]
-    public float jumpForce = 5f;
-    public int maxJump = 1;
+    [SerializeField] float jumpForce = 5f;
+    [SerializeField] int maxJump = 1;
     int remainingJump = 0;
 
     [Header("Dash")]
-    public bool canDash = true;
-    public float dashSpeed = 20f;
-    public float dashDuration = 1f;
+    bool canDash = true;
+    [SerializeField] float dashSpeed = 20f;
+    [SerializeField] float dashDuration = 1f;
     //public float dashDurationS = 0;
-    public float dashCD = 1f;
+    [SerializeField] float dashCD = 1f;
     //public float dashCDS = 0;
-    public bool isDash = false;
+    [SerializeField] bool isDash = false;
     //public int maxDash = 2;
     //public int remainDash = 0;
 
     [Header("Attack")]
 
-
+    private int comboStep = 0;
+    private float comboTimer = 0f;
+    [SerializeField] float comboDelay = 0.3f;
+    [SerializeField] int maxComboStep = 3;
+    [SerializeField] bool isAttack = false;
 
 
     [Header("Interact")]
     public PlayerInteract playerInteract;
     [Header("GetHit")]
-    public float getHitTime = 0.15f;
+    [SerializeField] float getHitTime = 0.15f;
     bool getHit => entity.getHit;
 
     [Header("Skill")]
-    public bool isSkill;
+    [SerializeField] bool isSkill;
     public float skillCDTime = 3f;
-    public bool canUseSkill;
-    public float cdCount = 0;
+    bool canUseSkill;
+    public float cdCount { get; private set; } = 0;
     [SerializeField] GameObject skillPre;
     // Start is called before the first frame update
 
@@ -58,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
     {
         instance = this;
         entity = GetComponent<Entity>();
+        animatorController = GetComponent<PlayerAnimationController>();
     }
     void Start()
     {
@@ -76,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        UpdateComboAttackTimer();
     }
 
     void GetHit()
@@ -89,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator PlayerGetHit()
     {
-        animator.SetTrigger("getHit");
+        animatorController.PlayGetHitAnimation();
         ResetSkill();
         yield return new WaitForSeconds(getHitTime);
         entity.ResetGetHit();
@@ -97,12 +102,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Idle()
     {
-        if (isMove || !isGrounded || getHit || isDash || isSkill)
+        if (isMove || !isGrounded || getHit || isDash || isSkill || isAttack)
         {
             return;
         }
 
-        animator.SetTrigger("idle");
+        animatorController.PlayIdleAnimation();
     }
 
     public void Attack(InputAction.CallbackContext context)
@@ -113,7 +118,45 @@ public class PlayerMovement : MonoBehaviour
         }
         if (context.performed)
         {
+            StartCoroutine(AttackPerform());
+        }
+    }
 
+    IEnumerator AttackPerform()
+    {
+        if (isAttack)
+        {
+            yield return new WaitForSeconds(comboDelay / 4.5f);
+        }
+        if (comboStep > 2)
+        {
+            yield return new WaitForSeconds(comboStep / 4f);
+        }
+        if (comboTimer > 0)
+        {
+            comboStep++;
+            if (comboStep > maxComboStep)
+                comboStep = 1;
+        }
+        else
+        {
+            comboStep = 1;
+        }
+        isAttack = true;
+        comboTimer = comboDelay;
+        animatorController.PlayAttackAnimation(comboStep);
+    }
+
+    void UpdateComboAttackTimer()
+    {
+        if (comboTimer > 0)
+        {
+            comboTimer -= Time.deltaTime;
+        }
+        else
+        {
+            comboStep = 0;
+            isAttack = false;
         }
     }
 
@@ -136,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isSkill = true;
             canUseSkill = false;
-            animator.SetBool("skill", true);
+            animatorController.PlaySkillAnimation();
         }
     }
 
@@ -155,7 +198,7 @@ public class PlayerMovement : MonoBehaviour
     }
     IEnumerator PerformDash()
     {
-        animator.SetBool("dash", true);
+        animatorController.PlayDashAnimation();
         Flip();
         ResetSkill();
         canDash = false;
@@ -170,7 +213,6 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = new Vector2(0f, body.velocity.y);
         PlayerStats.instance.SetInvincible(false);
         isDash = false;
-        animator.SetBool("dash", false);
         yield return new WaitForSeconds(dashCD);
         canDash = true;
     }
@@ -185,16 +227,16 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        animator.SetTrigger("air");
+        animatorController.PlayJumpAnimation();
     }
     private void Move()
     {
-        if (isDash || isSkill || getHit) { return; }
+        if (isDash || isSkill || getHit || isAttack) { return; }
         if (horizontal != 0)
         {
             isMove = true;
             body.velocity = new Vector2(horizontal * speed, body.velocity.y);
-            if (isGrounded) { animator.SetTrigger("move"); }
+            if (isGrounded) { animatorController.PlayMoveAnimation(); }
             Flip();
         }
         else
@@ -263,7 +305,6 @@ public class PlayerMovement : MonoBehaviour
             isSkill = false;
             canUseSkill = true;
             cdCount = skillCDTime;
-            animator.SetBool("skill", false);
         }
     }
 

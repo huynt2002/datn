@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 2850648946721361993}
   - component: {fileID: 2464994948225426081}
   - component: {fileID: 5427663365667822887}
+  - component: {fileID: 2088941520209255501}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -257,7 +258,7 @@ Animator:
   m_GameObject: {fileID: 4023742073585544922}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a5ea7914d4212f04eac6450c444937a8, type: 2}
+  m_Controller: {fileID: 9100000, guid: fa23980cede936b499c2f885347feafe, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -486,7 +487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 571229959066391984}
-  animator: {fileID: 4999629438927415403}
+  animatorController: {fileID: 0}
   groundSensor: {fileID: 67571829878162767}
   playerCollider: {fileID: 7772992961894565131}
   speed: 5
@@ -498,12 +499,11 @@ MonoBehaviour:
   dashDuration: 0.25
   dashCD: 0.25
   isDash: 0
-  canReceiveInput: 1
-  inputReceive: 0
   playerInteract: {fileID: 0}
+  getHitTime: 0.15
   isSkill: 0
   skillCDTime: 3
-  isSkillCD: 0
+  canUseSkill: 0
   cdCount: 0
   skillPre: {fileID: 5024623880849282256, guid: 5e7c8dcc1a698794a8424d97a6fdf7e0, type: 3}
 --- !u!114 &5427663365667822887
@@ -519,7 +519,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
-  getHit: 0
+--- !u!114 &2088941520209255501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4023742073585544922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a2a74ede191df4c98415d94ba14d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: 7400000, guid: e5e5d851c19159743b5f4d7eb620bdd1, type: 2}
+  move: {fileID: 7400000, guid: e46e8b310d43edf449bfee2db36e91a7, type: 2}
+  jump: {fileID: 7400000, guid: 0fcf703f0aaacf846b471b0fb5affc29, type: 2}
+  getHit: {fileID: 7400000, guid: a1c7792929f58634eb919297d6b892c6, type: 2}
+  dash: {fileID: 7400000, guid: 3dbbcf0bac2eb50428e407aca08ba873, type: 2}
+  skill: {fileID: 7400000, guid: 22e2c0f22a5689d4098699003b07a9d9, type: 2}
+  attack1: {fileID: 7400000, guid: 89376ec29b8b2c849bd91d9f6cc1f05e, type: 2}
+  attack2: {fileID: 7400000, guid: 3b096ab9c6b97074c9eeef403197cfc8, type: 2}
+  attack3: {fileID: 7400000, guid: 6e3a0745e2a2c1346b8cd2242c123527, type: 2}
 --- !u!1 &4481967053058003175
 GameObject:
   m_ObjectHideFlags: 0

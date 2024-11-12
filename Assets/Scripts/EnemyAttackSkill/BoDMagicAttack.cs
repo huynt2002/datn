@@ -25,12 +25,6 @@ public class BoDMagicAttack : AttackSkill
         spawnPosList = new List<Vector2>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void NormalMagic()
     {
         int tmp = 1;

@@ -56,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -146,11 +146,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemStats: {fileID: 11400000, guid: 179dd3b270a208e4784045987c1af67f, type: 2}
-  Name: Apple
-  ATKAmount: 0
-  DEFAmount: 0
-  HPAmount: 30
-  description: Increase 30HP
   cost: 500
 --- !u!50 &770992720809883570
 Rigidbody2D:

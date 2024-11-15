@@ -32,4 +32,10 @@ public class BossEventTrigger : MonoBehaviour
         GameObject.FindWithTag("MainCamera").GetComponent<CinemachineVirtualCamera>().m_Follow = target;
         gameObject.SetActive(false);
     }
+
+    public void OnBossDefeated()
+    {
+        GameManager.instance.isBossFight = false;
+        SoundManager.instance.PlayMainMusic();
+    }
 }

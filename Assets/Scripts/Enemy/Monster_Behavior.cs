@@ -17,7 +17,7 @@ public class Monster_Behavior : MonoBehaviour
     public int facingDirection;
     public int faceRight;
     public bool isIdle { get; protected set; }
-    public float idleTime = 1f;
+    [SerializeField] protected float idleTime = 1f;
     float idleCount = 0;
     [Header("Attack")]
     public bool attack;
@@ -60,7 +60,7 @@ public class Monster_Behavior : MonoBehaviour
                     Move();
                 }
             }
-            else if (isIdle)
+            else
             {
                 Idle();
             }
@@ -68,16 +68,19 @@ public class Monster_Behavior : MonoBehaviour
 
     }
 
-    void Idle()
+    protected void Idle()
     {
-        animator.SetTrigger("idle");
-        if (idleCount > 0)
+        if (isIdle)
         {
-            idleCount -= Time.deltaTime;
-        }
-        else
-        {
-            isIdle = false;
+            animator.SetTrigger("idle");
+            if (idleCount > 0)
+            {
+                idleCount -= Time.deltaTime;
+            }
+            else
+            {
+                isIdle = false;
+            }
         }
     }
 
@@ -123,7 +126,7 @@ public class Monster_Behavior : MonoBehaviour
         }
     }
 
-    protected void Attack()
+    void Attack()
     {
         if (currentAttackSkill)
         {

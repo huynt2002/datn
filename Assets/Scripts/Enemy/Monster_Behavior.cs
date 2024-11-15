@@ -126,7 +126,7 @@ public class Monster_Behavior : MonoBehaviour
         }
     }
 
-    void Attack()
+    protected void Attack()
     {
         if (currentAttackSkill)
         {

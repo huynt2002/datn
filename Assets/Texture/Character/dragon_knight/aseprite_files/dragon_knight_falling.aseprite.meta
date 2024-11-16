@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: dragon_knight_falling
     originalName: 
-    pivot: {x: 0.48387095, y: 0.4375}
+    pivot: {x: 0.485, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 31
-      height: 16
+      width: 33
+      height: 18
     spriteID: 62bc956728530bd41b9c573d41ae3f0a
     spriteBone: []
     spriteOutline: []
@@ -153,10 +153,10 @@ ScriptedImporter:
     - name: dragon_knight_falling
       frameIndex: 0
       cellRect:
-        x: 30
-        y: 15
-        width: 31
-        height: 16
+        x: 29
+        y: 14
+        width: 33
+        height: 18
       spriteId: 62bc956728530bd41b9c573d41ae3f0a
     linkedCells: []
     parentIndex: -1

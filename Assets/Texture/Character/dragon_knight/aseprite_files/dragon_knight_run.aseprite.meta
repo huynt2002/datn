@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: dragon_knight_run_Frame_0
     originalName: 
-    pivot: {x: 0.3548387, y: 0.375}
+    pivot: {x: 0.39, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
-      width: 31
-      height: 16
+      y: 30
+      width: 33
+      height: 17
     spriteID: 73e4ee7a52ef20440a5d4fd616a5412d
     spriteBone: []
     spriteOutline: []
@@ -140,18 +140,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 30}
   - name: dragon_knight_run_Frame_1
     originalName: 
-    pivot: {x: 0.3548387, y: 0.375}
+    pivot: {x: 0.39, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 28
-      width: 31
-      height: 16
+      y: 4
+      width: 33
+      height: 18
     spriteID: 0c0cc1984b783e54981c5f8dd5915cfb
     spriteBone: []
     spriteOutline: []
@@ -160,18 +160,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 28}
+    uvTransform: {x: 4, y: 4}
   - name: dragon_knight_run_Frame_2
     originalName: 
-    pivot: {x: 0.3548387, y: 0.375}
+    pivot: {x: 0.39, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 52
-      width: 31
-      height: 16
+      y: 55
+      width: 33
+      height: 17
     spriteID: d81f1f30e9dbf184c8d5cca619b33aa3
     spriteBone: []
     spriteOutline: []
@@ -180,18 +180,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 52}
+    uvTransform: {x: 4, y: 55}
   - name: dragon_knight_run_Frame_3
     originalName: 
-    pivot: {x: 0.3548387, y: 0.375}
+    pivot: {x: 0.39, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 76
-      width: 31
-      height: 15
+      y: 80
+      width: 33
+      height: 17
     spriteID: 49fbda4b8187186429692780860b1cf3
     spriteBone: []
     spriteOutline: []
@@ -200,7 +200,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 76}
+    uvTransform: {x: 4, y: 80}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -213,34 +213,34 @@ ScriptedImporter:
     - name: dragon_knight_run_Frame_0
       frameIndex: 0
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: 73e4ee7a52ef20440a5d4fd616a5412d
     - name: dragon_knight_run_Frame_1
       frameIndex: 1
       cellRect:
-        x: 13
-        y: 1
-        width: 31
-        height: 16
+        x: 12
+        y: 0
+        width: 33
+        height: 18
       spriteId: 0c0cc1984b783e54981c5f8dd5915cfb
     - name: dragon_knight_run_Frame_2
       frameIndex: 2
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: d81f1f30e9dbf184c8d5cca619b33aa3
     - name: dragon_knight_run_Frame_3
       frameIndex: 3
       cellRect:
-        x: 13
-        y: 2
-        width: 31
-        height: 15
+        x: 12
+        y: 1
+        width: 33
+        height: 17
       spriteId: 49fbda4b8187186429692780860b1cf3
     linkedCells: []
     parentIndex: -1

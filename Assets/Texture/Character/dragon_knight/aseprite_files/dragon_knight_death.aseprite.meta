@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: dragon_knight_death_Frame_0
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.355, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 31
-      height: 16
+      width: 33
+      height: 17
     spriteID: f0d4a476f5bd5774a895dde00f56cbbd
     spriteBone: []
     spriteOutline: []
@@ -143,15 +143,15 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: dragon_knight_death_Frame_1
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.355, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 43
+      x: 45
       y: 4
-      width: 31
-      height: 16
+      width: 33
+      height: 17
     spriteID: bf6983b697bd76440af32248c9577aee
     spriteBone: []
     spriteOutline: []
@@ -160,18 +160,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 43, y: 4}
+    uvTransform: {x: 45, y: 4}
   - name: dragon_knight_death_Frame_2
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.365, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 82
+      x: 86
       y: 4
-      width: 31
-      height: 16
+      width: 33
+      height: 17
     spriteID: cc58c379921d8d7478e3caa575bd5a2b
     spriteBone: []
     spriteOutline: []
@@ -180,18 +180,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 82, y: 4}
+    uvTransform: {x: 86, y: 4}
   - name: dragon_knight_death_Frame_3
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.46, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 28
-      width: 31
-      height: 12
+      y: 29
+      width: 33
+      height: 13
     spriteID: ee48b934c18a9e54c914510496f9889c
     spriteBone: []
     spriteOutline: []
@@ -200,18 +200,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 28}
+    uvTransform: {x: 4, y: 29}
   - name: dragon_knight_death_Frame_4
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.48, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 43
-      y: 28
-      width: 31
-      height: 12
+      x: 45
+      y: 29
+      width: 33
+      height: 13
     spriteID: f71ca60128e8fed40b7fdb208c7f65e8
     spriteBone: []
     spriteOutline: []
@@ -220,18 +220,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 43, y: 28}
+    uvTransform: {x: 45, y: 29}
   - name: dragon_knight_death_Frame_5
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.57, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 48
-      width: 31
-      height: 10
+      y: 50
+      width: 33
+      height: 11
     spriteID: 5a69d5681391129448bedefcb5ef143a
     spriteBone: []
     spriteOutline: []
@@ -240,18 +240,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 48}
+    uvTransform: {x: 4, y: 50}
   - name: dragon_knight_death_Frame_6
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.575, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 82
-      y: 28
-      width: 31
-      height: 11
+      x: 86
+      y: 29
+      width: 33
+      height: 12
     spriteID: 1af23383cce96ae468d35ca5331531c1
     spriteBone: []
     spriteOutline: []
@@ -260,18 +260,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 82, y: 28}
+    uvTransform: {x: 86, y: 29}
   - name: dragon_knight_death_Frame_7
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.57, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 43
-      y: 48
-      width: 31
-      height: 10
+      x: 45
+      y: 50
+      width: 33
+      height: 11
     spriteID: 230e0d5f65094ae4f8022ff1ca669c39
     spriteBone: []
     spriteOutline: []
@@ -280,18 +280,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 43, y: 48}
+    uvTransform: {x: 45, y: 50}
   - name: dragon_knight_death_Frame_8
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.57, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 82
-      y: 48
-      width: 31
-      height: 10
+      x: 86
+      y: 50
+      width: 33
+      height: 11
     spriteID: 136bafb8a25e9eb4fbcfa7760f2c73b5
     spriteBone: []
     spriteOutline: []
@@ -300,18 +300,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 82, y: 48}
+    uvTransform: {x: 86, y: 50}
   - name: dragon_knight_death_Frame_9
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.57, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 66
-      width: 31
-      height: 10
+      y: 69
+      width: 33
+      height: 11
     spriteID: 4a6b7d690090efa42bce34c740e40dd4
     spriteBone: []
     spriteOutline: []
@@ -320,18 +320,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 66}
+    uvTransform: {x: 4, y: 69}
   - name: dragon_knight_death_Frame_10
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.57, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 43
-      y: 66
-      width: 31
-      height: 10
+      x: 45
+      y: 69
+      width: 33
+      height: 11
     spriteID: 9e59beb88ef493e49a03c0ae077754be
     spriteBone: []
     spriteOutline: []
@@ -340,18 +340,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 43, y: 66}
+    uvTransform: {x: 45, y: 69}
   - name: dragon_knight_death_Frame_11
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.57, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 82
-      y: 66
-      width: 31
-      height: 10
+      x: 86
+      y: 69
+      width: 33
+      height: 11
     spriteID: 578311ab4d18f01439e735fabd08daec
     spriteBone: []
     spriteOutline: []
@@ -360,18 +360,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 82, y: 66}
+    uvTransform: {x: 86, y: 69}
   - name: dragon_knight_death_Frame_12
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.57, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 84
-      width: 31
-      height: 10
+      y: 88
+      width: 33
+      height: 11
     spriteID: 5b0eb4ac68f2daf459ef2ba651ec746a
     spriteBone: []
     spriteOutline: []
@@ -380,7 +380,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 84}
+    uvTransform: {x: 4, y: 88}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -393,106 +393,106 @@ ScriptedImporter:
     - name: dragon_knight_death_Frame_0
       frameIndex: 0
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: f0d4a476f5bd5774a895dde00f56cbbd
     - name: dragon_knight_death_Frame_1
       frameIndex: 1
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: bf6983b697bd76440af32248c9577aee
     - name: dragon_knight_death_Frame_2
       frameIndex: 2
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: cc58c379921d8d7478e3caa575bd5a2b
     - name: dragon_knight_death_Frame_3
       frameIndex: 3
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 12
+        width: 33
+        height: 13
       spriteId: ee48b934c18a9e54c914510496f9889c
     - name: dragon_knight_death_Frame_4
       frameIndex: 4
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 12
+        width: 33
+        height: 13
       spriteId: f71ca60128e8fed40b7fdb208c7f65e8
     - name: dragon_knight_death_Frame_5
       frameIndex: 5
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 10
+        width: 33
+        height: 11
       spriteId: 5a69d5681391129448bedefcb5ef143a
     - name: dragon_knight_death_Frame_6
       frameIndex: 6
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 11
+        width: 33
+        height: 12
       spriteId: 1af23383cce96ae468d35ca5331531c1
     - name: dragon_knight_death_Frame_7
       frameIndex: 7
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 10
+        width: 33
+        height: 11
       spriteId: 230e0d5f65094ae4f8022ff1ca669c39
     - name: dragon_knight_death_Frame_8
       frameIndex: 8
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 10
+        width: 33
+        height: 11
       spriteId: 136bafb8a25e9eb4fbcfa7760f2c73b5
     - name: dragon_knight_death_Frame_9
       frameIndex: 9
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 10
+        width: 33
+        height: 11
       spriteId: 4a6b7d690090efa42bce34c740e40dd4
     - name: dragon_knight_death_Frame_10
       frameIndex: 10
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 10
+        width: 33
+        height: 11
       spriteId: 9e59beb88ef493e49a03c0ae077754be
     - name: dragon_knight_death_Frame_11
       frameIndex: 11
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 10
+        width: 33
+        height: 11
       spriteId: 578311ab4d18f01439e735fabd08daec
     - name: dragon_knight_death_Frame_12
       frameIndex: 12
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 10
+        width: 33
+        height: 11
       spriteId: 5b0eb4ac68f2daf459ef2ba651ec746a
     linkedCells: []
     parentIndex: -1

@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: dragon_knight_dash
     originalName: 
-    pivot: {x: 0.4516129, y: 0.4615385}
+    pivot: {x: 0.45, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 31
-      height: 13
+      width: 33
+      height: 14
     spriteID: e6805f936be44d44d9e0cb8ca9dc6470
     spriteBone: []
     spriteOutline: []
@@ -153,10 +153,10 @@ ScriptedImporter:
     - name: dragon_knight_dash
       frameIndex: 0
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 13
+        width: 33
+        height: 14
       spriteId: e6805f936be44d44d9e0cb8ca9dc6470
     linkedCells: []
     parentIndex: -1

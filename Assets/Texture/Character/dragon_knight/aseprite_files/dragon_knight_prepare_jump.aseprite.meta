@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: dragon_knight_prepare_jump
     originalName: 
-    pivot: {x: 1.1935483, y: 0}
+    pivot: {x: 0.45, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 31
-      height: 14
+      width: 33
+      height: 15
     spriteID: 6b2dd6c914c88d74d85b145fb84b217a
     spriteBone: []
     spriteOutline: []
@@ -153,10 +153,10 @@ ScriptedImporter:
     - name: dragon_knight_prepare_jump
       frameIndex: 0
       cellRect:
-        x: 11
+        x: 10
         y: 0
-        width: 31
-        height: 14
+        width: 33
+        height: 15
       spriteId: 6b2dd6c914c88d74d85b145fb84b217a
     linkedCells: []
     parentIndex: -1

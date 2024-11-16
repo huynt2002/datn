@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: dragon_knight_firebreath_character_only_Frame_0
     originalName: 
-    pivot: {x: 0.3548387, y: 0.375}
+    pivot: {x: 0.38, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 82
+      x: 86
       y: 4
-      width: 31
-      height: 16
+      width: 33
+      height: 17
     spriteID: d50de52bbd7ee1643960a30c5a8c1489
     spriteBone: []
     spriteOutline: []
@@ -140,18 +140,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 82, y: 4}
+    uvTransform: {x: 86, y: 4}
   - name: dragon_knight_firebreath_character_only_Frame_1
     originalName: 
-    pivot: {x: 0.3548387, y: 0.375}
+    pivot: {x: 0.38, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 30
-      width: 31
-      height: 16
+      width: 33
+      height: 17
     spriteID: ff9ae3aa5cc229146a5a49d923f4462d
     spriteBone: []
     spriteOutline: []
@@ -163,14 +163,14 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 30}
   - name: dragon_knight_firebreath_character_only_Frame_2
     originalName: 
-    pivot: {x: 0.3548387, y: 0.33333334}
+    pivot: {x: 0.38, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 31
+      width: 33
       height: 18
     spriteID: 768fd4b2a7439e64597047d81b1772e7
     spriteBone: []
@@ -183,14 +183,14 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: dragon_knight_firebreath_character_only_Frame_3
     originalName: 
-    pivot: {x: 0.3548387, y: 0.33333334}
+    pivot: {x: 0.38, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 43
+      x: 45
       y: 4
-      width: 31
+      width: 33
       height: 18
     spriteID: 43af5457db4b512439dd9f272c78a680
     spriteBone: []
@@ -200,18 +200,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 43, y: 4}
+    uvTransform: {x: 45, y: 4}
   - name: dragon_knight_firebreath_character_only_Frame_4
     originalName: 
-    pivot: {x: 0.3548387, y: 0.46153846}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 43
-      y: 54
-      width: 31
-      height: 13
+      x: 45
+      y: 55
+      width: 33
+      height: 14
     spriteID: d46ee26bd08551347a09261fa7230c01
     spriteBone: []
     spriteOutline: []
@@ -220,18 +220,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 43, y: 54}
+    uvTransform: {x: 45, y: 55}
   - name: dragon_knight_firebreath_character_only_Frame_5
     originalName: 
-    pivot: {x: 0.3548387, y: 0.46153846}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 82
-      y: 54
-      width: 31
-      height: 13
+      x: 86
+      y: 55
+      width: 33
+      height: 14
     spriteID: f6b46929e4115f54980ec57d27af9aee
     spriteBone: []
     spriteOutline: []
@@ -240,18 +240,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 82, y: 54}
+    uvTransform: {x: 86, y: 55}
   - name: dragon_knight_firebreath_character_only_Frame_6
     originalName: 
-    pivot: {x: 0.3548387, y: 0.46153846}
+    pivot: {x: 0.35, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 77
-      width: 31
-      height: 13
+      y: 79
+      width: 33
+      height: 14
     spriteID: ac7b4b39bf75d984dbd3f574866dbd77
     spriteBone: []
     spriteOutline: []
@@ -260,18 +260,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 77}
+    uvTransform: {x: 4, y: 79}
   - name: dragon_knight_firebreath_character_only_Frame_7
     originalName: 
-    pivot: {x: 0.3548387, y: 0.46153846}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 43
-      y: 77
-      width: 31
-      height: 13
+      x: 45
+      y: 79
+      width: 33
+      height: 14
     spriteID: a6446a4ff1aa33844aa334e71aa75e17
     spriteBone: []
     spriteOutline: []
@@ -280,18 +280,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 43, y: 77}
+    uvTransform: {x: 45, y: 79}
   - name: dragon_knight_firebreath_character_only_Frame_8
     originalName: 
-    pivot: {x: 0.3548387, y: 0.4}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 43
+      x: 45
       y: 30
-      width: 31
-      height: 15
+      width: 33
+      height: 16
     spriteID: ad1beb9093591b34ca3d4ed5b27bc0e9
     spriteBone: []
     spriteOutline: []
@@ -300,18 +300,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 43, y: 30}
+    uvTransform: {x: 45, y: 30}
   - name: dragon_knight_firebreath_character_only_Frame_9
     originalName: 
-    pivot: {x: 0.3548387, y: 0.4}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 82
+      x: 86
       y: 30
-      width: 31
-      height: 15
+      width: 33
+      height: 16
     spriteID: e02990c94aa8b1941820c4d79e3e61cf
     spriteBone: []
     spriteOutline: []
@@ -320,18 +320,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 82, y: 30}
+    uvTransform: {x: 86, y: 30}
   - name: dragon_knight_firebreath_character_only_Frame_10
     originalName: 
-    pivot: {x: 0.3548387, y: 0.4}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 54
-      width: 31
-      height: 15
+      y: 55
+      width: 33
+      height: 16
     spriteID: a1b6fadcbfa72774bbcc19149710efce
     spriteBone: []
     spriteOutline: []
@@ -340,7 +340,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 54}
+    uvTransform: {x: 4, y: 55}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -353,90 +353,90 @@ ScriptedImporter:
     - name: dragon_knight_firebreath_character_only_Frame_0
       frameIndex: 0
       cellRect:
-        x: 14
+        x: 13
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: d50de52bbd7ee1643960a30c5a8c1489
     - name: dragon_knight_firebreath_character_only_Frame_1
       frameIndex: 1
       cellRect:
-        x: 14
+        x: 13
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: ff9ae3aa5cc229146a5a49d923f4462d
     - name: dragon_knight_firebreath_character_only_Frame_2
       frameIndex: 2
       cellRect:
-        x: 14
+        x: 13
         y: 0
-        width: 31
+        width: 33
         height: 18
       spriteId: 768fd4b2a7439e64597047d81b1772e7
     - name: dragon_knight_firebreath_character_only_Frame_3
       frameIndex: 3
       cellRect:
-        x: 14
+        x: 13
         y: 0
-        width: 31
+        width: 33
         height: 18
       spriteId: 43af5457db4b512439dd9f272c78a680
     - name: dragon_knight_firebreath_character_only_Frame_4
       frameIndex: 4
       cellRect:
-        x: 16
+        x: 15
         y: 0
-        width: 31
-        height: 13
+        width: 33
+        height: 14
       spriteId: d46ee26bd08551347a09261fa7230c01
     - name: dragon_knight_firebreath_character_only_Frame_5
       frameIndex: 5
       cellRect:
-        x: 16
+        x: 15
         y: 0
-        width: 31
-        height: 13
+        width: 33
+        height: 14
       spriteId: f6b46929e4115f54980ec57d27af9aee
     - name: dragon_knight_firebreath_character_only_Frame_6
       frameIndex: 6
       cellRect:
-        x: 16
+        x: 15
         y: 0
-        width: 31
-        height: 13
+        width: 33
+        height: 14
       spriteId: ac7b4b39bf75d984dbd3f574866dbd77
     - name: dragon_knight_firebreath_character_only_Frame_7
       frameIndex: 7
       cellRect:
-        x: 16
+        x: 15
         y: 0
-        width: 31
-        height: 13
+        width: 33
+        height: 14
       spriteId: a6446a4ff1aa33844aa334e71aa75e17
     - name: dragon_knight_firebreath_character_only_Frame_8
       frameIndex: 8
       cellRect:
-        x: 16
+        x: 15
         y: 0
-        width: 31
-        height: 15
+        width: 33
+        height: 16
       spriteId: ad1beb9093591b34ca3d4ed5b27bc0e9
     - name: dragon_knight_firebreath_character_only_Frame_9
       frameIndex: 9
       cellRect:
-        x: 16
+        x: 15
         y: 0
-        width: 31
-        height: 15
+        width: 33
+        height: 16
       spriteId: e02990c94aa8b1941820c4d79e3e61cf
     - name: dragon_knight_firebreath_character_only_Frame_10
       frameIndex: 10
       cellRect:
-        x: 16
+        x: 15
         y: 0
-        width: 31
-        height: 15
+        width: 33
+        height: 16
       spriteId: a1b6fadcbfa72774bbcc19149710efce
     linkedCells: []
     parentIndex: -1

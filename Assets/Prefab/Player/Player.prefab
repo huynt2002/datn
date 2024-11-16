@@ -116,7 +116,7 @@ Transform:
   m_GameObject: {fileID: 1451121491342251040}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.4954, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -490,21 +490,22 @@ MonoBehaviour:
   animatorController: {fileID: 0}
   groundSensor: {fileID: 67571829878162767}
   playerCollider: {fileID: 7772992961894565131}
+  isMove: 0
   speed: 5
   isOneWay: 0
   jumpForce: 10
   maxJump: 2
-  canDash: 1
   dashSpeed: 20
   dashDuration: 0.25
   dashCD: 0.25
   isDash: 0
+  comboDelay: 0.3
+  maxComboStep: 3
+  isAttack: 0
   playerInteract: {fileID: 0}
   getHitTime: 0.15
   isSkill: 0
   skillCDTime: 3
-  canUseSkill: 0
-  cdCount: 0
   skillPre: {fileID: 5024623880849282256, guid: 5e7c8dcc1a698794a8424d97a6fdf7e0, type: 3}
 --- !u!114 &5427663365667822887
 MonoBehaviour:
@@ -598,7 +599,7 @@ Transform:
   m_GameObject: {fileID: 5862659506205918589}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.481, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -712,7 +713,7 @@ Transform:
   m_GameObject: {fileID: 7166247883931134424}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -878,7 +879,7 @@ Transform:
   m_GameObject: {fileID: 7772992961894565131}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.007, y: 0.575, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -917,5 +918,5 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.540282, y: 0.991}
+  m_Size: {x: 0.5, y: 1.11}
   m_Direction: 0

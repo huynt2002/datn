@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     private int comboStep = 0;
     private float comboTimer = 0f;
-    [SerializeField] float comboDelay = 0.3f;
+    [SerializeField] float comboDelay = 0.4f;
     [SerializeField] int maxComboStep = 3;
     [SerializeField] bool isAttack = false;
 
@@ -56,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
     bool canUseSkill;
     public float cdCount { get; private set; } = 0;
     [SerializeField] GameObject skillPre;
+    [SerializeField] Transform skillPos;
     // Start is called before the first frame update
 
     void Awake()
@@ -63,10 +64,6 @@ public class PlayerMovement : MonoBehaviour
         instance = this;
         entity = GetComponent<Entity>();
         animatorController = GetComponent<PlayerAnimationController>();
-    }
-    void Start()
-    {
-        cdCount = 0;
     }
 
     // Update is called once per frame
@@ -126,11 +123,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isAttack)
         {
-            yield return new WaitForSeconds(comboDelay / 4.5f);
+            yield return new WaitForSeconds(comboDelay / 4f);
         }
         if (comboStep > 2)
         {
-            yield return new WaitForSeconds(comboStep / 4f);
+            yield return new WaitForSeconds(comboStep / 3f);
         }
         if (comboTimer > 0)
         {
@@ -164,9 +161,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!canUseSkill)
         {
-            cdCount -= Time.deltaTime;
-            if (cdCount <= 0)
+            if (cdCount > 0)
             {
+                cdCount -= Time.deltaTime;
+            }
+            else
+            {
+                cdCount = 0;
                 canUseSkill = true;
             }
         }
@@ -179,13 +180,14 @@ public class PlayerMovement : MonoBehaviour
         {
             isSkill = true;
             canUseSkill = false;
+            cdCount = skillCDTime;
             animatorController.PlaySkillAnimation();
         }
     }
 
     public void SkillAttack()
     {
-        var go = Instantiate(skillPre, transform.position, Quaternion.identity) as GameObject;
+        var go = Instantiate(skillPre, skillPos.position, Quaternion.identity) as GameObject;
         go.GetComponent<ProjectileBehavior>()?.Set(ProjectileBehavior.Target.Enemy, 2 * GetComponent<Entity>().outPutDamage);
     }
 
@@ -303,8 +305,6 @@ public class PlayerMovement : MonoBehaviour
         if (isSkill)
         {
             isSkill = false;
-            canUseSkill = true;
-            cdCount = skillCDTime;
         }
     }
 

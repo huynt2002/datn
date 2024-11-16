@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: dragon_knight_jump_attack_3_Frame_0
     originalName: 
-    pivot: {x: 0.5714286, y: -0.9375}
+    pivot: {x: 0.5833334, y: -0.7777778}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 102
-      width: 35
-      height: 16
+      y: 57
+      width: 36
+      height: 18
     spriteID: 52fb8edf156299a458557943cc2b89e3
     spriteBone: []
     spriteOutline: []
@@ -140,18 +140,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 102}
+    uvTransform: {x: 4, y: 57}
   - name: dragon_knight_jump_attack_3_Frame_1
     originalName: 
-    pivot: {x: 0.19512197, y: -0.8333333}
+    pivot: {x: 0.21428573, y: -0.7368421}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 52
-      width: 41
-      height: 18
+      y: 30
+      width: 42
+      height: 19
     spriteID: 48486074d4c49b44190422df0c7d2d84
     spriteBone: []
     spriteOutline: []
@@ -160,18 +160,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 52}
+    uvTransform: {x: 4, y: 30}
   - name: dragon_knight_jump_attack_3_Frame_2
     originalName: 
-    pivot: {x: 0.17021279, y: -0.9375}
+    pivot: {x: 0.1875, y: -0.7777778}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 28
-      width: 47
-      height: 16
+      x: 64
+      y: 4
+      width: 48
+      height: 18
     spriteID: ac1e38ce2dd4d4643a60313c2544d4eb
     spriteBone: []
     spriteOutline: []
@@ -180,18 +180,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 28}
+    uvTransform: {x: 64, y: 4}
   - name: dragon_knight_jump_attack_3_Frame_3
     originalName: 
-    pivot: {x: 0.15686277, y: -0.9375}
+    pivot: {x: 0.17307693, y: -0.7777778}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 51
-      height: 16
+      width: 52
+      height: 18
     spriteID: 435c0a72c82bc494a8abcf0ba96f1194
     spriteBone: []
     spriteOutline: []
@@ -203,15 +203,15 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: dragon_knight_jump_attack_3_Frame_4
     originalName: 
-    pivot: {x: 0.22222225, y: -0.9375}
+    pivot: {x: 0.2368421, y: -0.7777778}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 78
-      width: 36
-      height: 16
+      x: 54
+      y: 30
+      width: 38
+      height: 18
     spriteID: 1f715ef535fa6d54eb47e9a5ba15746d
     spriteBone: []
     spriteOutline: []
@@ -220,7 +220,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 78}
+    uvTransform: {x: 54, y: 30}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -233,42 +233,42 @@ ScriptedImporter:
     - name: dragon_knight_jump_attack_3_Frame_0
       frameIndex: 0
       cellRect:
-        x: 28
-        y: 15
-        width: 35
-        height: 16
+        x: 27
+        y: 14
+        width: 36
+        height: 18
       spriteId: 52fb8edf156299a458557943cc2b89e3
     - name: dragon_knight_jump_attack_3_Frame_1
       frameIndex: 1
       cellRect:
-        x: 40
-        y: 15
-        width: 41
-        height: 18
+        x: 39
+        y: 14
+        width: 42
+        height: 19
       spriteId: 48486074d4c49b44190422df0c7d2d84
     - name: dragon_knight_jump_attack_3_Frame_2
       frameIndex: 2
       cellRect:
-        x: 40
-        y: 15
-        width: 47
-        height: 16
+        x: 39
+        y: 14
+        width: 48
+        height: 18
       spriteId: ac1e38ce2dd4d4643a60313c2544d4eb
     - name: dragon_knight_jump_attack_3_Frame_3
       frameIndex: 3
       cellRect:
-        x: 40
-        y: 15
-        width: 51
-        height: 16
+        x: 39
+        y: 14
+        width: 52
+        height: 18
       spriteId: 435c0a72c82bc494a8abcf0ba96f1194
     - name: dragon_knight_jump_attack_3_Frame_4
       frameIndex: 4
       cellRect:
-        x: 40
-        y: 15
-        width: 36
-        height: 16
+        x: 39
+        y: 14
+        width: 38
+        height: 18
       spriteId: 1f715ef535fa6d54eb47e9a5ba15746d
     linkedCells: []
     parentIndex: -1

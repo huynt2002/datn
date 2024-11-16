@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: dragon_knight_drink_potion_Frame_0
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 43
+      x: 4
       y: 4
-      width: 31
-      height: 16
+      width: 33
+      height: 17
     spriteID: fe32e58320cb62d4ca9a093097d0d00e
     spriteBone: []
     spriteOutline: []
@@ -140,18 +140,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 43, y: 4}
+    uvTransform: {x: 4, y: 4}
   - name: dragon_knight_drink_potion_Frame_1
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 82
+      x: 45
       y: 4
-      width: 31
-      height: 16
+      width: 33
+      height: 17
     spriteID: 3741ca85ded1a2b4da6c71cdcca076c5
     spriteBone: []
     spriteOutline: []
@@ -160,18 +160,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 82, y: 4}
+    uvTransform: {x: 45, y: 4}
   - name: dragon_knight_drink_potion_Frame_2
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 29
-      width: 31
-      height: 16
+      x: 86
+      y: 4
+      width: 33
+      height: 17
     spriteID: 2ef2c29da9083c5448f56a5377315918
     spriteBone: []
     spriteOutline: []
@@ -180,17 +180,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 29}
+    uvTransform: {x: 86, y: 4}
   - name: dragon_knight_drink_potion_Frame_3
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
-      width: 31
+      y: 29
+      width: 33
       height: 17
     spriteID: 3adf272875da4b6478ce3c4fac24eaaf
     spriteBone: []
@@ -200,18 +200,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 29}
   - name: dragon_knight_drink_potion_Frame_4
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 43
+      x: 45
       y: 29
-      width: 31
-      height: 16
+      width: 33
+      height: 17
     spriteID: 055d4d2539f76cc47a1a7d09cc6777f1
     spriteBone: []
     spriteOutline: []
@@ -220,18 +220,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 43, y: 29}
+    uvTransform: {x: 45, y: 29}
   - name: dragon_knight_drink_potion_Frame_6
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 43
-      y: 77
-      width: 31
-      height: 15
+      x: 45
+      y: 79
+      width: 33
+      height: 16
     spriteID: 05a0f9a91a3c9214d9662c9ce918db58
     spriteBone: []
     spriteOutline: []
@@ -240,18 +240,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 43, y: 77}
+    uvTransform: {x: 45, y: 79}
   - name: dragon_knight_drink_potion_Frame_7
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 82
-      y: 77
-      width: 31
-      height: 15
+      x: 86
+      y: 79
+      width: 33
+      height: 16
     spriteID: 72d868b332ddbbc4da99c2256ba69e74
     spriteBone: []
     spriteOutline: []
@@ -260,18 +260,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 82, y: 77}
+    uvTransform: {x: 86, y: 79}
   - name: dragon_knight_drink_potion_Frame_8
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 101
-      width: 31
-      height: 15
+      y: 104
+      width: 33
+      height: 16
     spriteID: df18069ba76d76a4194e64a62511fd7e
     spriteBone: []
     spriteOutline: []
@@ -280,18 +280,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 101}
+    uvTransform: {x: 4, y: 104}
   - name: dragon_knight_drink_potion_Frame_9
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 43
-      y: 101
-      width: 31
-      height: 15
+      x: 45
+      y: 104
+      width: 33
+      height: 16
     spriteID: 824c573a574372b49ba22a1fc4817537
     spriteBone: []
     spriteOutline: []
@@ -300,18 +300,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 43, y: 101}
+    uvTransform: {x: 45, y: 104}
   - name: dragon_knight_drink_potion_Frame_10
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 82
+      x: 86
       y: 29
-      width: 31
-      height: 16
+      width: 33
+      height: 17
     spriteID: 29f92b864d746e34f945e1d097ee9cb1
     spriteBone: []
     spriteOutline: []
@@ -320,18 +320,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 82, y: 29}
+    uvTransform: {x: 86, y: 29}
   - name: dragon_knight_drink_potion_Frame_11
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 53
-      width: 31
-      height: 16
+      y: 54
+      width: 33
+      height: 17
     spriteID: 85f19966b6ae0ff47b55782b890b297a
     spriteBone: []
     spriteOutline: []
@@ -340,18 +340,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 53}
+    uvTransform: {x: 4, y: 54}
   - name: dragon_knight_drink_potion_Frame_12
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 43
-      y: 53
-      width: 31
-      height: 16
+      x: 45
+      y: 54
+      width: 33
+      height: 17
     spriteID: 8e123a08a1bbb924cbef55199eef1564
     spriteBone: []
     spriteOutline: []
@@ -360,18 +360,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 43, y: 53}
+    uvTransform: {x: 45, y: 54}
   - name: dragon_knight_drink_potion_Frame_13
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 82
-      y: 53
-      width: 31
-      height: 16
+      x: 86
+      y: 54
+      width: 33
+      height: 17
     spriteID: e7ecf9d77d7ef7442985c56322558920
     spriteBone: []
     spriteOutline: []
@@ -380,18 +380,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 82, y: 53}
+    uvTransform: {x: 86, y: 54}
   - name: dragon_knight_drink_potion_Frame_5
     originalName: 
-    pivot: {x: 1.1290321, y: 0}
+    pivot: {x: 0.36, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 77
-      width: 31
-      height: 16
+      y: 79
+      width: 33
+      height: 17
     spriteID: fc52ea1911d04054c8eee7980549446e
     spriteBone: []
     spriteOutline: []
@@ -400,7 +400,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 77}
+    uvTransform: {x: 4, y: 79}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -413,114 +413,114 @@ ScriptedImporter:
     - name: dragon_knight_drink_potion_Frame_0
       frameIndex: 0
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: fe32e58320cb62d4ca9a093097d0d00e
     - name: dragon_knight_drink_potion_Frame_1
       frameIndex: 1
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: 3741ca85ded1a2b4da6c71cdcca076c5
     - name: dragon_knight_drink_potion_Frame_2
       frameIndex: 2
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: 2ef2c29da9083c5448f56a5377315918
     - name: dragon_knight_drink_potion_Frame_3
       frameIndex: 3
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
+        width: 33
         height: 17
       spriteId: 3adf272875da4b6478ce3c4fac24eaaf
     - name: dragon_knight_drink_potion_Frame_4
       frameIndex: 4
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: 055d4d2539f76cc47a1a7d09cc6777f1
     - name: dragon_knight_drink_potion_Frame_6
       frameIndex: 6
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 15
+        width: 33
+        height: 16
       spriteId: 05a0f9a91a3c9214d9662c9ce918db58
     - name: dragon_knight_drink_potion_Frame_7
       frameIndex: 7
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 15
+        width: 33
+        height: 16
       spriteId: 72d868b332ddbbc4da99c2256ba69e74
     - name: dragon_knight_drink_potion_Frame_8
       frameIndex: 8
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 15
+        width: 33
+        height: 16
       spriteId: df18069ba76d76a4194e64a62511fd7e
     - name: dragon_knight_drink_potion_Frame_9
       frameIndex: 9
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 15
+        width: 33
+        height: 16
       spriteId: 824c573a574372b49ba22a1fc4817537
     - name: dragon_knight_drink_potion_Frame_10
       frameIndex: 10
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: 29f92b864d746e34f945e1d097ee9cb1
     - name: dragon_knight_drink_potion_Frame_11
       frameIndex: 11
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: 85f19966b6ae0ff47b55782b890b297a
     - name: dragon_knight_drink_potion_Frame_12
       frameIndex: 12
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: 8e123a08a1bbb924cbef55199eef1564
     - name: dragon_knight_drink_potion_Frame_13
       frameIndex: 13
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: e7ecf9d77d7ef7442985c56322558920
     - name: dragon_knight_drink_potion_Frame_5
       frameIndex: 5
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: fc52ea1911d04054c8eee7980549446e
     linkedCells: []
     parentIndex: -1

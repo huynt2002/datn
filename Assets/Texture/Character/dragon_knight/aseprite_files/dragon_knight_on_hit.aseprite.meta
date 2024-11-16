@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: dragon_knight_on_hit_Frame_0
     originalName: 
-    pivot: {x: 0.35, y: 0.43}
+    pivot: {x: 0.35, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 31
-      height: 16
+      width: 33
+      height: 17
     spriteID: d2b4c9f4c59336145821c0710fa94cc1
     spriteBone: []
     spriteOutline: []
@@ -143,15 +143,15 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: dragon_knight_on_hit_Frame_1
     originalName: 
-    pivot: {x: 0.43, y: 0.43}
+    pivot: {x: 0.42, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 28
-      width: 31
-      height: 14
+      y: 29
+      width: 33
+      height: 15
     spriteID: 226e59f5fd3a3ea4388271862cc5663f
     spriteBone: []
     spriteOutline: []
@@ -160,7 +160,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 28}
+    uvTransform: {x: 4, y: 29}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -173,18 +173,18 @@ ScriptedImporter:
     - name: dragon_knight_on_hit_Frame_0
       frameIndex: 0
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 16
+        width: 33
+        height: 17
       spriteId: d2b4c9f4c59336145821c0710fa94cc1
     - name: dragon_knight_on_hit_Frame_1
       frameIndex: 1
       cellRect:
-        x: 13
+        x: 12
         y: 0
-        width: 31
-        height: 14
+        width: 33
+        height: 15
       spriteId: 226e59f5fd3a3ea4388271862cc5663f
     linkedCells: []
     parentIndex: -1

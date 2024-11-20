@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,11 +21,13 @@ public class DisplayHP : MonoBehaviour
         gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(1, 1);
     }
 
-    public void Set(Entity e, Transform p)
+    public void Set(Entity e)
     {
         entity = e;
-        gameObject.transform.parent = p;
-        gameObject.transform.localPosition = new Vector3(0, -0.5f, 0);
+        Collider2D child = e.gameObject.GetComponentsInChildren<Collider2D>(true)
+                                     .FirstOrDefault(t => t.CompareTag("Enemy"));
+        gameObject.transform.parent = e.gameObject.transform;
+        gameObject.transform.localPosition = new Vector3(child.transform.localPosition.x, child.transform.localPosition.y - 0.2f - child.bounds.size.y / 2, 0);
     }
 
     // Update is called once per frame
@@ -46,7 +49,7 @@ public class DisplayHP : MonoBehaviour
         {
             if (show)
             {
-                hpUI.gameObject.transform.localScale = new Vector3(-transform.parent.localScale.x, 1, 1);
+                hpBar.gameObject.transform.localScale = new Vector3(entity.gameObject.transform.localScale.x, 1, 1);
                 ManageHP();
                 hpUI.enabled = true;
                 timeCount = 0;

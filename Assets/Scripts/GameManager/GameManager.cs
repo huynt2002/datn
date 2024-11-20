@@ -151,11 +151,6 @@ public class GameManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
     }
 
-    public void Setting()
-    {
-
-    }
-
     public void Dialog()
     {
         diaLog = true;

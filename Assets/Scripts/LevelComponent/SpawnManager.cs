@@ -121,7 +121,7 @@ public class SpawnManager : MonoBehaviour
         GameObject e = Instantiate(pre, pos, Quaternion.identity) as GameObject;
         //AttachUIElement
         GameObject ui = Instantiate(uiHPCanvas, pos, Quaternion.identity) as GameObject;
-        ui.GetComponent<DisplayHP>().Set(e.GetComponent<Entity>(), e.transform);
+        ui.GetComponent<DisplayHP>().Set(e.GetComponent<Entity>());
         return e;
     }
 

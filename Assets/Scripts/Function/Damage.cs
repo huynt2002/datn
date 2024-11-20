@@ -12,17 +12,9 @@ public class Damage : MonoBehaviour
     }
     protected void KnockBack(Rigidbody2D other)
     {
+        if (!other) return;
         Vector2 force = new Vector2(entity.transform.localScale.x * knockbackForce, 0);
         other.AddForce(force, ForceMode2D.Impulse);
-    }
-
-    IEnumerator KnockBackReset(Rigidbody2D other)
-    {
-        Vector2 force = new Vector2(entity.transform.localScale.x * knockbackForce, 0);
-        other.gravityScale = 0;
-        other.velocity = force;
-        yield return new WaitForSeconds(0.15f);
-        other.gravityScale = Defines.Physics.GravityScale;
     }
 
     protected void Effect(Vector3 position)

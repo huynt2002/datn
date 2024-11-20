@@ -65,6 +65,7 @@ public class InfoUIManager : MonoBehaviour
 
     public void Disable()
     {
+        if (!infoCanvas) return;
         infoCanvas.SetActive(false);
     }
 }

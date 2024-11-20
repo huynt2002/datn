@@ -34,8 +34,8 @@ public class MainCanvasManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI itemRare;
     [SerializeField] TextMeshProUGUI itemDescription;
     [SerializeField] GameObject traitItemUI;
-    [SerializeField] Transform traitContainer;
-    [SerializeField] GameObject traitInfoObject;
+    [SerializeField] Transform traitListContainer;
+    [SerializeField] GameObject traitContainerUI;
     [SerializeField] GameObject traitDetail;
     [Header("EndGame")]
     [SerializeField] GameObject EndGame;
@@ -79,6 +79,7 @@ public class MainCanvasManager : MonoBehaviour
 
     void ManageHP()
     {
+        if (!PlayerStats.instance) return;
         HPBar.value = (float)PlayerStats.instance.CurrentHP / PlayerStats.instance.MaxHP;
         hpText.text = PlayerStats.instance.CurrentHP + "/" + PlayerStats.instance.MaxHP;
     }
@@ -152,7 +153,7 @@ public class MainCanvasManager : MonoBehaviour
             itemSlots[i].GetComponent<Image>().sprite = null;
         }
 
-        var traitUIs = traitContainer.GetComponentsInChildren<ItemTraitInfoUI>();
+        var traitUIs = this.traitListContainer.GetComponentsInChildren<ItemTraitInfoUI>();
         foreach (ItemTraitInfoUI trait in traitUIs)
         {
             Destroy(trait.gameObject);
@@ -164,11 +165,11 @@ public class MainCanvasManager : MonoBehaviour
         {
             if (traitList[trait] != 0)
             {
-                var traitInfo = Instantiate(traitItemUI, traitContainer) as GameObject;
+                var traitInfo = Instantiate(traitItemUI, this.traitListContainer) as GameObject;
                 traitInfo.GetComponent<ItemTraitInfoUI>().SetTrait(trait);
             }
         }
-        traitInfoObject.SetActive(visible);
+        traitContainerUI.SetActive(visible);
     }
 
     public void DisplayItemDescription()

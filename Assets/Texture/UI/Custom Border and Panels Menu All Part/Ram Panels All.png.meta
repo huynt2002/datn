@@ -564,7 +564,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ram Panels All_21
+      name: minimap
       rect:
         serializedVersion: 2
         x: 70
@@ -1827,7 +1827,6 @@ TextureImporter:
       Ram Panels All_19: 413796323
       Ram Panels All_2: -440454616
       Ram Panels All_20: 121379493
-      Ram Panels All_21: 518256109
       Ram Panels All_22: -2016894686
       Ram Panels All_23: 573690078
       Ram Panels All_24: -55171213
@@ -1891,6 +1890,7 @@ TextureImporter:
       Ram Panels All_8: 1880920012
       Ram Panels All_9: 1058322900
       avt1: 1249307417
+      minimap: 518256109
       skill: -538892015
       skill1: -550240116
   mipmapLimitGroupName: 

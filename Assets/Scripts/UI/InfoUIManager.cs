@@ -2,18 +2,17 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 using System;
-
 public class InfoUIManager : MonoBehaviour
 {
     public static InfoUIManager instance;
     [SerializeField] GameObject infoCanvas;
     [SerializeField] TextMeshProUGUI butText;
-    [SerializeField] TextMeshProUGUI name;
+    [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI rareRate;
     [SerializeField] TextMeshProUGUI description;
     [SerializeField] Image traitImage;
-    [SerializeField] TextMeshProUGUI traitName;
-    [SerializeField] Image infoPanel;
+    //[SerializeField] TextMeshProUGUI traitName;
+    [SerializeField] GameObject infoPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,22 +25,33 @@ public class InfoUIManager : MonoBehaviour
     {
         if (item == null)
         {
-            infoPanel.gameObject.SetActive(false);
+            infoPanel.SetActive(false);
         }
         else
         {
-            this.name.text = item.itemName;
+            var color = Color.white;
+            switch (item.itemType)
+            {
+                case ItemStats.ItemType.Rare:
+                    color = Color.blue;
+                    break;
+                case ItemStats.ItemType.Legend:
+                    color = Color.red;
+                    break;
+            }
+            this.itemName.text = item.itemName;
             this.rareRate.text = item.itemType.ToString();
+            this.rareRate.color = color;
             this.description.text = item.description;
 
             if (item.trait)
             {
-                this.traitName.text = item.trait.traitName;
+                //this.traitName.text = item.trait.traitName;
                 this.traitImage.sprite = item.trait.icon;
             }
             SetTraitVisible(item.trait);
 
-            infoPanel.gameObject.SetActive(true);
+            infoPanel.SetActive(true);
         }
         if (butText == null)
         {
@@ -60,7 +70,7 @@ public class InfoUIManager : MonoBehaviour
     void SetTraitVisible(bool visible)
     {
         traitImage.gameObject.SetActive(visible);
-        traitName.gameObject.SetActive(visible);
+        //traitName.gameObject.SetActive(visible);
     }
 
     public void Disable()

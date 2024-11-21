@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 01_1
+      name: content
       rect:
         serializedVersion: 2
         x: 82
@@ -585,7 +585,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 01_22
+      name: trai1
       rect:
         serializedVersion: 2
         x: 131
@@ -690,7 +690,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 01_27
+      name: 2
       rect:
         serializedVersion: 2
         x: 80
@@ -780,7 +780,7 @@ TextureImporter:
         x: 80
         y: 112
         width: 79
-        height: 32
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -795,12 +795,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 01_32
+      name: Trait
       rect:
         serializedVersion: 2
-        x: 159
+        x: 160
         y: 112
-        width: 97
+        width: 96
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1058,7 +1058,6 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       01_0: -283428655
-      01_1: -1625750222
       01_10: -1590356972
       01_11: -1844870986
       01_12: -1091217086
@@ -1072,17 +1071,14 @@ TextureImporter:
       01_2: -1830545203
       01_20: -1229652792
       01_21: 1787133941
-      01_22: 1978311386
       01_23: -478046784
       01_24: 1705912385
       01_25: -707196945
       01_26: 557976221
-      01_27: -991910729
       01_28: 1138242622
       01_29: 1969614582
       01_30: 367007608
       01_31: -578578367
-      01_32: -664688700
       01_33: -712255868
       01_34: 1210955629
       01_35: -5333866
@@ -1100,7 +1096,11 @@ TextureImporter:
       01_7: 924822945
       01_8: -780542444
       01_9: -843694922
+      2: -991910729
+      Trait: -664688700
+      content: -1625750222
       item_name: -567648126
+      trai1: 1978311386
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

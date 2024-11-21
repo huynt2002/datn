@@ -375,7 +375,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ram Border All_12
+      name: minimap
       rect:
         serializedVersion: 2
         x: 65
@@ -1796,7 +1796,6 @@ TextureImporter:
       Ram Border All_1: -1510446698
       Ram Border All_10: 1727807027
       Ram Border All_11: 1725563519
-      Ram Border All_12: 247440855
       Ram Border All_13: -1615152924
       Ram Border All_14: -1069906184
       Ram Border All_15: -1295702473
@@ -1869,6 +1868,7 @@ TextureImporter:
       Ram Border All_9: 1135244451
       avt: 1595935057
       avt1: -1727889093
+      minimap: 247440855
       skill: 870867111
       skill1: -636785503
   mipmapLimitGroupName: 

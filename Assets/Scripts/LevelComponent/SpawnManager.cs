@@ -213,6 +213,7 @@ public class SpawnManager : MonoBehaviour
 
     public void DropProps(Transform pos, DropedProp.DropType type)
     {
+        pos.position = new Vector2(pos.position.x, pos.position.y + 0.5f);
         if (type == DropedProp.DropType.HP)
         {
             var go = Instantiate(HPDrop, pos.position, Quaternion.identity) as GameObject;

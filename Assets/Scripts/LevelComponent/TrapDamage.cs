@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    public int damage = 10;
-    public float dameRetrivalTime = 3f;
+    int damage = 10;
+    float dameRetrivalTime = 2f;
     float timeCount = 0f;
     Entity entity;
     // Start is called before the first frame update
 
-    public void Set(int damage = 10, float time = 1f)
+    public void Set(int damage = 10, float time = 2f)
     {
         this.damage = damage;
         dameRetrivalTime = time;
@@ -19,21 +19,34 @@ public class TrapDamage : MonoBehaviour
     void Awake()
     {
         entity = GetComponent<Entity>();
-        entity.TakeDamage(damage, Defines.DamageType.Trap);
-        timeCount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (entity)
+        if (timeCount > 0)
         {
-            timeCount += Time.deltaTime;
-            if (timeCount > dameRetrivalTime)
-            {
-                entity.TakeDamage(damage, Defines.DamageType.Trap);
-                timeCount = 0;
-            }
+            timeCount -= Time.deltaTime;
         }
     }
+
+    public bool canDamage()
+    {
+        return timeCount <= 0;
+    }
+
+    public void DamageEntity()
+    {
+        if (entity)
+        {
+            entity.TakeDamage(damage, Defines.DamageType.Trap);
+            timeCount = dameRetrivalTime;
+        }
+    }
+
+    public void ResetTimer()
+    {
+        timeCount = 0;
+    }
+
 }

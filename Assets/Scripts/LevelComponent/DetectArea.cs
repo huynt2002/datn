@@ -43,7 +43,7 @@ public class DetectArea : MonoBehaviour
             if (monsters.Contains(monster_Behavior))
             {
                 //monster_Behavior.detectArea = null;
-                //monsters.Remove(monster_Behavior);
+                monsters.Remove(monster_Behavior);
             }
         }
         else if (other.gameObject.tag == "Player")

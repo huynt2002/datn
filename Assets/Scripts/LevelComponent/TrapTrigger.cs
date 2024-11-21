@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class TrapTrigger : MonoBehaviour
 {
-    public int damage;
-    public float time;
+    [SerializeField] int damage = 10;
+    [SerializeField] float time = 1.5f;
+    [SerializeField] float knockForce = 10f;
     void Start()
     {
 
@@ -27,12 +28,13 @@ public class TrapTrigger : MonoBehaviour
             {
                 go.AddComponent<TrapDamage>();
                 trapDamage = go.GetComponent<TrapDamage>();
+                trapDamage.Set(damage, time);
+                DamageEntity(trapDamage, go.GetComponent<Rigidbody2D>());
             }
             else
             {
-                trapDamage.enabled = true;
+                DamageEntity(trapDamage, go.GetComponent<Rigidbody2D>());
             }
-            trapDamage?.Set(damage, time);
         }
     }
 
@@ -42,12 +44,30 @@ public class TrapTrigger : MonoBehaviour
         if (go)
         {
             TrapDamage trapDamage = go.GetComponent<TrapDamage>();
-            if (trapDamage) trapDamage.enabled = false;
+            if (trapDamage)
+            {
+                trapDamage.ResetTimer();
+            }
         }
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        var go = other.transform.parent.gameObject;
+        if (go)
+        {
+            TrapDamage trapDamage = go.GetComponent<TrapDamage>();
+            DamageEntity(trapDamage, go.GetComponent<Rigidbody2D>());
+        }
+    }
 
+    void DamageEntity(TrapDamage trapDamage, Rigidbody2D rg)
+    {
+        if (trapDamage == null || rg == null) return;
+        if (trapDamage.canDamage())
+        {
+            rg.AddForce(Vector2.up * knockForce, ForceMode2D.Impulse);
+            trapDamage.DamageEntity();
+        }
     }
 }

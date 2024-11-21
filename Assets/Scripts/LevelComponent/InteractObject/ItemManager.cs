@@ -69,7 +69,7 @@ public class ItemManager : PlayerInteract
     {
         if (!isSale)
         {
-            InfoUIManager.instance.SetInfo(gameObject.transform, Color.white, Defines.InfoButText.PickUp, itemStats);
+            InfoUIManager.instance.SetInfo(gameObject.transform, Color.white, Defines.InfoButText.PickUp);
         }
         else
         {

@@ -6,9 +6,8 @@ public class SpawnEnemy : MonoBehaviour
 {
     [Header("Enemy")]
     public int[] numEnemy;
-    public GameObject[] enemyPrefabList;
+    [SerializeField] GameObject[] enemyPrefabList;
     [Header("SpawnType")]
-    private bool spawned = false;
     public SpawnType spawnType = SpawnType.Wait;
     public enum SpawnType
     {
@@ -16,9 +15,9 @@ public class SpawnEnemy : MonoBehaviour
         Wait
     }
     public float spawnTime = 1f;
-    ArrayList monsterList = new ArrayList();
+    public ArrayList monsterList { get; private set; } = new ArrayList();
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         for (int i = 0; i < enemyPrefabList.Length; i++)
             while (numEnemy[i] > 0)
@@ -37,7 +36,7 @@ public class SpawnEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!spawned)
+        if (monsterList.Count > 0)
             if (spawnType == SpawnType.Wait)
             {
                 if (spawnTime > 0)
@@ -57,7 +56,7 @@ public class SpawnEnemy : MonoBehaviour
         {
             monster.SetActive(true);
         }
-        spawned = true;
+        monsterList.Clear();
     }
 
 

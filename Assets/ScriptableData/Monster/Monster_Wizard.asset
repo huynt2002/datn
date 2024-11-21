@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Monster_Wizard
   m_EditorClassIdentifier: 
   Damage: 20
-  MaxHP: 100
+  MaxHP: 200
   Speed: 0

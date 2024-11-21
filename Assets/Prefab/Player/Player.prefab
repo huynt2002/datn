@@ -171,7 +171,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -576,8 +576,8 @@ MonoBehaviour:
   isMove: 0
   speed: 5
   isOneWay: 0
-  jumpForce: 10
-  maxJump: 2
+  jumpForce: 13
+  maxJump: 1
   dashSpeed: 20
   dashDuration: 0.25
   dashCD: 0.25
@@ -588,7 +588,7 @@ MonoBehaviour:
   playerInteract: {fileID: 0}
   getHitTime: 0.15
   isSkill: 0
-  skillCDTime: 3
+  skillCDTime: 4
   skillPre: {fileID: 5024623880849282256, guid: 5e7c8dcc1a698794a8424d97a6fdf7e0, type: 3}
   skillPos: {fileID: 1558190978206454256}
 --- !u!114 &5427663365667822887
@@ -1033,7 +1033,7 @@ MonoBehaviour:
   - {x: 0.25, y: -0.555, z: 0}
   m_ShapePathHash: 1590984020
   m_Mesh: {fileID: 0}
-  m_InstanceId: -937710
+  m_InstanceId: -3032
   m_LocalBounds:
     m_Center: {x: -0.0006250441, y: -0.004284084, z: 0}
     m_Extent: {x: 0.25919324, y: 0.5507159, z: 0}

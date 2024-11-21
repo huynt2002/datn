@@ -243,7 +243,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            body.velocity = new Vector2(0, body.velocity.y);
             isMove = false;
         }
     }

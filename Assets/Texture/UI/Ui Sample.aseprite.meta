@@ -222,7 +222,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: Ui Sample_4
+  - name: bg_w_bd
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -242,7 +242,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: Ui Sample_5
+  - name: lightBackground
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -302,7 +302,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: Ui Sample_8
+  - name: blue_bg
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -342,7 +342,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: Ui Sample_10
+  - name: br_bg
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -402,7 +402,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: Ui Sample_13
+  - name: short_br_bg
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Monster_Troll
   m_EditorClassIdentifier: 
   Damage: 10
-  MaxHP: 200
+  MaxHP: 150
   Speed: 3

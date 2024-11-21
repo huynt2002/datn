@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Monster_Slug
   m_EditorClassIdentifier: 
   Damage: 5
-  MaxHP: 30
+  MaxHP: 100
   Speed: 1

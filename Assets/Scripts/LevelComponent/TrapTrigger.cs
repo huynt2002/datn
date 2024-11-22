@@ -66,6 +66,7 @@ public class TrapTrigger : MonoBehaviour
         if (trapDamage == null || rg == null) return;
         if (trapDamage.canDamage())
         {
+            rg.velocity = Vector2.zero;
             rg.AddForce(Vector2.up * knockForce, ForceMode2D.Impulse);
             trapDamage.DamageEntity();
         }

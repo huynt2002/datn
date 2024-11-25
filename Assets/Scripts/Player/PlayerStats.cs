@@ -16,7 +16,7 @@ public class PlayerStats : Entity
     void Start()
     {
         SetDefault();
-        coin = 10000;
+        coin = 0;
         gem = 0;
 
     }
@@ -28,6 +28,12 @@ public class PlayerStats : Entity
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             Damage += 10;
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            coin += 1000;
+            return;
         }
     }
 

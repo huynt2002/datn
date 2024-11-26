@@ -229,10 +229,10 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 107
-      y: 105
-      width: 47
-      height: 60
+      x: 102
+      y: 104
+      width: 57
+      height: 62
     spriteID: a6c21a69f619e0746ab3d902b2779d51
     spriteBone: []
     spriteOutline: []
@@ -614,6 +614,26 @@ ScriptedImporter:
       width: 68
       height: 3
     spriteID: 2af2e903efb03974b8fcf30079c0ef80
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: selected
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 97
+      y: 74
+      width: 54
+      height: 14
+    spriteID: 77d656bb8694c1c4abee16830430ca6d
     spriteBone: []
     spriteOutline: []
     vertices: []

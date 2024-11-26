@@ -38127,7 +38127,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 165
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -41451,7 +41451,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1921714819496015023, guid: f777823b15d30cd4095a8f148f19de62, type: 3}
       propertyPath: m_InstanceId
-      value: -1080398
+      value: -945262
       objectReference: {fileID: 0}
     - target: {fileID: 5915392942495230327, guid: f777823b15d30cd4095a8f148f19de62, type: 3}
       propertyPath: m_Name

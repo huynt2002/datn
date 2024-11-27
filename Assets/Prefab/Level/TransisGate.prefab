@@ -68,9 +68,9 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 132.20724
-  m_PointLightOuterAngle: 312.26212
-  m_PointLightInnerRadius: 1.39
+  m_PointLightInnerAngle: 239.32
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 3.48
   m_PointLightOuterRadius: 10.35
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0

@@ -56,6 +56,10 @@ public class TrapTrigger : MonoBehaviour
         var go = other.transform.parent.gameObject;
         if (go)
         {
+            if (!go.GetComponent<Entity>().IsAlive)
+            {
+                return;
+            }
             TrapDamage trapDamage = go.GetComponent<TrapDamage>();
             DamageEntity(trapDamage, go.GetComponent<Rigidbody2D>());
         }

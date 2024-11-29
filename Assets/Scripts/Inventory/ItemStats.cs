@@ -11,11 +11,9 @@ public class ItemStats : ScriptableObject
     public string itemName;
     public float ATKAmount;
     public float HPAmount;
-    //public float speedAmount;
     public string description;
     public Sprite icon;
     public ItemType itemType;
-    public ItemTrait trait;
     public GameObject itemEffectObject;
     public void ApplyItemStats(Entity e)
     {

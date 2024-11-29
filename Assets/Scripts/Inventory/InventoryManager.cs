@@ -11,19 +11,12 @@ public class InventoryManager : MonoBehaviour
     Entity p;
 
     [SerializeField] GameObject itemEffectContainer;
-
-    public Dictionary<ItemTrait, int> itemTraitCount;
-
-    public Dictionary<ItemTrait, GameObject> traitEffectList;
-
     void Start()
     {
         instance = this;
         items = new List<KeyValuePair<ItemStats, GameObject>>();
         p = gameObject.GetComponent<Entity>();
         // CalculateItemsStats(p);
-        itemTraitCount = new Dictionary<ItemTrait, int>();
-        traitEffectList = new Dictionary<ItemTrait, GameObject>();
     }
     // Update is called once per frame
     void Update()
@@ -46,33 +39,6 @@ public class InventoryManager : MonoBehaviour
             items.Add(new KeyValuePair<ItemStats, GameObject>(item, null));
         }
         item.ApplyItemStats(p);
-        AddItemTrait(item.trait);
-    }
-
-    void AddItemTrait(ItemTrait trait)
-    {
-        if (!trait) return;
-        if (itemTraitCount.ContainsKey(trait))
-        {
-            itemTraitCount[trait]++;
-        }
-        else
-        {
-            itemTraitCount[trait] = 1;
-        }
-        UpdateItemTraitEffect(trait);
-        Debug.Log("A: " + itemTraitCount);
-    }
-
-    void RemoveItemTrait(ItemTrait trait)
-    {
-        if (!trait) return;
-        if (itemTraitCount.ContainsKey(trait))
-        {
-            itemTraitCount[trait]--;
-        }
-        UpdateItemTraitEffect(trait);
-        Debug.Log("A: " + itemTraitCount);
     }
 
     // void CalculateItemsStats(Entity e)
@@ -84,18 +50,6 @@ public class InventoryManager : MonoBehaviour
     //     }
     // }
 
-    public void UpdateItemTraitEffect(ItemTrait itemTrait)
-    {
-        itemTrait.RemoveStats(p);
-        if (traitEffectList.ContainsKey(itemTrait))
-        {
-            Destroy(traitEffectList[itemTrait]);
-        }
-        itemTrait.UpdateCurrentLevel(itemTraitCount[itemTrait]);
-        itemTrait.ApplyStats(p);
-        traitEffectList[itemTrait] = itemTrait.GetTraitEffect(itemEffectContainer.transform);
-    }
-
     public void DropItem(int index)
     {
         var item = items[index];
@@ -103,7 +57,6 @@ public class InventoryManager : MonoBehaviour
         item.Key.RemoveItemStats(p);
         items.Remove(item);
         Destroy(item.Value);
-        RemoveItemTrait(item.Key.trait);
         //CalculateItemsStats(p);
     }
 }

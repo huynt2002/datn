@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
     [Header("Level")]
     [SerializeField] List<GameObject> playLevelList;
-    [SerializeField] int currentLevelIndex = 0;
+    int currentLevelIndex;
     GameObject currentLevel;
     public bool checkClear { get; private set; }
     Animator animator;
@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
     {
         instance = this;
         checkClear = false;
+        currentLevelIndex = 0;
         CreateLevel();
     }
 

@@ -249,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skill1
+      name: avt_info
       rect:
         serializedVersion: 2
         x: 389
@@ -1068,7 +1068,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ram Panels All_45
+      name: skil
       rect:
         serializedVersion: 2
         x: 324
@@ -1851,7 +1851,6 @@ TextureImporter:
       Ram Panels All_41: 1079678295
       Ram Panels All_42: 570601189
       Ram Panels All_44: -870982808
-      Ram Panels All_45: -711385628
       Ram Panels All_46: -526050663
       Ram Panels All_47: 1176049957
       Ram Panels All_48: -1932608972
@@ -1890,9 +1889,10 @@ TextureImporter:
       Ram Panels All_8: 1880920012
       Ram Panels All_9: 1058322900
       avt1: 1249307417
+      avt_info: -550240116
       minimap: 518256109
+      skil: -711385628
       skill: -538892015
-      skill1: -550240116
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

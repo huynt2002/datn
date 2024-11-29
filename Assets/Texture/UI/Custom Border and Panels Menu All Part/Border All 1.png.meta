@@ -228,13 +228,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Border All 1_5
+      name: avtInfo
       rect:
         serializedVersion: 2
         x: 384
-        y: 384
-        width: 192
-        height: 128
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -963,7 +963,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Border All 1_40
+      name: item
       rect:
         serializedVersion: 2
         x: 577
@@ -1658,7 +1658,6 @@ TextureImporter:
       Border All 1_38: -1105352980
       Border All 1_39: 2004298080
       Border All 1_4: 939089274
-      Border All 1_40: 1206571941
       Border All 1_41: 1675792219
       Border All 1_43: 1945532900
       Border All 1_44: 1010530644
@@ -1667,7 +1666,6 @@ TextureImporter:
       Border All 1_47: -1418831990
       Border All 1_48: 1387030732
       Border All 1_49: -207516374
-      Border All 1_5: 1057774137
       Border All 1_50: 1264345378
       Border All 1_51: -1673923973
       Border All 1_52: -1008156151
@@ -1699,7 +1697,9 @@ TextureImporter:
       a2: -1243846740
       a3: 1188503220
       a4: -141421513
+      avtInfo: 1057774137
       b: 497602040
+      item: 1206571941
       miniMap: -826080823
       skill: 1215097716
   mipmapLimitGroupName: 

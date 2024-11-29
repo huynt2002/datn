@@ -10,7 +10,6 @@ public class MainCanvasManager : MonoBehaviour
 {
     GameManager gameManager;
     [Header("PlayerStatus")]
-    [SerializeField] GameObject playerMainCanvas;
     [SerializeField] Slider HPBar;
     [SerializeField] TextMeshProUGUI hpText;
     [SerializeField] TextMeshProUGUI coinCount;
@@ -23,20 +22,25 @@ public class MainCanvasManager : MonoBehaviour
     [SerializeField] GameObject pauseUI;
     [SerializeField] GameObject settingUI;
     [SerializeField] GameObject backBut;
-    [Header("PlayerStats")]
+    [Header("PlayerInfoCanvas")]
     [SerializeField] GameObject playerInfoCanvas;
+    [Header("PlayerStats")]
+    [SerializeField] GameObject playerStatsInfoObject;
+    [SerializeField] GameObject playerAvtSelectedObj;
     [SerializeField] TextMeshProUGUI hp;
     [SerializeField] TextMeshProUGUI dmg;
+    [Header("SkillInfo")]
+    [SerializeField] GameObject skillInfoObject;
+    [SerializeField] GameObject skillSelectedObj;
+    [SerializeField] TextMeshProUGUI skillName;
+    [SerializeField] TextMeshProUGUI skillDes;
     [Header("Inventory")]
+    [SerializeField] GameObject itemInfoObject;
     List<ItemStats> itemList;
     [SerializeField] List<GameObject> itemSlots;
     [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI itemRare;
     [SerializeField] TextMeshProUGUI itemDescription;
-    [SerializeField] GameObject traitItemUI;
-    [SerializeField] Transform traitListContainer;
-    [SerializeField] GameObject traitContainerUI;
-    [SerializeField] GameObject traitDetail;
     [Header("EndGame")]
     [SerializeField] GameObject EndGame;
     [SerializeField] GameObject Win;
@@ -64,9 +68,16 @@ public class MainCanvasManager : MonoBehaviour
     void Update()
     {
         DisplayMainCanvas();
+        DisplayPlayerInfo();
+    }
+
+    void DisplayPlayerInfo()
+    {
         if (gameManager.playerInfo)
         {
             DisplayItemDescription();
+            DisplayStats();
+            DisplaySkillInfo();
         }
     }
 
@@ -97,10 +108,7 @@ public class MainCanvasManager : MonoBehaviour
 
     void ManageSkill()
     {
-
-
         skillCD.fillAmount = PlayerMovement.instance.cdCount / PlayerMovement.instance.skillCDTime;
-
     }
 
     public void ManagePauseCanvas()
@@ -123,67 +131,75 @@ public class MainCanvasManager : MonoBehaviour
         if (gameManager.playerInfo)
         {
             itemList = InventoryManager.instance.items.ConvertAll(e => e.Key);
-            DisplayStats();
             DisplayInventory();
             playerInfoCanvas.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(itemSlots[0]);
+            EventSystem.current.SetSelectedGameObject(playerAvtSelectedObj);
         }
         else
         {
-            playerInfoCanvas.SetActive(false);
             EventSystem.current.SetSelectedGameObject(null);
+            playerInfoCanvas.SetActive(false);
         }
     }
 
     void DisplayStats()
     {
-        hp.text = PlayerStats.instance.CurrentHP + "/" + PlayerStats.instance.MaxHP;
-        dmg.text = PlayerStats.instance.Damage + "";
+        if (EventSystem.current.currentSelectedGameObject == playerAvtSelectedObj)
+        {
+            hp.text = PlayerStats.instance.CurrentHP + "/" + PlayerStats.instance.MaxHP;
+            dmg.text = PlayerStats.instance.Damage + "";
+            playerStatsInfoObject.SetActive(true);
+            return;
+        }
+        playerStatsInfoObject.SetActive(false);
+    }
+
+    void DisplaySkillInfo()
+    {
+        if (EventSystem.current.currentSelectedGameObject == skillSelectedObj)
+        {
+            skillName.text = "Firey";
+            skillDes.text = "Breath a fireball that damage enemy on its way!";
+            skillInfoObject.SetActive(true);
+            return;
+        }
+        skillInfoObject.SetActive(false);
     }
 
     void DisplayInventory()
     {
         for (int i = 0; i < InventoryManager.instance.items.Count; i++)
         {
-
-            itemSlots[i].GetComponent<Image>().sprite = itemList[i].icon;
+            var icon = itemSlots[i].GetComponent<SelectedSkillUI>().skillIcon;
+            icon.sprite = itemList[i].icon;
+            icon.gameObject.SetActive(true);
         }
         for (int i = InventoryManager.instance.items.Count; i < 9; i++)
         {
-            itemSlots[i].GetComponent<Image>().sprite = null;
+            var icon = itemSlots[i].GetComponent<SelectedSkillUI>().skillIcon;
+            icon.gameObject.SetActive(false);
         }
-
-        var traitUIs = this.traitListContainer.GetComponentsInChildren<ItemTraitInfoUI>();
-        foreach (ItemTraitInfoUI trait in traitUIs)
-        {
-            Destroy(trait.gameObject);
-        }
-
-        var traitList = InventoryManager.instance.itemTraitCount;
-        var visible = traitList.Any(e => e.Value != 0);
-        foreach (var trait in traitList.Keys)
-        {
-            if (traitList[trait] != 0)
-            {
-                var traitInfo = Instantiate(traitItemUI, this.traitListContainer) as GameObject;
-                traitInfo.GetComponent<ItemTraitInfoUI>().SetTrait(trait);
-            }
-        }
-        traitContainerUI.SetActive(visible);
     }
 
-    public void DisplayItemDescription()
+
+    void DisplayItemDescription()
     {
-        itemName.text = "";
-        itemDescription.text = "";
-        itemRare.text = "";
-        int i = GetItemIndex();
-        if (i != -1)
+        if (itemSlots.Contains(EventSystem.current.currentSelectedGameObject))
         {
-            itemName.text = itemList[i].itemName;
-            itemRare.text = itemList[i].itemType.ToString();
-            itemDescription.text = itemList[i].description;
+            itemName.text = "";
+            itemDescription.text = "";
+            itemRare.text = "";
+            int i = GetItemIndex();
+            if (i != -1)
+            {
+                itemName.text = itemList[i].itemName;
+                itemRare.text = itemList[i].itemType.ToString();
+                itemDescription.text = itemList[i].description;
+                itemInfoObject.SetActive(true);
+                return;
+            }
         }
+        itemInfoObject.SetActive(false);
     }
 
     public int GetItemIndex()
@@ -239,18 +255,5 @@ public class MainCanvasManager : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(null);
             Time.timeScale = 1;
         }
-    }
-    public void UpdateTraitDetail(bool visible, ItemTrait trait = null)
-    {
-        if (trait)
-        {
-            var str = "";
-            foreach (var level in trait.effects)
-            {
-                str += "<b>Level:" + level.levelNum + "</b>\n" + level.description + "\n";
-            }
-            traitDetail.GetComponent<TraitDetailUI>().Set(trait.traitName, str);
-        }
-        traitDetail.SetActive(visible);
     }
 }

@@ -16,8 +16,6 @@ public class Item : ScriptableObject
     {
         Consumable,
         Equipment,
-        Weapon,
-        Armor,
         QuestItem
     }
 

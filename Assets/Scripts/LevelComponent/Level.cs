@@ -11,13 +11,17 @@ public class Level : MonoBehaviour
     public List<GameObject> itemList;
     public List<GameObject> monsterList;
     // Start is called before the first frame update
+    void Awake()
+    {
+        LevelManager.instance.clearOnLoadLevel += ClearLevel;
+    }
     void Start()
     {
-        mainBound = GetComponent<PolygonCollider2D>();
-        SpawnChest();
         mainCam = GameObject.FindWithTag("MainCamera");
+        mainBound = GetComponent<PolygonCollider2D>();
         mainCam.GetComponent<CinemachineVirtualCamera>().m_Follow = PlayerStats.instance.transform;
         mainCam.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = mainBound;
+        SpawnChest();
     }
 
     // Update is called once per frame
@@ -42,5 +46,15 @@ public class Level : MonoBehaviour
         {
             SpawnManager.instance.SpawnChest(i.transform);
         }
+    }
+
+    void ClearLevel()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        LevelManager.instance.clearOnLoadLevel -= ClearLevel;
     }
 }

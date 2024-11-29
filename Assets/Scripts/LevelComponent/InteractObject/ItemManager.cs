@@ -74,7 +74,7 @@ public class ItemManager : PlayerInteract
         else
         {
             InfoUIManager.instance.SetInfo(gameObject.transform, Color.yellow,
-            Defines.InfoButText.Buy + " (" + cost + ")", itemStats);
+            Defines.InfoButText.Buy + " (" + cost + ")");
         }
     }
 

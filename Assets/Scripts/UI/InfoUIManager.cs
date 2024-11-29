@@ -7,12 +7,6 @@ public class InfoUIManager : MonoBehaviour
     public static InfoUIManager instance;
     [SerializeField] GameObject infoCanvas;
     [SerializeField] TextMeshProUGUI butText;
-    [SerializeField] TextMeshProUGUI itemName;
-    [SerializeField] TextMeshProUGUI rareRate;
-    [SerializeField] TextMeshProUGUI description;
-    [SerializeField] Image traitImage;
-    //[SerializeField] TextMeshProUGUI traitName;
-    [SerializeField] GameObject infoPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,38 +15,11 @@ public class InfoUIManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void SetInfo(Transform pos, Color c, string butText = null, ItemStats item = null)
+    public void SetInfo(
+        Transform pos,
+        Color c,
+        string butText = null)
     {
-        if (item == null)
-        {
-            infoPanel.SetActive(false);
-        }
-        else
-        {
-            var color = Color.white;
-            switch (item.itemType)
-            {
-                case ItemStats.ItemType.Rare:
-                    color = Color.blue;
-                    break;
-                case ItemStats.ItemType.Legend:
-                    color = Color.red;
-                    break;
-            }
-            this.itemName.text = item.itemName;
-            this.rareRate.text = item.itemType.ToString();
-            this.rareRate.color = color;
-            this.description.text = item.description;
-
-            if (item.trait)
-            {
-                //this.traitName.text = item.trait.traitName;
-                this.traitImage.sprite = item.trait.icon;
-            }
-            SetTraitVisible(item.trait);
-
-            infoPanel.SetActive(true);
-        }
         if (butText == null)
         {
             this.butText.gameObject.SetActive(false);
@@ -65,12 +32,6 @@ public class InfoUIManager : MonoBehaviour
         }
         infoCanvas.GetComponent<RectTransform>().position = pos.position;
         infoCanvas.SetActive(true);
-    }
-
-    void SetTraitVisible(bool visible)
-    {
-        traitImage.gameObject.SetActive(visible);
-        //traitName.gameObject.SetActive(visible);
     }
 
     public void Disable()

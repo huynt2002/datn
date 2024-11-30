@@ -78,10 +78,11 @@ public class LevelManager : MonoBehaviour
         {
             return;
         }
-        var numArea = currentLevel.GetComponentsInChildren<DetectArea>();
-        foreach (var area in numArea)
+        var numMonster = currentLevel.GetComponentsInChildren<Monster_Behavior>();
+        if (numMonster.Length > 0)
         {
-            if (area.monsters.Count > 0) { checkClear = false; return; }
+            checkClear = false;
+            return;
         }
         var numAreaS = currentLevel.GetComponentsInChildren<SpawnEnemy>();
         foreach (var area in numAreaS)

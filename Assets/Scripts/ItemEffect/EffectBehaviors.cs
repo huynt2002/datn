@@ -5,7 +5,7 @@ public class EffectBehaviors
     public static void Healing(Entity entity, int healNum, Transform transform)
     {
         entity.HealHP(healNum);
-        var uiEffect = SpawnManager.instance.SpawnEffect(SpawnManager.EffectType.PlayerHealingEffect, transform);
+        var uiEffect = SpawnManager.instance.SpawnEffect(SpawnManager.EffectType.PlayerHealingEffect, transform, Helper.GetPos(entity.gameObject));
     }
 
     public static void ProjectTileSpawn(Entity entity, GameObject projectile, Vector2 pos)

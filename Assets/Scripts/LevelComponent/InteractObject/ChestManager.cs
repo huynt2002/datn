@@ -28,7 +28,7 @@ public class ChestManager : PlayerInteract
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        InfoUIManager.instance.SetInfo(gameObject.transform, Color.white, Defines.InfoButText.Check);
+        InfoUIManager.instance.SetInfo(Helper.GetPos(gameObject, Helper.ObjPosition.Top), Color.white, Defines.InfoButText.Check);
     }
 
 

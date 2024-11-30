@@ -41,9 +41,9 @@ public class Entity : MonoBehaviour
         if (invicible) return;
         getHit = true;
         var damage = (int)_damage;
-        DamagePopUpManager.instance?.Create(gameObject.transform.position, damage, isCriticalHit);
+        DamagePopUpManager.instance?.Create(Helper.GetPos(gameObject, Helper.ObjPosition.Top), damage, isCriticalHit);
         GameObject blood = SpawnManager.instance
-            .SpawnParticalEffect(SpawnManager.ParticleType.BloodSmall, gameObject.transform.position);
+            .SpawnParticalEffect(SpawnManager.ParticleType.BloodSmall, Helper.GetPos(gameObject));
         var ui = GetComponent<Monster_Behavior>()?.GetComponentInChildren<DisplayHP>();
         if (ui != null) ui.show = true;
         CurrentHP -= damage;
@@ -64,14 +64,8 @@ public class Entity : MonoBehaviour
     {
         //Dead for monster
         DropWhenDie();
-        var collider2Ds = gameObject.GetComponentsInChildren<Collider2D>();
-        foreach (var collider in collider2Ds)
-        {
-            if (collider.gameObject.tag == "Enemy")
-            {
-                SpawnManager.instance.SpawnParticalEffect(SpawnManager.ParticleType.BloodLarge, collider.transform.position);
-            }
-        }
+        SpawnManager.instance.SpawnParticalEffect(SpawnManager.ParticleType.BloodLarge,
+            Helper.GetPos(gameObject));
         SetInvincible(true);
         SoundManager.instance.PlayDeathSound(gameObject.transform);
         Invoke(nameof(Destroy), 5f);

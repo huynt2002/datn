@@ -22,7 +22,7 @@ public class DamagePlayer : Damage
         if (e.invicible) return;
         //deal damage
         e.TakeDamage(entity.outPutDamage, Defines.DamageType.Entity);
-        Effect(e.gameObject.transform.position);
+        Effect(Helper.GetPos(e.gameObject));
         KnockBack(other.GetComponentInParent<Rigidbody2D>());
         Debug.Log("Damage " + e.name);
     }

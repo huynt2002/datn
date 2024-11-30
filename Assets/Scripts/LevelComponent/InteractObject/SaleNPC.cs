@@ -7,6 +7,7 @@ public class SaleNPC : PlayerInteract
     [SerializeField] List<Transform> itemPos;
     DialogManager dialogManager;
     GameObject[] item;
+    int cost = 500;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +36,18 @@ public class SaleNPC : PlayerInteract
             {
                 Vector2 pos = new Vector2(itemPos[i].position.x, itemPos[i].position.y + 1f);
                 item[i] = SpawnManager.instance.SpawnItem(pos);
-                item[i].GetComponent<ItemManager>().SetSale();
+                var itemManager = item[i].GetComponent<ItemManager>();
+                float h = 1;
+                switch (itemManager.itemStats.itemType)
+                {
+                    case ItemStats.ItemType.Rare:
+                        h = 1.5f;
+                        break;
+                    case ItemStats.ItemType.Legend:
+                        h = 2f;
+                        break;
+                }
+                itemManager.SetSale((int)(h * cost));
             }
         }
     }
@@ -60,6 +72,6 @@ public class SaleNPC : PlayerInteract
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        InfoUIManager.instance.SetInfo(gameObject.transform, Color.white, Defines.InfoButText.Talk);
+        InfoUIManager.instance.SetInfo(Helper.GetPos(gameObject, Helper.ObjPosition.Top), Color.white, Defines.InfoButText.Talk);
     }
 }

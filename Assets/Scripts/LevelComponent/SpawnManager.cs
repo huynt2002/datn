@@ -68,9 +68,10 @@ public class SpawnManager : MonoBehaviour
         return effect;
     }
 
-    public GameObject SpawnEffect(EffectType effectType, Transform parent)
+    public GameObject SpawnEffect(EffectType effectType, Transform parent, Vector2 pos)
     {
-        GameObject effect = Instantiate(effectController, parent) as GameObject;
+        GameObject effect = Instantiate(effectController, pos, Quaternion.identity) as GameObject;
+        effect.transform.parent = parent;
         effect.GetComponent<ParticleDestroyEvent>().effectType = effectType;
         return effect;
     }
@@ -211,7 +212,7 @@ public class SpawnManager : MonoBehaviour
         return prefa;
     }
 
-    public void DropProps(Transform pos, DropedProp.DropType type)
+    void DropProps(Transform pos, DropedProp.DropType type)
     {
         pos.position = new Vector2(pos.position.x, pos.position.y + 0.5f);
         if (type == DropedProp.DropType.HP)

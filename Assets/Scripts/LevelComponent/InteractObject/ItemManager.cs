@@ -6,7 +6,7 @@ public class ItemManager : PlayerInteract
 {
     public ItemStats itemStats;
     public bool isSale { get; private set; }
-    public int cost = 500;
+    public int cost = 0;
     void Awake()
     {
         if (LevelManager.instance)
@@ -69,17 +69,18 @@ public class ItemManager : PlayerInteract
     {
         if (!isSale)
         {
-            InfoUIManager.instance.SetInfo(gameObject.transform, Color.white, Defines.InfoButText.PickUp);
+            InfoUIManager.instance.SetInfo(Helper.GetPos(gameObject, Helper.ObjPosition.Top), Color.white, Defines.InfoButText.PickUp);
         }
         else
         {
-            InfoUIManager.instance.SetInfo(gameObject.transform, Color.yellow,
-            Defines.InfoButText.Buy + " (" + cost + ")");
+            InfoUIManager.instance.SetInfo(Helper.GetPos(gameObject, Helper.ObjPosition.Top), Color.yellow,
+            Defines.InfoButText.Buy + "(" + cost + ")");
         }
     }
 
-    public void SetSale()
+    public void SetSale(int cost = 500)
     {
+        this.cost = cost;
         isSale = true;
     }
 

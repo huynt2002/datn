@@ -16,7 +16,7 @@ public class InfoUIManager : MonoBehaviour
 
     // Update is called once per frame
     public void SetInfo(
-        Transform pos,
+        Vector2 pos,
         Color c,
         string butText = null)
     {
@@ -30,7 +30,8 @@ public class InfoUIManager : MonoBehaviour
             this.butText.color = c;
             this.butText.gameObject.SetActive(true);
         }
-        infoCanvas.GetComponent<RectTransform>().position = pos.position;
+        var rect = infoCanvas.GetComponent<RectTransform>();
+        rect.position = new Vector2(pos.x, pos.y + rect.sizeDelta.y / 2);
         infoCanvas.SetActive(true);
     }
 

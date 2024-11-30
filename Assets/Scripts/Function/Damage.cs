@@ -17,10 +17,10 @@ public class Damage : MonoBehaviour
         other.AddForce(force, ForceMode2D.Impulse);
     }
 
-    protected void Effect(Vector3 position)
+    protected void Effect(Vector2 position)
     {
         // Set correct arrow spawn position
-        GameObject dust = SpawnManager.instance.SpawnEffect(SpawnManager.EffectType.HitEffect, position + new Vector3(0, 0.5f, 0));
+        GameObject dust = SpawnManager.instance.SpawnEffect(SpawnManager.EffectType.HitEffect, position);
     }
 
     protected bool getCriticalHit()

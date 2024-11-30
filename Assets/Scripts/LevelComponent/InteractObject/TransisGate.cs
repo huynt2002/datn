@@ -9,7 +9,9 @@ public class TransisGate : PlayerInteract
     {
         interactType = InteractType.Gate;
         for (int i = 0; i < transisComponent.Length; i++)
+        {
             transisComponent[i].SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -18,7 +20,9 @@ public class TransisGate : PlayerInteract
         if (LevelManager.instance)
             if (LevelManager.instance.checkClear)
                 for (int i = 0; i < transisComponent.Length; i++)
+                {
                     transisComponent[i].SetActive(true);
+                }
     }
 
     public override void Gate()
@@ -32,7 +36,7 @@ public class TransisGate : PlayerInteract
         if (LevelManager.instance)
             if (LevelManager.instance.checkClear)
             {
-                InfoUIManager.instance.SetInfo(gameObject.transform, Color.white);
+                InfoUIManager.instance.SetInfo(Helper.GetPos(gameObject, Helper.ObjPosition.Top), Color.white);
             }
     }
 }

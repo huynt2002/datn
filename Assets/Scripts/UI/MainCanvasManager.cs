@@ -170,13 +170,13 @@ public class MainCanvasManager : MonoBehaviour
     {
         for (int i = 0; i < InventoryManager.instance.items.Count; i++)
         {
-            var icon = itemSlots[i].GetComponent<SelectedSkillUI>().skillIcon;
+            var icon = itemSlots[i].GetComponent<SelectedUI>().itemIcon;
             icon.sprite = itemList[i].icon;
             icon.gameObject.SetActive(true);
         }
         for (int i = InventoryManager.instance.items.Count; i < 9; i++)
         {
-            var icon = itemSlots[i].GetComponent<SelectedSkillUI>().skillIcon;
+            var icon = itemSlots[i].GetComponent<SelectedUI>().itemIcon;
             icon.gameObject.SetActive(false);
         }
     }

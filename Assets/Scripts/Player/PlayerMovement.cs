@@ -260,11 +260,9 @@ public class PlayerMovement : MonoBehaviour
                 SoundManager.instance.PlayJumpSound(gameObject.transform);
                 if (!isGrounded)
                 {
-                    Vector2 pos = new Vector2(
-                            gameObject.transform.position.x, gameObject.transform.position.y - 1f);
                     GameObject effect = SpawnManager
                         .instance
-                        .SpawnEffect(SpawnManager.EffectType.PlayerJumpEffect, pos);
+                        .SpawnEffect(SpawnManager.EffectType.PlayerJumpEffect, Helper.GetPos(gameObject, Helper.ObjPosition.Bottom));
                 }
                 ResetSkill();
                 body.velocity = new Vector2(body.velocity.x, jumpForce);
@@ -278,7 +276,7 @@ public class PlayerMovement : MonoBehaviour
     void DashEffect()
     {
         // Set correct arrow spawn position
-        GameObject dust = SpawnManager.instance.SpawnEffect(SpawnManager.EffectType.PlayerDashEffect, gameObject.transform.position);
+        GameObject dust = SpawnManager.instance.SpawnEffect(SpawnManager.EffectType.PlayerDashEffect, Helper.GetPos(gameObject, Helper.ObjPosition.Bottom));
         // Turn arrow in correct direction
         if (dust)
         {

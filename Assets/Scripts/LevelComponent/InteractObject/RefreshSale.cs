@@ -34,6 +34,6 @@ public class RefreshSale : PlayerInteract
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        InfoUIManager.instance.SetInfo(gameObject.transform, Color.yellow, Defines.InfoButText.Refresh + "(100)");
+        InfoUIManager.instance.SetInfo(Helper.GetPos(gameObject, Helper.ObjPosition.Top), Color.yellow, Defines.InfoButText.Refresh + "(100)");
     }
 }

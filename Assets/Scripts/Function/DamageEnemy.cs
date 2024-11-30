@@ -10,7 +10,7 @@ public class DamageEnemy : Damage
         if (e.IsAlive)
         {
             //deal damage
-            Effect(e.gameObject.transform.position);
+            Effect(Helper.GetPos(e.gameObject));
             if (e.invicible) return;
             if (getCriticalHit())
             {

@@ -463,10 +463,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 7400000, guid: 3aae3850de556a54c81b410ef5a9afbc, type: 2}
   damage: 10
-  cdTime: 4
+  cdTime: 6
   needWaitOtherAttack: 1
   projectile: {fileID: 5828442611997034025, guid: 93c1cca4a81ef1f42acff93640f73114, type: 3}
-  ranThresh: 1.5
+  ranThresh: 1
 --- !u!1 &8403386804578322872
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +621,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: d44a8926d70cb2343bdbd55bb435c9dd, type: 2}
-  getHit: 0
 --- !u!114 &2152526488476696524
 MonoBehaviour:
   m_ObjectHideFlags: 0

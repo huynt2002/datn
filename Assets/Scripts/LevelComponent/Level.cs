@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    GameObject mainCam;
-    Collider2D mainBound;
-    public List<Transform> chestSpawnPos;
+    [SerializeField] GameObject mainCam;
     public List<GameObject> itemList;
     public List<GameObject> monsterList;
     // Start is called before the first frame update
@@ -17,10 +15,7 @@ public class Level : MonoBehaviour
     }
     void Start()
     {
-        mainCam = GameObject.FindWithTag("MainCamera");
-        mainBound = GetComponent<PolygonCollider2D>();
         mainCam.GetComponent<CinemachineVirtualCamera>().m_Follow = PlayerStats.instance.transform;
-        mainCam.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = mainBound;
         SpawnChest();
     }
 

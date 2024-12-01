@@ -1,23 +1,42 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+[Serializable]
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance { get; private set; }
-    public List<KeyValuePair<ItemStats, GameObject>> items { get; private set; }
+    public List<KeyValuePair<ItemStats, GameObject>> items { get; private set; } = new List<KeyValuePair<ItemStats, GameObject>>();
     public const int numItem = 9;
     public bool full { get; private set; }
     Entity p;
 
     [SerializeField] GameObject itemEffectContainer;
-    void Start()
+    void Awake()
     {
         instance = this;
-        items = new List<KeyValuePair<ItemStats, GameObject>>();
-        p = gameObject.GetComponent<Entity>();
-        // CalculateItemsStats(p);
     }
+    void Start()
+    {
+        p = gameObject.GetComponent<Entity>();
+        LoadInventoryData();
+    }
+
+    void LoadInventoryData()
+    {
+        if (GameManager.instance.gameData.inventoryItemIds != null)
+        {
+            var ids = GameManager.instance.gameData.inventoryItemIds;
+            foreach (var itemId in ids)
+            {
+                var item = SpawnManager.instance.itemDataList.Find(e => e.id == itemId);
+                if (item)
+                {
+                    AddItem(item, false);
+                }
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -27,7 +46,7 @@ public class InventoryManager : MonoBehaviour
         }
         else full = true;
     }
-    public void AddItem(ItemStats item)
+    public void AddItem(ItemStats item, bool applyStats = true)
     {
         if (item.itemEffectObject)
         {
@@ -38,17 +57,8 @@ public class InventoryManager : MonoBehaviour
         {
             items.Add(new KeyValuePair<ItemStats, GameObject>(item, null));
         }
-        item.ApplyItemStats(p);
+        if (applyStats) { item.ApplyItemStats(p); }
     }
-
-    // void CalculateItemsStats(Entity e)
-    // {
-    //     e.SetDefault();
-    //     foreach (var i in items)
-    //     {
-    //         i.Key.ApplyItemStats(e);
-    //     }
-    // }
 
     public void DropItem(int index)
     {
@@ -57,6 +67,5 @@ public class InventoryManager : MonoBehaviour
         item.Key.RemoveItemStats(p);
         items.Remove(item);
         Destroy(item.Value);
-        //CalculateItemsStats(p);
     }
 }

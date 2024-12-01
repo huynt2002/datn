@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561581d114dd1ca4a8ee274becc9d972, type: 3}
   m_Name: Item1
   m_EditorClassIdentifier: 
+  id: 1
   itemName: Wooden Sword
   ATKAmount: 10
   HPAmount: 0
   description: Increase 10% ATK
   icon: {fileID: 21300166, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
   itemType: 0
-  trait: {fileID: 11400000, guid: 19c5ac0a4581c404f8f3255be4034865, type: 2}
   itemEffectObject: {fileID: 0}

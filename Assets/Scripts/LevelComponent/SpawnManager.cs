@@ -13,7 +13,7 @@ public class SpawnManager : MonoBehaviour
 
     [Header("Item")]
     [SerializeField] GameObject itemPre;
-    [SerializeField] List<ItemStats> itemDataList;
+    [SerializeField] public List<ItemStats> itemDataList;
     List<ItemStats> itemCommonDataList;
     List<ItemStats> itemRareDataList;
     List<ItemStats> itemLegendDataList;

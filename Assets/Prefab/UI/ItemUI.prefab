@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21efe0b8dd5ed91429e354f134351bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillIcon: {fileID: 3769783713172698907}
+  itemIcon: {fileID: 3769783713172698907}
   imageSelecteds:
   - {fileID: 3769783713172698907}
   - {fileID: 2436009929047516810}

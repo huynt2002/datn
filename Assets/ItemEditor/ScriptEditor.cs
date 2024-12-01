@@ -2,12 +2,12 @@ using UnityEngine;
 using UnityEditor;
 using System.IO;
 
+#if UNITY_EDITOR
 public class ScriptEditor : EditorWindow
 {
     private string className = "NewScriptableObject";
     private string folderPath = "Assets/ScriptableObjects"; // Default folder for saving script
     private string scriptContent = "";
-
     [MenuItem("Tools/ScriptableObject Class Generator")]
     public static void ShowWindow()
     {
@@ -74,3 +74,4 @@ public class ScriptEditor : EditorWindow
             "}";
     }
 }
+#endif

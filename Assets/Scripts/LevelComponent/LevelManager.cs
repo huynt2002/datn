@@ -9,7 +9,9 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
     [Header("Level")]
     [SerializeField] List<GameObject> playLevelList;
-    int currentLevelIndex;
+    [SerializeField] GameObject tutorialLevel;
+    bool tutorial = false;
+    public int currentLevelIndex { get; private set; }
     GameObject currentLevel;
     public bool checkClear { get; private set; }
     Animator animator;
@@ -19,22 +21,41 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        checkClear = false;
+        if (GameManager.instance)
+        {
+            tutorial = GameManager.instance.gameData.tutorial;
+            currentLevelIndex = GameManager.instance.gameData.currentLevelIndex;
+        }
+        else
+        {
+            currentLevelIndex = 0;
+        }
+        if (tutorial)
+        {
+            CreateTutorialLevel();
+        }
+        else
+        {
+            CreateLevel();
+        }
         animator = GetComponent<Animator>();
     }
     void Awake()
     {
         instance = this;
-        checkClear = false;
-        currentLevelIndex = 0;
-        CreateLevel();
     }
-
 
     void CreateLevel()
     {
         var go = Instantiate(playLevelList[currentLevelIndex], this.gameObject.transform) as GameObject;
         currentLevel = go;
-        go.transform.parent = this.gameObject.transform;
+    }
+
+    void CreateTutorialLevel()
+    {
+        var tutorialLevelGo = Instantiate(tutorialLevel, this.gameObject.transform) as GameObject;
+        currentLevel = tutorialLevelGo;
     }
 
     void Update()
@@ -54,10 +75,9 @@ public class LevelManager : MonoBehaviour
         }
         checkClear = false;
         ResetWhenTransis();
+        GameManager.instance.SaveGame();
         CreateLevel();
     }
-
-
 
     public void ResetWhenTransis()
     {

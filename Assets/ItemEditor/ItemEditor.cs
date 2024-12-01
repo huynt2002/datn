@@ -3,6 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 public class ItemEditor : EditorWindow
 {
     private Item selectedItem;
@@ -122,3 +123,4 @@ public class ItemEditor : EditorWindow
     }
 
 }
+#endif

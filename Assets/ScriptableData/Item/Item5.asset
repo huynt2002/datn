@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561581d114dd1ca4a8ee274becc9d972, type: 3}
   m_Name: Item5
   m_EditorClassIdentifier: 
+  id: 5
   itemName: Ruby Stone
   ATKAmount: 50
   HPAmount: 50
   description: Legend Stone. Icrease 50%DMG and 50HP.
   icon: {fileID: 21300000, guid: 70e92df91699f664ab5bad7bf4723022, type: 3}
   itemType: 2
-  trait: {fileID: 11400000, guid: f6a818da2d36e5047845b373d6d28545, type: 2}
   itemEffectObject: {fileID: 0}

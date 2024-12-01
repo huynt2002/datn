@@ -20,14 +20,45 @@ public class GameManager : MonoBehaviour
 
     public delegate void EndGame();
     public EndGame lose;
+    public GameData gameData { get; private set; }
+
+    void Awake()
+    {
+        instance = this;
+        LoadGame();
+    }
 
     void Start()
     {
-        instance = this;
         mainCanvasManager = GetComponent<MainCanvasManager>();
         playerInfo = false;
         pause = false;
         isBossFight = false;
+    }
+
+    void LoadGame()
+    {
+        gameData = SaveLoad.LoadGame();
+        if (gameData == null)
+        {
+            gameData = new GameData();
+            gameData.Default();
+            gameData.tutorial = true;
+        }
+    }
+
+    void SaveDefault()
+    {
+        gameData = new GameData();
+        gameData.Default();
+        SaveLoad.SaveGame(gameData);
+    }
+
+    public void SaveGame()
+    {
+        gameData = new GameData();
+        gameData.UpdateGameState(PlayerStats.instance, LevelManager.instance.currentLevelIndex, InventoryManager.instance);
+        SaveLoad.SaveGame(gameData);
     }
 
     // Update is called once per frame
@@ -51,6 +82,7 @@ public class GameManager : MonoBehaviour
         isWin = false;
         Resume();
         LevelManager.instance?.Transis();
+        SaveDefault();
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("PlayScene");
         EventSystem.current.SetSelectedGameObject(null);

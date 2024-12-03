@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Item2
   m_EditorClassIdentifier: 
   id: 2
-  itemName: Wooden Shield
+  itemName: Rusted Shield
   ATKAmount: 0
   HPAmount: 20
   description: Increase 20 Max HP
-  icon: {fileID: 21300000, guid: 615f3cdaa1374bd4db14286066f31cde, type: 3}
+  icon: {fileID: 21300000, guid: fc117b2779853164cb5aa968960de74e, type: 3}
   itemType: 0
   itemEffectObject: {fileID: 0}

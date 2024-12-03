@@ -17,6 +17,6 @@ MonoBehaviour:
   ATKAmount: 50
   HPAmount: 50
   description: Legend Stone. Icrease 50%DMG and 50HP.
-  icon: {fileID: 21300000, guid: 70e92df91699f664ab5bad7bf4723022, type: 3}
+  icon: {fileID: 21300000, guid: 0fe9cdc332a865d40ad70da123f73001, type: 3}
   itemType: 2
   itemEffectObject: {fileID: 0}

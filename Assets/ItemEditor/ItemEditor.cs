@@ -1,14 +1,17 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
 #if UNITY_EDITOR
 public class ItemEditor : EditorWindow
 {
-    private Item selectedItem;
-
-    private List<Item> items = new List<Item>();
+    private ItemStats selectedItem;
+    ItemPool itemPool;
+    string folderPath = "Assets/ScriptableData/Item/";
+    private List<ItemStats> items = new List<ItemStats>();
     private Vector2 scrollPosition;
 
     [MenuItem("Tools/Item Editor")]
@@ -22,18 +25,20 @@ public class ItemEditor : EditorWindow
     {
         GUILayout.Label("Item Editor", EditorStyles.boldLabel);
 
-        selectedItem = (Item)EditorGUILayout.ObjectField("Item", selectedItem, typeof(Item), false);
+        selectedItem = (ItemStats)EditorGUILayout.ObjectField("Item", selectedItem, typeof(ItemStats), false);
 
         if (selectedItem != null)
         {
             EditorGUI.BeginChangeCheck();
 
+            selectedItem.id = EditorGUILayout.TextField("ID", selectedItem.id);
             selectedItem.itemName = EditorGUILayout.TextField("Item Name", selectedItem.itemName);
             selectedItem.icon = (Sprite)EditorGUILayout.ObjectField("Icon", selectedItem.icon, typeof(Sprite), false);
-            selectedItem.id = EditorGUILayout.IntField("ID", selectedItem.id);
             selectedItem.description = EditorGUILayout.TextField("Description", selectedItem.description);
-            selectedItem.itemType = (Item.ItemType)EditorGUILayout.EnumPopup("Item Type", selectedItem.itemType);
-            selectedItem.value = EditorGUILayout.IntField("Value", selectedItem.value);
+            selectedItem.itemType = (ItemStats.ItemType)EditorGUILayout.EnumPopup("Item Type", selectedItem.itemType);
+            selectedItem.ATKAmount = EditorGUILayout.FloatField("ATK Amount", selectedItem.ATKAmount);
+            selectedItem.HPAmount = EditorGUILayout.FloatField("HP Amount", selectedItem.HPAmount);
+            selectedItem.itemEffectObject = (GameObject)EditorGUILayout.ObjectField("Item", selectedItem.itemEffectObject, typeof(GameObject), false);
 
             if (EditorGUI.EndChangeCheck())
             {
@@ -92,11 +97,12 @@ public class ItemEditor : EditorWindow
 
     private void CreateNewItem(string itemName)
     {
-        Item newItem = CreateInstance<Item>();
+        ItemStats newItem = CreateInstance<ItemStats>();
         newItem.itemName = itemName;
-        string path = $"Assets/ItemEditor/{itemName}.asset";
+        string path = folderPath + $"{itemName}.asset";
         path = AssetDatabase.GenerateUniqueAssetPath(path);
-
+        itemPool.items.Add(newItem);
+        itemPool.items.Distinct();
         AssetDatabase.CreateAsset(newItem, path);
         AssetDatabase.SaveAssets();
         LoadAllItems();
@@ -109,14 +115,17 @@ public class ItemEditor : EditorWindow
 
     private void LoadAllItems()
     {
-        items = AssetDatabase.FindAssets("t:Item")
-            .Select(guid => AssetDatabase.LoadAssetAtPath<Item>(AssetDatabase.GUIDToAssetPath(guid)))
+        items = AssetDatabase.FindAssets("t:ItemStats")
+            .Select(guid => AssetDatabase.LoadAssetAtPath<ItemStats>(AssetDatabase.GUIDToAssetPath(guid)))
             .ToList();
+        itemPool = AssetDatabase.FindAssets("t:ItemPool")
+            .Select(guid => AssetDatabase.LoadAssetAtPath<ItemPool>(AssetDatabase.GUIDToAssetPath(guid))).ToList()[0];
     }
 
-    private void DeleteItem(Item item)
+    private void DeleteItem(ItemStats item)
     {
         string path = AssetDatabase.GetAssetPath(item);
+        itemPool.items.Remove(item);
         AssetDatabase.DeleteAsset(path);
         AssetDatabase.SaveAssets();
         LoadAllItems();

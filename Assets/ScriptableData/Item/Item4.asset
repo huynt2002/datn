@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Item4
   m_EditorClassIdentifier: 
   id: 4
-  itemName: Belt of The Giant
+  itemName: Wolf Helmet
   ATKAmount: 10
   HPAmount: 30
-  description: A giant belt. Increase 30 Max HP and 10% ATK
-  icon: {fileID: 21300000, guid: 6858a15e5082cf34b9ee3167e90403d3, type: 3}
+  description: Increase 30 Max HP and 10% ATK
+  icon: {fileID: 21300000, guid: 857e73d112fe35a4da2b384f7b47b865, type: 3}
   itemType: 1
   itemEffectObject: {fileID: 0}

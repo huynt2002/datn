@@ -28,7 +28,7 @@ public class InventoryManager : MonoBehaviour
             var ids = GameManager.instance.gameData.inventoryItemIds;
             foreach (var itemId in ids)
             {
-                var item = SpawnManager.instance.itemDataList.Find(e => e.id == itemId);
+                var item = SpawnManager.instance.itemDataList.items.Find(e => e.id == itemId);
                 if (item)
                 {
                     AddItem(item, false);

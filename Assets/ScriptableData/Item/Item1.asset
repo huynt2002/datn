@@ -17,6 +17,6 @@ MonoBehaviour:
   ATKAmount: 10
   HPAmount: 0
   description: Increase 10% ATK
-  icon: {fileID: 21300166, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
+  icon: {fileID: 21300000, guid: 01464cf7cba1296408e9b7aa635badbc, type: 3}
   itemType: 0
   itemEffectObject: {fileID: 0}

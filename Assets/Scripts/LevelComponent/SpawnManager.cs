@@ -13,7 +13,7 @@ public class SpawnManager : MonoBehaviour
 
     [Header("Item")]
     [SerializeField] GameObject itemPre;
-    [SerializeField] public List<ItemStats> itemDataList;
+    [SerializeField] public ItemPool itemDataList;
     List<ItemStats> itemCommonDataList;
     List<ItemStats> itemRareDataList;
     List<ItemStats> itemLegendDataList;
@@ -93,7 +93,7 @@ public class SpawnManager : MonoBehaviour
         itemCommonDataList = new List<ItemStats>();
         itemRareDataList = new List<ItemStats>();
         itemLegendDataList = new List<ItemStats>();
-        foreach (var item in itemDataList)
+        foreach (var item in itemDataList.items)
         {
             switch (item.itemType)
             {
@@ -164,8 +164,8 @@ public class SpawnManager : MonoBehaviour
                 itemStats = itemLegendDataList[i];
                 break;
             default:
-                i = Random.Range(0, itemDataList.Count);
-                itemStats = itemDataList[i];
+                i = Random.Range(0, itemDataList.items.Count);
+                itemStats = itemDataList.items[i];
                 break;
         }
         return itemStats;

@@ -521,13 +521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiHPCanvas: {fileID: 186989221232309805, guid: 3e7da16ac90ae1d469f64a6b3e020aa1, type: 3}
   itemPre: {fileID: 6128163989061940302, guid: 06c818b1c247712439bf19af105b1c3a, type: 3}
-  itemDataList:
-  - {fileID: 11400000, guid: 179dd3b270a208e4784045987c1af67f, type: 2}
-  - {fileID: 11400000, guid: b5f39298deec65a4285bb62820cad1e6, type: 2}
-  - {fileID: 11400000, guid: 476c816e4b8e8fc47b7046d99519acba, type: 2}
-  - {fileID: 11400000, guid: 33b8b6562f8dfeb4aa3d05d8c4a98a12, type: 2}
-  - {fileID: 11400000, guid: c10e34373bd587648a76f8c4bc32664a, type: 2}
-  - {fileID: 11400000, guid: da28d47982b510d42b16515906d8de83, type: 2}
+  itemDataList: {fileID: 11400000, guid: 19bef478178b1a348a1c17c6b3f8f62d, type: 2}
   wooden: {fileID: 5915392942495230327, guid: f777823b15d30cd4095a8f148f19de62, type: 3}
   silver: {fileID: 7774113971667041036, guid: 08ba3b5162bdba143aa23e5b15b357e7, type: 3}
   gold: {fileID: 6861008421320383634, guid: e345db5df18f52b468c22a613eeb6a71, type: 3}

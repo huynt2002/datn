@@ -19,7 +19,7 @@ public class ItemStats : ScriptableObject
     public Sprite icon;
     public ItemType itemType;
     public GameObject itemEffectObject;
-    public void ApplyItemStats(PlayerStats e)
+    public void ApplyItemStats(Entity e)
     {
         e.IncreaseHP(hpAmount);
         e.IncreaseDmg(damageAmount);
@@ -28,7 +28,7 @@ public class ItemStats : ScriptableObject
         e.IncreaseSpeed(speed);
     }
 
-    public void RemoveItemStats(PlayerStats e)
+    public void RemoveItemStats(Entity e)
     {
         e.DecreaseHP(hpAmount);
         e.DecreaseDmg(damageAmount);

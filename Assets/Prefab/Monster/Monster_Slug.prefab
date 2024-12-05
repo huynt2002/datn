@@ -285,7 +285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbea3b6a6603629499edf1b272075766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 2
 --- !u!114 &5335279510781932186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,6 +429,7 @@ GameObject:
   - component: {fileID: 4350943058270930825}
   - component: {fileID: 3987079374739049985}
   - component: {fileID: 1591170857690577220}
+  - component: {fileID: 7095634824953560080}
   m_Layer: 0
   m_Name: Monster_Slug
   m_TagString: Untagged
@@ -599,13 +599,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168c71f5bae7b8c47910f629154413e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationController: {fileID: 7095634824953560080}
   detectArea: {fileID: 0}
   canChase: 1
   canMove: 1
+  canGetHit: 0
+  runWhenCD: 0
   moveTarget: {x: 0, y: 0}
-  facingDirection: 0
-  faceRight: 0
+  isIdle: 0
   idleTime: 1
   attack: 0
   currentAttackSkill: {fileID: 0}
-  canGetHit: 0
+  getHitTime: 0
+--- !u!114 &7095634824953560080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6273467602576250793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a2a74ede191df4c98415d94ba14d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: 7400000, guid: 58cdd911faf430842a57c33fffee9163, type: 2}
+  move: {fileID: 7400000, guid: 14b95195b447b3e4391ceaefc2b0048e, type: 2}
+  jump: {fileID: 7400000, guid: 920f15f44d72e5648ad42c0e2490ddcc, type: 2}
+  getHit: {fileID: 7400000, guid: 920f15f44d72e5648ad42c0e2490ddcc, type: 2}
+  dead: {fileID: 7400000, guid: cadbd1c4090380649b6510e36359e65e, type: 2}
+  dash: {fileID: 0}
+  skill: {fileID: 0}
+  attack1: {fileID: 0}
+  attack2: {fileID: 0}
+  attack3: {fileID: 0}

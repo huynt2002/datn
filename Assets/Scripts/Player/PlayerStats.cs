@@ -6,8 +6,6 @@ using UnityEngine;
 public class PlayerStats : Entity
 {
     public static PlayerStats instance;
-    public float criticalChance { get; private set; }
-    public float criticalDamage { get; private set; }
     public int coin { get; private set; }
     public int gem { get; private set; }
     // Start is called before the first frame update
@@ -59,10 +57,12 @@ public class PlayerStats : Entity
     {
         maxHP = 100;
         currentHP = maxHP;
-        speed = 5;
+        speed = 3f;
         isAlive = true;
-        damage = 15;
+        damage = 15f;
         SetOutPutDamage();
+        criticalChance = 5f;
+        criticalDamage = 50f;
         coin = 0;
         gem = 0;
     }
@@ -83,13 +83,4 @@ public class PlayerStats : Entity
         coin += c;
     }
 
-    public void IncreaseCriticalChance(float amount)
-    {
-        criticalChance += amount;
-    }
-
-    public void IncreaseCriticalDamage(float amount)
-    {
-        criticalDamage += amount;
-    }
 }

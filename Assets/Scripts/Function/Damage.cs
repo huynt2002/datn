@@ -48,10 +48,11 @@ public class Damage : MonoBehaviour
     protected void GetCriticalHit()
     {
         var p = Random.Range(0, 100);
-        if (p <= 10)
+        if (p <= entity.criticalChance)
         {
-            damage = damage * 2;
+            damage = damage * entity.criticalDamage / 100;
             isCritical = true;
+            return;
         }
         isCritical = false;
     }

@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 8039585494973490209}
   - component: {fileID: 1223366586997145354}
   - component: {fileID: 2136855161496792011}
+  - component: {fileID: 1768085093432224181}
   m_Layer: 0
   m_Name: Monster_Mushroom
   m_TagString: Untagged
@@ -165,17 +166,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168c71f5bae7b8c47910f629154413e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationController: {fileID: 1768085093432224181}
   detectArea: {fileID: 0}
   canChase: 1
   canMove: 1
   canGetHit: 1
   runWhenCD: 1
   moveTarget: {x: 0, y: 0}
-  facingDirection: 0
-  faceRight: 0
-  idleTime: 1
+  isIdle: 0
+  idleTime: 4
   attack: 0
   currentAttackSkill: {fileID: 0}
+  getHitTime: 0.3
 --- !u!212 &1801745211002167633
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -294,6 +296,28 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 2056
+--- !u!114 &1768085093432224181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3114575383660464274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a2a74ede191df4c98415d94ba14d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: 7400000, guid: 99daec46e2a19fb40bde089e604a446f, type: 2}
+  move: {fileID: 7400000, guid: a744324966e47894d82de23f0ac3ea2e, type: 2}
+  jump: {fileID: 7400000, guid: 560f68b90e3ab9243b699fa198e55327, type: 2}
+  getHit: {fileID: 7400000, guid: aad3b8f95cbcc634a99e3b8341ba0dbc, type: 2}
+  dead: {fileID: 7400000, guid: 7393529114830c54190d8875b84c6eb1, type: 2}
+  dash: {fileID: 0}
+  skill: {fileID: 0}
+  attack1: {fileID: 0}
+  attack2: {fileID: 0}
+  attack3: {fileID: 0}
 --- !u!1 &3497351677276740664
 GameObject:
   m_ObjectHideFlags: 0

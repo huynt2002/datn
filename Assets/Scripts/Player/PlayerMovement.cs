@@ -9,13 +9,13 @@ public class PlayerMovement : MonoBehaviour
     Entity entity;
     [Header("Components")]
     [SerializeField] Rigidbody2D body;
-    [SerializeField] PlayerAnimationController animatorController;
+    [SerializeField] AnimationController animationController;
     [SerializeField] GroundSensor groundSensor;
     bool isGrounded => groundSensor.isGrounded;
     [SerializeField] GameObject playerCollider;
     [Header("Move")]
     [SerializeField] bool isMove;
-    [SerializeField] float speed = 3f;
+    [SerializeField] float speed => entity.speed;
     float horizontal;
     int facingDirection = 1;
     public bool isOneWay;
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
     {
         instance = this;
         entity = GetComponent<Entity>();
-        animatorController = GetComponent<PlayerAnimationController>();
+        animationController = GetComponent<AnimationController>();
     }
 
     // Update is called once per frame
@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator PlayerGetHit()
     {
-        animatorController.PlayGetHitAnimation();
+        animationController.PlayGetHitAnimation();
         ResetSkill();
         yield return new WaitForSeconds(getHitTime);
         entity.ResetGetHit();
@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        animatorController.PlayIdleAnimation();
+        animationController.PlayIdleAnimation();
     }
 
     public void Attack(InputAction.CallbackContext context)
@@ -141,7 +141,7 @@ public class PlayerMovement : MonoBehaviour
         }
         isAttack = true;
         comboTimer = comboDelay;
-        animatorController.PlayAttackAnimation(comboStep);
+        animationController.PlayAttackAnimation(comboStep);
     }
 
     void UpdateComboAttackTimer()
@@ -181,7 +181,7 @@ public class PlayerMovement : MonoBehaviour
             isSkill = true;
             canUseSkill = false;
             cdCount = skillCDTime;
-            animatorController.PlaySkillAnimation();
+            animationController.PlaySkillAnimation();
         }
     }
 
@@ -200,7 +200,7 @@ public class PlayerMovement : MonoBehaviour
     }
     IEnumerator PerformDash()
     {
-        animatorController.PlayDashAnimation();
+        animationController.PlayDashAnimation();
         Flip();
         ResetSkill();
         canDash = false;
@@ -229,7 +229,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        animatorController.PlayJumpAnimation();
+        animationController.PlayJumpAnimation();
     }
     private void Move()
     {
@@ -238,7 +238,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isMove = true;
             body.velocity = new Vector2(horizontal * speed, body.velocity.y);
-            if (isGrounded) { animatorController.PlayMoveAnimation(); }
+            if (isGrounded) { animationController.PlayMoveAnimation(); }
             Flip();
         }
         else

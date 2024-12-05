@@ -1,11 +1,12 @@
 using UnityEngine;
 
-public class PlayerAnimationController : MonoBehaviour
+public class AnimationController : MonoBehaviour
 {
     [SerializeField] AnimationClip idle;
     [SerializeField] AnimationClip move;
     [SerializeField] AnimationClip jump;
     [SerializeField] AnimationClip getHit;
+    [SerializeField] AnimationClip dead;
     [SerializeField] AnimationClip dash;
     [SerializeField] AnimationClip skill;
     [SerializeField] AnimationClip attack1;
@@ -52,6 +53,11 @@ public class PlayerAnimationController : MonoBehaviour
     public void PlayGetHitAnimation()
     {
         PlayAnimation(getHit.name);
+    }
+
+    public void PlayDeadAnimation()
+    {
+        PlayAnimation(dead.name);
     }
 
 

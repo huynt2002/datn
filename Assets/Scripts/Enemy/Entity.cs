@@ -13,6 +13,8 @@ public class Entity : MonoBehaviour
     public float speed { get; protected set; }
 
     public float damage { get; protected set; }
+    public float criticalChance { get; protected set; }
+    public float criticalDamage { get; protected set; }
     public float outputDamage { get; protected set; }
 
     public bool isAlive { get; protected set; }
@@ -119,6 +121,16 @@ public class Entity : MonoBehaviour
     public void IncreaseSpeed(float value)
     {
         speed += value;
+    }
+
+    public void IncreaseCriticalChance(float amount)
+    {
+        criticalChance += amount;
+    }
+
+    public void IncreaseCriticalDamage(float amount)
+    {
+        criticalDamage += amount;
     }
 
     public void HealHP(float amount)

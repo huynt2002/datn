@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     public List<KeyValuePair<ItemStats, GameObject>> items { get; private set; } = new List<KeyValuePair<ItemStats, GameObject>>();
     public const int numItem = 9;
     public bool full { get; private set; }
-    PlayerStats p;
+    Entity p;
 
     [SerializeField] GameObject itemEffectContainer;
     void Awake()

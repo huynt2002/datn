@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6c87f0585ccfe4c96d73db725a5f32, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  Name: Player
-  Damage: 10
-  MaxHP: 100
-  DEF: 2
-  Speed: 0
-  numAttack: 0
+  damage: 15
+  maxHP: 100
+  speed: 5
+  criticalChance: 5
+  criticalDamage: 50

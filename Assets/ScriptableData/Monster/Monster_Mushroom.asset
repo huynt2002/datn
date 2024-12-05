@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6c87f0585ccfe4c96d73db725a5f32, type: 3}
   m_Name: Monster_Mushroom
   m_EditorClassIdentifier: 
-  Damage: 5
-  MaxHP: 100
-  Speed: 2
+  damage: 10
+  maxHP: 100
+  speed: 3
+  criticalChance: 0
+  criticalDamage: 0

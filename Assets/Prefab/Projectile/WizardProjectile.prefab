@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5754028136903867956}
   - component: {fileID: 6919933297526444068}
   - component: {fileID: 6747427363504778364}
+  - component: {fileID: 2468199702120521117}
   m_Layer: 18
   m_Name: WizardProjectile
   m_TagString: Untagged
@@ -184,3 +185,15 @@ MonoBehaviour:
   projectile: {fileID: 6919933297526444068}
   target: 0
   nearestDistanceSqr: 30
+--- !u!114 &2468199702120521117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5828442611997034025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbea3b6a6603629499edf1b272075766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

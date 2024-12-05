@@ -583,13 +583,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 571229959066391984}
-  animatorController: {fileID: 0}
+  animationController: {fileID: 2088941520209255501}
   groundSensor: {fileID: 67571829878162767}
   playerCollider: {fileID: 7772992961894565131}
   isMove: 0
-  speed: 5
   isOneWay: 0
-  jumpForce: 13
+  jumpForce: 12.85
   maxJump: 1
   dashSpeed: 20
   dashDuration: 0.25
@@ -616,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7baa3bfcb0d19514fb39adae58fa6892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: 4747a7913e9398b40a3501bd8f93ce65, type: 2}
 --- !u!114 &2088941520209255501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,6 +632,7 @@ MonoBehaviour:
   move: {fileID: 7400000, guid: e46e8b310d43edf449bfee2db36e91a7, type: 2}
   jump: {fileID: 7400000, guid: 0fcf703f0aaacf846b471b0fb5affc29, type: 2}
   getHit: {fileID: 7400000, guid: a1c7792929f58634eb919297d6b892c6, type: 2}
+  dead: {fileID: 0}
   dash: {fileID: 7400000, guid: 3dbbcf0bac2eb50428e407aca08ba873, type: 2}
   skill: {fileID: 7400000, guid: 22e2c0f22a5689d4098699003b07a9d9, type: 2}
   attack1: {fileID: 7400000, guid: 89376ec29b8b2c849bd91d9f6cc1f05e, type: 2}
@@ -795,7 +795,7 @@ GameObject:
   - component: {fileID: 6570085737589053871}
   - component: {fileID: 6545160963128075612}
   m_Layer: 21
-  m_Name: 9-Sliced
+  m_Name: minimap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -992,7 +992,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 7772992961894565131}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c47f9488444069a4f918cb0ac9d98b99, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1046,7 +1046,7 @@ MonoBehaviour:
   - {x: 0.25, y: -0.555, z: 0}
   m_ShapePathHash: 1590984020
   m_Mesh: {fileID: 0}
-  m_InstanceId: -7212
+  m_InstanceId: -100898
   m_LocalBounds:
     m_Center: {x: -0.0006250441, y: -0.004284084, z: 0}
     m_Extent: {x: 0.25919324, y: 0.5507159, z: 0}

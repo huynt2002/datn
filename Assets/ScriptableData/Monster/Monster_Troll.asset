@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6c87f0585ccfe4c96d73db725a5f32, type: 3}
   m_Name: Monster_Troll
   m_EditorClassIdentifier: 
-  Damage: 10
-  MaxHP: 150
-  Speed: 3
+  damage: 15
+  maxHP: 200
+  speed: 5
+  criticalChance: 0
+  criticalDamage: 0

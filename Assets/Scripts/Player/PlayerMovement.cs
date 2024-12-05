@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontal;
     int facingDirection = 1;
     public bool isOneWay;
+    bool canOneWay;
     [Header("Jump")]
     [SerializeField] float jumpForce = 5f;
     [SerializeField] int maxJump = 1;
@@ -255,6 +256,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed)
         {
+            if (canOneWay)
+            {
+                if (groundSensor.platformCollider)
+                {
+                    foreach (var i in playerCollider.GetComponents<Collider2D>()) Physics2D.IgnoreCollision(i, groundSensor.platformCollider);
+                    isOneWay = true;
+                    return;
+                }
+            }
             if (remainingJump > 0)
             {
                 SoundManager.instance.PlayJumpSound(gameObject.transform);
@@ -331,10 +341,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void OneWayPlatform(InputAction.CallbackContext context)
     {
-        if (groundSensor.platformCollider)
-        {
-            foreach (var i in playerCollider.GetComponents<Collider2D>()) Physics2D.IgnoreCollision(i, groundSensor.platformCollider);
-            isOneWay = true;
-        }
+        canOneWay = context.phase == InputActionPhase.Performed;
     }
 }

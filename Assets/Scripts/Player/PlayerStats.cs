@@ -55,14 +55,7 @@ public class PlayerStats : Entity
 
     public override void SetDefault()
     {
-        maxHP = 100;
-        currentHP = maxHP;
-        speed = 3f;
-        isAlive = true;
-        damage = 15f;
-        SetOutPutDamage();
-        criticalChance = 5f;
-        criticalDamage = 50f;
+        base.SetDefault();
         coin = 0;
         gem = 0;
     }

@@ -52,11 +52,11 @@ public class DetectArea : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
             foreach (var mon in monsters)
             {
-                mon.PlayerDetected(other.gameObject.GetComponentInParent<Entity>().transform);
+                mon.PlayerDetected(other.GetComponentInParent<Entity>().transform);
             }
         }
     }

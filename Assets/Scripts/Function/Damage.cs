@@ -47,6 +47,10 @@ public class Damage : MonoBehaviour
 
     protected void GetCriticalHit()
     {
+        if (!entity)
+        {
+            return;
+        }
         var p = Random.Range(0, 100);
         if (p <= entity.criticalChance)
         {

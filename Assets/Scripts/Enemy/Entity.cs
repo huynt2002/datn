@@ -7,15 +7,15 @@ public class Entity : MonoBehaviour
 {
     [Header("Stats")]
     public EntityStats stats;
-    public float CurrentHP { get; protected set; }
-    public float MaxHP { get; protected set; }
+    public float currentHP { get; protected set; }
+    public float maxHP { get; protected set; }
 
     public float speed { get; protected set; }
 
-    public float Damage { get; protected set; }
-    public float outPutDamage { get; protected set; }
+    public float damage { get; protected set; }
+    public float outputDamage { get; protected set; }
 
-    public bool IsAlive { get; protected set; }
+    public bool isAlive { get; protected set; }
     public bool invicible { get; protected set; }
 
     public bool getHit { get; protected set; }
@@ -27,10 +27,10 @@ public class Entity : MonoBehaviour
     virtual public void SetDefault()
     {
         if (stats == null) return;
-        Damage = stats.Damage;
-        MaxHP = stats.MaxHP;
-        CurrentHP = MaxHP;
-        IsAlive = true;
+        damage = stats.Damage;
+        maxHP = stats.MaxHP;
+        currentHP = maxHP;
+        isAlive = true;
         getHit = false;
         speed = stats.Speed;
         SetOutPutDamage();
@@ -46,18 +46,18 @@ public class Entity : MonoBehaviour
             .SpawnParticalEffect(SpawnManager.ParticleType.BloodSmall, Helper.GetPos(gameObject));
         var ui = GetComponent<Monster_Behavior>()?.GetComponentInChildren<DisplayHP>();
         if (ui != null) ui.show = true;
-        CurrentHP -= damage;
-        if (CurrentHP <= 0)
+        currentHP -= damage;
+        if (currentHP <= 0)
         {
-            CurrentHP = 0;
-            IsAlive = false;
+            currentHP = 0;
+            isAlive = false;
             Dead();
         }
     }
 
     public void DealDamage(Entity entity)
     {
-        entity?.TakeDamage(outPutDamage, Defines.DamageType.Entity);
+        entity?.TakeDamage(outputDamage, Defines.DamageType.Entity);
     }
 
     protected virtual void Dead()
@@ -88,42 +88,55 @@ public class Entity : MonoBehaviour
 
     public void SetOutPutDamage(float dame = 0)
     {
-        outPutDamage = Damage + dame / Damage;
+        outputDamage = damage + dame / damage;
     }
 
     public void SetHp(float hp)
     {
-        MaxHP = hp;
+        maxHP = hp;
     }
 
     public void IncreaseHP(float amount)
     {
-        MaxHP += amount;
-        CurrentHP += amount;
+        maxHP += amount;
+        currentHP += amount;
     }
 
     public void DecreaseHP(float amount)
     {
-        MaxHP -= amount;
-        CurrentHP -= amount;
+        maxHP -= amount;
+        var remain = currentHP - amount;
+        if (remain > 0)
+        {
+            currentHP = remain;
+        }
+        else
+        {
+            currentHP = 1;
+        }
+    }
+
+    public void IncreaseSpeed(float value)
+    {
+        speed += value;
     }
 
     public void HealHP(float amount)
     {
-        CurrentHP += amount;
-        if (CurrentHP > MaxHP) CurrentHP = MaxHP;
+        currentHP += amount;
+        if (currentHP > maxHP) currentHP = maxHP;
         DamagePopUpManager.instance?.Create(transform.position, amount, false, true);
     }
 
     public void IncreaseDmg(float dmg)
     {
-        Damage = Damage * (100 + dmg) / 100;
+        damage = damage * (100 + dmg) / 100;
         SetOutPutDamage();
     }
 
     public void DecreaseDmg(float dmg)
     {
-        Damage = Damage * 100 / (100 + dmg);
+        damage = damage * 100 / (100 + dmg);
         SetOutPutDamage();
     }
 

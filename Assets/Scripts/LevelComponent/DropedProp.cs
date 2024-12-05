@@ -69,8 +69,7 @@ public class DropedProp : MonoBehaviour
     {
         PlayerStats e = PlayerStats.instance;
         var amount = Random.Range(100, 300);
-        //how much coin and gem
-        e.SetCoin(e.coin + amount);
+        e.AddCoin(amount);
         SoundManager.instance.PlayCoinSound(gameObject.transform);
         Destroy(gameObject);
     }
@@ -79,8 +78,7 @@ public class DropedProp : MonoBehaviour
     {
         PlayerStats e = PlayerStats.instance;
         var amount = Random.Range(10, 50);
-        //how much coin and gem
-        e.SetGem(e.gem + amount);
+        e.AddGem(amount);
         Destroy(gameObject);
     }
 }

@@ -61,7 +61,7 @@ public class BoDBehavior : Monster_Behavior
         if (tmp >= 60)
         {
             currentAttackSkill = normalAttack;
-            if (entity.CurrentHP / entity.MaxHP <= 0.5) currentAttackSkill = comboAttack;
+            if (entity.currentHP / entity.maxHP <= 0.5) currentAttackSkill = comboAttack;
         }
         else if (tmp >= 40)
         {
@@ -74,7 +74,7 @@ public class BoDBehavior : Monster_Behavior
         else
         {
             currentAttackSkill = comboAttack;
-            if (entity.CurrentHP / entity.MaxHP > 0.5) currentAttackSkill = normalAttack;
+            if (entity.currentHP / entity.maxHP > 0.5) currentAttackSkill = normalAttack;
         }
     }
     public void CoolDown()
@@ -101,7 +101,7 @@ public class BoDBehavior : Monster_Behavior
 
     void TeleportToPlayer()
     {
-        if (entity.CurrentHP / entity.MaxHP > 0.5)
+        if (entity.currentHP / entity.maxHP > 0.5)
         {
             if (PlayerStats.instance.transform.localScale.x == 1)
             {

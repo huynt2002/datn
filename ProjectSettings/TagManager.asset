@@ -11,6 +11,7 @@ TagManager:
   - InfoCanvas
   - GameManager
   - ChestPos
+  - PlayerHitBox
   layers:
   - Default
   - TransparentFX

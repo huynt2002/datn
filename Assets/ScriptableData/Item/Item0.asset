@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   itemName: Wood Magic Ring
-  ATKAmount: 5
-  HPAmount: 10
-  description: 'Increase 10HP and 5%ATK '
+  damageAmount: 0
+  hpAmount: 0
+  description: Increase 10% CritRate
+  criticalChance: 10
+  criticalDamage: 0
+  speed: 0
   icon: {fileID: 21300000, guid: 75fb31b7a2d667946a80fff38d8e98ca, type: 3}
   itemType: 0
-  itemEffectObject: {fileID: 3619892523627480844, guid: bb827c06a7760c949be67e2253474c16, type: 3}
+  itemEffectObject: {fileID: 0}

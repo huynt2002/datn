@@ -67,6 +67,6 @@ public class DisplayHP : MonoBehaviour
     }
     void ManageHP()
     {
-        hpBar.value = (float)entity.CurrentHP / entity.MaxHP;
+        hpBar.value = (float)entity.currentHP / entity.maxHP;
     }
 }

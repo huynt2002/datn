@@ -37,7 +37,7 @@ public class Damage : MonoBehaviour
         switch (damageType)
         {
             case Defines.DamageType.Entity:
-                damage = entity.outPutDamage;
+                damage = entity.outputDamage;
                 break;
             case Defines.DamageType.Projectile:
                 damage = projectile.damage;

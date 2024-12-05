@@ -18,7 +18,7 @@ public class GameData
         tutorial = false;
         var data = PlayerStats.instance;
         data.SetDefault();
-        playerStats = new PlayerData(data.CurrentHP, data.MaxHP, data.Damage, data.speed, data.coin, data.gem);
+        playerStats = new PlayerData(data.currentHP, data.maxHP, data.damage, data.speed, data.coin, data.gem, data.criticalChance, data.criticalDamage);
         currentLevelIndex = 0;
         inventoryItemIds.Clear();
     }
@@ -31,7 +31,7 @@ public class GameData
         }
         this.currentLevelIndex = currentLevelIndex;
         var data = playerStats;
-        this.playerStats = new PlayerData(data.CurrentHP, data.MaxHP, data.Damage, data.speed, data.coin, data.gem);
+        this.playerStats = new PlayerData(data.currentHP, data.maxHP, data.damage, data.speed, data.coin, data.gem, data.criticalChance, data.criticalDamage);
         this.tutorial = tutorial;
     }
 }
@@ -39,23 +39,27 @@ public class GameData
 [Serializable]
 public class PlayerData
 {
-    public float CurrentHP { get; protected set; }
-    public float MaxHP { get; protected set; }
+    public float currentHP { get; protected set; }
+    public float maxHP { get; protected set; }
 
     public float speed { get; protected set; }
 
-    public float Damage { get; protected set; }
+    public float damage { get; protected set; }
+    public float criticalChance { get; private set; }
+    public float criticalDamage { get; private set; }
     public int coin;
     public int gem;
 
-    public PlayerData(float CurrentHP, float MaxHP, float Damage, float speed, int coin, int gem)
+    public PlayerData(float currentHP, float maxHP, float damage, float speed, int coin, int gem, float criticalChance, float criticalDamage)
     {
-        this.CurrentHP = CurrentHP;
-        this.MaxHP = MaxHP;
-        this.Damage = Damage;
+        this.currentHP = currentHP;
+        this.maxHP = maxHP;
+        this.damage = damage;
         this.speed = speed;
         this.coin = coin;
         this.gem = gem;
+        this.criticalChance = criticalChance;
+        this.criticalDamage = criticalDamage;
     }
 }
 

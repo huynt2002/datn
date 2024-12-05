@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   itemName: Wolf Helmet
-  ATKAmount: 10
-  HPAmount: 30
-  description: Increase 30 Max HP and 10% ATK
+  damageAmount: 0
+  hpAmount: 30
+  description: Increase 30 Max HP and Speed by 1
+  criticalChance: 0
+  criticalDamage: 0
+  speed: 1
   icon: {fileID: 21300000, guid: 857e73d112fe35a4da2b384f7b47b865, type: 3}
   itemType: 1
   itemEffectObject: {fileID: 0}

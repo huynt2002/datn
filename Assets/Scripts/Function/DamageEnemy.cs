@@ -9,7 +9,7 @@ public class DamageEnemy : Damage
         Entity target = other.GetComponentInParent<Entity>();
         UpdateDamage();
         GetCriticalHit();
-        if (target.IsAlive)
+        if (target.isAlive)
         {
             //deal damage
             Effect(Helper.GetPos(target.gameObject));

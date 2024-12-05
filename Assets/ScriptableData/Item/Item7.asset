@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 7
   itemName: Silver Armor
-  ATKAmount: 0
-  HPAmount: 40
-  description: Increase 40HP
+  damageAmount: 0
+  hpAmount: 0
+  description: Increase 50HP but speed decrease by 1
+  criticalChance: 0
+  criticalDamage: 0
+  speed: 0
   icon: {fileID: 21300000, guid: 5d5bc82b0ec9894418bf009c44535c95, type: 3}
   itemType: 1
   itemEffectObject: {fileID: 0}

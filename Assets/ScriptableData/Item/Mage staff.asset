@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   itemName: Wooden Staff
-  ATKAmount: 5
-  HPAmount: 10
-  description: Increase 5%ATK and 10HP
+  damageAmount: 5
+  hpAmount: 0
+  description: Increase 5%ATK, 5%CritDamage and 5%CritDamage
+  criticalChance: 5
+  criticalDamage: 5
+  speed: 0
   icon: {fileID: 21300000, guid: c4377606930726240befe26257ef9a4b, type: 3}
   itemType: 0
   itemEffectObject: {fileID: 0}

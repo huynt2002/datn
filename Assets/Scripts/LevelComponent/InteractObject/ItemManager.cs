@@ -40,7 +40,7 @@ public class ItemManager : PlayerInteract
             var coin = PlayerStats.instance.coin;
             if (coin >= cost)
             {
-                PlayerStats.instance.SetCoin(coin - cost);
+                PlayerStats.instance.AddCoin(-cost);
                 isSale = false;
                 GetPickedUp(InventoryManager.instance);
             }

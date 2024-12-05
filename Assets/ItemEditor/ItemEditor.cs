@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography;
 using UnityEditor;
 using UnityEngine;
 
@@ -36,9 +37,12 @@ public class ItemEditor : EditorWindow
             selectedItem.icon = (Sprite)EditorGUILayout.ObjectField("Icon", selectedItem.icon, typeof(Sprite), false);
             selectedItem.description = EditorGUILayout.TextField("Description", selectedItem.description);
             selectedItem.itemType = (ItemStats.ItemType)EditorGUILayout.EnumPopup("Item Type", selectedItem.itemType);
-            selectedItem.ATKAmount = EditorGUILayout.FloatField("ATK Amount", selectedItem.ATKAmount);
-            selectedItem.HPAmount = EditorGUILayout.FloatField("HP Amount", selectedItem.HPAmount);
-            selectedItem.itemEffectObject = (GameObject)EditorGUILayout.ObjectField("Item", selectedItem.itemEffectObject, typeof(GameObject), false);
+            selectedItem.damageAmount = EditorGUILayout.FloatField("Damage", selectedItem.damageAmount);
+            selectedItem.hpAmount = EditorGUILayout.FloatField("HP", selectedItem.hpAmount);
+            selectedItem.speed = EditorGUILayout.FloatField("Speed", selectedItem.speed);
+            selectedItem.criticalChance = EditorGUILayout.FloatField("Critical Chance", selectedItem.criticalChance);
+            selectedItem.criticalDamage = EditorGUILayout.FloatField("Critical Damage", selectedItem.criticalDamage);
+            selectedItem.itemEffectObject = (GameObject)EditorGUILayout.ObjectField("ItemEffectObject", selectedItem.itemEffectObject, typeof(GameObject), false);
 
             if (EditorGUI.EndChangeCheck())
             {
@@ -64,8 +68,7 @@ public class ItemEditor : EditorWindow
             EditorGUILayout.BeginVertical("box");
 
             EditorGUILayout.BeginHorizontal();
-            item.itemName = EditorGUILayout.TextField("Item Name", item.itemName);
-
+            EditorGUILayout.LabelField(item.id, item.itemName);
             if (GUILayout.Button("Select", GUILayout.Width(60)))
             {
                 selectedItem = item;

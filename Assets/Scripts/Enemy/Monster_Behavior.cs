@@ -40,7 +40,7 @@ public class Monster_Behavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!entity.IsAlive)
+        if (!entity.isAlive)
         {
             animator.SetTrigger("dead");
             return;

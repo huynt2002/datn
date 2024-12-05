@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     public List<KeyValuePair<ItemStats, GameObject>> items { get; private set; } = new List<KeyValuePair<ItemStats, GameObject>>();
     public const int numItem = 9;
     public bool full { get; private set; }
-    Entity p;
+    PlayerStats p;
 
     [SerializeField] GameObject itemEffectContainer;
     void Awake()
@@ -17,7 +17,7 @@ public class InventoryManager : MonoBehaviour
     }
     void Start()
     {
-        p = gameObject.GetComponent<Entity>();
+        p = gameObject.GetComponent<PlayerStats>();
         LoadInventoryData();
     }
 

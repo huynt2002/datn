@@ -91,8 +91,8 @@ public class MainCanvasManager : MonoBehaviour
     void ManageHP()
     {
         if (!PlayerStats.instance) return;
-        HPBar.value = (float)PlayerStats.instance.CurrentHP / PlayerStats.instance.MaxHP;
-        hpText.text = PlayerStats.instance.CurrentHP + "/" + PlayerStats.instance.MaxHP;
+        HPBar.value = (float)PlayerStats.instance.currentHP / PlayerStats.instance.maxHP;
+        hpText.text = PlayerStats.instance.currentHP + "/" + PlayerStats.instance.maxHP;
     }
 
     void ManageCoin()
@@ -146,8 +146,8 @@ public class MainCanvasManager : MonoBehaviour
     {
         if (EventSystem.current.currentSelectedGameObject == playerAvtSelectedObj)
         {
-            hp.text = PlayerStats.instance.CurrentHP + "/" + PlayerStats.instance.MaxHP;
-            dmg.text = PlayerStats.instance.Damage + "";
+            hp.text = PlayerStats.instance.currentHP + "/" + PlayerStats.instance.maxHP;
+            dmg.text = PlayerStats.instance.damage + "";
             playerStatsInfoObject.SetActive(true);
             return;
         }

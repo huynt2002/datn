@@ -56,7 +56,7 @@ public class TrapTrigger : MonoBehaviour
         var go = other.transform.parent.gameObject;
         if (go)
         {
-            if (!go.GetComponent<Entity>().IsAlive)
+            if (!go.GetComponent<Entity>().isAlive)
             {
                 return;
             }

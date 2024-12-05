@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   itemName: Silver Arrow
-  ATKAmount: 20
-  HPAmount: 0
-  description: Increase 20% DMG
+  damageAmount: 0
+  hpAmount: 0
+  description: ' Increase 10% CritRate and 30%CritDamage'
+  criticalChance: 10
+  criticalDamage: 30
+  speed: 0
   icon: {fileID: 21300000, guid: d3318582418d75a46b3439c9776936b9, type: 3}
   itemType: 1
   itemEffectObject: {fileID: 0}

@@ -10,21 +10,30 @@ public class ItemStats : ScriptableObject
     }
     public string id;
     public string itemName;
-    public float ATKAmount;
-    public float HPAmount;
+    public float damageAmount;
+    public float hpAmount;
     public string description;
+    public float criticalChance;
+    public float criticalDamage;
+    public float speed;
     public Sprite icon;
     public ItemType itemType;
     public GameObject itemEffectObject;
-    public void ApplyItemStats(Entity e)
+    public void ApplyItemStats(PlayerStats e)
     {
-        e.IncreaseHP(HPAmount);
-        e.IncreaseDmg(ATKAmount);
+        e.IncreaseHP(hpAmount);
+        e.IncreaseDmg(damageAmount);
+        e.IncreaseCriticalChance(criticalChance);
+        e.IncreaseCriticalDamage(criticalDamage);
+        e.IncreaseSpeed(speed);
     }
 
-    public void RemoveItemStats(Entity e)
+    public void RemoveItemStats(PlayerStats e)
     {
-        e.DecreaseHP(HPAmount);
-        e.DecreaseDmg(ATKAmount);
+        e.DecreaseHP(hpAmount);
+        e.DecreaseDmg(damageAmount);
+        e.IncreaseCriticalChance(-criticalChance);
+        e.IncreaseCriticalDamage(-criticalDamage);
+        e.IncreaseSpeed(-speed);
     }
 }

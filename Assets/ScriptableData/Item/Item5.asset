@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   itemName: Ruby Stone
-  ATKAmount: 50
-  HPAmount: 50
+  damageAmount: 50
+  hpAmount: 50
   description: Legend Stone. Icrease 50%DMG and 50HP.
+  criticalChance: 0
+  criticalDamage: 0
+  speed: 0
   icon: {fileID: 21300000, guid: 0fe9cdc332a865d40ad70da123f73001, type: 3}
   itemType: 2
   itemEffectObject: {fileID: 0}

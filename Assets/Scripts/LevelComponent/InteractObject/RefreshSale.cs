@@ -16,7 +16,7 @@ public class RefreshSale : PlayerInteract
         {
             canRefresh = false;
             npc.Refresh();
-            PlayerStats.instance.SetCoin(PlayerStats.instance.coin - 100);
+            PlayerStats.instance.AddCoin(-100);
             Invoke(nameof(ResetRefresh), 1f);
         }
         else

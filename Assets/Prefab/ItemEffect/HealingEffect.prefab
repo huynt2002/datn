@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d473350cd59126d4580e54285ac50431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectCD: 3
   healNum: 1
-  healCD: 5

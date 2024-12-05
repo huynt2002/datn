@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   itemName: Rusted Shield
-  ATKAmount: 0
-  HPAmount: 20
+  damageAmount: 0
+  hpAmount: 20
   description: Increase 20 Max HP
+  criticalChance: 0
+  criticalDamage: 0
+  speed: 0
   icon: {fileID: 21300000, guid: fc117b2779853164cb5aa968960de74e, type: 3}
   itemType: 0
   itemEffectObject: {fileID: 0}

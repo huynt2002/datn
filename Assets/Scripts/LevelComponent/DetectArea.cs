@@ -5,7 +5,6 @@ using UnityEngine;
 public class DetectArea : MonoBehaviour
 {
     public List<Monster_Behavior> monsters;
-    public PlayerMovement player;
     public BoxCollider2D detectBound { get; private set; }
     // Start is called before the first frame update
     void Start()
@@ -28,11 +27,6 @@ public class DetectArea : MonoBehaviour
             if (!monsters.Contains(monster_Behavior))
                 monsters.Add(monster_Behavior);
             monster_Behavior.detectArea = this;
-            monster_Behavior.SetTarget();
-        }
-        else if (other.gameObject.tag == "Player")
-        {
-            player = other.gameObject.GetComponentInParent<PlayerMovement>();
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -46,13 +40,12 @@ public class DetectArea : MonoBehaviour
                 monsters.Remove(monster_Behavior);
             }
         }
-        else if (other.gameObject.tag == "Player")
+        else if (other.tag == "Player")
         {
             foreach (var mon in monsters)
             {
-                //mon.SetTarget();
+                mon.PlayerDetected(null);
             }
-            player = null;
         }
     }
 
@@ -63,8 +56,7 @@ public class DetectArea : MonoBehaviour
         {
             foreach (var mon in monsters)
             {
-                if (!mon.attack && mon.canChase && !mon.isIdle)
-                    mon.SetTarget(other.gameObject.GetComponentInParent<Transform>());
+                mon.PlayerDetected(other.gameObject.GetComponentInParent<Entity>().transform);
             }
         }
     }

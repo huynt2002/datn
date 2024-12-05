@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1893147181986231867}
   - component: {fileID: 4706655061740172619}
   - component: {fileID: 5754028136903867956}
-  - component: {fileID: 9039932568710796110}
+  - component: {fileID: 6919933297526444068}
+  - component: {fileID: 6747427363504778364}
   m_Layer: 18
   m_Name: WizardProjectile
   m_TagString: Untagged
@@ -153,7 +154,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7274604, y: 1}
   m_EdgeRadius: 0
---- !u!114 &9039932568710796110
+--- !u!114 &6919933297526444068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,12 +163,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 5828442611997034025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d8e351174be3ac47baae3f3463fbd46, type: 3}
+  m_Script: {fileID: 11500000, guid: f120795ff5bc14f4093d64352051eea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  speed: 5
+  timeToLive: -1
+--- !u!114 &6747427363504778364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5828442611997034025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98c612074d3c914c9d477c8a56eb55c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   destroyedAtCollided: 1
-  scanTargetRange: 10
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  projectile: {fileID: 6919933297526444068}
+  target: 0
+  nearestDistanceSqr: 30

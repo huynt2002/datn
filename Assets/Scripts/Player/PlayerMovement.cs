@@ -188,7 +188,7 @@ public class PlayerMovement : MonoBehaviour
     public void SkillAttack()
     {
         var go = Instantiate(skillPre, skillPos.position, Quaternion.identity) as GameObject;
-        go.GetComponent<ProjectileBehavior>()?.Set(ProjectileBehavior.Target.Enemy, 2 * GetComponent<Entity>().outPutDamage);
+        go.GetComponent<Projectile>()?.SetUp(1.25f * GetComponent<Entity>().outPutDamage, transform.localScale.x);
     }
 
     public void Dash(InputAction.CallbackContext context)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,6 +57,11 @@ public class Helper : MonoBehaviour
         }
 
         return null;
+    }
+
+    public static float RoundingFloatNumber(float x)
+    {
+        return Mathf.Round(x * 100) * 0.01f;
     }
 
 }

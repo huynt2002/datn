@@ -6,20 +6,20 @@ public class DamageEnemy : Damage
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Entity e = other.transform.parent.gameObject.GetComponent<Entity>();
-        if (e.IsAlive)
+        Entity target = other.GetComponentInParent<Entity>();
+        UpdateDamage();
+        GetCriticalHit();
+        if (target.IsAlive)
         {
             //deal damage
-            Effect(Helper.GetPos(e.gameObject));
-            if (e.invicible) return;
-            if (getCriticalHit())
+            Effect(Helper.GetPos(target.gameObject));
+            if (target.invicible) { return; }
+            target.TakeDamage(damage, damageType, isCritical);
+            var onHitEffects = GetComponents<OnHitEffect>();
+            foreach (var onHitEffect in onHitEffects)
             {
-                e.TakeDamage(getCriticalHitDamage(entity.outPutDamage), Defines.DamageType.Entity, true);
+                onHitEffect.OnHit(target);
             }
-            else { e.TakeDamage(entity.outPutDamage, Defines.DamageType.Entity); }
-
-            KnockBack(e.GetComponent<Rigidbody2D>());
-            Debug.Log("Damage " + e.name);
         }
     }
 }

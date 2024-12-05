@@ -6,6 +6,7 @@ public abstract class AttackSkill : MonoBehaviour
 {
     //setting this need create animation with this too
     public AnimationClip anim;
+    public bool isCD { get; private set; }
     protected Entity entity;
     public int damage;
     public float cdTime;
@@ -23,14 +24,18 @@ public abstract class AttackSkill : MonoBehaviour
     {
         if (cdCount > 0)
         {
+            isCD = true;
             cdCount -= Time.deltaTime;
         }
-
+        else
+        {
+            isCD = false;
+        }
     }
 
-    protected void AttackTrigger(Transform transform)
+    protected void SetAttack(Transform attackTarget)
     {
-        monster_Behavior.SetAttack(this, transform);
+        monster_Behavior.SetAttack(this);
         cdCount = cdTime;
     }
 
@@ -46,14 +51,14 @@ public abstract class AttackSkill : MonoBehaviour
             {
                 monster_Behavior.SetIdle(false);
                 monster_Behavior.ResetAttack();
-                AttackTrigger(other.transform.parent);
+                SetAttack(other.transform.parent);
                 return;
             }
             if (monster_Behavior.attack || monster_Behavior.isIdle)
             {
                 return;
             }
-            AttackTrigger(other.transform.parent);
+            SetAttack(other.transform.parent);
         }
     }
 

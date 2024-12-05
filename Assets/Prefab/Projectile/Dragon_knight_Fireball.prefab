@@ -94,7 +94,9 @@ GameObject:
   - component: {fileID: 1640066496021538837}
   - component: {fileID: 811308106186482778}
   - component: {fileID: 1377166215604608406}
-  - component: {fileID: 8993873704037253775}
+  - component: {fileID: 2812813393435160641}
+  - component: {fileID: 7805510870458320423}
+  - component: {fileID: 7668995953506056054}
   m_Layer: 8
   m_Name: Dragon_knight_Fireball
   m_TagString: Untagged
@@ -111,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 5024623880849282256}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: -0, z: -0.23373103}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -236,7 +238,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.890379, y: 1.9686792}
   m_EdgeRadius: 0
---- !u!114 &8993873704037253775
+--- !u!114 &2812813393435160641
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,9 +247,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 5024623880849282256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d8e351174be3ac47baae3f3463fbd46, type: 3}
+  m_Script: {fileID: 11500000, guid: f120795ff5bc14f4093d64352051eea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
+  speed: 7
+  timeToLive: -1
+--- !u!114 &7805510870458320423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5024623880849282256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abf87cde262422458bfe555c3519302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   destroyedAtCollided: 0
-  nearestDistanceSqr: 30
+  projectile: {fileID: 2812813393435160641}
+--- !u!114 &7668995953506056054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5024623880849282256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6201c8b63a9bd4595e7b85de76f1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

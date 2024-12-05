@@ -4,17 +4,26 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    protected Entity entity;
-    public float knockbackForce;
+    Entity entity;
+    Projectile projectile;
+    protected float damage;
+    protected bool isCritical;
+    protected Defines.DamageType damageType;
+
     protected void Start()
     {
         entity = GetComponentInParent<Entity>();
-    }
-    protected void KnockBack(Rigidbody2D other)
-    {
-        if (!other) return;
-        Vector2 force = new Vector2(entity.transform.localScale.x * knockbackForce, 0);
-        other.AddForce(force, ForceMode2D.Impulse);
+        projectile = GetComponent<Projectile>();
+        if (entity)
+        {
+            damageType = Defines.DamageType.Entity;
+            return;
+        }
+        if (projectile)
+        {
+            damageType = Defines.DamageType.Projectile;
+            return;
+        }
     }
 
     protected void Effect(Vector2 position)
@@ -23,18 +32,27 @@ public class Damage : MonoBehaviour
         GameObject dust = SpawnManager.instance.SpawnEffect(SpawnManager.EffectType.HitEffect, position);
     }
 
-    protected bool getCriticalHit()
+    protected void UpdateDamage()
+    {
+        switch (damageType)
+        {
+            case Defines.DamageType.Entity:
+                damage = entity.outPutDamage;
+                break;
+            case Defines.DamageType.Projectile:
+                damage = projectile.damage;
+                break;
+        }
+    }
+
+    protected void GetCriticalHit()
     {
         var p = Random.Range(0, 100);
         if (p <= 10)
         {
-            return true;
+            damage = damage * 2;
+            isCritical = true;
         }
-        return false;
-    }
-
-    protected float getCriticalHitDamage(float damage)
-    {
-        return damage * 2;
+        isCritical = false;
     }
 }

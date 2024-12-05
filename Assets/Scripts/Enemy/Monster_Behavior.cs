@@ -12,7 +12,11 @@ public class Monster_Behavior : MonoBehaviour
     [Header("Behavior")]
     public DetectArea detectArea;
     public bool canChase;
+    bool chasingPlayer;
     public bool canMove;
+    public bool canGetHit;
+    public bool runWhenCD;
+    Transform playerTransform;
     public Vector2 moveTarget;
     public int facingDirection;
     public int faceRight;
@@ -22,8 +26,6 @@ public class Monster_Behavior : MonoBehaviour
     [Header("Attack")]
     public bool attack;
     public AttackSkill currentAttackSkill = null;
-    [Header("GetHit")]
-    public bool canGetHit;
 
     // Start is called before the first frame update
     void Start()
@@ -43,29 +45,34 @@ public class Monster_Behavior : MonoBehaviour
             animator.SetTrigger("dead");
             return;
         }
+
+        if (!groundSensor.isGrounded)
+        {
+            SetIdle(false);
+            animator.SetTrigger("air");
+            return;
+        }
+
         if (entity.getHit && canGetHit)
         {
             GetHit();
         }
-        else
+
+        if (!isIdle && (!entity.getHit || !canGetHit))
         {
-            if (!isIdle && (!entity.getHit || !canGetHit))
+            if (attack)
             {
-                if (attack)
-                {
-                    Attack();
-                }
-                else
-                {
-                    Move();
-                }
+                Attack();
             }
             else
             {
-                Idle();
+                Move();
             }
         }
-
+        else
+        {
+            Idle();
+        }
     }
 
     protected void Idle()
@@ -105,25 +112,52 @@ public class Monster_Behavior : MonoBehaviour
     }
     void Move()
     {
-        if (!canMove) return;
+        if (!canMove) { return; }
+        if (isIdle) { return; }
         if (detectArea != null && groundSensor.isGrounded)
         {
-            if (transform.position.x == moveTarget.x)
+            if (canChase) { ChasePlayer(); }
+            if (Helper.RoundingFloatNumber(transform.position.x) == Helper.RoundingFloatNumber(moveTarget.x))
             {
-                if (!isIdle)
-                {
-                    SetIdle(true);
-                    SetTarget();
-                }
+                SetRandomMovePos();
+                SetIdle(true);
+                return;
             }
-            else
+            animator.SetTrigger("move");
+            if (chasingPlayer)
             {
-                animator.SetTrigger("move");
-                Flip(moveTarget);
-                transform.position = Vector2.MoveTowards(transform.position,
-                            new Vector2(moveTarget.x, transform.position.y), entity.speed * Time.deltaTime);
+                MoveToPos(playerTransform.position, entity.speed * 1.2f);
+                return;
+            }
+
+            MoveToPos(moveTarget, entity.speed);
+        }
+    }
+
+    void MoveToPos(Vector2 moveTarget, float speed)
+    {
+        Flip(moveTarget);
+        transform.position = Vector2.MoveTowards(transform.position,
+                               new Vector2(moveTarget.x, transform.position.y), speed * Time.deltaTime);
+
+    }
+
+    void ChasePlayer()
+    {
+        if (!playerTransform)
+        {
+            chasingPlayer = false;
+            return;
+        }
+        if (currentAttackSkill)
+        {
+            if (currentAttackSkill.isCD && runWhenCD)
+            {
+                chasingPlayer = false;
+                return;
             }
         }
+        chasingPlayer = true;
     }
 
     protected void Attack()
@@ -137,15 +171,14 @@ public class Monster_Behavior : MonoBehaviour
     public void AttackInAnimation()
     {
         //only trigger in animation
-        Flip(moveTarget);
+        //Flip(playerTransform.position);
         currentAttackSkill?.Attack();
     }
 
-    public void SetAttack(AttackSkill attackSkill, Transform target)
+    public void SetAttack(AttackSkill attackSkill)
     {
         attack = true;
         currentAttackSkill = attackSkill;
-        SetTarget(target);
     }
 
     public void ResetAttack()
@@ -172,20 +205,17 @@ public class Monster_Behavior : MonoBehaviour
         gameObject.transform.localScale = new Vector3(facingDirection, 1, 1);
     }
 
-    public void SetTarget(Transform pos = null)
+    public void PlayerDetected(Transform player)
     {
-        Vector3 target;
-        if (pos)
-        {
-            target = pos.position;
-        }
-        else
-        {
-            var xSize = detectArea.detectBound.size.x;
-            var r = Random.Range((detectArea.transform.position.x - xSize / 2 + 2f),
-                (detectArea.transform.position.x + xSize / 2 - 2f));
-            target = new Vector3(r, 0, 0);
-        }
+        playerTransform = player;
+    }
+
+    void SetRandomMovePos()
+    {
+        var xSize = detectArea.detectBound.size.x;
+        var r = Random.Range((detectArea.transform.position.x - xSize / 2 + 2f),
+            (detectArea.transform.position.x + xSize / 2 - 2f));
+        Vector2 target = new Vector3(r, 0, 0);
         moveTarget = target;
     }
 

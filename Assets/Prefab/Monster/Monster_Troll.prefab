@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 5687709221940723816}
   - component: {fileID: 5968793168962298660}
   - component: {fileID: 2962499015796016025}
+  - component: {fileID: 8500561816649332188}
   m_Layer: 18
   m_Name: HitBox
   m_TagString: Untagged
@@ -204,6 +205,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbea3b6a6603629499edf1b272075766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackForce: 5
+--- !u!114 &8500561816649332188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2548990496399676513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a0d1b39e30d3742a1359482acd23eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 5
@@ -451,7 +465,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 201208709, guid: 1a78810867d9a9a41935a4cf6ce3683f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 8891810975713291283}
   - component: {fileID: 2851877499039663734}
   - component: {fileID: 518419090107400143}
+  - component: {fileID: 5335279510781932186}
   m_Layer: 18
   m_Name: HitBox
   m_TagString: Untagged
@@ -282,6 +283,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbea3b6a6603629499edf1b272075766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackForce: 2
+--- !u!114 &5335279510781932186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3456009813798858853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a0d1b39e30d3742a1359482acd23eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 2
@@ -482,7 +496,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4723107735738678597, guid: 2fc74fa7747dc0049add021cd64d7a48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -573,7 +587,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: d047c033908435b469c3e1290d239624, type: 2}
-  getHit: 0
 --- !u!114 &1591170857690577220
 MonoBehaviour:
   m_ObjectHideFlags: 0

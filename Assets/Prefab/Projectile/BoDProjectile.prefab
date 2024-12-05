@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 8758344439416719694}
   - component: {fileID: 1204588699865237933}
   - component: {fileID: 8455892058976490266}
-  - component: {fileID: 7941002302810624079}
-  - component: {fileID: 6095834673679554332}
+  - component: {fileID: 7636700629233668194}
+  - component: {fileID: 9016069422273922497}
+  - component: {fileID: 6310721746284041622}
   m_Layer: 18
   m_Name: BoDProjectile
   m_TagString: Untagged
@@ -154,7 +155,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.8333335, y: 3.875}
   m_EdgeRadius: 0
---- !u!114 &7941002302810624079
+--- !u!114 &7636700629233668194
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,11 +164,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7183848645229619181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52753f3b24fd0e84d8e6d8c3155daed4, type: 3}
+  m_Script: {fileID: 11500000, guid: f120795ff5bc14f4093d64352051eea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectType: 0
---- !u!114 &6095834673679554332
+  speed: 0
+  timeToLive: -1
+--- !u!114 &9016069422273922497
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,13 +178,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 7183848645229619181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d8e351174be3ac47baae3f3463fbd46, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ae437db95bbdde498661e601df6849d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  lifeTime: 5
   destroyedAtCollided: 0
-  scanTargetRange: 10
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  projectile: {fileID: 7636700629233668194}
+--- !u!114 &6310721746284041622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7183848645229619181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2a231117a1efb44905e6353d0e817d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

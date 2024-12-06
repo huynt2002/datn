@@ -37,6 +37,8 @@ public class Monster_Behavior : MonoBehaviour
         entity = GetComponent<Entity>();
         groundSensor = GetComponent<GroundSensor>();
         faceRight = (int)transform.localScale.x;
+        SetIdle(true);
+        moveTarget = transform.position;
     }
 
     // Update is called once per frame
@@ -48,12 +50,7 @@ public class Monster_Behavior : MonoBehaviour
             return;
         }
 
-        if (!groundSensor.isGrounded)
-        {
-            SetIdle(false);
-            animationController.PlayJumpAnimation();
-            return;
-        }
+        Air();
         GetHit();
         if (!isIdle && (!entity.getHit || !canGetHit))
         {
@@ -84,8 +81,21 @@ public class Monster_Behavior : MonoBehaviour
         }
     }
 
-    protected void Idle()
+    void Air()
     {
+        if (!groundSensor.isGrounded)
+        {
+            animationController.PlayJumpAnimation();
+            return;
+        }
+    }
+
+    void Idle()
+    {
+        if (!groundSensor.isGrounded || attack || (entity.getHit && canGetHit))
+        {
+            return;
+        }
         if (isIdle)
         {
             animationController.PlayIdleAnimation();
@@ -137,7 +147,6 @@ public class Monster_Behavior : MonoBehaviour
                 SetIdle(true);
                 return;
             }
-            animationController.PlayMoveAnimation();
             if (chasingPlayer)
             {
                 MoveToPos(playerTransform.position, entity.speed * 1.2f);
@@ -150,6 +159,7 @@ public class Monster_Behavior : MonoBehaviour
 
     void MoveToPos(Vector2 moveTarget, float speed)
     {
+        animationController.PlayMoveAnimation();
         Flip(moveTarget);
         transform.position = Vector2.MoveTowards(transform.position,
                                new Vector2(moveTarget.x, transform.position.y), speed * Time.deltaTime);
@@ -189,9 +199,10 @@ public class Monster_Behavior : MonoBehaviour
         currentAttackSkill?.Attack();
     }
 
-    public void SetAttack(AttackSkill attackSkill)
+    public void SetAttack(AttackSkill attackSkill, Transform target)
     {
         attack = true;
+        Flip(target.position);
         currentAttackSkill = attackSkill;
     }
 
@@ -202,7 +213,7 @@ public class Monster_Behavior : MonoBehaviour
 
     public void ResetAttackWithIdle()
     {
-        ResetAttack();
+        attack = false;
         SetIdle(true);
     }
 

@@ -587,6 +587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: d047c033908435b469c3e1290d239624, type: 2}
+  speed: 0
 --- !u!114 &1591170857690577220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,14 +604,14 @@ MonoBehaviour:
   detectArea: {fileID: 0}
   canChase: 1
   canMove: 1
-  canGetHit: 0
+  canGetHit: 1
   runWhenCD: 0
   moveTarget: {x: 0, y: 0}
   isIdle: 0
   idleTime: 1
   attack: 0
   currentAttackSkill: {fileID: 0}
-  getHitTime: 0
+  getHitTime: 0.15
 --- !u!114 &7095634824953560080
 MonoBehaviour:
   m_ObjectHideFlags: 0

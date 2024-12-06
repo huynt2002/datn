@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject playerCollider;
     [Header("Move")]
     [SerializeField] bool isMove;
-    [SerializeField] float speed => entity.speed;
     float horizontal;
     int facingDirection = 1;
     public bool isOneWay;
@@ -238,7 +237,7 @@ public class PlayerMovement : MonoBehaviour
         if (horizontal != 0)
         {
             isMove = true;
-            body.velocity = new Vector2(horizontal * speed, body.velocity.y);
+            body.velocity = new Vector2(horizontal * entity.speed, body.velocity.y);
             if (isGrounded) { animationController.PlayMoveAnimation(); }
             Flip();
         }

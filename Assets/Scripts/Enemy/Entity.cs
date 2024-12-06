@@ -28,13 +28,18 @@ public class Entity : MonoBehaviour
 
     virtual public void SetDefault()
     {
-        if (stats == null) return;
+        if (stats == null)
+        {
+            Debug.LogError("No stats");
+            return;
+        }
         damage = stats.damage;
         maxHP = stats.maxHP;
         currentHP = maxHP;
         criticalChance = stats.criticalChance;
         criticalDamage = stats.criticalDamage;
         speed = stats.speed;
+
         isAlive = true;
         getHit = false;
         SetOutPutDamage();

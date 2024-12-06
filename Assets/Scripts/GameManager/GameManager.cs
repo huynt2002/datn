@@ -25,9 +25,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-#if UNITY_EDITOR
         LoadGame();
-#endif
     }
 
     void Start()
@@ -40,7 +38,9 @@ public class GameManager : MonoBehaviour
 
     void LoadGame()
     {
+#if !UNITY_EDITOR
         gameData = SaveLoad.LoadGame();
+#endif
         if (gameData == null)
         {
             gameData = new GameData();

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 561581d114dd1ca4a8ee274becc9d972, type: 3}
-  m_Name: Item3
+  m_Name: New Item 1
   m_EditorClassIdentifier: 
-  id: 3
-  itemName: Silver Arrow
+  id: 9
+  itemName: Book of Revelations
   damageAmount: 0
   hpAmount: 0
-  description: ' Increase 10% CritRate and 20%CritDamage'
-  criticalChance: 10
-  criticalDamage: 20
-  speed: 0
-  icon: {fileID: 21300000, guid: d3318582418d75a46b3439c9776936b9, type: 3}
-  itemType: 1
+  description: Increase speed by 0.5 and CritRate by 5
+  criticalChance: 5
+  criticalDamage: 0
+  speed: 0.5
+  icon: {fileID: 21300000, guid: c27ee528c4b5fe6499247c25520943bd, type: 3}
+  itemType: 0
   itemEffectObject: {fileID: 0}

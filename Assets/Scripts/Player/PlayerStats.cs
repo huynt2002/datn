@@ -17,6 +17,10 @@ public class PlayerStats : Entity
 
     void Start()
     {
+        if (GameManager.instance.gameData == null)
+        {
+            return;
+        }
         if (GameManager.instance.gameData.playerStats != null)
         {
             var data = GameManager.instance.gameData.playerStats;

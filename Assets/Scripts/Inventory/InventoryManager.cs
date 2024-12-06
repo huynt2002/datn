@@ -23,6 +23,10 @@ public class InventoryManager : MonoBehaviour
 
     void LoadInventoryData()
     {
+        if (GameManager.instance.gameData == null)
+        {
+            return;
+        }
         if (GameManager.instance.gameData.inventoryItemIds != null)
         {
             var ids = GameManager.instance.gameData.inventoryItemIds;

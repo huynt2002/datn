@@ -35,7 +35,7 @@ public abstract class AttackSkill : MonoBehaviour
 
     protected void SetAttack(Transform attackTarget)
     {
-        monster_Behavior.SetAttack(this);
+        monster_Behavior.SetAttack(this, attackTarget);
         cdCount = cdTime;
     }
 

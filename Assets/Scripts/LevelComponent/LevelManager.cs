@@ -24,6 +24,10 @@ public class LevelManager : MonoBehaviour
         checkClear = false;
         if (GameManager.instance)
         {
+            if (GameManager.instance.gameData == null)
+            {
+                return;
+            }
             tutorial = GameManager.instance.gameData.tutorial;
             currentLevelIndex = GameManager.instance.gameData.currentLevelIndex;
         }

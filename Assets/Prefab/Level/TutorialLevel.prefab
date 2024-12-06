@@ -37679,7 +37679,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 3125409291482385323}
-  chestSpawnPos: []
   itemList: []
   monsterList: []
 --- !u!1 &4984302942504142802
@@ -38063,7 +38062,7 @@ GameObject:
   - component: {fileID: 288335545649499778}
   m_Layer: 11
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: OneWayPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41664,7 +41663,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1921714819496015023, guid: f777823b15d30cd4095a8f148f19de62, type: 3}
       propertyPath: m_InstanceId
-      value: -734700
+      value: -199154
       objectReference: {fileID: 0}
     - target: {fileID: 5915392942495230327, guid: f777823b15d30cd4095a8f148f19de62, type: 3}
       propertyPath: m_Name
@@ -44010,7 +44009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7800517507525845185, guid: 3fbfaefe57c0e3047a0b1d391ee02774, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.04
+      value: 8.927
       objectReference: {fileID: 0}
     - target: {fileID: 7800517507525845185, guid: 3fbfaefe57c0e3047a0b1d391ee02774, type: 3}
       propertyPath: m_LocalPosition.z

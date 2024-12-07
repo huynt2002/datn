@@ -32302,7 +32302,7 @@ GameObject:
   - component: {fileID: 6965023217817941170}
   m_Layer: 0
   m_Name: MarketLevel
-  m_TagString: Untagged
+  m_TagString: StateLevel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32337,7 +32337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 715011337606546197}
-  chestSpawnPos: []
   itemList: []
   monsterList: []
 --- !u!156049354 &6965023217817941170

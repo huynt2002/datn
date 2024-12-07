@@ -117,6 +117,10 @@ public class SpawnManager : MonoBehaviour
 
     public GameObject SpawnMonster(GameObject pre, Vector2 pos, Transform parent, Defines.MonsterType type)
     {
+        if (!parent)
+        {
+            parent = GameObject.FindWithTag(Defines.Tag.StateLevel).transform;
+        }
         //SpawnEnemy
         GameObject e = Instantiate(pre, pos, Quaternion.identity, parent);
         e.GetComponent<Monster_Behavior>().monsterType = type;

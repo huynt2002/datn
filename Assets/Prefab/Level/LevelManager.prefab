@@ -68,12 +68,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playLevelList:
-  - {fileID: 4941544089980506039, guid: 33ea91227fbee83408d2554452358b45, type: 3}
+  - {fileID: 4941544089980506039, guid: afdb4bd915b52b64ca628dea796813ba, type: 3}
   - {fileID: 7624550181663239523, guid: 04152a29c6feb34439eeefcfed5af24c, type: 3}
   - {fileID: 1654040085530838416, guid: 367cb3452ab96d240914b6d0c7d4fde5, type: 3}
   - {fileID: 2661291233325232301, guid: 7381c7de0cd5e7d46b37545f38fb2676, type: 3}
+  - {fileID: 2367913920668594044, guid: bba12acefae794c43ba7d79ee866af62, type: 3}
   - {fileID: 5550879779242575405, guid: 0c2559d9f3ae5a846993fbc651c3e75b, type: 3}
-  currentLevelIndex: 0
+  tutorialLevel: {fileID: 4941544089980506039, guid: 33ea91227fbee83408d2554452358b45, type: 3}
 --- !u!1 &2150581338055560827
 GameObject:
   m_ObjectHideFlags: 0

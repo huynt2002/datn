@@ -3661,6 +3661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsters: []
+  allies: []
   player: {fileID: 0}
 --- !u!61 &6689031524989628208
 BoxCollider2D:
@@ -4049,7 +4050,7 @@ GameObject:
   - component: {fileID: 5412025288862219807}
   m_Layer: 0
   m_Name: LV3
-  m_TagString: Untagged
+  m_TagString: StateLevel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4084,7 +4085,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 9016606112407847826}
-  chestSpawnPos: []
   itemList: []
   monsterList: []
 --- !u!156049354 &5412025288862219807
@@ -4525,6 +4525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsters: []
+  allies: []
   player: {fileID: 0}
 --- !u!61 &2057802484178140798
 BoxCollider2D:
@@ -4700,6 +4701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsters: []
+  allies: []
   player: {fileID: 0}
 --- !u!61 &8495459656051121730
 BoxCollider2D:
@@ -20433,6 +20435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsters: []
+  allies: []
   player: {fileID: 0}
 --- !u!61 &5141861979384394212
 BoxCollider2D:
@@ -20525,6 +20528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsters: []
+  allies: []
   player: {fileID: 0}
 --- !u!61 &238647452455489364
 BoxCollider2D:

@@ -16,6 +16,7 @@ public class Defines
         public static string Enemy = "Enemy";
         public static string Ally = "Ally";
         public static string MainCam = "MainCamera";
+        public static string StateLevel = "StateLevel";
         public static string ChestPosition = "ChestPos";
         public static string OneWayPlatform = "OneWayPlatform";
     }

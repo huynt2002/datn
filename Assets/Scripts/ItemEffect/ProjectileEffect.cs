@@ -9,7 +9,7 @@ public class ProjectileEffect : ItemEffect
     {
         if (entity && projectile)
         {
-            EffectBehaviors.ProjectileSpawn(entity.outputDamage, projectile, transform.position, entity.transform.localScale.x);
+            EffectBehaviors.ProjectileSpawn(entity.damage, projectile, transform.position, entity.transform.localScale.x);
             ResetCD();
         }
     }

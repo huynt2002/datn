@@ -108,7 +108,7 @@ public class MainCanvasManager : MonoBehaviour
 
     void ManageSkill()
     {
-        skillCD.fillAmount = PlayerMovement.instance.cdCount / PlayerMovement.instance.skillCDTime;
+        skillCD.fillAmount = PlayerMovement.instance.skill1.cdCount / PlayerMovement.instance.skill1.cdTime;
     }
 
     public void ManagePauseCanvas()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BoD_Teleport : AttackSkill
 {
-    public override void Attack()
+    public override void OnAttacking()
     {
         entity.SetInvincible(true);
     }

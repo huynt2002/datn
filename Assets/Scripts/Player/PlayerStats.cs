@@ -25,7 +25,6 @@ public class PlayerStats : Entity
         {
             var data = GameManager.instance.gameData.playerStats;
             SetDataStats(data.currentHP, data.maxHP, data.damage, data.speed, data.coin, data.gem, data.criticalChance, data.criticalDamage);
-            SetOutPutDamage();
         }
     }
 

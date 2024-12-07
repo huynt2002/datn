@@ -17,7 +17,7 @@ public class GameData
     {
         tutorial = false;
         var data = PlayerStats.instance;
-        data.SetDefault();
+        data?.SetDefault();
         playerStats = new PlayerData(data.currentHP, data.maxHP, data.damage, data.speed, data.coin, data.gem, data.criticalChance, data.criticalDamage);
         currentLevelIndex = 0;
         inventoryItemIds.Clear();

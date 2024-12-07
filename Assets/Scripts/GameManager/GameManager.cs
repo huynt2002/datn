@@ -38,9 +38,7 @@ public class GameManager : MonoBehaviour
 
     void LoadGame()
     {
-#if !UNITY_EDITOR
         gameData = SaveLoad.LoadGame();
-#endif
         if (gameData == null)
         {
             gameData = new GameData();

@@ -6,6 +6,7 @@ public class Damage : MonoBehaviour
 {
     Entity entity;
     Projectile projectile;
+    AttackSkill attackSkill;
     protected float damage;
     protected bool isCritical;
     protected Defines.DamageType damageType;
@@ -14,6 +15,7 @@ public class Damage : MonoBehaviour
     {
         entity = GetComponentInParent<Entity>();
         projectile = GetComponent<Projectile>();
+        attackSkill = GetComponentInParent<AttackSkill>();
         if (entity)
         {
             damageType = Defines.DamageType.Entity;
@@ -37,7 +39,14 @@ public class Damage : MonoBehaviour
         switch (damageType)
         {
             case Defines.DamageType.Entity:
-                damage = entity.outputDamage;
+                if (attackSkill)
+                {
+                    damage = attackSkill.damageMultiple * entity.damage;
+                }
+                else
+                {
+                    damage = entity.damage;
+                }
                 break;
             case Defines.DamageType.Projectile:
                 damage = projectile.damage;

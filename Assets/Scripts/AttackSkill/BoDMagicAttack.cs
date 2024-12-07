@@ -7,9 +7,8 @@ public class BoDMagicAttack : AttackSkill
     Vector2 pPos;
     [SerializeField] GameObject boDProjectile;
     List<Vector2> spawnPosList;
-    public override void Attack()
+    public override void OnAttacking()
     {
-        entity.SetOutPutDamage(damage);
         pPos = new Vector2(PlayerStats.instance.transform.position.x, PlayerStats.instance.transform.position.y + 2f);
         NormalMagic();
     }
@@ -35,11 +34,11 @@ public class BoDMagicAttack : AttackSkill
             spawnPosList.Add(t);
         }
         var go = Instantiate(boDProjectile, pPos, Quaternion.identity) as GameObject;
-        go.GetComponent<Projectile>()?.SetUp(entity.outputDamage, entity.transform.localScale.x, gameObject.layer);
+        go.GetComponent<Projectile>()?.SetUp(totalDamage / entity.damage, entity.transform.localScale.x, gameObject.layer);
         foreach (var i in spawnPosList)
         {
             var go1 = Instantiate(boDProjectile, i, Quaternion.identity) as GameObject;
-            go1.GetComponent<Projectile>()?.SetUp(entity.outputDamage, entity.transform.localScale.x, gameObject.layer);
+            go1.GetComponent<Projectile>()?.SetUp(totalDamage / entity.damage, entity.transform.localScale.x, gameObject.layer);
         }
         spawnPosList.Clear();
     }

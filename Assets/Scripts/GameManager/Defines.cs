@@ -7,7 +7,7 @@ public class Defines
 
     public enum MonsterType
     {
-        Ally, Enemy
+        Enemy, Ally
     }
 
     public static class Tag

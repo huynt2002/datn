@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrollAttack : AttackSkill
+public class TrollAttack : MonsterAttackSkill
 {
     Rigidbody2D body;
     public float force = 0;
@@ -17,11 +17,10 @@ public class TrollAttack : AttackSkill
 
     }
 
-    public override void Attack()
+    public override void OnAttacking()
     {
         int direction = 1;
         Monster_Behavior monster_Behavior = body.GetComponent<Monster_Behavior>();
-        entity.SetOutPutDamage(damage);
         if (monster_Behavior.facingDirection != monster_Behavior.faceRight)
         {
             direction = -1;

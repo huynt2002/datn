@@ -85,7 +85,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &6404522645502198901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,8 +117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
   hpUI: {fileID: 5207300409100487322}
-  show: 0
-  alwayShow: 1
+  show: 1
+  alwayShow: 0
   hpBar: {fileID: 3970774065982627508}
   hpBarColor: {fileID: 7602252067618982561}
   hpEnemy: {fileID: 417673830, guid: 0ce873f54c703fd429f65f0606e30134, type: 3}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DashAttack : AttackSkill
+public class DashAttack : MonsterAttackSkill
 {
     Rigidbody2D body;
     public float force;
@@ -16,9 +16,8 @@ public class DashAttack : AttackSkill
         body.velocity = new Vector2(0, body.velocity.y);
     }
 
-    public override void Attack()
+    public override void OnAttacking()
     {
-        entity.SetOutPutDamage(damage);
         //body.velocity = new Vector2(force * transform.localScale.x, 0);
         int direction = 1;
         Monster_Behavior monster_Behavior = body.GetComponent<Monster_Behavior>();

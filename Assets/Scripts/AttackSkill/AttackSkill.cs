@@ -8,16 +8,14 @@ public abstract class AttackSkill : MonoBehaviour
     public AnimationClip anim;
     public bool isCD { get; private set; }
     protected Entity entity;
-    public int damage;
+    public float damageMultiple = 1;
+    protected float totalDamage => damageMultiple * entity.damage;
     public float cdTime;
-    float cdCount = 0;
-    Monster_Behavior monster_Behavior;
+    public float cdCount { get; protected set; }
     public bool needWaitOtherAttack = true;
-    void Awake()
+    protected void Awake()
     {
-        monster_Behavior = GetComponentInParent<Monster_Behavior>();
-        entity = monster_Behavior.GetComponent<Entity>();
-        entity.SetOutPutDamage(damage);
+        entity = GetComponentInParent<Entity>();
     }
 
     void Update()
@@ -33,40 +31,11 @@ public abstract class AttackSkill : MonoBehaviour
         }
     }
 
-    protected void SetAttack(Transform attackTarget)
+    public void Attack()
     {
-        monster_Behavior.SetAttack(this, attackTarget);
         cdCount = cdTime;
     }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (cdCount > 0)
-        {
-            return;
-        }
-        if (monster_Behavior != null)
-        {
-            if (!needWaitOtherAttack)
-            {
-                monster_Behavior.SetIdle(false);
-                monster_Behavior.ResetAttack();
-                SetAttack(other.transform.parent);
-                return;
-            }
-            if (monster_Behavior.attack || monster_Behavior.isIdle)
-            {
-                return;
-            }
-            SetAttack(other.transform.parent);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-
-    }
-    public abstract void Attack();
+    public abstract void OnAttacking();
 
     public abstract void ResetAttack();
 }

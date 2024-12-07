@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MushroomAttack : AttackSkill
+public class MushroomAttack : MonsterAttackSkill
 {
     [SerializeField] GameObject projectile;
     [SerializeField] Transform pos;
-    public override void Attack()
+    public override void OnAttacking()
     {
         if (projectile != null)
         {
             var go = Instantiate(projectile, pos.position, Quaternion.identity);
-            go.GetComponent<Projectile>().SetUp(entity.outputDamage, entity.transform.localScale.x, gameObject.layer);
+            go.GetComponent<Projectile>().SetUp(totalDamage, entity.transform.localScale.x, gameObject.layer);
         }
         else
         {

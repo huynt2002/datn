@@ -67,7 +67,7 @@ public class DetectArea : MonoBehaviour
             foreach (var mon in monsters)
             {
                 mon.SetAttackTarget(null);
-                mon.moveTarget = other.GetComponentInParent<Entity>().transform.position;
+                mon.moveTarget = other.transform.position;
             }
         }
     }

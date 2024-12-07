@@ -9,11 +9,12 @@ public class Monster_Behavior : MonoBehaviour
     [SerializeField] AnimationController animationController;
     protected Rigidbody2D body;
     protected Entity entity;
-    protected GroundSensor groundSensor;
+    protected GroundSensor groundSensor; public Defines.MonsterType monsterType;
+    [SerializeField] Collider2D entityCollider;
     [Header("Behavior")]
     public DetectArea detectArea;
     public bool canChase;
-    bool chasingPlayer;
+    bool chasing;
     public bool canMove;
     public bool canGetHit;
     public bool runWhenCD;
@@ -26,10 +27,8 @@ public class Monster_Behavior : MonoBehaviour
     float idleCount = 0;
     [Header("Attack")]
     public bool attack;
-    public AttackSkill currentAttackSkill = null;
+    public MonsterAttackSkill currentAttackSkill = null;
     [SerializeField] float getHitTime = 0.15f;
-    public Defines.MonsterType monsterType;
-    [SerializeField] Collider2D entityCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -181,7 +180,7 @@ public class Monster_Behavior : MonoBehaviour
                 SetIdle(true);
                 return;
             }
-            if (chasingPlayer)
+            if (chasing)
             {
                 MoveToPos(attackTarget.position, entity.speed * 1.2f);
                 return;
@@ -204,18 +203,18 @@ public class Monster_Behavior : MonoBehaviour
     {
         if (!attackTarget)
         {
-            chasingPlayer = false;
+            chasing = false;
             return;
         }
         if (currentAttackSkill)
         {
             if (currentAttackSkill.isCD && runWhenCD)
             {
-                chasingPlayer = false;
+                chasing = false;
                 return;
             }
         }
-        chasingPlayer = true;
+        chasing = true;
     }
 
     protected void Attack()
@@ -230,10 +229,10 @@ public class Monster_Behavior : MonoBehaviour
     {
         //only trigger in animation
         //Flip(playerTransform.position);
-        currentAttackSkill?.Attack();
+        currentAttackSkill?.OnAttacking();
     }
 
-    public void SetAttack(AttackSkill attackSkill, Transform target)
+    public void SetAttack(MonsterAttackSkill attackSkill, Transform target)
     {
         attack = true;
         Flip(target.position);

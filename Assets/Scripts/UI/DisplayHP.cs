@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,7 +37,6 @@ public class DisplayHP : MonoBehaviour
                 hpBarColor.sprite = hpAlly;
                 alwayShow = true;
                 break;
-
         }
     }
 
@@ -54,6 +51,7 @@ public class DisplayHP : MonoBehaviour
 
     void Display()
     {
+        hpBar.transform.localScale = new Vector3(entity.transform.localScale.x, 1, 1);
         if (alwayShow)
         {
             ManageHP();
@@ -62,7 +60,6 @@ public class DisplayHP : MonoBehaviour
         {
             if (show)
             {
-                hpBar.gameObject.transform.localScale = new Vector3(entity.gameObject.transform.localScale.x, 1, 1);
                 ManageHP();
                 hpUI.enabled = true;
                 timeCount = 0;

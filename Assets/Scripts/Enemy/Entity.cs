@@ -15,15 +15,18 @@ public class Entity : MonoBehaviour
     public float damage { get; protected set; }
     public float criticalChance { get; protected set; }
     public float criticalDamage { get; protected set; }
-    public float outputDamage { get; protected set; }
 
     public bool isAlive { get; protected set; }
     public bool invicible { get; protected set; }
 
     public bool getHit { get; protected set; }
-    void Start()
+    private void Awake()
     {
         SetDefault();
+    }
+    void Start()
+    {
+
     }
 
     virtual public void SetDefault()
@@ -42,7 +45,6 @@ public class Entity : MonoBehaviour
 
         isAlive = true;
         getHit = false;
-        SetOutPutDamage();
     }
 
     public void TakeDamage(float _damage, Defines.DamageType _type, bool isCriticalHit = false)
@@ -62,11 +64,6 @@ public class Entity : MonoBehaviour
             isAlive = false;
             Dead();
         }
-    }
-
-    public void DealDamage(Entity entity)
-    {
-        entity?.TakeDamage(outputDamage, Defines.DamageType.Entity);
     }
 
     protected virtual void Dead()
@@ -93,11 +90,6 @@ public class Entity : MonoBehaviour
     void DropWhenDie()
     {
         SpawnManager.instance.DropProps(transform);
-    }
-
-    public void SetOutPutDamage(float dame = 0)
-    {
-        outputDamage = damage + dame / damage;
     }
 
     public void SetHp(float hp)
@@ -150,13 +142,11 @@ public class Entity : MonoBehaviour
     public void IncreaseDmg(float dmg)
     {
         damage = damage * (100 + dmg) / 100;
-        SetOutPutDamage();
     }
 
     public void DecreaseDmg(float dmg)
     {
         damage = damage * 100 / (100 + dmg);
-        SetOutPutDamage();
     }
 
     public void ResetGetHit()

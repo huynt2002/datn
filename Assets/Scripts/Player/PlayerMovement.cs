@@ -7,18 +7,21 @@ public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement instance;
     Entity entity;
+
     [Header("Components")]
     [SerializeField] Rigidbody2D body;
     [SerializeField] AnimationController animationController;
     [SerializeField] GroundSensor groundSensor;
     bool isGrounded => groundSensor.isGrounded;
     [SerializeField] GameObject playerCollider;
+
     [Header("Move")]
     [SerializeField] bool isMove;
     float horizontal;
     int facingDirection = 1;
     public bool isOneWay;
     bool canOneWay;
+
     [Header("Jump")]
     [SerializeField] float jumpForce = 5f;
     [SerializeField] int maxJump = 1;
@@ -36,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
     //public int remainDash = 0;
 
     [Header("Attack")]
-
     private int comboStep = 0;
     private float comboTimer = 0f;
     [SerializeField] float comboDelay = 0.4f;
@@ -46,17 +48,16 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Interact")]
     public PlayerInteract playerInteract;
+
     [Header("GetHit")]
     [SerializeField] float getHitTime = 0.15f;
     bool getHit => entity.getHit;
 
     [Header("Skill")]
-    [SerializeField] bool isSkill;
-    public float skillCDTime = 3f;
-    bool canUseSkill;
-    public float cdCount { get; private set; } = 0;
-    [SerializeField] GameObject skillPre;
-    [SerializeField] Transform skillPos;
+    public AttackSkill skill1;
+    bool isSkill;
+    bool canUseSkill => !skill1.isCD;
+
 
     void Awake()
     {
@@ -68,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SkillCD();
         GetHit();
         Air();
         Move();
@@ -156,38 +156,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void SkillCD()
-    {
-        if (!canUseSkill)
-        {
-            if (cdCount > 0)
-            {
-                cdCount -= Time.deltaTime;
-            }
-            else
-            {
-                cdCount = 0;
-                canUseSkill = true;
-            }
-        }
-    }
-
     public void SkillAttackInput(InputAction.CallbackContext context)
     {
-        if (!canUseSkill || getHit) { return; }
+        if (!canUseSkill || getHit || isSkill) { return; }
         if (context.performed)
         {
             isSkill = true;
-            canUseSkill = false;
-            cdCount = skillCDTime;
+            skill1.Attack();
             animationController.PlaySkillAnimation();
         }
     }
 
-    public void SkillAttack()
+    public void SkillAttackInAnimation()
     {
-        var go = Instantiate(skillPre, skillPos.position, Quaternion.identity) as GameObject;
-        go.GetComponent<Projectile>()?.SetUp(1.25f * GetComponent<Entity>().outputDamage, transform.localScale.x, LayerMask.NameToLayer(Defines.DetectType.DetectEnemy.ToString()));
+        skill1.OnAttacking();
     }
 
     public void Dash(InputAction.CallbackContext context)

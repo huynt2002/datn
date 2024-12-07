@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 7400000, guid: 0df2db778007ccd4aacca2287f40c35f, type: 2}
-  damage: 5
+  damageMultiple: 1
   cdTime: 3
   needWaitOtherAttack: 1
   force: 8
@@ -600,6 +600,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationController: {fileID: 7095634824953560080}
+  monsterType: 0
+  entityCollider: {fileID: 7989947911875563038}
   detectArea: {fileID: 0}
   canChase: 1
   canMove: 1
@@ -611,8 +613,6 @@ MonoBehaviour:
   attack: 0
   currentAttackSkill: {fileID: 0}
   getHitTime: 0.15
-  monsterType: 0
-  entityCollider: {fileID: 7989947911875563038}
 --- !u!114 &7095634824953560080
 MonoBehaviour:
   m_ObjectHideFlags: 0

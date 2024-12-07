@@ -93,7 +93,6 @@ GameObject:
   - component: {fileID: 4463780476119110562}
   - component: {fileID: 1103075167745921147}
   - component: {fileID: 7427119732227099400}
-  - component: {fileID: 5174102961834001584}
   m_Layer: 0
   m_Name: Monster_BoD
   m_TagString: Untagged
@@ -252,39 +251,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 2056
---- !u!114 &5174102961834001584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3332555035702764338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a551c1891a8d1549b9601fd25f52082, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationController: {fileID: 0}
-  detectArea: {fileID: 0}
-  canChase: 0
-  canMove: 0
-  canGetHit: 0
-  runWhenCD: 0
-  moveTarget: {x: 0, y: 0}
-  isIdle: 0
-  idleTime: 1
-  attack: 0
-  currentAttackSkill: {fileID: 0}
-  getHitTime: 0.15
-  teleport: {fileID: 7915960502569660766}
-  pos1: {fileID: 0}
-  pos2: {fileID: 0}
-  pPos1: {fileID: 0}
-  pPos2: {fileID: 0}
-  normalAttack: {fileID: 6192258974347252159}
-  magicAttack: {fileID: 7826911860795018210}
-  comboAttack: {fileID: 8249521064642634314}
-  projectileAttack: {fileID: 3313279634563388073}
 --- !u!1 &3336615144014520721
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 128557603345267062, guid: 3e7da16ac90ae1d469f64a6b3e020aa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.34
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: 128557603345267062, guid: 3e7da16ac90ae1d469f64a6b3e020aa1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

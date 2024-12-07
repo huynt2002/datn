@@ -263,6 +263,7 @@ Transform:
   - {fileID: 6570085737589053871}
   - {fileID: 5007551542186242658}
   - {fileID: 3602408400563652554}
+  - {fileID: 262348092217151277}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2732962477221686909
@@ -599,10 +600,7 @@ MonoBehaviour:
   isAttack: 0
   playerInteract: {fileID: 0}
   getHitTime: 0.15
-  isSkill: 0
-  skillCDTime: 4
-  skillPre: {fileID: 5024623880849282256, guid: 5e7c8dcc1a698794a8424d97a6fdf7e0, type: 3}
-  skillPos: {fileID: 1558190978206454256}
+  skill1: {fileID: 2504680315096095407}
 --- !u!114 &5427663365667822887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,6 +782,56 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!1 &6195657460358984071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 262348092217151277}
+  - component: {fileID: 2504680315096095407}
+  m_Layer: 0
+  m_Name: Skill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &262348092217151277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6195657460358984071}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5966786623815608426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2504680315096095407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6195657460358984071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ca9cdb98b07174bb6688f91d2aad39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 7400000, guid: 22e2c0f22a5689d4098699003b07a9d9, type: 2}
+  damageMultiple: 1.25
+  cdTime: 6
+  needWaitOtherAttack: 0
+  spawnObj: {fileID: 5024623880849282256, guid: 5e7c8dcc1a698794a8424d97a6fdf7e0, type: 3}
+  pos: {fileID: 1558190978206454256}
 --- !u!1 &7166247883931134424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,7 +1094,7 @@ MonoBehaviour:
   - {x: 0.25, y: -0.555, z: 0}
   m_ShapePathHash: 1590984020
   m_Mesh: {fileID: 0}
-  m_InstanceId: 55718
+  m_InstanceId: -197118
   m_LocalBounds:
     m_Center: {x: -0.0006250441, y: -0.004284084, z: 0}
     m_Extent: {x: 0.25919324, y: 0.5507159, z: 0}

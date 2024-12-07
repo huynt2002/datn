@@ -42,9 +42,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2396294598646066598}
   - component: {fileID: 3460454326209227835}
-  m_Layer: 7
+  m_Layer: 24
   m_Name: Collider
-  m_TagString: Enemy
+  m_TagString: Ally
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,12 +109,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8206167698019351815}
   - component: {fileID: 7921693715917177281}
-  - component: {fileID: 6116687838779853552}
   - component: {fileID: 1801745211002167633}
   - component: {fileID: 8039585494973490209}
   - component: {fileID: 1223366586997145354}
   - component: {fileID: 2136855161496792011}
   - component: {fileID: 1768085093432224181}
+  - component: {fileID: 6116687838779853552}
   m_Layer: 0
   m_Name: Monster_Mushroom
   m_TagString: Untagged
@@ -154,30 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: c64c14582708eac42838a9d2f6e3b796, type: 2}
---- !u!114 &6116687838779853552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3114575383660464274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 168c71f5bae7b8c47910f629154413e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationController: {fileID: 1768085093432224181}
-  detectArea: {fileID: 0}
-  canChase: 1
-  canMove: 1
-  canGetHit: 1
-  runWhenCD: 1
-  moveTarget: {x: 0, y: 0}
-  isIdle: 0
-  idleTime: 4
-  attack: 0
-  currentAttackSkill: {fileID: 0}
-  getHitTime: 0.3
 --- !u!212 &1801745211002167633
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -318,6 +294,30 @@ MonoBehaviour:
   attack1: {fileID: 0}
   attack2: {fileID: 0}
   attack3: {fileID: 0}
+--- !u!114 &6116687838779853552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3114575383660464274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 168c71f5bae7b8c47910f629154413e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationController: {fileID: 1768085093432224181}
+  detectArea: {fileID: 0}
+  canChase: 1
+  canMove: 1
+  canGetHit: 1
+  runWhenCD: 1
+  moveTarget: {x: 0, y: 0}
+  isIdle: 0
+  idleTime: 4
+  attack: 0
+  currentAttackSkill: {fileID: 0}
+  getHitTime: 0.3
 --- !u!1 &3497351677276740664
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 3504267764512013104}
   - component: {fileID: 6351073061797580515}
   - component: {fileID: 7180043871214524964}
-  m_Layer: 9
+  m_Layer: 23
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 5974166877667352174}
   - component: {fileID: 949512626730884670}
   - component: {fileID: 2052592606894214358}
-  - component: {fileID: 3822085808583411067}
   - component: {fileID: 1702319811515668352}
   - component: {fileID: 603465496772786689}
   - component: {fileID: 971185072794884984}
   - component: {fileID: 8863200193554287850}
-  m_Layer: 18
+  - component: {fileID: 706038461382880798}
+  m_Layer: 8
   m_Name: MushroomGasProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,18 +111,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3822085808583411067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8453972634296444808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbea3b6a6603629499edf1b272075766, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1702319811515668352
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -208,3 +196,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyedAtCollided: 0
   projectile: {fileID: 971185072794884984}
+--- !u!114 &706038461382880798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8453972634296444808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f92f7fe62791e45bd838d9de4fed67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

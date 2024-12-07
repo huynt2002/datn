@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7636700629233668194}
   - component: {fileID: 9016069422273922497}
   - component: {fileID: 6310721746284041622}
+  - component: {fileID: 5303620085078917363}
   m_Layer: 18
   m_Name: BoDProjectile
   m_TagString: Untagged
@@ -193,5 +194,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f2a231117a1efb44905e6353d0e817d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5303620085078917363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7183848645229619181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f92f7fe62791e45bd838d9de4fed67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

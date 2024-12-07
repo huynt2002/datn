@@ -223,8 +223,8 @@ GameObject:
   m_Component:
   - component: {fileID: 222589723417793103}
   - component: {fileID: 6022094573204534925}
-  - component: {fileID: 8920898258969374540}
   - component: {fileID: 7538095205253077574}
+  - component: {fileID: 6866501030696342150}
   m_Layer: 18
   m_Name: HitBox
   m_TagString: Untagged
@@ -292,18 +292,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8920898258969374540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3859185379317030072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbea3b6a6603629499edf1b272075766, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7538095205253077574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +305,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 20
+--- !u!114 &6866501030696342150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3859185379317030072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f92f7fe62791e45bd838d9de4fed67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5855988506353114646
 GameObject:
   m_ObjectHideFlags: 0

@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1377166215604608406}
   - component: {fileID: 2812813393435160641}
   - component: {fileID: 7805510870458320423}
-  - component: {fileID: 7668995953506056054}
+  - component: {fileID: 7006799131517216967}
   m_Layer: 8
   m_Name: Dragon_knight_Fireball
   m_TagString: Untagged
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyedAtCollided: 0
   projectile: {fileID: 2812813393435160641}
---- !u!114 &7668995953506056054
+--- !u!114 &7006799131517216967
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,6 +275,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5024623880849282256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb6201c8b63a9bd4595e7b85de76f1c6, type: 3}
+  m_Script: {fileID: 11500000, guid: d8f92f7fe62791e45bd838d9de4fed67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class DetectArea : MonoBehaviour
 {
     public List<Monster_Behavior> monsters;
+    public List<Monster_Behavior> allies;
     public BoxCollider2D detectBound { get; private set; }
     // Start is called before the first frame update
     void Start()
@@ -21,22 +22,33 @@ public class DetectArea : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.tag == "Enemy")
         {
             Monster_Behavior monster_Behavior = other.gameObject.GetComponentInParent<Monster_Behavior>();
             if (!monsters.Contains(monster_Behavior))
-                monsters.Add(monster_Behavior);
+            {
+                monster_Behavior.detectArea = this;
+            }
+            monsters.Add(monster_Behavior);
+        }
+        else if (other.tag == "Ally")
+        {
+            Monster_Behavior monster_Behavior = other.gameObject.GetComponentInParent<Monster_Behavior>();
+            if (!allies.Contains(monster_Behavior))
+            {
+                allies.Add(monster_Behavior);
+            }
             monster_Behavior.detectArea = this;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.tag == "Enemy" || other.tag == "Ally")
         {
-            Monster_Behavior monster_Behavior = other.gameObject.GetComponentInParent<Monster_Behavior>();
+            Monster_Behavior monster_Behavior = other.GetComponentInParent<Monster_Behavior>();
             if (monsters.Contains(monster_Behavior))
             {
-                //monster_Behavior.detectArea = null;
+                monster_Behavior.detectArea = null;
                 monsters.Remove(monster_Behavior);
             }
         }

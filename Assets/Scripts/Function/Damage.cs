@@ -60,4 +60,21 @@ public class Damage : MonoBehaviour
         }
         isCritical = false;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Entity target = other.GetComponentInParent<Entity>();
+        UpdateDamage();
+        GetCriticalHit();
+        if (!target.isAlive) { return; }
+        //deal damage
+        Effect(Helper.GetPos(target.gameObject));
+        if (target.invicible) { return; }
+        target.TakeDamage(damage, damageType, isCritical);
+        var onHitEffects = GetComponents<OnHitEffect>();
+        foreach (var onHitEffect in onHitEffects)
+        {
+            onHitEffect.OnHit(target);
+        }
+    }
 }

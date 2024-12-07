@@ -585,7 +585,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ui Sample_22
+      name: greenSmall
       rect:
         serializedVersion: 2
         x: 830
@@ -706,7 +706,6 @@ TextureImporter:
       Ui Sample_13: 1752787031
       Ui Sample_2: 1814345361
       Ui Sample_21: -1681822793
-      Ui Sample_22: -1263629512
       Ui Sample_23: -28661744
       Ui Sample_24: 832495367
       Ui Sample_25: 605393622
@@ -722,6 +721,7 @@ TextureImporter:
       border_bar_small: -1439344224
       br_button: -1506312672
       coin: -836800009
+      greenSmall: -1263629512
       light_button: 2105164651
       red_bar: -285893699
       red_crystal: -1961014480

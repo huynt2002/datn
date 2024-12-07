@@ -17,7 +17,7 @@ public class Monster_Behavior : MonoBehaviour
     public bool canMove;
     public bool canGetHit;
     public bool runWhenCD;
-    Transform playerTransform;
+    public Transform attackTarget { get; private set; }
     public Vector2 moveTarget;
     public int facingDirection { get; private set; }
     public int faceRight { get; private set; }
@@ -28,6 +28,8 @@ public class Monster_Behavior : MonoBehaviour
     public bool attack;
     public AttackSkill currentAttackSkill = null;
     [SerializeField] float getHitTime = 0.15f;
+    public Defines.MonsterType monsterType;
+    [SerializeField] Collider2D entityCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,38 @@ public class Monster_Behavior : MonoBehaviour
         faceRight = (int)transform.localScale.x;
         SetIdle(true);
         moveTarget = transform.position;
+
+        var skills = GetComponentsInChildren<AttackSkill>();
+
+        switch (monsterType)
+        {
+            case Defines.MonsterType.Enemy:
+                foreach (var skill in skills)
+                {
+                    LayerMask layer = LayerMask.NameToLayer(Defines.DetectType.DetectPlayer.ToString());
+                    skill.gameObject.layer = layer;
+                    foreach (var child in skill.GetComponentsInChildren<Collider2D>())
+                    {
+                        child.gameObject.layer = layer;
+                    }
+                }
+                entityCollider.tag = Defines.Tag.Enemy;
+                entityCollider.gameObject.layer = LayerMask.NameToLayer(Defines.Tag.Enemy);
+                break;
+            case Defines.MonsterType.Ally:
+                foreach (var skill in skills)
+                {
+                    LayerMask layer = LayerMask.NameToLayer(Defines.DetectType.DetectEnemy.ToString());
+                    skill.gameObject.layer = layer;
+                    foreach (var child in skill.GetComponentsInChildren<Collider2D>())
+                    {
+                        child.gameObject.layer = layer;
+                    }
+                }
+                entityCollider.tag = Defines.Tag.Ally;
+                entityCollider.gameObject.layer = LayerMask.NameToLayer(Defines.Tag.Ally);
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -118,7 +152,7 @@ public class Monster_Behavior : MonoBehaviour
 
     void GetHit()
     {
-        if (!entity.getHit || !canGetHit)
+        if (!entity.getHit || !canGetHit || attack)
         {
             return;
         }
@@ -149,7 +183,7 @@ public class Monster_Behavior : MonoBehaviour
             }
             if (chasingPlayer)
             {
-                MoveToPos(playerTransform.position, entity.speed * 1.2f);
+                MoveToPos(attackTarget.position, entity.speed * 1.2f);
                 return;
             }
 
@@ -168,7 +202,7 @@ public class Monster_Behavior : MonoBehaviour
 
     void ChasePlayer()
     {
-        if (!playerTransform)
+        if (!attackTarget)
         {
             chasingPlayer = false;
             return;
@@ -230,9 +264,9 @@ public class Monster_Behavior : MonoBehaviour
         gameObject.transform.localScale = new Vector3(facingDirection, 1, 1);
     }
 
-    public void PlayerDetected(Transform player)
+    public void SetAttackTarget(Transform player)
     {
-        playerTransform = player;
+        attackTarget = player;
     }
 
     void SetRandomMovePos()

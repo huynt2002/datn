@@ -15,7 +15,7 @@ public class SpawnEnemy : MonoBehaviour
         Wait
     }
     public float spawnTime = 1f;
-    public ArrayList monsterList { get; private set; } = new ArrayList();
+    public List<GameObject> monsterList { get; private set; } = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +25,7 @@ public class SpawnEnemy : MonoBehaviour
                 Vector2 pos = new Vector2(Random.Range(transform.position.x - gameObject.GetComponent<BoxCollider2D>().bounds.size.x / 2 + 1f,
                  transform.position.x + gameObject.GetComponent<BoxCollider2D>().bounds.size.x / 2 - 1f),
                  transform.position.y + 0.5f);
-                var mons = SpawnManager.instance.SpawnMonster(enemyPrefabList[i], pos) as GameObject;
-                mons.transform.parent = gameObject.transform;
+                var mons = SpawnManager.instance.SpawnMonster(enemyPrefabList[i], pos, transform, Defines.MonsterType.Enemy);
                 mons.SetActive(false);
                 monsterList.Add(mons);
                 numEnemy[i]--;
@@ -62,7 +61,7 @@ public class SpawnEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player" && spawnType == SpawnType.Trigger)
+        if (other.tag == Defines.Tag.Player && spawnType == SpawnType.Trigger)
         {
             Spawn();
         }

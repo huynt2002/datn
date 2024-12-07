@@ -32,7 +32,7 @@ public class GroundSensor : MonoBehaviour
         if (Physics2D.OverlapBox(groundSensor.position, groundSensorSize, 0, groundLayer))
         {
             isGrounded = true;
-            if (x.tag == "OneWayPlatform")
+            if (x.tag == Defines.Tag.OneWayPlatform)
             {
                 platformCollider = x.gameObject.GetComponent<Collider2D>();
 

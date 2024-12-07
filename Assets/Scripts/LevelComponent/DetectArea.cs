@@ -6,6 +6,7 @@ public class DetectArea : MonoBehaviour
 {
     public List<Monster_Behavior> monsters;
     public List<Monster_Behavior> allies;
+    public Entity player;
     public BoxCollider2D detectBound { get; private set; }
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class DetectArea : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == Defines.Tag.Enemy)
         {
             Monster_Behavior monster_Behavior = other.gameObject.GetComponentInParent<Monster_Behavior>();
             if (!monsters.Contains(monster_Behavior))
@@ -31,7 +32,7 @@ public class DetectArea : MonoBehaviour
             }
             monsters.Add(monster_Behavior);
         }
-        else if (other.tag == "Ally")
+        else if (other.tag == Defines.Tag.Ally)
         {
             Monster_Behavior monster_Behavior = other.gameObject.GetComponentInParent<Monster_Behavior>();
             if (!allies.Contains(monster_Behavior))
@@ -43,7 +44,7 @@ public class DetectArea : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Enemy" || other.tag == "Ally")
+        if (other.tag == Defines.Tag.Enemy)
         {
             Monster_Behavior monster_Behavior = other.GetComponentInParent<Monster_Behavior>();
             if (monsters.Contains(monster_Behavior))
@@ -52,11 +53,21 @@ public class DetectArea : MonoBehaviour
                 monsters.Remove(monster_Behavior);
             }
         }
-        else if (other.tag == "Player")
+        else if (other.tag == Defines.Tag.Ally)
+        {
+            Monster_Behavior monster_Behavior = other.GetComponentInParent<Monster_Behavior>();
+            if (allies.Contains(monster_Behavior))
+            {
+                monster_Behavior.detectArea = null;
+                allies.Remove(monster_Behavior);
+            }
+        }
+        else if (other.tag == Defines.Tag.Player)
         {
             foreach (var mon in monsters)
             {
-                mon.PlayerDetected(null);
+                mon.SetAttackTarget(null);
+                mon.moveTarget = other.GetComponentInParent<Entity>().transform.position;
             }
         }
     }
@@ -64,11 +75,25 @@ public class DetectArea : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == Defines.Tag.Player)
         {
             foreach (var mon in monsters)
             {
-                mon.PlayerDetected(other.GetComponentInParent<Entity>().transform);
+                mon.SetAttackTarget(other.GetComponentInParent<Entity>().transform);
+            }
+        }
+        else if (other.tag == Defines.Tag.Ally)
+        {
+            Monster_Behavior ally = other.GetComponentInParent<Monster_Behavior>();
+            if (ally.attackTarget == null)
+            {
+                monsters.RemoveAll(e => e == null);
+                var target = monsters[Random.Range(0, monsters.Count - 1)];
+                if (target.attackTarget == null)
+                {
+                    target.SetAttackTarget(ally.transform);
+                }
+                ally.SetAttackTarget(target.transform);
             }
         }
     }

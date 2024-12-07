@@ -318,6 +318,8 @@ MonoBehaviour:
   attack: 0
   currentAttackSkill: {fileID: 0}
   getHitTime: 0.3
+  monsterType: 0
+  entityCollider: {fileID: 3460454326209227835}
 --- !u!1 &3497351677276740664
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +413,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6420951014524914320}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +446,7 @@ GameObject:
   - component: {fileID: 3504267764512013104}
   - component: {fileID: 6351073061797580515}
   - component: {fileID: 7180043871214524964}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 7400000, guid: 6382a1849d4ef7644afbef197d1ad78e, type: 2}
   damage: 0
-  cdTime: 5
+  cdTime: 3
   needWaitOtherAttack: 1
   projectile: {fileID: 8453972634296444808, guid: fc0f7f1eca818ec49bf7ee7026a4ed9b, type: 3}
   pos: {fileID: 6420951014524914320}

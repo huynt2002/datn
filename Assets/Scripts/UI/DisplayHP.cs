@@ -11,6 +11,9 @@ public class DisplayHP : MonoBehaviour
     public bool show = false;
     public bool alwayShow;
     [SerializeField] Slider hpBar;
+    [SerializeField] Image hpBarColor;
+    [SerializeField] Sprite hpEnemy;
+    [SerializeField] Sprite hpAlly;
 
     public float timeDisplay = 2f;
     float timeCount = 0;
@@ -21,13 +24,23 @@ public class DisplayHP : MonoBehaviour
         gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(1, 1);
     }
 
-    public void Set(Entity e)
+    public void Set(Entity e, Defines.MonsterType monsterType)
     {
         entity = e;
         Collider2D child = e.gameObject.GetComponentsInChildren<Collider2D>(true)
                                      .FirstOrDefault(t => t.CompareTag("Enemy"));
-        gameObject.transform.parent = e.gameObject.transform;
         gameObject.transform.localPosition = new Vector3(child.transform.localPosition.x, child.transform.localPosition.y - 0.2f - child.bounds.size.y / 2, 0);
+        switch (monsterType)
+        {
+            case Defines.MonsterType.Enemy:
+                hpBarColor.sprite = hpEnemy;
+                break;
+            case Defines.MonsterType.Ally:
+                hpBarColor.sprite = hpAlly;
+                alwayShow = true;
+                break;
+
+        }
     }
 
     // Update is called once per frame

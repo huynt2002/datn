@@ -115,14 +115,14 @@ public class SpawnManager : MonoBehaviour
         None, Wooden, Silver, Gold
     }
 
-    // Update is called once per frame
-    public GameObject SpawnMonster(GameObject pre, Vector2 pos)
+    public GameObject SpawnMonster(GameObject pre, Vector2 pos, Transform parent, Defines.MonsterType type)
     {
         //SpawnEnemy
-        GameObject e = Instantiate(pre, pos, Quaternion.identity) as GameObject;
+        GameObject e = Instantiate(pre, pos, Quaternion.identity, parent);
+        e.GetComponent<Monster_Behavior>().monsterType = type;
         //AttachUIElement
-        GameObject ui = Instantiate(uiHPCanvas, pos, Quaternion.identity) as GameObject;
-        ui.GetComponent<DisplayHP>().Set(e.GetComponent<Entity>());
+        GameObject ui = Instantiate(uiHPCanvas, pos, Quaternion.identity, e.transform);
+        ui.GetComponent<DisplayHP>().Set(e.GetComponent<Entity>(), type);
         return e;
     }
 

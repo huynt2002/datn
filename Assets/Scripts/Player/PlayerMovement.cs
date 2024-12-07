@@ -57,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
     public float cdCount { get; private set; } = 0;
     [SerializeField] GameObject skillPre;
     [SerializeField] Transform skillPos;
-    // Start is called before the first frame update
 
     void Awake()
     {
@@ -188,7 +187,7 @@ public class PlayerMovement : MonoBehaviour
     public void SkillAttack()
     {
         var go = Instantiate(skillPre, skillPos.position, Quaternion.identity) as GameObject;
-        go.GetComponent<Projectile>()?.SetUp(1.25f * GetComponent<Entity>().outputDamage, transform.localScale.x);
+        go.GetComponent<Projectile>()?.SetUp(1.25f * GetComponent<Entity>().outputDamage, transform.localScale.x, LayerMask.NameToLayer(Defines.DetectType.DetectEnemy.ToString()));
     }
 
     public void Dash(InputAction.CallbackContext context)

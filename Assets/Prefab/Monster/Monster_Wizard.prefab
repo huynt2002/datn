@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 3457062458868107288}
   - component: {fileID: 7115630593757811969}
   - component: {fileID: 841071480809441273}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 577503425389227874}
   - component: {fileID: 5758294211930322769}
   - component: {fileID: 7824485789849365726}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,6 +677,8 @@ MonoBehaviour:
   attack: 0
   currentAttackSkill: {fileID: 0}
   getHitTime: 0.15
+  monsterType: 0
+  entityCollider: {fileID: 5754037812301481764}
 --- !u!114 &2992106890292964301
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22,22 +22,22 @@ TagManager:
   - UI
   - Player
   - Enemy
-  - PlayerHitBox
-  - SkillAttackTrigger
+  - DetectEnemy
+  - 
   - DetectArea
   - OneWayPlatform
   - PlayerInteraction
-  - EventTrigger
+  - 
   - NPC
   - CamBound
   - OneWayCheck
   - Trap
-  - EnemyHitBox
+  - DetectPlayer
   - CheckWall
   - DropedProp
   - Minimap
   - Partical
-  - AllySkillTrigger
+  - 
   - Ally
   - 
   - 

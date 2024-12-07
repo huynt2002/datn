@@ -102,8 +102,9 @@ public class LevelManager : MonoBehaviour
         {
             return;
         }
-        var numMonster = currentLevel.GetComponentsInChildren<Monster_Behavior>();
-        if (numMonster.Length > 0)
+        var numMonster = currentLevel.GetComponentsInChildren<Monster_Behavior>().ToList();
+        numMonster.RemoveAll(e => e.GetComponent<Entity>().isAlive == false);
+        if (numMonster.Count > 0)
         {
             checkClear = false;
             return;
@@ -111,7 +112,8 @@ public class LevelManager : MonoBehaviour
         var numAreaS = currentLevel.GetComponentsInChildren<SpawnEnemy>();
         foreach (var area in numAreaS)
         {
-            if (area.monsterList.ToArray().Any(e => e != null))
+            area.monsterList.RemoveAll(e => e == null);
+            if (area.monsterList.Any(e => e.GetComponent<Entity>().isAlive))
             {
                 checkClear = false; return;
             }

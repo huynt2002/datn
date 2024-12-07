@@ -54,7 +54,7 @@ public class Damage : MonoBehaviour
         var p = Random.Range(0, 100);
         if (p <= entity.criticalChance)
         {
-            damage = damage * entity.criticalDamage / 100;
+            damage += damage * entity.criticalDamage / 100;
             isCritical = true;
             return;
         }

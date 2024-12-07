@@ -11,7 +11,7 @@ public class MushroomAttack : AttackSkill
         if (projectile != null)
         {
             var go = Instantiate(projectile, pos.position, Quaternion.identity);
-            go.GetComponent<Projectile>().SetUp(entity.outputDamage, entity.transform.localScale.x);
+            go.GetComponent<Projectile>().SetUp(entity.outputDamage, entity.transform.localScale.x, gameObject.layer);
         }
         else
         {

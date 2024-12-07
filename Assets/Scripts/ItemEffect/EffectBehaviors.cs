@@ -13,6 +13,6 @@ public class EffectBehaviors
         var xPos = Random.Range(pos.x - 1f, pos.x + 1f);
         var yPos = Random.Range(pos.y - 1f, pos.y + 1f);
         var projectileObject = Object.Instantiate(projectile, new Vector2(xPos, yPos), Quaternion.identity) as GameObject;
-        projectileObject.GetComponent<Projectile>().SetUp(damage, direction);
+        projectileObject.GetComponent<Projectile>().SetUp(damage, direction, LayerMask.NameToLayer(Defines.DetectType.DetectEnemy.ToString()));
     }
 }

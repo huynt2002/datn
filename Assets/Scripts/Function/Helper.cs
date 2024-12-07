@@ -43,7 +43,7 @@ public class Helper : MonoBehaviour
         var colliders = obj.GetComponentsInChildren<Collider2D>();
         foreach (var collider in colliders)
         {
-            if (collider.tag == "Enemy" || collider.tag == "Player")
+            if (collider.tag == Defines.Tag.Enemy || collider.tag == Defines.Tag.Player || collider.tag == Defines.Tag.Ally)
             {
                 return collider;
             }

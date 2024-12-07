@@ -1,5 +1,25 @@
 public class Defines
 {
+    public enum DetectType
+    {
+        DetectPlayer, DetectEnemy
+    }
+
+    public enum MonsterType
+    {
+        Ally, Enemy
+    }
+
+    public static class Tag
+    {
+        public static string Player = "Player";
+        public static string Enemy = "Enemy";
+        public static string Ally = "Ally";
+        public static string MainCam = "MainCamera";
+        public static string ChestPosition = "ChestPos";
+        public static string OneWayPlatform = "OneWayPlatform";
+    }
+
     public enum DamageType
     {
         Entity, Trap, Projectile

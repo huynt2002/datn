@@ -41659,7 +41659,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1921714819496015023, guid: f777823b15d30cd4095a8f148f19de62, type: 3}
       propertyPath: m_InstanceId
-      value: -55756
+      value: -9416
       objectReference: {fileID: 0}
     - target: {fileID: 5915392942495230327, guid: f777823b15d30cd4095a8f148f19de62, type: 3}
       propertyPath: m_Name
@@ -43989,7 +43989,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1591170857690577220, guid: 3fbfaefe57c0e3047a0b1d391ee02774, type: 3}
       propertyPath: monsterType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3598196329538777258, guid: 3fbfaefe57c0e3047a0b1d391ee02774, type: 3}
       propertyPath: m_IsActive

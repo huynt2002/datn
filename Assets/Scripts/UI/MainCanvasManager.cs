@@ -30,10 +30,8 @@ public class MainCanvasManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI hp;
     [SerializeField] TextMeshProUGUI dmg;
     [Header("SkillInfo")]
-    [SerializeField] GameObject skillInfoObject;
+    [SerializeField] DisplaySkillInfo skillInfoObject;
     [SerializeField] GameObject skillSelectedObj;
-    [SerializeField] TextMeshProUGUI skillName;
-    [SerializeField] TextMeshProUGUI skillDes;
     [Header("Inventory")]
     [SerializeField] GameObject itemInfoObject;
     List<ItemStats> itemList;
@@ -156,14 +154,14 @@ public class MainCanvasManager : MonoBehaviour
 
     void DisplaySkillInfo()
     {
+        if (!PlayerMovement.instance) return;
         if (EventSystem.current.currentSelectedGameObject == skillSelectedObj)
         {
-            skillName.text = "Firey";
-            skillDes.text = "Breath a fireball that damage enemy on its way!";
-            skillInfoObject.SetActive(true);
+            skillInfoObject.skill = PlayerMovement.instance.skill1;
+            skillInfoObject.gameObject.SetActive(true);
             return;
         }
-        skillInfoObject.SetActive(false);
+        skillInfoObject.gameObject.SetActive(false);
     }
 
     void DisplayInventory()

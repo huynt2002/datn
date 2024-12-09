@@ -601,6 +601,7 @@ MonoBehaviour:
   playerInteract: {fileID: 0}
   getHitTime: 0.15
   skill1: {fileID: 2504680315096095407}
+  skill2: {fileID: 0}
 --- !u!114 &5427663365667822887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,6 +831,8 @@ MonoBehaviour:
   damageMultiple: 1.25
   cdTime: 6
   needWaitOtherAttack: 0
+  skillName: Firery
+  skillDescription: Fire a fire ball and damage enemy on its way
   spawnObj: {fileID: 5024623880849282256, guid: 5e7c8dcc1a698794a8424d97a6fdf7e0, type: 3}
   pos: {fileID: 1558190978206454256}
 --- !u!1 &7166247883931134424
@@ -1094,7 +1097,7 @@ MonoBehaviour:
   - {x: 0.25, y: -0.555, z: 0}
   m_ShapePathHash: 1590984020
   m_Mesh: {fileID: 0}
-  m_InstanceId: -197118
+  m_InstanceId: -2638
   m_LocalBounds:
     m_Center: {x: -0.0006250441, y: -0.004284084, z: 0}
     m_Extent: {x: 0.25919324, y: 0.5507159, z: 0}

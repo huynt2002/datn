@@ -13,6 +13,8 @@ public abstract class AttackSkill : MonoBehaviour
     public float cdTime;
     public float cdCount { get; protected set; }
     public bool needWaitOtherAttack = true;
+    public string skillName;
+    public string skillDescription;
     protected void Awake()
     {
         entity = GetComponentInParent<Entity>();

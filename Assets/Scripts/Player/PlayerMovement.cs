@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Skill")]
     public AttackSkill skill1;
+    public AttackSkill skill2;
     bool isSkill;
     bool canUseSkill => !skill1.isCD;
 

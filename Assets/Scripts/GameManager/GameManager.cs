@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
     {
         if (isLose || isWin)
         {
+            SaveDefault();
             lose.Invoke();
         }
     }

@@ -9,68 +9,94 @@ using UnityEngine;
 #if UNITY_EDITOR
 public class ItemEditor : EditorWindow
 {
-    private ItemStats selectedItem;
+    private MonoScript selectedScript;
+    private Type scriptType;
+    private Editor objectEditor;
+    private ScriptableObject selectedItem;
     ItemPool itemPool;
-    string folderPath = "Assets/ScriptableData/Item/";
-    private List<ItemStats> items = new List<ItemStats>();
+    private List<ScriptableObject> items = new List<ScriptableObject>();
+    private List<ScriptableObject> filterItems = new List<ScriptableObject>();
+    string searchQuery = "";
     private Vector2 scrollPosition;
 
-    [MenuItem("Tools/Item Editor")]
+    [MenuItem("Tools/ScriptableEditor")]
     public static void ShowWindow()
     {
-        GetWindow<ItemEditor>("Item Editor");
+        GetWindow<ItemEditor>("Scriptable Editor");
     }
 
-    private string newItemName = "New Item";
+    private string newItemName = "New Object";
     private void OnGUI()
     {
-        GUILayout.Label("Item Editor", EditorStyles.boldLabel);
+        selectedScript = (MonoScript)EditorGUILayout.ObjectField(
+            "Script",
+            selectedScript,
+            typeof(MonoScript),
+            false);
 
-        selectedItem = (ItemStats)EditorGUILayout.ObjectField("Item", selectedItem, typeof(ItemStats), false);
-
-        if (selectedItem != null)
+        // Check if the selected script is valid
+        if (selectedScript != null)
         {
-            EditorGUI.BeginChangeCheck();
+            scriptType = selectedScript.GetClass();
 
-            selectedItem.id = EditorGUILayout.TextField("ID", selectedItem.id);
-            selectedItem.itemName = EditorGUILayout.TextField("Item Name", selectedItem.itemName);
-            selectedItem.icon = (Sprite)EditorGUILayout.ObjectField("Icon", selectedItem.icon, typeof(Sprite), false);
-            selectedItem.description = EditorGUILayout.TextField("Description", selectedItem.description);
-            selectedItem.itemType = (ItemStats.ItemType)EditorGUILayout.EnumPopup("Item Type", selectedItem.itemType);
-            selectedItem.damageAmount = EditorGUILayout.FloatField("Damage", selectedItem.damageAmount);
-            selectedItem.hpAmount = EditorGUILayout.FloatField("HP", selectedItem.hpAmount);
-            selectedItem.speed = EditorGUILayout.FloatField("Speed", selectedItem.speed);
-            selectedItem.criticalChance = EditorGUILayout.FloatField("Critical Chance", selectedItem.criticalChance);
-            selectedItem.criticalDamage = EditorGUILayout.FloatField("Critical Damage", selectedItem.criticalDamage);
-            selectedItem.itemEffectObject = (GameObject)EditorGUILayout.ObjectField("ItemEffectObject", selectedItem.itemEffectObject, typeof(GameObject), false);
-
-            if (EditorGUI.EndChangeCheck())
+            if (scriptType == null || !scriptType.IsSubclassOf(typeof(ScriptableObject)) || scriptType.IsAbstract)
             {
-                EditorUtility.SetDirty(selectedItem);
+                EditorGUILayout.HelpBox(
+                    "The selected script must be a non-abstract class that inherits from ScriptableObject.",
+                    MessageType.Error);
             }
+            else
+            {
+                GUILayout.Label("Create New Object", EditorStyles.boldLabel);
+
+                newItemName = EditorGUILayout.TextField("Name", newItemName);
+
+                if (GUILayout.Button("Create Item"))
+                {
+                    CreateScriptableObject(scriptType);
+                }
+            }
+            // GUILayout.Label("Object Editor", EditorStyles.boldLabel);
+            // selectedItem = (ScriptableObject)EditorGUILayout.ObjectField("Selected Object", selectedItem, scriptType, false);
+            // if (selectedItem != null)
+            // {
+            //     GUILayout.Label("Object Editor", EditorStyles.boldLabel);
+            //     if (objectEditor == null || objectEditor.target != selectedItem)
+            //         objectEditor = Editor.CreateEditor(selectedItem);
+
+            //     // Draw the inspector for the ScriptableObject
+            //     objectEditor.OnInspectorGUI();
+            // }
+
+            if (GUILayout.Button("Refresh Objects"))
+            {
+                LoadAllItems();
+            }
+            searchQuery = EditorGUILayout.TextField("Search:", searchQuery);
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                filterItems = items.Where(item => item.name.ToLower().Contains(searchQuery.ToLower())).ToList();
+            }
+            else
+            {
+                filterItems = new List<ScriptableObject>(items);
+            }
+            ObjectListView(filterItems);
         }
-        else
-        {
-            GUILayout.Label("Select an Item to edit.");
-        }
+    }
 
-        if (GUILayout.Button("Refresh Items"))
-        {
-            LoadAllItems();
-        }
-
-
-
+    void ObjectListView(List<ScriptableObject> items)
+    {
         scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
-
         foreach (var item in items)
         {
             EditorGUILayout.BeginVertical("box");
 
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField(item.id, item.itemName);
+            EditorGUILayout.LabelField(item.name);
             if (GUILayout.Button("Select", GUILayout.Width(60)))
             {
+                Selection.activeObject = item;
                 selectedItem = item;
             }
 
@@ -83,54 +109,63 @@ public class ItemEditor : EditorWindow
 
             EditorGUILayout.EndVertical();
         }
-
         EditorGUILayout.EndScrollView();
-        GUILayout.Space(10);
-        GUILayout.Label("Create New Item", EditorStyles.boldLabel);
+    }
 
-        newItemName = EditorGUILayout.TextField("Item Name", newItemName);
+    private void CreateScriptableObject(System.Type type)
+    {
+        // Create an instance of the selected type
+        ScriptableObject instance = ScriptableObject.CreateInstance(type);
 
-        if (GUILayout.Button("Create Item"))
+        // Show save file dialog
+        string path = EditorUtility.SaveFilePanelInProject(
+            "Save ScriptableObject",
+            type.Name + ".asset",
+            "asset",
+            "Choose a location to save the ScriptableObject"
+        );
+
+        if (!string.IsNullOrEmpty(path))
         {
-            CreateNewItem(newItemName);
+            AssetDatabase.CreateAsset(instance, path);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+
+            EditorUtility.FocusProjectWindow();
+            Selection.activeObject = instance;
+            selectedItem = instance;
+
+            if (scriptType == typeof(ItemStats))
+            {
+                itemPool.items.Add((ItemStats)instance);
+            }
         }
-
-
-    }
-
-    private void CreateNewItem(string itemName)
-    {
-        ItemStats newItem = CreateInstance<ItemStats>();
-        newItem.itemName = itemName;
-        string path = folderPath + $"{itemName}.asset";
-        path = AssetDatabase.GenerateUniqueAssetPath(path);
-        itemPool.items.Add(newItem);
-        itemPool.items.Distinct();
-        AssetDatabase.CreateAsset(newItem, path);
-        AssetDatabase.SaveAssets();
-        LoadAllItems();
-    }
-
-    private void OnEnable()
-    {
-        LoadAllItems();
     }
 
     private void LoadAllItems()
     {
-        items = AssetDatabase.FindAssets("t:ItemStats")
-            .Select(guid => AssetDatabase.LoadAssetAtPath<ItemStats>(AssetDatabase.GUIDToAssetPath(guid)))
-            .ToList();
-        itemPool = AssetDatabase.FindAssets("t:ItemPool")
-            .Select(guid => AssetDatabase.LoadAssetAtPath<ItemPool>(AssetDatabase.GUIDToAssetPath(guid))).ToList()[0];
+
+        items = AssetDatabase.FindAssets("t:" + scriptType.Name)
+        .Select(guid => AssetDatabase.LoadAssetAtPath<ScriptableObject>(AssetDatabase.GUIDToAssetPath(guid)))
+        .ToList();
+        filterItems = new List<ScriptableObject>(items);
+        if (scriptType == typeof(ItemStats))
+        {
+            itemPool = AssetDatabase.FindAssets("t:ItemPool")
+                     .Select(guid => AssetDatabase.LoadAssetAtPath<ItemPool>(AssetDatabase.GUIDToAssetPath(guid))).ToList()[0];
+
+        }
     }
 
-    private void DeleteItem(ItemStats item)
+    private void DeleteItem(ScriptableObject item)
     {
+        itemPool.items.Remove((ItemStats)item);
+
         string path = AssetDatabase.GetAssetPath(item);
-        itemPool.items.Remove(item);
         AssetDatabase.DeleteAsset(path);
         AssetDatabase.SaveAssets();
+        selectedItem = null;
+        Selection.activeObject = null;
         LoadAllItems();
     }
 

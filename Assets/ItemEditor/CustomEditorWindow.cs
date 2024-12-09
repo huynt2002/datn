@@ -1,89 +1,72 @@
 using UnityEditor;
 using UnityEngine;
 
-public class MyCustomEditorWindow : EditorWindow
+public class ScriptableObjectCreatorWindow : EditorWindow
 {
-    private string gameObjectName = "New GameObject";
-    private GameObject selectedGameObject;
-    private MonoScript componentToAdd;
+    private MonoScript selectedScript;
 
-    // Specify the base class or interface to filter
-    private System.Type filterType = typeof(ItemEffect);
-
-    [MenuItem("Tools/Custom GameObject Creator")]
-    public static void ShowWindow()
+    [MenuItem("Tools/Scriptable Object Creator")]
+    public static void OpenWindow()
     {
-        GetWindow<MyCustomEditorWindow>("GameObject Creator");
+        GetWindow<ScriptableObjectCreatorWindow>("Scriptable Object Creator");
     }
 
     private void OnGUI()
     {
-        GUILayout.Label("Create a GameObject", EditorStyles.boldLabel);
+        GUILayout.Label("Create a ScriptableObject", EditorStyles.boldLabel);
 
-        // Input field for the GameObject name
-        gameObjectName = EditorGUILayout.TextField("GameObject Name", gameObjectName);
+        selectedScript = (MonoScript)EditorGUILayout.ObjectField(
+            "Script",
+            selectedScript,
+            typeof(MonoScript),
+            false);
 
-        // Field to assign a GameObject in the scene
-        selectedGameObject = (GameObject)EditorGUILayout.ObjectField("Target GameObject", selectedGameObject, typeof(GameObject), true);
-
-        // Field to select a component type, filtered by the specific class
-        componentToAdd = SelectFilteredComponentField("Component to Add", componentToAdd, filterType);
-
-        if (componentToAdd != null && !filterType.IsAssignableFrom(componentToAdd.GetClass()))
+        // Check if the selected script is valid
+        if (selectedScript != null)
         {
-            EditorGUILayout.HelpBox($"Selected script must inherit from {filterType.Name}.", MessageType.Error);
-        }
+            var scriptType = selectedScript.GetClass();
 
-        // Button to create a new GameObject or modify the selected one
-        if (GUILayout.Button("Create GameObject or Add Component"))
-        {
-            CreateOrModifyGameObject();
-        }
-    }
-
-    private MonoScript SelectFilteredComponentField(string label, MonoScript current, System.Type baseType)
-    {
-        // Create an object field
-        MonoScript selectedScript = (MonoScript)EditorGUILayout.ObjectField(label, current, typeof(MonoScript), false);
-
-        // If a script is selected, validate if it inherits from the base type
-        if (selectedScript != null && baseType.IsAssignableFrom(selectedScript.GetClass()))
-        {
-            return selectedScript; // Valid selection
-        }
-
-        // If invalid, return null
-        return null;
-    }
-
-    private void CreateOrModifyGameObject()
-    {
-        GameObject targetObject = selectedGameObject;
-
-        // Create a new GameObject if none is selected
-        if (targetObject == null)
-        {
-            targetObject = new GameObject(gameObjectName);
-            Debug.Log($"Created new GameObject: {targetObject.name}");
-        }
-
-        // Add the selected component if valid
-        if (componentToAdd != null)
-        {
-            System.Type componentType = componentToAdd.GetClass();
-
-            if (componentType != null && filterType.IsAssignableFrom(componentType))
+            if (scriptType == null || !scriptType.IsSubclassOf(typeof(ScriptableObject)) || scriptType.IsAbstract)
             {
-                targetObject.AddComponent(componentType);
-                Debug.Log($"Added {componentType.Name} to {targetObject.name}");
+                EditorGUILayout.HelpBox(
+                    "The selected script must be a non-abstract class that inherits from ScriptableObject.",
+                    MessageType.Error);
             }
             else
             {
-                Debug.LogError($"The selected script does not inherit from {filterType.Name}.");
+                if (GUILayout.Button("Create"))
+                {
+                    CreateScriptableObject(scriptType);
+                }
             }
         }
+        else
+        {
+            EditorGUILayout.HelpBox("Drag a ScriptableObject script to the field above.", MessageType.Info);
+        }
+    }
 
-        // Select the GameObject in the scene
-        Selection.activeGameObject = targetObject;
+    private void CreateScriptableObject(System.Type type)
+    {
+        // Create an instance of the selected type
+        ScriptableObject instance = ScriptableObject.CreateInstance(type);
+
+        // Show save file dialog
+        string path = EditorUtility.SaveFilePanelInProject(
+            "Save ScriptableObject",
+            type.Name + ".asset",
+            "asset",
+            "Choose a location to save the ScriptableObject"
+        );
+
+        if (!string.IsNullOrEmpty(path))
+        {
+            AssetDatabase.CreateAsset(instance, path);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+
+            EditorUtility.FocusProjectWindow();
+            Selection.activeObject = instance;
+        }
     }
 }

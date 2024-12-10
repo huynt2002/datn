@@ -774,7 +774,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Border All 1_31
+      name: skillll
       rect:
         serializedVersion: 2
         x: 0
@@ -1649,7 +1649,6 @@ TextureImporter:
       Border All 1_29: -495209514
       Border All 1_3: 1253751131
       Border All 1_30: 1941012014
-      Border All 1_31: 632976978
       Border All 1_32: -937728768
       Border All 1_33: 1868024321
       Border All 1_34: 291954002
@@ -1702,6 +1701,7 @@ TextureImporter:
       item: 1206571941
       miniMap: -826080823
       skill: 1215097716
+      skillll: 632976978
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

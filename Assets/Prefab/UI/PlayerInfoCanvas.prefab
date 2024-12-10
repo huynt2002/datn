@@ -3011,22 +3011,8 @@ PrefabInstance:
     - {fileID: 3965789911102892461, guid: 08d4aa12e6d8e6a479150b2437bd6275, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6210211170580365870, guid: 08d4aa12e6d8e6a479150b2437bd6275, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2360211467137098480}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08d4aa12e6d8e6a479150b2437bd6275, type: 3}
---- !u!114 &2358301408398725096 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2436009929047516810, guid: 08d4aa12e6d8e6a479150b2437bd6275, type: 3}
-  m_PrefabInstance: {fileID: 104757883255351650}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6294684919641697100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6268442811101571225 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6307809401651855867, guid: 08d4aa12e6d8e6a479150b2437bd6275, type: 3}
@@ -3038,55 +3024,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &6294684919641697100 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6210211170580365870, guid: 08d4aa12e6d8e6a479150b2437bd6275, type: 3}
-  m_PrefabInstance: {fileID: 104757883255351650}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2360211467137098480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6294684919641697100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 2358301408398725096}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!224 &7211956264606921051 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7305446344025905209, guid: 08d4aa12e6d8e6a479150b2437bd6275, type: 3}

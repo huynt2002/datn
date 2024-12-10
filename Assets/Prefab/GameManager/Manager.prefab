@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38797b2ae147ae9419b7d04c8c1682fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCanvasManager: {fileID: 237131960018861062}
   isBossFight: 0
   isLose: 0
   isWin: 0
@@ -775,6 +776,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3628830497558650042, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956801988182905976, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956801988182905976, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956801988182905976, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956801988182905976, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956801988182905976, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4204005305872350246, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}

@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public bool pause { get; private set; }
     public bool playerInfo { get; private set; }
     public bool diaLog { get; private set; }
-    MainCanvasManager mainCanvasManager;
+    [SerializeField] MainCanvasManager mainCanvasManager;
     public bool isBossFight;
     public bool isLose;
     public bool isWin;
@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        mainCanvasManager = GetComponent<MainCanvasManager>();
         playerInfo = false;
         pause = false;
         isBossFight = false;

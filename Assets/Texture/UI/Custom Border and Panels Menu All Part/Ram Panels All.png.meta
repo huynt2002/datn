@@ -963,7 +963,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ram Panels All_40
+      name: skillll
       rect:
         serializedVersion: 2
         x: 5
@@ -1847,7 +1847,6 @@ TextureImporter:
       Ram Panels All_38: 903140121
       Ram Panels All_39: -1931129836
       Ram Panels All_4: -472159415
-      Ram Panels All_40: -887106830
       Ram Panels All_41: 1079678295
       Ram Panels All_42: 570601189
       Ram Panels All_44: -870982808
@@ -1893,6 +1892,7 @@ TextureImporter:
       minimap: 518256109
       skil: -711385628
       skill: -538892015
+      skillll: -887106830
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

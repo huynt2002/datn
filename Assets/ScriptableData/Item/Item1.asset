@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Wooden Sword
   damageAmount: 10
   hpAmount: 0
-  description: Increase 10% ATK
+  description: Increase 10% DMG
   criticalChance: 0
   criticalDamage: 0
   speed: 0

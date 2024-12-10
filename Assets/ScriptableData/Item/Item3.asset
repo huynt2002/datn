@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Silver Arrow
   damageAmount: 0
   hpAmount: 0
-  description: ' Increase 10% CritRate and 20%CritDamage'
+  description: ' Increase 10% CritRate and 20%CritDMG'
   criticalChance: 10
   criticalDamage: 20
   speed: 0

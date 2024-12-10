@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Wooden Staff
   damageAmount: 5
   hpAmount: 0
-  description: Increase 5%ATK, 5%CritDamage and 5%CritDamage
+  description: Increase 5%ATK, 5%CritRate and 5%CritDMG
   criticalChance: 5
   criticalDamage: 5
   speed: 0

@@ -62,12 +62,15 @@ public class DisplayHP : MonoBehaviour
             {
                 ManageHP();
                 hpUI.enabled = true;
-                timeCount = 0;
+                timeCount = timeDisplay;
             }
             else
             {
-                timeCount += Time.deltaTime;
-                if (timeCount > timeDisplay)
+                if (timeCount > 0)
+                {
+                    timeCount -= Time.deltaTime;
+                }
+                else
                 {
                     hpUI.enabled = false;
                     show = false;

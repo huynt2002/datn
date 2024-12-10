@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,8 +6,6 @@ using UnityEngine.UI;
 public class DisplayHP : MonoBehaviour
 {
     public Entity entity;
-    public Canvas hpUI;
-    public bool show = false;
     public bool alwayShow;
     [SerializeField] Slider hpBar;
     [SerializeField] Image hpBarColor;
@@ -18,7 +17,6 @@ public class DisplayHP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hpUI = GetComponent<Canvas>();
         gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(1, 1);
     }
 
@@ -55,31 +53,28 @@ public class DisplayHP : MonoBehaviour
         if (alwayShow)
         {
             ManageHP();
+            return;
+        }
+
+        if (timeCount > 0)
+        {
+            timeCount -= Time.deltaTime;
+            ManageHP();
+            hpBar.gameObject.SetActive(true);
         }
         else
         {
-            if (show)
-            {
-                ManageHP();
-                hpUI.enabled = true;
-                timeCount = timeDisplay;
-            }
-            else
-            {
-                if (timeCount > 0)
-                {
-                    timeCount -= Time.deltaTime;
-                }
-                else
-                {
-                    hpUI.enabled = false;
-                    show = false;
-                }
-            }
+            hpBar.gameObject.SetActive(false);
         }
     }
+
     void ManageHP()
     {
         hpBar.value = (float)entity.currentHP / entity.maxHP;
+    }
+
+    public void Show()
+    {
+        timeCount = timeDisplay;
     }
 }

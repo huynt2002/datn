@@ -56,7 +56,7 @@ public class Entity : MonoBehaviour
         GameObject blood = SpawnManager.instance
             .SpawnParticalEffect(SpawnManager.ParticleType.BloodSmall, Helper.GetPos(gameObject));
         var ui = GetComponent<Monster_Behavior>()?.GetComponentInChildren<DisplayHP>();
-        if (ui != null) ui.show = true;
+        if (ui) { ui.Show(); }
         currentHP -= damage;
         if (currentHP <= 0)
         {

@@ -32,6 +32,8 @@ public class Defines
         public static string PickUp = "Pick Up";
         public static string Buy = "Buy";
         public static string Refresh = "Refresh";
+        public static string Focus = "Focus";
+        public static string Change = "Change";
 
     }
 

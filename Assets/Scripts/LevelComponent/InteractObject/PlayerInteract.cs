@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class PlayerInteract : MonoBehaviour
 {
     public enum InteractType
     {
-        None, Gate, Chest, NPC, Item
+        None, Gate, Chest, NPC, Item, SkillProvide
     }
     public InteractType interactType { get; protected set; }
     protected Animator animator;
@@ -14,6 +12,7 @@ public abstract class PlayerInteract : MonoBehaviour
     public virtual void Chest() { }
     public virtual void NPC() { }
     public virtual void Item() { }
+    public virtual void SkillProvide() { }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

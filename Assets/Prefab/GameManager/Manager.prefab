@@ -210,6 +210,8 @@ MonoBehaviour:
   coinCount: {fileID: 7826831092431812426}
   gemCount: {fileID: 7301526010297361606}
   skillCD: {fileID: 7484862592733833308}
+  skillObj: {fileID: 5237117122392875939}
+  skillIcon: {fileID: 9044418089214233757}
   pauseCanvas: {fileID: 8488058411951262605}
   resumeBut: {fileID: 278624955634467655}
   pauseUI: {fileID: 6282932442404911420}
@@ -221,6 +223,7 @@ MonoBehaviour:
   hp: {fileID: 2973270792249607103}
   dmg: {fileID: 6499604215338407692}
   skillInfoObject: {fileID: 4068493625782347842}
+  skillUiIcon: {fileID: 1659973510571830534}
   skillSelectedObj: {fileID: 2459151281568973368}
   itemInfoObject: {fileID: 463867774642975800}
   itemSlots:
@@ -674,6 +677,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetSoundFXVolumme
       objectReference: {fileID: 0}
+    - target: {fileID: 2301056083071704735, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3516844380080643753, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -919,7 +926,8 @@ PrefabInstance:
       value: Resume
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4736305113820181052, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
@@ -969,6 +977,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5162320899932989435, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
   m_PrefabInstance: {fileID: 6287873999840640316}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1659973510571830534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4632635058348052538, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
+  m_PrefabInstance: {fileID: 6287873999840640316}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2459151281568973368 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8458794848591806212, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
@@ -1035,6 +1054,11 @@ GameObject:
 --- !u!1 &5211633422719655937 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2238417566733720893, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
+  m_PrefabInstance: {fileID: 6287873999840640316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5237117122392875939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2301056083071704735, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
   m_PrefabInstance: {fileID: 6287873999840640316}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &5501552903756576165 stripped
@@ -1157,6 +1181,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9044418089214233757 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3082500930517676449, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
+  m_PrefabInstance: {fileID: 6287873999840640316}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9080474272780318915 stripped

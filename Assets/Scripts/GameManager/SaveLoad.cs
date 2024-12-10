@@ -18,7 +18,7 @@ public class GameData
         tutorial = false;
         var data = PlayerStats.instance;
         data?.SetDefault();
-        playerStats = new PlayerData(data.currentHP, data.maxHP, data.damage, data.speed, data.coin, data.gem, data.criticalChance, data.criticalDamage);
+        playerStats = new PlayerData(data.currentHP, data.maxHP, data.damage, data.speed, data.coin, data.gem, data.criticalChance, data.criticalDamage, data.skillId);
         currentLevelIndex = 0;
         inventoryItemIds.Clear();
     }
@@ -31,7 +31,7 @@ public class GameData
         }
         this.currentLevelIndex = currentLevelIndex;
         var data = playerStats;
-        this.playerStats = new PlayerData(data.currentHP, data.maxHP, data.damage, data.speed, data.coin, data.gem, data.criticalChance, data.criticalDamage);
+        this.playerStats = new PlayerData(data.currentHP, data.maxHP, data.damage, data.speed, data.coin, data.gem, data.criticalChance, data.criticalDamage, data.skillId);
         this.tutorial = tutorial;
     }
 }
@@ -49,8 +49,9 @@ public class PlayerData
     public float criticalDamage { get; private set; }
     public int coin;
     public int gem;
+    public int skillId;
 
-    public PlayerData(float currentHP, float maxHP, float damage, float speed, int coin, int gem, float criticalChance, float criticalDamage)
+    public PlayerData(float currentHP, float maxHP, float damage, float speed, int coin, int gem, float criticalChance, float criticalDamage, int skillId)
     {
         this.currentHP = currentHP;
         this.maxHP = maxHP;
@@ -60,6 +61,7 @@ public class PlayerData
         this.gem = gem;
         this.criticalChance = criticalChance;
         this.criticalDamage = criticalDamage;
+        this.skillId = skillId;
     }
 }
 

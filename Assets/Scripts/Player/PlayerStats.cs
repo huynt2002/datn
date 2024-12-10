@@ -8,6 +8,7 @@ public class PlayerStats : Entity
     public static PlayerStats instance;
     public int coin { get; private set; }
     public int gem { get; private set; }
+    public int skillId { get; private set; }
     // Start is called before the first frame update
     void Awake()
     {
@@ -24,7 +25,7 @@ public class PlayerStats : Entity
         if (GameManager.instance.gameData.playerStats != null)
         {
             var data = GameManager.instance.gameData.playerStats;
-            SetDataStats(data.currentHP, data.maxHP, data.damage, data.speed, data.coin, data.gem, data.criticalChance, data.criticalDamage);
+            SetDataStats(data.currentHP, data.maxHP, data.damage, data.speed, data.coin, data.gem, data.criticalChance, data.criticalDamage, data.skillId);
         }
     }
 
@@ -44,7 +45,7 @@ public class PlayerStats : Entity
         }
     }
 
-    void SetDataStats(float currentHP, float maxHP, float damage, float speed, int coin, int gem, float criticalChance, float criticalDamage)
+    void SetDataStats(float currentHP, float maxHP, float damage, float speed, int coin, int gem, float criticalChance, float criticalDamage, int skillId)
     {
         this.currentHP = currentHP;
         this.maxHP = maxHP;
@@ -54,6 +55,7 @@ public class PlayerStats : Entity
         this.gem = gem;
         this.criticalChance = criticalChance;
         this.criticalDamage = criticalDamage;
+        this.skillId = skillId;
     }
 
     public override void SetDefault()
@@ -61,6 +63,7 @@ public class PlayerStats : Entity
         base.SetDefault();
         coin = 0;
         gem = 0;
+        skillId = -1;
     }
 
     protected override void Dead()
@@ -77,6 +80,11 @@ public class PlayerStats : Entity
     public void AddCoin(int c)
     {
         coin += c;
+    }
+
+    public void SetSkill(int id)
+    {
+        skillId = id;
     }
 
 }

@@ -5,6 +5,9 @@ using UnityEngine;
 public abstract class AttackSkill : MonoBehaviour
 {
     //setting this need create animation with this too
+    public int skillId;//only player
+    public Sprite icon;//only player
+
     public AnimationClip anim;
     public bool isCD { get; private set; }
     protected Entity entity;

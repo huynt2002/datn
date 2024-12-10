@@ -20,7 +20,7 @@ public class AnimationController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void PlayAnimation(string animationName)
+    public void PlayAnimation(string animationName)
     {
         animator.Play(animationName);
     }

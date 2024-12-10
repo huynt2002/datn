@@ -1,12 +1,13 @@
-using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement instance;
-    Entity entity;
+    PlayerStats entity;
 
     [Header("Components")]
     [SerializeField] Rigidbody2D body;
@@ -55,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Skill")]
     public AttackSkill skill1;
-    public AttackSkill skill2;
+    List<AttackSkill> skills;
     bool isSkill;
     bool canUseSkill => !skill1.isCD;
 
@@ -63,8 +64,14 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         instance = this;
-        entity = GetComponent<Entity>();
+        entity = GetComponent<PlayerStats>();
         animationController = GetComponent<AnimationController>();
+    }
+
+    void Start()
+    {
+        skills = GetComponentsInChildren<AttackSkill>().ToList();
+        skill1 = skills.Find(e => e.skillId == entity.skillId);
     }
 
     // Update is called once per frame
@@ -159,12 +166,20 @@ public class PlayerMovement : MonoBehaviour
 
     public void SkillAttackInput(InputAction.CallbackContext context)
     {
+        if (!skill1) { return; }
         if (!canUseSkill || getHit || isSkill) { return; }
         if (context.performed)
         {
             isSkill = true;
             skill1.Attack();
-            animationController.PlaySkillAnimation();
+            if (skill1.anim)
+            {
+                animationController.PlayAnimation(skill1.anim.name);
+            }
+            else
+            {
+                skill1.OnAttacking();
+            }
         }
     }
 
@@ -315,6 +330,12 @@ public class PlayerMovement : MonoBehaviour
                     break;
                 case PlayerInteract.InteractType.Chest:
                     playerInteract.Chest();
+                    break;
+                case PlayerInteract.InteractType.SkillProvide:
+                    var randSkill = Random.Range(0, skills.Count);
+                    skill1 = skills[randSkill];
+                    entity.SetSkill(skill1.skillId);
+                    playerInteract.SkillProvide();
                     break;
             }
         }

@@ -1,10 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Linq;
 
 public class MainCanvasManager : MonoBehaviour
 {
@@ -15,6 +13,8 @@ public class MainCanvasManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI coinCount;
     [SerializeField] TextMeshProUGUI gemCount;
     [SerializeField] Image skillCD;
+    [SerializeField] GameObject skillObj;
+    [SerializeField] Image skillIcon;
 
     [Header("Pause")]
     [SerializeField] GameObject pauseCanvas;
@@ -31,6 +31,7 @@ public class MainCanvasManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI dmg;
     [Header("SkillInfo")]
     [SerializeField] DisplaySkillInfo skillInfoObject;
+    [SerializeField] Image skillUiIcon;
     [SerializeField] GameObject skillSelectedObj;
     [Header("Inventory")]
     [SerializeField] GameObject itemInfoObject;
@@ -106,7 +107,17 @@ public class MainCanvasManager : MonoBehaviour
 
     void ManageSkill()
     {
-        skillCD.fillAmount = PlayerMovement.instance.skill1.cdCount / PlayerMovement.instance.skill1.cdTime;
+        if (PlayerMovement.instance)
+        {
+            if (PlayerMovement.instance.skill1)
+            {
+                skillIcon.sprite = PlayerMovement.instance.skill1.icon;
+                skillCD.fillAmount = PlayerMovement.instance.skill1.cdCount / PlayerMovement.instance.skill1.cdTime;
+                skillObj.SetActive(true);
+                return;
+            }
+        }
+        skillObj.SetActive(false);
     }
 
     public void ManagePauseCanvas()
@@ -155,9 +166,21 @@ public class MainCanvasManager : MonoBehaviour
     void DisplaySkillInfo()
     {
         if (!PlayerMovement.instance) return;
+        var skill = PlayerMovement.instance.skill1;
+        if (skill)
+        {
+            skillUiIcon.sprite = skill.icon;
+            skillUiIcon.gameObject.SetActive(true);
+        }
+        else
+        {
+            skillUiIcon.gameObject.SetActive(false);
+            skillInfoObject.gameObject.SetActive(false);
+            return;
+        }
         if (EventSystem.current.currentSelectedGameObject == skillSelectedObj)
         {
-            skillInfoObject.skill = PlayerMovement.instance.skill1;
+            skillInfoObject.skill = skill;
             skillInfoObject.gameObject.SetActive(true);
             return;
         }

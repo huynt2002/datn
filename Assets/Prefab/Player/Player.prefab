@@ -919,7 +919,7 @@ MonoBehaviour:
   damageMultiple: 0
   cdTime: 60
   needWaitOtherAttack: 1
-  skillName: Hoiguy
+  skillName: MonsterSummon
   skillDescription: Summon a monster to fight.
   monsters:
   - {fileID: 6273467602576250793, guid: 3fbfaefe57c0e3047a0b1d391ee02774, type: 3}
@@ -1187,7 +1187,7 @@ MonoBehaviour:
   - {x: 0.25, y: -0.555, z: 0}
   m_ShapePathHash: 1590984020
   m_Mesh: {fileID: 0}
-  m_InstanceId: 90130
+  m_InstanceId: -1318
   m_LocalBounds:
     m_Center: {x: -0.0006250441, y: -0.004284084, z: 0}
     m_Extent: {x: 0.25919324, y: 0.5507159, z: 0}

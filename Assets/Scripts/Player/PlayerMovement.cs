@@ -332,12 +332,17 @@ public class PlayerMovement : MonoBehaviour
                     playerInteract.Chest();
                     break;
                 case PlayerInteract.InteractType.SkillProvide:
+                    if (skills.Count == 0)
+                    {
+                        Debug.LogError("No skills");
+                        return;
+                    }
                     int randSkill;
                     do
                     {
                         randSkill = Random.Range(0, skills.Count);
                     } while (
-                        skill1 != skills[randSkill] && skill1
+                        skill1 == skills[randSkill]
                     );
                     skill1 = skills[randSkill];
                     entity.SetSkill(skill1.skillId);

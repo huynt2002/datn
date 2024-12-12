@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -28,6 +29,7 @@ public class Monster_Behavior : MonoBehaviour
     [Header("Attack")]
     public bool attack;
     public MonsterAttackSkill currentAttackSkill = null;
+    List<MonsterAttackSkill> skills;
     [SerializeField] float getHitTime = 0.15f;
 
     // Start is called before the first frame update
@@ -41,7 +43,7 @@ public class Monster_Behavior : MonoBehaviour
         SetIdle(true);
         moveTarget = transform.position;
 
-        var skills = GetComponentsInChildren<AttackSkill>();
+        skills = GetComponentsInChildren<MonsterAttackSkill>().ToList();
 
         switch (monsterType)
         {
@@ -79,27 +81,14 @@ public class Monster_Behavior : MonoBehaviour
     {
         if (!entity.isAlive)
         {
-            animationController.PlayDeadAnimation();
+            Dead();
             return;
         }
-
         Air();
         GetHit();
-        if (!isIdle && (!entity.getHit || !canGetHit))
-        {
-            if (attack)
-            {
-                Attack();
-            }
-            else
-            {
-                Move();
-            }
-        }
-        else
-        {
-            Idle();
-        }
+        Attack();
+        Move();
+        Idle();
     }
 
     void FixedUpdate()
@@ -112,6 +101,11 @@ public class Monster_Behavior : MonoBehaviour
         {
             isIdle = false;
         }
+    }
+
+    void Dead()
+    {
+        animationController.PlayDeadAnimation();
     }
 
     void Air()
@@ -164,16 +158,20 @@ public class Monster_Behavior : MonoBehaviour
         animationController.PlayGetHitAnimation();
         yield return new WaitForSeconds(getHitTime);
         entity.ResetGetHit();
-        SetIdle(true);
     }
 
     void Move()
     {
+        if (entity.getHit && canGetHit)
+        {
+            return;
+        }
         if (!canMove) { return; }
-        if (isIdle) { return; }
+        if (isIdle || attack) { return; }
         if (detectArea != null && groundSensor.isGrounded)
         {
-            if (canChase) { ChasePlayer(); }
+            ChasePlayer();
+            RunFromPlayer();
             if (Helper.RoundingFloatNumber(transform.position.x) == Helper.RoundingFloatNumber(moveTarget.x))
             {
                 SetRandomMovePos();
@@ -201,24 +199,61 @@ public class Monster_Behavior : MonoBehaviour
 
     void ChasePlayer()
     {
+        if (!canChase)
+        {
+            return;
+        }
         if (!attackTarget)
         {
             chasing = false;
             return;
         }
-        if (currentAttackSkill)
+
+        var isSkillsCD = !skills.Any(e => e.isCD == false);
+        if (isSkillsCD && currentAttackSkill)
         {
-            if (currentAttackSkill.isCD && runWhenCD)
+            chasing = false;
+            return;
+
+        }
+
+        chasing = true;
+    }
+
+    void RunFromPlayer()
+    {
+        if (!runWhenCD)
+        {
+            return;
+        }
+        if (entity.getHit && canGetHit)
+        {
+            return;
+        }
+        if (attack || chasing)
+        {
+            return;
+        }
+        var isSkillsCD = !skills.Any(e => e.isCD == false);
+        if (isSkillsCD)
+        {
+            if (Mathf.Abs(attackTarget.transform.position.x - transform.position.x) < 5f)
             {
-                chasing = false;
-                return;
+                SetRandomMovePos(true, 7f);
             }
         }
-        chasing = true;
     }
 
     protected void Attack()
     {
+        if (entity.getHit && canGetHit || isIdle)
+        {
+            return;
+        }
+        if (!attack)
+        {
+            return;
+        }
         if (currentAttackSkill)
         {
             animator.Play(currentAttackSkill.anim.name);
@@ -270,12 +305,40 @@ public class Monster_Behavior : MonoBehaviour
         attackTarget = player;
     }
 
-    void SetRandomMovePos()
+    void SetRandomMovePos(bool runFromAttackTarget = false, float distance = 0f)
     {
+        float targetXPos = attackTarget.transform.position.x;
         var xSize = detectArea.detectBound.size.x;
-        var r = Random.Range((detectArea.transform.position.x - xSize / 2 + 2f),
-            (detectArea.transform.position.x + xSize / 2 - 2f));
-        Vector2 target = new Vector3(r, 0, 0);
-        moveTarget = target;
+        float randPos = Random.Range(detectArea.transform.position.x - xSize / 2 + 1f,
+            detectArea.transform.position.x + xSize / 2 - 1f);
+        if (runFromAttackTarget)
+        {
+            if (attackTarget)
+            {
+                if (targetXPos > transform.position.x)
+                {
+                    if (targetXPos - distance < detectArea.transform.position.x - xSize / 2 + 1f)
+                    {
+                        randPos = detectArea.transform.position.x - xSize / 2 + 1f;
+                    }
+                    else
+                    {
+                        randPos = targetXPos - distance;
+                    }
+                }
+                else
+                {
+                    if (targetXPos + distance > detectArea.transform.position.x + xSize / 2 - 1f)
+                    {
+                        randPos = detectArea.transform.position.x + xSize / 2 - 1f;
+                    }
+                    else
+                    {
+                        randPos = targetXPos + distance;
+                    }
+                }
+            }
+        }
+        moveTarget = new Vector2(randPos, 0);
     }
 }

@@ -186,7 +186,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -211,7 +211,7 @@ Transform:
   m_GameObject: {fileID: 99411624}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.848025, y: 2.842682, z: -0.071912766}
+  m_LocalPosition: {x: 9.882669, y: 3.7028816, z: -0.071912766}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -468,9 +468,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 538533058950506673, guid: fc7c5ccfdf232e54f832001140af9379, type: 3}
+      propertyPath: force
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 538533058950506673, guid: fc7c5ccfdf232e54f832001140af9379, type: 3}
+      propertyPath: cdTime
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3114575383660464274, guid: fc7c5ccfdf232e54f832001140af9379, type: 3}
       propertyPath: m_Name
       value: Monster_Mushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 6116687838779853552, guid: fc7c5ccfdf232e54f832001140af9379, type: 3}
+      propertyPath: idleTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8206167698019351815, guid: fc7c5ccfdf232e54f832001140af9379, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1278,7 +1290,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6981549725097531983, guid: 0dcac33b44530d646b28c5f40c696c98, type: 3}
   m_PrefabInstance: {fileID: 977542612}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &1224048244
+--- !u!43 &1030179700
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1543,7 +1555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5966786623815608426, guid: 4bd5b88cdfd5e184eba9e602928c0065, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.98
+      value: 1.07
       objectReference: {fileID: 0}
     - target: {fileID: 5966786623815608426, guid: 4bd5b88cdfd5e184eba9e602928c0065, type: 3}
       propertyPath: m_LocalPosition.z

@@ -317,7 +317,7 @@ MonoBehaviour:
   runWhenCD: 1
   moveTarget: {x: 0, y: 0}
   isIdle: 0
-  idleTime: 4
+  idleTime: 2
   attack: 0
   currentAttackSkill: {fileID: 0}
   getHitTime: 0.3
@@ -677,11 +677,11 @@ MonoBehaviour:
   icon: {fileID: 0}
   anim: {fileID: 7400000, guid: 2b6badc2e3523aa42950c0bc3d8caa35, type: 2}
   damageMultiple: 1
-  cdTime: 5
+  cdTime: 6
   needWaitOtherAttack: 1
   skillName: 
   skillDescription: 
-  force: 10
+  force: 12
 --- !u!61 &2984728263264904857
 BoxCollider2D:
   m_ObjectHideFlags: 0

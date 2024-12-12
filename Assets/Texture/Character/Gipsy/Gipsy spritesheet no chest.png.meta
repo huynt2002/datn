@@ -1,0 +1,398 @@
+fileFormatVersion: 2
+guid: 3fdb215aa7cef5b48a468049461234cd
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Gipsy spritesheet no chest_32
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 79
+        width: 36
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edeed387fb176eb40ab256adfba734e9
+      internalID: -1732702466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gipsy spritesheet no chest_33
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 79
+        width: 36
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca27db8c5352da48a41747e145cbf2b
+      internalID: -609374678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gipsy spritesheet no chest_34
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 79
+        width: 36
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e84bf138e533ca44fa687beea671ec4e
+      internalID: -2137744559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gipsy spritesheet no chest_35
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 79
+        width: 36
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81749acf32378e74ea4122772df6263b
+      internalID: 1485610223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gipsy spritesheet no chest_36
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 79
+        width: 36
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43878fc40c36e4548b8a75232348d98b
+      internalID: 1723572366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gipsy spritesheet no chest_37
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 79
+        width: 37
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc93b8882be350948828d54c3962a10e
+      internalID: -1100083272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gipsy spritesheet no chest_38
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 79
+        width: 36
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6babf3166b8f84d43b1b773fc38376bd
+      internalID: -1693364189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gipsy spritesheet no chest_39
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 79
+        width: 36
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa948f298664ab4e81bbccabc542435
+      internalID: -1900202622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gipsy spritesheet no chest_40
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 79
+        width: 36
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60d8829fcc4ee8f4fb4af83afab87410
+      internalID: -147592242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gipsy spritesheet no chest_41
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 79
+        width: 36
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f95e0b624298340bd26237b599f09b
+      internalID: 95462554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Gipsy spritesheet no chest_0: -313042334
+      Gipsy spritesheet no chest_1: -380886495
+      Gipsy spritesheet no chest_10: 1085869941
+      Gipsy spritesheet no chest_11: -1871538698
+      Gipsy spritesheet no chest_12: 411449135
+      Gipsy spritesheet no chest_13: -1542893304
+      Gipsy spritesheet no chest_14: 824786892
+      Gipsy spritesheet no chest_15: 1465681997
+      Gipsy spritesheet no chest_16: -216425448
+      Gipsy spritesheet no chest_17: 739744844
+      Gipsy spritesheet no chest_18: -1181741498
+      Gipsy spritesheet no chest_19: 1654014034
+      Gipsy spritesheet no chest_2: -392396247
+      Gipsy spritesheet no chest_20: -1091082707
+      Gipsy spritesheet no chest_21: -1827471650
+      Gipsy spritesheet no chest_22: -500732825
+      Gipsy spritesheet no chest_23: 913563188
+      Gipsy spritesheet no chest_24: -1040305959
+      Gipsy spritesheet no chest_25: 1942720136
+      Gipsy spritesheet no chest_26: -1155203348
+      Gipsy spritesheet no chest_27: -1844203513
+      Gipsy spritesheet no chest_28: 1921860423
+      Gipsy spritesheet no chest_29: 203990549
+      Gipsy spritesheet no chest_3: -1044555509
+      Gipsy spritesheet no chest_30: 1985756611
+      Gipsy spritesheet no chest_31: -865138914
+      Gipsy spritesheet no chest_32: -1732702466
+      Gipsy spritesheet no chest_33: -609374678
+      Gipsy spritesheet no chest_34: -2137744559
+      Gipsy spritesheet no chest_35: 1485610223
+      Gipsy spritesheet no chest_36: 1723572366
+      Gipsy spritesheet no chest_37: -1100083272
+      Gipsy spritesheet no chest_38: -1693364189
+      Gipsy spritesheet no chest_39: -1900202622
+      Gipsy spritesheet no chest_4: -1977281249
+      Gipsy spritesheet no chest_40: -147592242
+      Gipsy spritesheet no chest_41: 95462554
+      Gipsy spritesheet no chest_42: 1702158827
+      Gipsy spritesheet no chest_43: 571129384
+      Gipsy spritesheet no chest_44: -1121556830
+      Gipsy spritesheet no chest_45: -1258383968
+      Gipsy spritesheet no chest_46: 1755892921
+      Gipsy spritesheet no chest_47: 1073843104
+      Gipsy spritesheet no chest_5: -915543431
+      Gipsy spritesheet no chest_6: 1722293832
+      Gipsy spritesheet no chest_7: 270529725
+      Gipsy spritesheet no chest_8: 2094771588
+      Gipsy spritesheet no chest_9: -147225297
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -34937,17 +34937,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7026074023314308804}
     m_Modifications:
-    - target: {fileID: 1635840434771238098, guid: 3069012da85d9f049a6375b80fe18c86, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 5622754373564905955, guid: 3069012da85d9f049a6375b80fe18c86, type: 3}
       propertyPath: m_Name
       value: SaleNPC
-      objectReference: {fileID: 0}
-    - target: {fileID: 6972745442563959791, guid: 3069012da85d9f049a6375b80fe18c86, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6989127949197652224, guid: 3069012da85d9f049a6375b80fe18c86, type: 3}
       propertyPath: m_LocalPosition.x

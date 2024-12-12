@@ -3481,10 +3481,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd25c7159314564ab3cb37c5d4729c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numEnemy: 0300000003000000
+  numEnemy: 0300000002000000
   enemyPrefabList:
   - {fileID: 9050534279554106856, guid: abd75af6c1f3ed14a854b8dab02dadc8, type: 3}
-  - {fileID: 6273467602576250793, guid: 3fbfaefe57c0e3047a0b1d391ee02774, type: 3}
+  - {fileID: 3114575383660464274, guid: fc7c5ccfdf232e54f832001140af9379, type: 3}
   spawnType: 1
   spawnTime: 1
 --- !u!61 &2332203708802708056
@@ -3865,7 +3865,7 @@ MonoBehaviour:
   - {x: 5.5278625, y: -1.8818321, z: 0}
   m_ShapePathHash: -670500287
   m_Mesh: {fileID: 0}
-  m_InstanceId: 82588
+  m_InstanceId: 58024
   m_LocalBounds:
     m_Center: {x: 3.0933275, y: -1.4233751, z: 0}
     m_Extent: {x: 2.5206766, y: 0.458457, z: 0}
@@ -4241,7 +4241,7 @@ MonoBehaviour:
   - {x: 4.2546377, y: -2.9836617, z: 0}
   m_ShapePathHash: 710798951
   m_Mesh: {fileID: 0}
-  m_InstanceId: 82616
+  m_InstanceId: 58052
   m_LocalBounds:
     m_Center: {x: 2.2334952, y: -1.5565128, z: 0}
     m_Extent: {x: 2.0827985, y: 1.4730606, z: 0}
@@ -4475,7 +4475,7 @@ MonoBehaviour:
   - {x: 2.0050638, y: -1.0554562, z: 0}
   m_ShapePathHash: -401023522
   m_Mesh: {fileID: 0}
-  m_InstanceId: 82556
+  m_InstanceId: 57992
   m_LocalBounds:
     m_Center: {x: 1.1467593, y: -0.5465007, z: 0}
     m_Extent: {x: 0.9658706, y: 0.5089574, z: 0}
@@ -20084,7 +20084,7 @@ MonoBehaviour:
   - {x: 3.3486872, y: -1.8083754, z: 0}
   m_ShapePathHash: 961508973
   m_Mesh: {fileID: 0}
-  m_InstanceId: 83106
+  m_InstanceId: 58538
   m_LocalBounds:
     m_Center: {x: 2.0159822, y: -1.4203157, z: 0}
     m_Extent: {x: 1.4433312, y: 0.4339714, z: 0}
@@ -20798,7 +20798,7 @@ MonoBehaviour:
   - {x: 17.701395, y: -2.614338, z: 0}
   m_ShapePathHash: 52850775
   m_Mesh: {fileID: 0}
-  m_InstanceId: 82752
+  m_InstanceId: 58186
   m_LocalBounds:
     m_Center: {x: 8.726124, y: -1.2005148, z: 0}
     m_Extent: {x: 8.97527, y: 1.413825, z: 0}
@@ -21261,7 +21261,7 @@ MonoBehaviour:
   - {x: 5.5278625, y: -1.8818321, z: 0}
   m_ShapePathHash: -670500287
   m_Mesh: {fileID: 0}
-  m_InstanceId: 82540
+  m_InstanceId: 57976
   m_LocalBounds:
     m_Center: {x: 3.0933275, y: -1.4233751, z: 0}
     m_Extent: {x: 2.5206766, y: 0.458457, z: 0}
@@ -24563,7 +24563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4963960267294517407, guid: 971de3e1936bbac448a3bc2783d5edbc, type: 3}
       propertyPath: m_InstanceId
-      value: -200916
+      value: -31560
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

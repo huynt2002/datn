@@ -242,6 +242,8 @@ public class Monster_Behavior : MonoBehaviour
     public void ResetAttack()
     {
         attack = false;
+        currentAttackSkill.ResetAttack();
+        currentAttackSkill.CD();
     }
 
     public void ResetAttackWithIdle()

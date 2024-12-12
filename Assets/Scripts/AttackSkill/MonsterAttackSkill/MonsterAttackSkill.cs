@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class MonsterAttackSkill : AttackSkill
@@ -15,7 +13,6 @@ public abstract class MonsterAttackSkill : AttackSkill
     protected void SetMonsterAttack(Transform attackTarget)
     {
         monster_Behavior.SetAttack(this, attackTarget);
-        Attack();
     }
 
 
@@ -34,7 +31,7 @@ public abstract class MonsterAttackSkill : AttackSkill
                 SetMonsterAttack(other.transform.parent);
                 return;
             }
-            if (monster_Behavior.attack || monster_Behavior.isIdle)
+            if (monster_Behavior.attack || (monster_Behavior.isIdle && !monster_Behavior.currentAttackSkill.isCD))
             {
                 return;
             }

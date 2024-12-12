@@ -164,6 +164,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: dash_1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 28
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663b0884ed700354d8f3fc7cac9cf959
+      internalID: -769868845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dash_2
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 0
+        width: 26
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4b4a407f1277e478430a06cdaf7611
+      internalID: 95775849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dash_3
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 15
+        width: 29
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a1880d6a2d31541a1321dc6cf04ec0
+      internalID: -1635937949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dash_4
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 0
+        width: 28
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ecaa93e48528745b8351b69708a698
+      internalID: -1441223904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -175,8 +259,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      dash_1: 1997618290
+      dash_2: 95775849
+      dash_3: -1635937949
+      dash_4: -1441223904
       sunny-mushroom-jump_0: -863325695
-      sunny-mushroom-jump_1: 1997618290
       sunny-mushroom-jump_2: -1719319274
       sunny-mushroom-jump_3: -1939204224
       sunny-mushroom-jump_4: 858549670

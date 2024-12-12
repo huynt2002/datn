@@ -171,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
         if (context.performed)
         {
             isSkill = true;
-            skill1.Attack();
+            skill1.CD();
             if (skill1.anim)
             {
                 animationController.PlayAnimation(skill1.anim.name);

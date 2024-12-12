@@ -36,7 +36,7 @@ public abstract class AttackSkill : MonoBehaviour
         }
     }
 
-    public void Attack()
+    public void CD()
     {
         cdCount = cdTime;
     }

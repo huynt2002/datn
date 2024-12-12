@@ -122,10 +122,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a635954c8af4f44cb61cd97a8b0e903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillId: 0
+  icon: {fileID: 0}
   anim: {fileID: 7400000, guid: 0df2db778007ccd4aacca2287f40c35f, type: 2}
   damageMultiple: 1
   cdTime: 3
   needWaitOtherAttack: 1
+  skillName: 
+  skillDescription: 
   force: 8
 --- !u!1 &2969619385303630280
 GameObject:
@@ -603,7 +607,7 @@ MonoBehaviour:
   monsterType: 0
   entityCollider: {fileID: 7989947911875563038}
   detectArea: {fileID: 0}
-  canChase: 1
+  canChase: 0
   canMove: 1
   canGetHit: 1
   runWhenCD: 0

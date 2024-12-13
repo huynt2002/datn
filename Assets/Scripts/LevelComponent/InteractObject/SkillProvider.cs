@@ -1,29 +1,31 @@
 using UnityEngine;
 public class SkillProvider : PlayerInteract
 {
-    bool canProvide;
+    int cost;
     void Start()
     {
         interactType = InteractType.SkillProvide;
-        canProvide = true;
+        cost = 100;
     }
 
     public override void SkillProvide()
     {
-        if (canProvide)
+        if (!PlayerMovement.instance.skill1)
         {
-            canProvide = false;
+            return;
         }
+        PlayerStats.instance.AddCoin(-cost);
+        var x = cost * 0.3f;
+        cost += (int)x;
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (!canProvide) { return; }
-        if (PlayerMovement.instance.skill1)
+        if (!PlayerMovement.instance.skill1)
         {
-            InfoUIManager.instance.SetInfo(Helper.GetPos(gameObject, Helper.ObjPosition.Top), Color.white, Defines.InfoButText.Focus);
+            InfoUIManager.instance.SetInfo(Helper.GetPos(gameObject, Helper.ObjPosition.Top), Color.white, Defines.InfoButText.Focus + "(0)");
             return;
         }
-        InfoUIManager.instance.SetInfo(Helper.GetPos(gameObject, Helper.ObjPosition.Top), Color.white, Defines.InfoButText.Change);
+        InfoUIManager.instance.SetInfo(Helper.GetPos(gameObject, Helper.ObjPosition.Top), Color.white, Defines.InfoButText.Change + "(" + cost + ")");
     }
 }

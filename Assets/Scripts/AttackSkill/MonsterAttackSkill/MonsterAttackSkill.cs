@@ -31,9 +31,15 @@ public abstract class MonsterAttackSkill : AttackSkill
                 SetMonsterAttack(other.transform.parent);
                 return;
             }
-            if (monster_Behavior.attack || (monster_Behavior.isIdle && !monster_Behavior.currentAttackSkill.isCD))
+            if (monster_Behavior.attack || monster_Behavior.isIdle)
             {
-                return;
+                if (monster_Behavior.currentAttackSkill)
+                {
+                    if (!monster_Behavior.currentAttackSkill.isCD)
+                    {
+                        return;
+                    }
+                }
             }
             SetMonsterAttack(other.transform.parent);
         }

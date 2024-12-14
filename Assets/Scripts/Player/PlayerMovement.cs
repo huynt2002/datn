@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Skill")]
     public AttackSkill skill1;
-    List<AttackSkill> skills;
+    public List<AttackSkill> skills { get; private set; }
     bool isSkill;
     bool canUseSkill => !skill1.isCD;
 
@@ -206,11 +206,11 @@ public class PlayerMovement : MonoBehaviour
         SoundManager.instance.PlayDashSound(gameObject.transform);
         body.gravityScale = 0;
         body.velocity = new Vector2(dashSpeed * facingDirection, 0f);
-        PlayerStats.instance.SetInvincible(true);
+        entity.SetInvincible(true);
         yield return new WaitForSeconds(dashDuration);
         body.gravityScale = Defines.Physics.GravityScale;
         body.velocity = new Vector2(0f, body.velocity.y);
-        PlayerStats.instance.SetInvincible(false);
+        entity.SetInvincible(false);
         isDash = false;
         yield return new WaitForSeconds(dashCD);
         canDash = true;
@@ -332,20 +332,6 @@ public class PlayerMovement : MonoBehaviour
                     playerInteract.Chest();
                     break;
                 case PlayerInteract.InteractType.SkillProvide:
-                    if (skills.Count == 0)
-                    {
-                        Debug.LogError("No skills");
-                        return;
-                    }
-                    int randSkill;
-                    do
-                    {
-                        randSkill = Random.Range(0, skills.Count);
-                    } while (
-                        skill1 == skills[randSkill]
-                    );
-                    skill1 = skills[randSkill];
-                    entity.SetSkill(skill1.skillId);
                     playerInteract.SkillProvide();
                     break;
             }

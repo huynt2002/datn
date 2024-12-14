@@ -277,8 +277,11 @@ public class Monster_Behavior : MonoBehaviour
     public void ResetAttack()
     {
         attack = false;
-        currentAttackSkill.ResetAttack();
-        currentAttackSkill.CD();
+        if (currentAttackSkill)
+        {
+            currentAttackSkill.ResetAttack();
+            currentAttackSkill.CD();
+        }
     }
 
     public void ResetAttackWithIdle()
@@ -307,7 +310,6 @@ public class Monster_Behavior : MonoBehaviour
 
     void SetRandomMovePos(bool runFromAttackTarget = false, float distance = 0f)
     {
-        float targetXPos = attackTarget.transform.position.x;
         var xSize = detectArea.detectBound.size.x;
         float randPos = Random.Range(detectArea.transform.position.x - xSize / 2 + 1f,
             detectArea.transform.position.x + xSize / 2 - 1f);
@@ -315,6 +317,7 @@ public class Monster_Behavior : MonoBehaviour
         {
             if (attackTarget)
             {
+                float targetXPos = attackTarget.transform.position.x;
                 if (targetXPos > transform.position.x)
                 {
                     if (targetXPos - distance < detectArea.transform.position.x - xSize / 2 + 1f)

@@ -103,7 +103,7 @@ public class LevelManager : MonoBehaviour
             return;
         }
         var numMonster = currentLevel.GetComponentsInChildren<Monster_Behavior>().ToList();
-        numMonster.RemoveAll(e => e.GetComponent<Entity>().isAlive == false);
+        numMonster.RemoveAll(e => e.GetComponent<Entity>().isAlive == false || e.monsterType == Defines.MonsterType.Ally);
         if (numMonster.Count > 0)
         {
             checkClear = false;

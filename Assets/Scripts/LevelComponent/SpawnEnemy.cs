@@ -20,7 +20,7 @@ public class SpawnEnemy : MonoBehaviour
     void Start()
     {
         for (int i = 0; i < enemyPrefabList.Length; i++)
-            while (numEnemy[i] > 0)
+            for (int j = 0; j < numEnemy[i]; j++)
             {
                 Vector2 pos = new Vector2(Random.Range(transform.position.x - gameObject.GetComponent<BoxCollider2D>().bounds.size.x / 2 + 1f,
                  transform.position.x + gameObject.GetComponent<BoxCollider2D>().bounds.size.x / 2 - 1f),
@@ -28,7 +28,6 @@ public class SpawnEnemy : MonoBehaviour
                 var mons = SpawnManager.instance.SpawnMonster(enemyPrefabList[i], pos, transform, Defines.MonsterType.Enemy);
                 mons.SetActive(false);
                 monsterList.Add(mons);
-                numEnemy[i]--;
             }
     }
 

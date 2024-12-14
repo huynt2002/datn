@@ -85,9 +85,9 @@ public class DetectArea : MonoBehaviour
         else if (other.tag == Defines.Tag.Ally)
         {
             Monster_Behavior ally = other.GetComponentInParent<Monster_Behavior>();
-            if (ally.attackTarget == null)
+            monsters.RemoveAll(e => e == null);
+            if (ally.attackTarget == null && monsters.Count > 0)
             {
-                monsters.RemoveAll(e => e == null);
                 var target = monsters[Random.Range(0, monsters.Count - 1)];
                 if (target.attackTarget == null)
                 {

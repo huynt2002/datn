@@ -22,7 +22,7 @@ public class TutorialAnimatorController : MonoBehaviour
     {
         if (disposeWhenExit)
         {
-            animatorObj.SetActive(false);
+            Destroy(animatorObj);
         }
     }
 }

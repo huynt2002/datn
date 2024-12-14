@@ -50,10 +50,14 @@ public class SkillProvider : PlayerInteract
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (!canProvide) { return; }
+        if (!canProvide)
+        {
+            InfoUIManager.instance.Disable();
+            return;
+        }
         if (!PlayerMovement.instance.skill1)
         {
-            InfoUIManager.instance.SetInfo(Helper.GetPos(gameObject, Helper.ObjPosition.Top), Color.white, Defines.InfoButText.Focus + "(0)");
+            InfoUIManager.instance.SetInfo(Helper.GetPos(gameObject, Helper.ObjPosition.Top), Color.white, Defines.InfoButText.Focus);
             return;
         }
         InfoUIManager.instance.SetInfo(Helper.GetPos(gameObject, Helper.ObjPosition.Top), Color.white, Defines.InfoButText.Change + "(" + cost + ")");

@@ -143,7 +143,7 @@ public class SpawnManager : MonoBehaviour
 
     public GameObject SpawnItemForSale(Vector2 pos)
     {
-        var rand = Random.Range(0, 5);
+        var rand = Random.Range(0, 100);
         if (rand < 5)
         {
             var item = Instantiate(itemPre, pos, Quaternion.identity);

@@ -29,6 +29,9 @@ public class MainCanvasManager : MonoBehaviour
     [SerializeField] GameObject playerAvtSelectedObj;
     [SerializeField] TextMeshProUGUI hp;
     [SerializeField] TextMeshProUGUI dmg;
+    [SerializeField] TextMeshProUGUI crtRate;
+    [SerializeField] TextMeshProUGUI crtDmg;
+    [SerializeField] TextMeshProUGUI speed;
     [Header("SkillInfo")]
     [SerializeField] DisplaySkillInfo skillInfoObject;
     [SerializeField] Image skillUiIcon;
@@ -157,6 +160,9 @@ public class MainCanvasManager : MonoBehaviour
         {
             hp.text = PlayerStats.instance.currentHP + "/" + PlayerStats.instance.maxHP;
             dmg.text = PlayerStats.instance.damage + "";
+            crtRate.text = PlayerStats.instance.criticalChance + "";
+            crtDmg.text = PlayerStats.instance.criticalDamage + "";
+            speed.text = PlayerStats.instance.speed + "";
             playerStatsInfoObject.SetActive(true);
             return;
         }

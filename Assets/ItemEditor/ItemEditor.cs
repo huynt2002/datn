@@ -47,10 +47,6 @@ public class ItemEditor : EditorWindow
             }
             else
             {
-                GUILayout.Label("Create New Object", EditorStyles.boldLabel);
-
-                newItemName = EditorGUILayout.TextField("Name", newItemName);
-
                 if (GUILayout.Button("Create Item"))
                 {
                     CreateScriptableObject(scriptType);
@@ -82,6 +78,7 @@ public class ItemEditor : EditorWindow
                 filterItems = new List<ScriptableObject>(items);
             }
             ObjectListView(filterItems);
+            GUILayout.Label("Count: " + items.Count);
         }
     }
 

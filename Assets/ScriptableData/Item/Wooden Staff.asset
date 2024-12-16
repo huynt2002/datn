@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 561581d114dd1ca4a8ee274becc9d972, type: 3}
-  m_Name: Mage staff
+  m_Name: Wooden Staff
   m_EditorClassIdentifier: 
   id: 6
   itemName: Wooden Staff

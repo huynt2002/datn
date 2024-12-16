@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561581d114dd1ca4a8ee274becc9d972, type: 3}
+  m_Name: FireStaff
+  m_EditorClassIdentifier: 
+  id: 11
+  itemName: Fire Staff
+  damageAmount: 10
+  hpAmount: 0
+  description: Increase 10%DMG, 50%CritDMG and create a fireball attack enemy every
+    10s
+  criticalChance: 0
+  criticalDamage: 50
+  speed: 0
+  icon: {fileID: 21300000, guid: d1891e22e149d254b889462ed2a8d6db, type: 3}
+  itemType: 2
+  itemEffectObject: {fileID: 570684442556238901, guid: 72d9e1648956a4644a7f21a9046cc328, type: 3}

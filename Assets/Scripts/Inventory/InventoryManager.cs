@@ -5,7 +5,7 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance { get; private set; }
-    public List<KeyValuePair<ItemStats, GameObject>> items { get; private set; } = new List<KeyValuePair<ItemStats, GameObject>>();
+    public List<KeyValuePair<ItemStats, ItemEffect>> items { get; private set; } = new List<KeyValuePair<ItemStats, ItemEffect>>();
     public const int numItem = 9;
     public bool full { get; private set; }
     Entity p;
@@ -55,11 +55,11 @@ public class InventoryManager : MonoBehaviour
         if (item.itemEffectObject)
         {
             var itemEffect = Instantiate(item.itemEffectObject, itemEffectContainer.transform) as GameObject;
-            items.Add(new KeyValuePair<ItemStats, GameObject>(item, itemEffect));
+            items.Add(new KeyValuePair<ItemStats, ItemEffect>(item, itemEffect.GetComponent<ItemEffect>()));
         }
         else
         {
-            items.Add(new KeyValuePair<ItemStats, GameObject>(item, null));
+            items.Add(new KeyValuePair<ItemStats, ItemEffect>(item, null));
         }
         if (applyStats) { item.ApplyItemStats(p); }
     }
@@ -70,6 +70,9 @@ public class InventoryManager : MonoBehaviour
         SpawnManager.instance.SpawnItem(transform.position, item.Key);
         item.Key.RemoveItemStats(p);
         items.Remove(item);
-        Destroy(item.Value);
+        if (item.Value)
+        {
+            item.Value.DestroyEffect();
+        }
     }
 }

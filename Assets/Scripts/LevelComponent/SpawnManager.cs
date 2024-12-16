@@ -136,15 +136,38 @@ public class SpawnManager : MonoBehaviour
         {
             itemStats = ChoseItem();
         }
-        var item = Instantiate(itemPre, pos, Quaternion.identity) as GameObject;
+        var item = Instantiate(itemPre, pos, Quaternion.identity);
         item.GetComponent<ItemManager>().itemStats = itemStats;
         return item;
+    }
+
+    public GameObject SpawnItemForSale(Vector2 pos)
+    {
+        var rand = Random.Range(0, 5);
+        if (rand < 5)
+        {
+            var item = Instantiate(itemPre, pos, Quaternion.identity);
+            item.GetComponent<ItemManager>().itemStats = ChoseItem(ChestType.Gold);
+            return item;
+        }
+        if (rand < 30)
+        {
+            var item = Instantiate(itemPre, pos, Quaternion.identity);
+            item.GetComponent<ItemManager>().itemStats = ChoseItem(ChestType.Silver);
+            return item;
+        }
+        else
+        {
+            var item = Instantiate(itemPre, pos, Quaternion.identity);
+            item.GetComponent<ItemManager>().itemStats = ChoseItem(ChestType.Wooden);
+            return item;
+        }
     }
 
     public GameObject SpawnItemFromChest(Vector2 pos, ChestType chestType = ChestType.None)
     {
         ItemStats itemStats = ChoseItem(chestType);
-        var item = Instantiate(itemPre, pos, Quaternion.identity) as GameObject;
+        var item = Instantiate(itemPre, pos, Quaternion.identity);
         item.GetComponent<ItemManager>().itemStats = itemStats;
         return item;
     }
@@ -152,7 +175,7 @@ public class SpawnManager : MonoBehaviour
     ItemStats ChoseItem(ChestType type = ChestType.None)
     {
         ItemStats itemStats;
-        int i = -1;
+        int i;
         switch (type)
         {
             case ChestType.Wooden:
@@ -178,7 +201,7 @@ public class SpawnManager : MonoBehaviour
     public void SpawnChest(Transform pos, ChestType chestType = ChestType.None)
     {
         GameObject prefa = ChestTypeToGameObject(chestType);
-        var chest = Instantiate(prefa, pos.position, Quaternion.identity) as GameObject;
+        var chest = Instantiate(prefa, pos.position, Quaternion.identity);
         chest.transform.parent = pos;
     }
 
@@ -221,15 +244,15 @@ public class SpawnManager : MonoBehaviour
         pos.position = new Vector2(pos.position.x, pos.position.y + 0.5f);
         if (type == DropedProp.DropType.HP)
         {
-            var go = Instantiate(HPDrop, pos.position, Quaternion.identity) as GameObject;
+            var go = Instantiate(HPDrop, pos.position, Quaternion.identity);
         }
         else if (type == DropedProp.DropType.Coin)
         {
-            var go = Instantiate(coin, pos.position, Quaternion.identity) as GameObject;
+            var go = Instantiate(coin, pos.position, Quaternion.identity);
         }
         else if (type == DropedProp.DropType.Gem)
         {
-            var go = Instantiate(gem, pos.position, Quaternion.identity) as GameObject;
+            var go = Instantiate(gem, pos.position, Quaternion.identity);
         }
     }
 

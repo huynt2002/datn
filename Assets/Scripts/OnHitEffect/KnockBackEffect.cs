@@ -5,7 +5,7 @@ using UnityEngine;
 public class KnockBackEffect : OnHitEffect
 {
     public float knockbackForce;
-    public override void OnHit(Entity target)
+    public override void OnHit(Entity target, Entity dealer = null, float damage = 0)
     {
         KnockBack(target.GetComponent<Rigidbody2D>());
     }

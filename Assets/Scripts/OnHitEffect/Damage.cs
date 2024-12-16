@@ -80,10 +80,10 @@ public class Damage : MonoBehaviour
         Effect(Helper.GetPos(target.gameObject));
         if (target.invicible) { return; }
         target.TakeDamage(damage, damageType, isCritical);
-        var onHitEffects = GetComponents<OnHitEffect>();
+        var onHitEffects = GetComponentsInChildren<OnHitEffect>();
         foreach (var onHitEffect in onHitEffects)
         {
-            onHitEffect.OnHit(target);
+            onHitEffect.OnHit(target, entity, damage);
         }
     }
 }

@@ -134,9 +134,10 @@ public class Entity : MonoBehaviour
 
     public void HealHP(float amount)
     {
+        amount = (int)amount;
         currentHP += amount;
         if (currentHP > maxHP) currentHP = maxHP;
-        DamagePopUpManager.instance?.Create(transform.position, amount, false, true);
+        DamagePopUpManager.instance?.Create(Helper.GetPos(gameObject, Helper.ObjPosition.Top), amount, false, true);
     }
 
     public void IncreaseDmg(float dmg)

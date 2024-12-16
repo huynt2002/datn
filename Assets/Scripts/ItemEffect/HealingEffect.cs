@@ -1,4 +1,4 @@
-public class HealingEffect : ItemEffect
+public class HealingEffect : MultiTimeEffect
 {
     public int healNum = 5;
     public override void ApplyEffect()
@@ -8,5 +8,9 @@ public class HealingEffect : ItemEffect
             EffectBehaviors.Healing(entity, healNum, transform);
             ResetCD();
         }
+    }
+    public override void DestroyEffect()
+    {
+        Destroy(gameObject);
     }
 }

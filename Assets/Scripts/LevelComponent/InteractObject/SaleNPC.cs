@@ -6,14 +6,16 @@ public class SaleNPC : PlayerInteract
 {
     [SerializeField] List<Transform> itemPos;
     DialogManager dialogManager;
-    GameObject[] item;
+    GameObject[] saleItems;
+    List<GameObject> purchasedItems;
     int cost = 500;
     // Start is called before the first frame update
     void Start()
     {
         dialogManager = GetComponent<DialogManager>();
         interactType = InteractType.NPC;
-        item = new GameObject[itemPos.Count];
+        saleItems = new GameObject[itemPos.Count];
+        purchasedItems = new List<GameObject>();
         Init();
     }
 
@@ -25,18 +27,18 @@ public class SaleNPC : PlayerInteract
 
     public override void NPC()
     {
-        dialogManager.Show(Defines.DialogNPCText.SaleNPC);
+        //dialogManager.Show(Defines.DialogNPCText.SaleNPC);
     }
 
     void Init()
     {
         for (int i = 0; i < itemPos.Count; i++)
         {
-            if (item[i] == null)
+            if (saleItems[i] == null)
             {
                 Vector2 pos = new Vector2(itemPos[i].position.x, itemPos[i].position.y + 1f);
-                item[i] = SpawnManager.instance.SpawnItem(pos);
-                var itemManager = item[i].GetComponent<ItemManager>();
+                saleItems[i] = SpawnManager.instance.SpawnItemForSale(pos);
+                var itemManager = saleItems[i].GetComponent<ItemManager>();
                 float h = 1;
                 switch (itemManager.itemStats.itemType)
                 {
@@ -55,16 +57,14 @@ public class SaleNPC : PlayerInteract
     {
         for (int i = 0; i < itemPos.Count; i++)
         {
-            if (item[i] != null)
+            if (saleItems[i] != null)
             {
                 //fix
-                if (!item[i].GetComponent<ItemManager>().isSale)
+                if (!saleItems[i].GetComponent<ItemManager>().isSale)
                 {
-                    var newItem = item[i] as GameObject;
+                    purchasedItems.Add(saleItems[i]);
                 }
-                Destroy(item[i]);
-                item[i] = null;
-
+                saleItems[i] = null;
             }
         }
         Init();

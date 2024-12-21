@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,12 +12,6 @@ public class DetectArea : MonoBehaviour
     {
         monsters = new List<Monster_Behavior>();
         detectBound = GetComponent<BoxCollider2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -97,11 +90,4 @@ public class DetectArea : MonoBehaviour
             }
         }
     }
-
-    // private void OnDrawGizmos()
-    // {
-    //     Gizmos.color = Color.red;
-    //     Vector3 s = new Vector3(detectBound.size.x - 4f, detectBound.size.y, 0);
-    //     Gizmos.DrawCube(gameObject.transform.position, s);
-    // }
 }

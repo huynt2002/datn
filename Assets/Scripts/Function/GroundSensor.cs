@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GroundSensor : MonoBehaviour
@@ -9,18 +7,6 @@ public class GroundSensor : MonoBehaviour
     [SerializeField] Vector2 groundSensorSize;
     [SerializeField] LayerMask groundLayer;
     public Collider2D platformCollider { get; private set; }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void FixedUpdate()
     {
         CheckGround();
@@ -48,11 +34,5 @@ public class GroundSensor : MonoBehaviour
             platformCollider = null;
         }
 
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawCube(groundSensor.position, groundSensorSize);
     }
 }

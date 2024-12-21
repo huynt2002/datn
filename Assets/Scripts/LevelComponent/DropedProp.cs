@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DropedProp : MonoBehaviour
@@ -10,24 +8,10 @@ public class DropedProp : MonoBehaviour
     }
     public float HPAmount;
     [SerializeField] DropType dropType;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
     void Awake()
     {
         LevelManager.instance.clearOnLoadLevel += DestroyProp;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    private void OnEnable()
-    {
-
     }
 
     private void OnDestroy()

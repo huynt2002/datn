@@ -1,7 +1,6 @@
-using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
-using System;
+
 public class InfoUIManager : MonoBehaviour
 {
     public static InfoUIManager instance;

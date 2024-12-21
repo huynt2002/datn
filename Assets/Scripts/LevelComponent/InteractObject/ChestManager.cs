@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ChestManager : PlayerInteract
@@ -30,6 +28,4 @@ public class ChestManager : PlayerInteract
     {
         InfoUIManager.instance.SetInfo(Helper.GetPos(gameObject, Helper.ObjPosition.Top), Color.white, Defines.InfoButText.Check);
     }
-
-
 }

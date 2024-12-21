@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
-using UnityEngine.Playables;
 
 public class BossEventTrigger : MonoBehaviour
 {

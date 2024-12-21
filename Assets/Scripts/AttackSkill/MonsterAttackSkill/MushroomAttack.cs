@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MushroomAttack : MonsterAttackSkill
@@ -21,6 +19,5 @@ public class MushroomAttack : MonsterAttackSkill
 
     public override void ResetAttack()
     {
-
     }
 }

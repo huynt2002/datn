@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ParticleDestroyEvent : MonoBehaviour
 {
-    // Destroy particles when animation has finished playing. 
-    // destroyEvent() is called as an event in animations.
     [HideInInspector]
     public SpawnManager.EffectType effectType = SpawnManager.EffectType.None;
     Animator animator;

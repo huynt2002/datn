@@ -13,7 +13,7 @@ public class Damage : MonoBehaviour
     protected void Start()
     {
         entity = GetComponentInParent<Entity>();
-        projectile = GetComponent<Projectile>();
+        projectile = GetComponentInParent<Projectile>();
         attackSkill = GetComponentInParent<AttackSkill>();
         if (entity)
         {
@@ -72,17 +72,20 @@ public class Damage : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Entity target = other.GetComponentInParent<Entity>();
-        UpdateDamage();
-        GetCriticalHit();
-        if (!target.isAlive) { return; }
-        //deal damage
-        Effect(Helper.GetPos(target.gameObject));
-        if (target.invicible) { return; }
-        target.TakeDamage(damage, damageType, isCritical);
-        var onHitEffects = GetComponentsInChildren<OnHitEffect>();
-        foreach (var onHitEffect in onHitEffects)
+        if (target)
         {
-            onHitEffect.OnHit(target, entity, damage);
+            UpdateDamage();
+            GetCriticalHit();
+            if (!target.isAlive) { return; }
+            //deal damage
+            Effect(Helper.GetPos(target.gameObject));
+            if (target.invicible) { return; }
+            target.TakeDamage(damage, damageType, isCritical);
+            var onHitEffects = GetComponentsInChildren<OnHitEffect>();
+            foreach (var onHitEffect in onHitEffects)
+            {
+                onHitEffect.OnHit(target, entity, damage);
+            }
         }
     }
 }

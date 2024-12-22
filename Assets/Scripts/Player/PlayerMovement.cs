@@ -161,6 +161,7 @@ public class PlayerMovement : MonoBehaviour
         {
             comboStep = 0;
             isAttack = false;
+
         }
     }
 
@@ -175,12 +176,20 @@ public class PlayerMovement : MonoBehaviour
             if (skill1.anim)
             {
                 animationController.PlayAnimation(skill1.anim.name);
+                StartCoroutine(PerformSkill(skill1));
             }
             else
             {
                 skill1.OnAttacking();
+                ResetSkill();
             }
         }
+    }
+
+    IEnumerator PerformSkill(AttackSkill skill)
+    {
+        yield return new WaitForSeconds(skill.anim.length);
+        ResetSkill();
     }
 
     public void SkillAttackInAnimation()
@@ -230,12 +239,19 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Move()
     {
-        if (isDash || isSkill || getHit || isAttack) { return; }
+        if (isDash || isSkill || getHit) { return; }
         if (horizontal != 0)
         {
-            isMove = true;
-            body.velocity = new Vector2(horizontal * entity.speed, body.velocity.y);
-            if (isGrounded) { animationController.PlayMoveAnimation(); }
+            if (isAttack)
+            {
+                body.velocity = new Vector2(horizontal * entity.speed / 2, body.velocity.y);
+            }
+            else
+            {
+                isMove = true;
+                body.velocity = new Vector2(horizontal * entity.speed, body.velocity.y);
+                if (isGrounded) { animationController.PlayMoveAnimation(); }
+            }
             Flip();
         }
         else

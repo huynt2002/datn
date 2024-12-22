@@ -60,7 +60,12 @@ public class DetectArea : MonoBehaviour
             foreach (var mon in monsters)
             {
                 mon.SetAttackTarget(null);
-                mon.moveTarget = other.transform.position;
+                if (other.transform.position.x > detectBound.transform.position.x - detectBound.bounds.size.x / 2 + 1f &&
+                other.transform.position.x < detectBound.transform.position.x + detectBound.bounds.size.x / 2 - 1f)
+                {
+                    mon.moveTarget = other.transform.position;
+                }
+
             }
         }
     }

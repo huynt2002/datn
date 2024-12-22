@@ -35,6 +35,8 @@ public class MainCanvasManager : MonoBehaviour
     [Header("SkillInfo")]
     [SerializeField] DisplaySkillInfo skillInfoObject;
     [SerializeField] Image skillUiIcon;
+    [SerializeField] TextMeshProUGUI skillName;
+    [SerializeField] TextMeshProUGUI skillDes;
     [SerializeField] GameObject skillSelectedObj;
     [Header("Inventory")]
     [SerializeField] GameObject itemInfoObject;
@@ -176,6 +178,8 @@ public class MainCanvasManager : MonoBehaviour
         if (skill)
         {
             skillUiIcon.sprite = skill.icon;
+            skillName.text = skill.skillName;
+            skillDes.text = skill.skillDescription;
             skillUiIcon.gameObject.SetActive(true);
         }
         else

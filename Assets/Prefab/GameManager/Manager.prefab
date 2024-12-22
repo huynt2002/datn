@@ -227,6 +227,8 @@ MonoBehaviour:
   speed: {fileID: 8165020420370104627}
   skillInfoObject: {fileID: 4068493625782347842}
   skillUiIcon: {fileID: 1659973510571830534}
+  skillName: {fileID: 5631854411285609075}
+  skillDes: {fileID: 5109739000420184511}
   skillSelectedObj: {fileID: 2459151281568973368}
   itemInfoObject: {fileID: 463867774642975800}
   itemSlots:
@@ -1076,6 +1078,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7967608905404482107, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
   m_PrefabInstance: {fileID: 6287873999840640316}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5109739000420184511 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1272958052813458563, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
+  m_PrefabInstance: {fileID: 6287873999840640316}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5211633422719655937 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2238417566733720893, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
@@ -1091,6 +1104,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1953002173910976665, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
   m_PrefabInstance: {fileID: 6287873999840640316}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5631854411285609075 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1831656256168740687, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}
+  m_PrefabInstance: {fileID: 6287873999840640316}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5946781685921313327 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 415512560944090899, guid: 4d7b2ba6d0894d1478cf5f095ba761f5, type: 3}

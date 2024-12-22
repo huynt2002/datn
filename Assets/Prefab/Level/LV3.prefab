@@ -3865,7 +3865,7 @@ MonoBehaviour:
   - {x: 5.5278625, y: -1.8818321, z: 0}
   m_ShapePathHash: -670500287
   m_Mesh: {fileID: 0}
-  m_InstanceId: 58024
+  m_InstanceId: 68286
   m_LocalBounds:
     m_Center: {x: 3.0933275, y: -1.4233751, z: 0}
     m_Extent: {x: 2.5206766, y: 0.458457, z: 0}
@@ -3943,7 +3943,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -7
   m_Sprite: {fileID: 21300000, guid: 1632676c31a59864ba950b3850184965, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4027,7 +4027,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: f63409ffb9882cb4c8a7fd9ef39981ec, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4173,7 +4173,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 1632676c31a59864ba950b3850184965, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4241,7 +4241,7 @@ MonoBehaviour:
   - {x: 4.2546377, y: -2.9836617, z: 0}
   m_ShapePathHash: 710798951
   m_Mesh: {fileID: 0}
-  m_InstanceId: 58052
+  m_InstanceId: 68314
   m_LocalBounds:
     m_Center: {x: 2.2334952, y: -1.5565128, z: 0}
     m_Extent: {x: 2.0827985, y: 1.4730606, z: 0}
@@ -4407,7 +4407,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -4
   m_Sprite: {fileID: 21300000, guid: 1632676c31a59864ba950b3850184965, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4475,7 +4475,7 @@ MonoBehaviour:
   - {x: 2.0050638, y: -1.0554562, z: 0}
   m_ShapePathHash: -401023522
   m_Mesh: {fileID: 0}
-  m_InstanceId: 57992
+  m_InstanceId: 68254
   m_LocalBounds:
     m_Center: {x: 1.1467593, y: -0.5465007, z: 0}
     m_Extent: {x: 0.9658706, y: 0.5089574, z: 0}
@@ -20084,7 +20084,7 @@ MonoBehaviour:
   - {x: 3.3486872, y: -1.8083754, z: 0}
   m_ShapePathHash: 961508973
   m_Mesh: {fileID: 0}
-  m_InstanceId: 58538
+  m_InstanceId: 68800
   m_LocalBounds:
     m_Center: {x: 2.0159822, y: -1.4203157, z: 0}
     m_Extent: {x: 1.4433312, y: 0.4339714, z: 0}
@@ -20162,7 +20162,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -8
   m_Sprite: {fileID: 21300000, guid: f63409ffb9882cb4c8a7fd9ef39981ec, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -20378,7 +20378,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -9
   m_Sprite: {fileID: 21300000, guid: bc2f62862c5992346b6178f37a047d45, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -20730,7 +20730,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -9
   m_Sprite: {fileID: 21300000, guid: bc2f62862c5992346b6178f37a047d45, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -20798,7 +20798,7 @@ MonoBehaviour:
   - {x: 17.701395, y: -2.614338, z: 0}
   m_ShapePathHash: 52850775
   m_Mesh: {fileID: 0}
-  m_InstanceId: 58186
+  m_InstanceId: 68448
   m_LocalBounds:
     m_Center: {x: 8.726124, y: -1.2005148, z: 0}
     m_Extent: {x: 8.97527, y: 1.413825, z: 0}
@@ -21193,7 +21193,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -11
   m_Sprite: {fileID: 8799596396419474631, guid: 5c5b4bc572711354c814942c5c2e810b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3207547, g: 0.31621572, b: 0.31621572, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -21261,7 +21261,7 @@ MonoBehaviour:
   - {x: 5.5278625, y: -1.8818321, z: 0}
   m_ShapePathHash: -670500287
   m_Mesh: {fileID: 0}
-  m_InstanceId: 57976
+  m_InstanceId: 68238
   m_LocalBounds:
     m_Center: {x: 3.0933275, y: -1.4233751, z: 0}
     m_Extent: {x: 2.5206766, y: 0.458457, z: 0}
@@ -24563,7 +24563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4963960267294517407, guid: 971de3e1936bbac448a3bc2783d5edbc, type: 3}
       propertyPath: m_InstanceId
-      value: -31560
+      value: -95806
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

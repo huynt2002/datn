@@ -63,6 +63,10 @@ public class SaleNPC : PlayerInteract
                 {
                     purchasedItems.Add(saleItems[i]);
                 }
+                else
+                {
+                    Destroy(saleItems[i]);
+                }
                 saleItems[i] = null;
             }
         }

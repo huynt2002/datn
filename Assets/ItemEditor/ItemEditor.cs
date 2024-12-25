@@ -44,7 +44,7 @@ public class ItemEditor : EditorWindow
             }
             else
             {
-                if (GUILayout.Button("Create Item"))
+                if (GUILayout.Button("Create"))
                 {
                     CreateScriptableObject(scriptType);
                 }

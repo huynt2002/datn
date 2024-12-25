@@ -79,7 +79,6 @@ public class ItemEditor : EditorWindow
             EditorGUILayout.LabelField(item.name);
             if (GUILayout.Button("Select", GUILayout.Width(60)))
             {
-                Selection.activeObject = item;
                 selectedItem = item;
                 DetailWindow.ShowWindow(selectedItem);
             }

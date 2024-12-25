@@ -12,7 +12,10 @@ public class DetailWindow : EditorWindow
         var window = GetWindow<DetailWindow>();
         window.titleContent = new GUIContent("ObjectDetail");
         selectedObject = obj;
-        fileName = obj.name;
+        if (obj)
+        {
+            fileName = obj.name;
+        }
         window.Show();
     }
 
@@ -43,6 +46,10 @@ public class DetailWindow : EditorWindow
     }
     private void RenameAsset()
     {
+        if (!selectedObject)
+        {
+            return;
+        }
         if (string.IsNullOrEmpty(fileName))
         {
             Debug.LogError("New name cannot be empty.");

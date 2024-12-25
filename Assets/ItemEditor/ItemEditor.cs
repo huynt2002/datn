@@ -9,7 +9,6 @@ public class ItemEditor : EditorWindow
 {
     private MonoScript selectedScript;
     private Type scriptType;
-    private Editor objectEditor;
     private ScriptableObject selectedItem;
     ItemPool itemPool;
     private List<ScriptableObject> items = new List<ScriptableObject>();

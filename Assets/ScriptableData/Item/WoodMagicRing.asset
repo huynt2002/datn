@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 561581d114dd1ca4a8ee274becc9d972, type: 3}
-  m_Name: Item4
+  m_Name: WoodMagicRing
   m_EditorClassIdentifier: 
-  id: 4
-  itemName: Wolf Helmet
+  id: 0
+  itemName: Wood Magic Ring
   damageAmount: 0
-  hpAmount: 30
-  description: Increase 30 Max HP and Speed by 1
-  criticalChance: 0
+  hpAmount: 0
+  description: Increase 10% CritRate
+  criticalChance: 10
   criticalDamage: 0
-  speed: 1
-  icon: {fileID: 21300000, guid: 857e73d112fe35a4da2b384f7b47b865, type: 3}
-  itemType: 1
+  speed: 0
+  icon: {fileID: 21300000, guid: 75fb31b7a2d667946a80fff38d8e98ca, type: 3}
+  itemType: 0
   itemEffectObject: {fileID: 0}

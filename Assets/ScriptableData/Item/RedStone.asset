@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 561581d114dd1ca4a8ee274becc9d972, type: 3}
-  m_Name: New Item 1
+  m_Name: RedStone
   m_EditorClassIdentifier: 
-  id: 9
-  itemName: Book of Revelations
+  id: 8
+  itemName: Red Stone
   damageAmount: 0
-  hpAmount: 0
-  description: Increase speed by 0.5 and CritRate by 5
-  criticalChance: 5
+  hpAmount: 30
+  description: Increase HP by 30 and slow regen HP by 1 every 3second
+  criticalChance: 0
   criticalDamage: 0
-  speed: 0.5
-  icon: {fileID: 21300000, guid: c27ee528c4b5fe6499247c25520943bd, type: 3}
-  itemType: 0
-  itemEffectObject: {fileID: 0}
+  speed: 0
+  icon: {fileID: 21300000, guid: 5f7c00cecdde3de4a817f6d970cda357, type: 3}
+  itemType: 1
+  itemEffectObject: {fileID: 3619892523627480844, guid: bb827c06a7760c949be67e2253474c16, type: 3}

@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Security.Cryptography;
 using UnityEditor;
 using UnityEngine;
 
@@ -25,11 +23,10 @@ public class ItemEditor : EditorWindow
         GetWindow<ItemEditor>("Scriptable Editor");
     }
 
-    private string newItemName = "New Object";
     private void OnGUI()
     {
         selectedScript = (MonoScript)EditorGUILayout.ObjectField(
-            "Script",
+            "Type",
             selectedScript,
             typeof(MonoScript),
             false);
@@ -52,17 +49,6 @@ public class ItemEditor : EditorWindow
                     CreateScriptableObject(scriptType);
                 }
             }
-            // GUILayout.Label("Object Editor", EditorStyles.boldLabel);
-            // selectedItem = (ScriptableObject)EditorGUILayout.ObjectField("Selected Object", selectedItem, scriptType, false);
-            // if (selectedItem != null)
-            // {
-            //     GUILayout.Label("Object Editor", EditorStyles.boldLabel);
-            //     if (objectEditor == null || objectEditor.target != selectedItem)
-            //         objectEditor = Editor.CreateEditor(selectedItem);
-
-            //     // Draw the inspector for the ScriptableObject
-            //     objectEditor.OnInspectorGUI();
-            // }
 
             if (GUILayout.Button("Refresh Objects"))
             {
@@ -95,6 +81,7 @@ public class ItemEditor : EditorWindow
             {
                 Selection.activeObject = item;
                 selectedItem = item;
+                DetailWindow.ShowWindow(selectedItem);
             }
 
             if (GUILayout.Button("Delete", GUILayout.Width(60)))

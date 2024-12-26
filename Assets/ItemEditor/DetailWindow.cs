@@ -10,7 +10,7 @@ public class DetailWindow : EditorWindow
     public static void ShowWindow(ScriptableObject obj)
     {
         var window = GetWindow<DetailWindow>();
-        window.titleContent = new GUIContent("ObjectDetail");
+        window.titleContent = new GUIContent("DetailWindow");
         selectedObject = obj;
         if (obj)
         {

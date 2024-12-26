@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 
 #if UNITY_EDITOR
-public class ItemEditor : EditorWindow
+public class MainWindow : EditorWindow
 {
     private MonoScript selectedScript;
     private Type scriptType;
@@ -19,7 +19,7 @@ public class ItemEditor : EditorWindow
     [MenuItem("Tools/ScriptableEditor")]
     public static void ShowWindow()
     {
-        GetWindow<ItemEditor>("Scriptable Editor");
+        GetWindow<MainWindow>("MainWindow");
     }
 
     private void OnGUI()

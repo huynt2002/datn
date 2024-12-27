@@ -59,7 +59,7 @@ public class MainViewModel
 
     public void LoadAllItems()
     {
-
+        if (scriptType == null) { return; }
         items = AssetDatabase.FindAssets("t:" + scriptType.Name)
         .Select(guid => AssetDatabase.LoadAssetAtPath<ScriptableObject>(AssetDatabase.GUIDToAssetPath(guid)))
         .ToList();

@@ -21,6 +21,10 @@ public class MainWindow : EditorWindow
 
     private void OnGUI()
     {
+        if (controller == null)
+        {
+            controller = new MainViewModel();
+        }
         controller.selectedScript = (MonoScript)EditorGUILayout.ObjectField(
             "Type",
             controller.selectedScript,

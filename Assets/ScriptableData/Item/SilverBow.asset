@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 561581d114dd1ca4a8ee274becc9d972, type: 3}
-  m_Name: SilverArrow
+  m_Name: SilverBow
   m_EditorClassIdentifier: 
-  id: 3
-  itemName: Silver Arrow
+  id: 18
+  itemName: SilverBow
   damageAmount: 0
   hpAmount: 0
-  description: ' Increase 20%CritDMG'
-  criticalChance: 0
-  criticalDamage: 20
+  description: Increase 20%CritRate
+  criticalChance: 20
+  criticalDamage: 0
   speed: 0
-  icon: {fileID: 21300000, guid: d3318582418d75a46b3439c9776936b9, type: 3}
+  icon: {fileID: 21300000, guid: 46881e259352d1f4987b6c50919ab76d, type: 3}
   itemType: 1
   itemEffectObject: {fileID: 0}

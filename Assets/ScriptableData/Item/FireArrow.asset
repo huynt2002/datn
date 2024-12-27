@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 561581d114dd1ca4a8ee274becc9d972, type: 3}
-  m_Name: SilverArmor
+  m_Name: FireArrow
   m_EditorClassIdentifier: 
-  id: 7
-  itemName: Silver Armor
-  damageAmount: 0
-  hpAmount: 30
-  description: Increase 30HP but speed decrease by 1
+  id: 12
+  itemName: FireArrow
+  damageAmount: 20
+  hpAmount: 0
+  description: Increase 20%DMG and 20%CritDMG
   criticalChance: 0
-  criticalDamage: 0
-  speed: -1
-  icon: {fileID: 21300000, guid: 5d5bc82b0ec9894418bf009c44535c95, type: 3}
+  criticalDamage: 20
+  speed: 0
+  icon: {fileID: 21300000, guid: dd4f4af4f263e774d9040b8170b7d2bf, type: 3}
   itemType: 1
   itemEffectObject: {fileID: 0}

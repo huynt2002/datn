@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+#if UNITY_EDITOR
 public class DetailViewModel
 {
     public ScriptableObject selectedObject;
@@ -37,3 +38,4 @@ public class DetailViewModel
         }
     }
 }
+#endif

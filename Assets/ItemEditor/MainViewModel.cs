@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-
+#if UNITY_EDITOR
 public class MainViewModel
 {
     public MonoScript selectedScript;
@@ -89,3 +89,4 @@ public class MainViewModel
         }
     }
 }
+#endif

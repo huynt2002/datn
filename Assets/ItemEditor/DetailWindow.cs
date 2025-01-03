@@ -17,11 +17,12 @@ public class DetailWindow : EditorWindow
         {
             fileName = obj.name;
         }
-        window.Show();
+        if(window!=null) {window.Show();}
     }
 
     private void OnGUI()
-    {
+    {   
+        if(controller==null) return;
         if (controller.selectedObject != null)
         {
             fileName = EditorGUILayout.TextField("Asset name:", fileName);
